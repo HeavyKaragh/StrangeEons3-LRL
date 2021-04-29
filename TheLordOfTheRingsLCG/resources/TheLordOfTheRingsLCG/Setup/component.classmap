@@ -1,0 +1,2 @@
+@cat-rules
+	@LRL-component-Setup = diy:TheLordOfTheRingsLCG/Setup/component.js | TheLordOfTheRingsLCG/Setup/ui.png | LRL

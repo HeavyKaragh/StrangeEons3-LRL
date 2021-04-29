@@ -1,0 +1,81 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/PresentationAlternate/Standard-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/Standard.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/PresentationAlternate/StandardBack-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/StandardBack.jp2
+
+Portrait-portrait-clip-region = 0,140,413,285
+BackgroundBack-portrait-clip-region = 0,0,413,563
+
+Name-region = 74,437,265,105
+Name-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}
+Name-pointsize = 20
+Name-colour = #FFFFFF
+Name-alignment = middle,center
+Name-portrait-clip-region = 74,437,265,105
+Name-portrait-clipping = false
+Name-shadow-width = 2
+Name-shadow-colour = #4f0f0f0f
+Name-shadow-passes = 6
+
+GameName-region = 62,20,289,105
+GameName-portrait-clip-region = 62,20,289,105
+GameName-portrait-clipping = false
+GameName-shadow-width = 2
+GameName-shadow-colour = #4f0f0f0f
+GameName-shadow-passes = 6
+
+Body-region = 50,68,313,442
+Type-region = 50,50,313,16
+
+Page-region = 295,528,59,10
+PageDecoration-region = 288,526,74,18
+PageIn-region = 300,495,63,15
+
+OptionLeft-region = 49,507,59,9
+OptionLeftDecoration-region = 42,503,72,17
+OptionRight-region = 306,507,59,9
+OptionRightDecoration-region = 299,503,72,17
+
+Artist-region = 38,527,100,12
+Copyright-region = 139,527,135,12
+CollectionInfo-region = 275,527,87,12
+Collection-portrait-clip-region = 363,527,12,12
+
+Standard-template = TheLordOfTheRingsLCG/PresentationAlternate/Standard-lr.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/Standard.jp2
+
+StandardBack-template = TheLordOfTheRingsLCG/PresentationAlternate/StandardBack-lr.jp2
+StandardBack-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/StandardBack.jp2
+
+Nightmare-template = TheLordOfTheRingsLCG/PresentationAlternate/Nightmare-lr.jp2
+Nightmare-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/Nightmare.jp2
+
+NightmareBack-template = TheLordOfTheRingsLCG/PresentationAlternate/NightmareBack-lr.jp2
+NightmareBack-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/NightmareBack.jp2
+
+Collection-template = TheLordOfTheRingsLCG/PresentationAlternate/Custom-lr.jp2
+Collection-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/Custom.jp2
+
+CollectionBack-template = TheLordOfTheRingsLCG/PresentationAlternate/CustomBack-lr.jp2
+CollectionBack-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/CustomBack.jp2
+
+Custom-template = TheLordOfTheRingsLCG/PresentationAlternate/Custom-lr.jp2
+Custom-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/Custom.jp2
+
+Custom-outside-tintable = TheLordOfTheRingsLCG/PresentationAlternate/Custom-outside-tintable-lr.jp2
+Custom-outside-tintable-hires = TheLordOfTheRingsLCG/PresentationAlternate/Custom-outside-tintable.jp2
+
+Custom-tintable = TheLordOfTheRingsLCG/PresentationAlternate/Custom-inside-tintable-lr.jp2
+Custom-tintable-hires = TheLordOfTheRingsLCG/PresentationAlternate/Custom-inside-tintable.jp2
+
+CustomBack-template = TheLordOfTheRingsLCG/PresentationAlternate/CustomBack-lr.jp2
+CustomBack-template-hires = TheLordOfTheRingsLCG/PresentationAlternate/CustomBack.jp2
+
+CustomBack-tintable = TheLordOfTheRingsLCG/PresentationAlternate/CustomBack-tintable-lr.jp2
+CustomBack-tintable-hires = TheLordOfTheRingsLCG/PresentationAlternate/CustomBack-tintable.jp2
+

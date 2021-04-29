@@ -1,0 +1,66 @@
+Template-region = 0,0,563,413
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/SideQuestPlayer/Neutral-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Neutral.jp2
+
+TemplateBack-region = 0,0,563,413
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/image/PlayerHorizontal-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/image/PlayerHorizontal.jp2
+
+Portrait-portrait-clip-region = 0,0,563,413
+Portrait-shadow = TheLordOfTheRingsLCG/image/PokerCardHorizontal-shadow.jp2
+Portrait-shadow-tintable = TheLordOfTheRingsLCG/image/PokerCardHorizontal-shadow-tintable.jp2
+Sphere-portrait-clip-region = 479,190,36,36
+BodyIcon-portrait-clip-region = 220,244,124,124
+
+Artist-region = 38,377,100,12
+Copyright-region = 139,377,285,12
+CollectionInfo-region = 425,377,70,12
+Collection-portrait-clip-region = 496,377,12,12
+CollectionNumber-region = 509,377,16,12
+
+
+Progress-region = 55,203,36,24
+ResourceCost-region = 45,38,50,36
+
+Name-region = 133,39,389,29
+Body-region = 49,244,465,124
+Body-shape = 0,35,255,0,0
+OptionRight-region = 463,358,59,9
+OptionRight-decoration-region = 456,354,72,17
+
+Option-Body-shape = 0,0,354,0,61
+
+Name-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Name-pointsize = 12
+Name-colour = #000000
+
+Neutral-template = TheLordOfTheRingsLCG/SideQuestPlayer/Neutral-lr.jp2
+Neutral-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Neutral.jp2
+
+Custom-template = TheLordOfTheRingsLCG/SideQuestPlayer/Custom-lr.jp2
+Custom-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Custom.jp2
+Custom-Body-tintable = TheLordOfTheRingsLCG/SideQuestPlayer/Custom-Body.jp2
+Custom-Colour-tintable = TheLordOfTheRingsLCG/SideQuestPlayer/Custom-Colour.jp2
+
+Leadership-template = TheLordOfTheRingsLCG/SideQuestPlayer/Leadership-lr.jp2
+Leadership-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Leadership.jp2
+
+Spirit-template = TheLordOfTheRingsLCG/SideQuestPlayer/Spirit-lr.jp2
+Spirit-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Spirit.jp2
+
+Tactics-template = TheLordOfTheRingsLCG/SideQuestPlayer/Tactics-lr.jp2
+Tactics-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Tactics.jp2
+
+Lore-template = TheLordOfTheRingsLCG/SideQuestPlayer/Lore-lr.jp2
+Lore-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Lore.jp2
+
+Baggins-template = TheLordOfTheRingsLCG/SideQuestPlayer/Baggins-lr.jp2
+Baggins-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Baggins.jp2
+
+Fellowship-template = TheLordOfTheRingsLCG/SideQuestPlayer/Fellowship-lr.jp2
+Fellowship-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Fellowship.jp2
+
+Mastery-template = TheLordOfTheRingsLCG/SideQuestPlayer/Mastery-lr.jp2
+Mastery-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Mastery.jp2

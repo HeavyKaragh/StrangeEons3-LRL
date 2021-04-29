@@ -1,0 +1,73 @@
+Template-region = 0,0,563,413
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/Quest/Standard-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Quest/Standard.jp2
+
+TemplateBack-region = 0,0,563,413
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/Quest/StandardBack-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/Quest/StandardBack.jp2
+
+Portrait-portrait-clip-region = 0,0,563,413
+Portrait-portrait-backgroundFilled = true
+PortraitBack-portrait-clip-region = 0,0,563,413
+PortraitBack-portrait-backgroundFilled = true
+EncounterSet-portrait-clip-region = 477,188,36,36
+
+Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2
+Difficulty-region = 469,180,52,52
+
+Stage-region = 44,43,60,42
+Side-region = 60,30,60,42
+
+Name-region = 135,39,387,29
+Adventure-region = 190,75,275,15
+Progress-region = 55,201,36,24
+Body-region = 46,243,471,125
+
+Option-Body-shape = 0,0,354,0,60
+
+OptionRight-region = 463,358,59,9
+OptionRight-decoration-region = 456,354,72,17
+
+Artist-region = 38,377,100,12
+Copyright-region = 139,377,285,12
+CollectionInfo-region = 425,377,70,12
+Collection-portrait-clip-region = 496,377,12,12
+CollectionNumber-region = 509,377,16,12
+
+EncounterSet1-portrait-clip-region = 448,212,22,22
+EncounterSet2-portrait-clip-region = 423,212,22,22
+EncounterSet3-portrait-clip-region = 398,212,22,22
+EncounterSet4-portrait-clip-region = 373,212,22,22
+EncounterSet5-portrait-clip-region = 348,212,22,22
+
+Name-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Name-pointsize = 12
+Name-colour = #000000
+
+Standard-template = TheLordOfTheRingsLCG/Quest/Standard-lr.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Quest/Standard.jp2
+
+StandardBack-template = TheLordOfTheRingsLCG/Quest/StandardBack-lr.jp2
+StandardBack-template-hires = TheLordOfTheRingsLCG/Quest/StandardBack.jp2
+
+Nightmare-template = TheLordOfTheRingsLCG/Quest/Nightmare-lr.jp2
+Nightmare-template-hires = TheLordOfTheRingsLCG/Quest/Nightmare.jp2
+
+Nightmare-template = TheLordOfTheRingsLCG/Quest/NightmareBack-lr.jp2
+NightmareBack-template-hires = TheLordOfTheRingsLCG/Quest/NightmareBack.jp2
+
+Standard-Adapter-0 = TheLordOfTheRingsLCG/image/empty1x1.png
+Standard-Adapter-1 = TheLordOfTheRingsLCG/Quest/Standard-Adapter-1.jp2
+Standard-Adapter-2 = TheLordOfTheRingsLCG/Quest/Standard-Adapter-2.jp2
+Standard-Adapter-3 = TheLordOfTheRingsLCG/Quest/Standard-Adapter-3.jp2
+Standard-Adapter-4 = TheLordOfTheRingsLCG/Quest/Standard-Adapter-4.jp2
+Standard-Adapter-5 = TheLordOfTheRingsLCG/Quest/Standard-Adapter-5.jp2
+
+Nightmare-Adapter-0 = TheLordOfTheRingsLCG/Quest/Nightmare-Adapter-0.jp2
+Nightmare-Adapter-1 = TheLordOfTheRingsLCG/Quest/Nightmare-Adapter-1.jp2
+Nightmare-Adapter-2 = TheLordOfTheRingsLCG/Quest/Nightmare-Adapter-2.jp2
+Nightmare-Adapter-3 = TheLordOfTheRingsLCG/Quest/Nightmare-Adapter-3.jp2
+Nightmare-Adapter-4 = TheLordOfTheRingsLCG/Quest/Nightmare-Adapter-4.jp2
+Nightmare-Adapter-5 = TheLordOfTheRingsLCG/Quest/Nightmare-Adapter-5.jp2

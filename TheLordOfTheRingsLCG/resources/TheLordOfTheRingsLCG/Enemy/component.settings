@@ -1,0 +1,53 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/Enemy/Standard-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Enemy/Standard.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/image/Encounter-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/image/Encounter.jp2
+
+Portrait-portrait-clip-region = 95,0,318,325
+Portrait-portrait-backgroundFilled = true
+EncounterSet-portrait-clip-region = 324,269,36,36
+
+Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2
+Difficulty-region = 316,260,52,52
+EncounterSetNumber-region = 330,313,24,12
+
+Engagement-region = 76,48,36,24
+Threat-region = 74,116,15,15
+Attack-region = 74,156,15,15
+Defense-region = 74,199,15,15
+HitPoints-region = 68,270,54,40
+
+Name-region =88,323,238,24
+Body-region = 56,356,301,137
+Type-region = 135,502,144,18
+OptionSpecial-portrait-clip-region = 55,494,24,24
+
+OptionLeft-region = 49,507,59,9
+OptionLeft-decoration-region = 42,503,72,17
+OptionRight-region = 306,507,59,9
+OptionRight-decoration-region = 299,503,72,17
+
+Artist-region = 38,527,100,12
+Copyright-region = 139,527,135,12
+CollectionInfo-region = 275,527,70,12
+Collection-portrait-clip-region = 346,527,12,12
+CollectionNumber-region = 359,527,16,12
+
+Standard-template = TheLordOfTheRingsLCG/Enemy/Standard-lr.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Enemy/Standard.jp2
+
+Nightmare-template = TheLordOfTheRingsLCG/Enemy/Nightmare-lr.jp2
+Nightmare-template-hires = TheLordOfTheRingsLCG/Enemy/Nightmare.jp2
+Nightmare-Body-region = 114,714,600,272
+
+Ship-template = TheLordOfTheRingsLCG/Enemy/Ship-lr.jp2
+Ship-template-hires = TheLordOfTheRingsLCG/Enemy/Ship.jp2
+
+Burden-template = TheLordOfTheRingsLCG/Enemy/Burden-lr.jp2
+Burden-template-hires = TheLordOfTheRingsLCG/Enemy/Burden.jp2
+Subtype-region = 164,304,95,13

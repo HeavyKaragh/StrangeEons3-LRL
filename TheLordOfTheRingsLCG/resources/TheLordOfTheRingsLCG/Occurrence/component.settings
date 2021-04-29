@@ -1,0 +1,76 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/Occurrence/Standard-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Occurrence/Standard.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/Occurrence/StandardBack-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/Occurrence/StandardBack.jp2
+
+Portrait-portrait-clip-region = 0,165,413,170
+EncounterSet-portrait-clip-region = 340,39,34,34
+
+Difficulty-region = 329,34,50,50
+Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2
+
+Body-region = 38,333,337,169
+Complex-Body-region = 38,333,337,55
+Success-region = 38,390,337,55
+Failure-region = 38,447,337,55
+Story-region = 38,80,337,88
+Name-region = 38,38,294,30
+Type-region = 38,511,337,16
+
+OptionLeft-region = 49,507,59,9
+OptionLeft-decoration-region = 42,503,72,17
+OptionRight-region = 306,507,59,9
+OptionRight-decoration-region = 299,503,72,17
+
+Artist-region = 38,527,100,12
+Copyright-region = 139,527,135,12
+CollectionInfo-region = 275,527,70,12
+Collection-portrait-clip-region = 346,527,12,12
+CollectionNumber-region = 359,527,16,12
+
+Name-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Name-pointsize = 12
+Name-colour = #FFFFFF
+Type-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Type-pointsize = 7
+Type-colour = #FFFFFF
+
+Standard-template = TheLordOfTheRingsLCG/Occurrence/Standard-lr.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Occurrence/Standard.jp2
+
+Complex-template = TheLordOfTheRingsLCG/Occurrence/Complex-lr.jp2
+Complex-template-hires = TheLordOfTheRingsLCG/Occurrence/Complex.jp2
+
+StandardBack-template = TheLordOfTheRingsLCG/Occurrence/StandardBack-lr.jp2
+StandardBack-template-hires = TheLordOfTheRingsLCG/Occurrence/StandardBack.jp2
+
+Black = TheLordOfTheRingsLCG/Occurrence/Black-lr.jp2
+Black-hires = TheLordOfTheRingsLCG/Occurrence/Black.jp2
+
+Blue = TheLordOfTheRingsLCG/Occurrence/Blue-lr.jp2
+Blue-hires = TheLordOfTheRingsLCG/Occurrence/Blue.jp2
+
+Brown = TheLordOfTheRingsLCG/Occurrence/Brown-lr.jp2
+Brown-hires = TheLordOfTheRingsLCG/Occurrence/Brown.jp2
+
+Green = TheLordOfTheRingsLCG/Occurrence/Green-lr.jp2
+Green-hires = TheLordOfTheRingsLCG/Occurrence/Green.jp2
+
+Purple = TheLordOfTheRingsLCG/Occurrence/Purple-lr.jp2
+Purple-hires = TheLordOfTheRingsLCG/Occurrence/Purple.jp2
+
+Red = TheLordOfTheRingsLCG/Occurrence/Red-lr.jp2
+Red-hires = TheLordOfTheRingsLCG/Occurrence/Red.jp2
+
+White = TheLordOfTheRingsLCG/Occurrence/White-lr.jp2
+White-hires = TheLordOfTheRingsLCG/Occurrence/White.jp2
+
+Yellow = TheLordOfTheRingsLCG/Occurrence/Yellow-lr.jp2
+Yellow-hires = TheLordOfTheRingsLCG/Occurrence/Yellow.jp2
+
+Region-tintable = TheLordOfTheRingsLCG/Occurrence/Red-lr.jp2

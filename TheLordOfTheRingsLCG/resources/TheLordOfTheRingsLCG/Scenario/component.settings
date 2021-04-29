@@ -1,0 +1,60 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/Scenario/Standard-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Scenario/Standard.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack.jp2
+
+Portrait-portrait-clip-region = 0,66,413,230
+EncounterSet-portrait-clip-region = 40,40,44,44
+
+EncounterSet1-portrait-clip-region = 41,92,22,22
+EncounterSet2-portrait-clip-region = 41,114,22,22
+EncounterSet3-portrait-clip-region = 41,136,22,22
+EncounterSet4-portrait-clip-region = 41,158,22,22
+EncounterSet5-portrait-clip-region = 41,180,22,22
+
+Standard-template = TheLordOfTheRingsLCG/Scenario/Standard-lr.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Scenario/Standard.jp2
+
+Adapter-1 = TheLordOfTheRingsLCG/Scenario/Adapter-1.jp2
+Adapter-2 = TheLordOfTheRingsLCG/Scenario/Adapter-2.jp2
+Adapter-3 = TheLordOfTheRingsLCG/Scenario/Adapter-3.jp2
+Adapter-4 = TheLordOfTheRingsLCG/Scenario/Adapter-4.jp2
+Adapter-5 = TheLordOfTheRingsLCG/Scenario/Adapter-5.jp2
+
+StandardBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-lr.jp2
+StandardBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack.jp2
+
+Custom-template = TheLordOfTheRingsLCG/Scenario/Standard-lr.jp2
+Custom-template-hires = TheLordOfTheRingsLCG/Scenario/Standard.jp2
+Custom-tintable = TheLordOfTheRingsLCG/Scenario/Custom-tintable.jp2
+
+Adapter-1-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-1-tintable.jp2
+Adapter-2-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-2-tintable.jp2
+Adapter-3-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-3-tintable.jp2
+Adapter-4-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-4-tintable.jp2
+Adapter-5-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-5-tintable.jp2
+
+CustomBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-lr.jp2
+CustomBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack.jp2
+CustomBack-tintable = TheLordOfTheRingsLCG/Scenario/CustomBack-tintable.jp2
+
+OptionLeft-region = 49,507,59,9
+OptionLeftDecoration-region = 42,503,72,17
+OptionRight-region = 306,507,59,9
+OptionRightDecoration-region = 299,503,72,17
+
+Name-region = 96,42,270,22
+Cycle-region = 100,72,262,10
+Body-region = 48,298,316,196
+BodyBack-region = 48,42,316,474
+Type-region = 136,502,140,17
+
+Artist-region = 38,527,100,12
+Copyright-region = 139,527,135,12
+CollectionInfo-region = 275,527,87,12
+Collection-portrait-clip-region = 363,527,12,12

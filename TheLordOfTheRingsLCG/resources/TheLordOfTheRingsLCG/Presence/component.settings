@@ -1,0 +1,39 @@
+Template-region = 0,0,563,413
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/Presence/Standard-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Presence/Standard.jp2
+Template-cut = TheLordOfTheRingsLCG/image/PokerCardHorizontal-cut.png
+Template-bleeding = TheLordOfTheRingsLCG/image/PokerCardHorizontal-bleeding.png
+
+TemplateBack-region = 0,0,563,413
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/image/EncounterHorizontal-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/image/EncounterHorizontal.jp2
+
+Portrait-portrait-clip-region = 0,0,563,413
+
+Type-region = 362,272,139,16
+
+TraitOut-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+TraitOut-alignment = middle,center
+TraitOut-pointsize = 6
+TraitOut-colour = #000000
+TraitOut-format = 
+TraitOut-decoration = TheLordOfTheRingsLCG/Presence/Trait.jp2
+TraitOut-region = 214,65,136,14
+
+Body-region = 50,300,463,68
+Name-region = 90,39,382,26
+
+Artist-region = 38,377,100,12
+Copyright-region = 139,377,285,12
+CollectionInfo-region = 425,377,70,12
+Collection-portrait-clip-region = 496,377,12,12
+CollectionNumber-region = 509,377,16,12
+
+
+Standard-template = TheLordOfTheRingsLCG/Presence/Standard-lr.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Presence/Standard.jp2
+
+Portrait-shadow-tintable = TheLordOfTheRingsLCG/image/PokerCardHorizontal-shadow-small-tintable.jp2
+Portrait-shadow = TheLordOfTheRingsLCG/image/PokerCardHorizontal-shadow-small.jp2

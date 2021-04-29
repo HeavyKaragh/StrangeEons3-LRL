@@ -1,0 +1,67 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/Attachment/Neutral-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Attachment/Neutral.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/image/Player-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/image/Player.jp2
+
+Portrait-portrait-clip-region = 50,50,312,269
+Sphere-portrait-clip-region = 320,269,40,40
+BodyIcon-portrait-clip-region = 145,350,124,124
+
+ResourceCost-region = 37,43,56,40
+
+Name-region = 124,35,200,24
+
+Body-region = 56,324,301,170
+Sphere-Body-shape = 40,40,335,0,0
+Type-region = 139,500,135,19
+Subtype-region = 146,301,124,14
+
+OptionLeft-region = 49,507,59,9
+OptionLeft-decoration-region = 42,503,72,17
+OptionRight-region = 306,507,59,9
+OptionRight-decoration-region = 299,503,72,17
+
+Artist-region = 38,527,100,12
+Copyright-region = 139,527,135,12
+CollectionInfo-region = 275,527,70,12
+Collection-portrait-clip-region = 346,527,12,12
+CollectionNumber-region = 359,527,16,12
+
+Neutral-template = TheLordOfTheRingsLCG/Attachment/Neutral-lr.jp2
+Neutral-template-hires = TheLordOfTheRingsLCG/Attachment/Neutral.jp2
+
+Custom-template = TheLordOfTheRingsLCG/Attachment/Custom-lr.jp2
+Custom-template-hires = TheLordOfTheRingsLCG/Attachment/Custom.jp2
+Custom-Body-tintable = TheLordOfTheRingsLCG/Attachment/Custom-Body.jp2
+Custom-Colour-tintable = TheLordOfTheRingsLCG/Attachment/Custom-Colour.jp2
+
+Leadership-template = TheLordOfTheRingsLCG/Attachment/Leadership-lr.jp2
+Leadership-template-hires = TheLordOfTheRingsLCG/Attachment/Leadership.jp2
+
+Spirit-template = TheLordOfTheRingsLCG/Attachment/Spirit-lr.jp2
+Spirit-template-hires = TheLordOfTheRingsLCG/Attachment/Spirit.jp2
+
+Tactics-template = TheLordOfTheRingsLCG/Attachment/Tactics-lr.jp2
+Tactics-template-hires = TheLordOfTheRingsLCG/Attachment/Tactics.jp2
+
+Lore-template = TheLordOfTheRingsLCG/Attachment/Lore-lr.jp2
+Lore-template-hires = TheLordOfTheRingsLCG/Attachment/Lore.jp2
+
+Baggins-template = TheLordOfTheRingsLCG/Attachment/Baggins-lr.jp2
+Baggins-template-hires = TheLordOfTheRingsLCG/Attachment/Baggins.jp2
+
+Fellowship-template = TheLordOfTheRingsLCG/Attachment/Fellowship-lr.jp2
+Fellowship-template-hires = TheLordOfTheRingsLCG/Attachment/Fellowship.jp2
+
+Mastery-template = TheLordOfTheRingsLCG/Attachment/Mastery-lr.jp2
+Mastery-template-hires = TheLordOfTheRingsLCG/Attachment/Mastery.jp2
+
+Boon-template = TheLordOfTheRingsLCG/Attachment/Boon-lr.jp2
+Boon-template-hires = TheLordOfTheRingsLCG/Attachment/Boon.jp2
+Boon-Name-region = 122,34,200,24
+Boon-ResourceCost-region = 37,44,50,35

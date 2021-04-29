@@ -1,0 +1,15 @@
+Template = Tactics
+Portrait-portrait-template = TheLordOfTheRingsLCG/portrait/Rochelle Green - helm.jpg
+Unique = false
+ResourceCost = 1
+Type =
+Artist = Rochelle Green
+Sphere-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+BodyIcon-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+Collection = StrangeEons
+CollectionNumber = 0
+Custom-tint = 0.0,1.0,1.0
+ShowCut = false
+ShowBleeding = false
+BodyIcon-transparency = 2

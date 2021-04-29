@@ -1,0 +1,63 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/PresentationExtra/Standard-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/PresentationExtra/Standard.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/PresentationExtra/Standard-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/PresentationExtra/Standard.jp2
+
+Overlay-portrait-clip-region = 0,0,413,563
+OverlayBack-portrait-clip-region = 0,0,413,563
+
+Page-region = 280,528,66,10
+Page-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
+Page-decoration-region = 272,525,81,18
+PageIn-region = 300,495,63,15
+
+Page-back-region = 68,528,66,10
+Page-back-decoration-region = 60,525,81,18
+
+Name-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}; WIDTH: SEMICONDENSED;
+Name-pointsize = 10
+Name-colour = #FFFFFF
+Name-stroke = Medium
+
+Collection-portrait-clip-region = 62,527,12,12
+CollectionInfo-region = 75,527,69,12
+CollectionInfo-format = <right>
+
+Collection-back-portrait-clip-region = 340,527,12,12
+CollectionInfo-back-region = 270,527,69,12
+CollectionInfo-back-format = <left>
+
+Name-region = 50,55,313,30
+Body-region = 50,55,313,454
+Title-Body-region = 50,85,313,424
+
+Copyright-region = 141,527,131,12
+
+Standard-template = TheLordOfTheRingsLCG/PresentationExtra/Standard-lr.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/PresentationExtra/Standard.jp2
+
+Blue-template = TheLordOfTheRingsLCG/PresentationExtra/Blue-lr.jp2
+Blue-template-hires = TheLordOfTheRingsLCG/PresentationExtra/Blue.jp2
+
+Green-template = TheLordOfTheRingsLCG/PresentationExtra/Green-lr.jp2
+Green-template-hires = TheLordOfTheRingsLCG/PresentationExtra/Green.jp2
+
+Purple-template = TheLordOfTheRingsLCG/PresentationExtra/Purple-lr.jp2
+Purple-template-hires = TheLordOfTheRingsLCG/PresentationExtra/Purple.jp2
+
+Red-template = TheLordOfTheRingsLCG/PresentationExtra/Red-lr.jp2
+Red-template-hires = TheLordOfTheRingsLCG/PresentationExtra/Red.jp2
+
+Brown-template = TheLordOfTheRingsLCG/PresentationExtra/Brown-lr.jp2
+Brown-template-hires = TheLordOfTheRingsLCG/PresentationExtra/Brown.jp2
+
+Yellow-template = TheLordOfTheRingsLCG/PresentationExtra/Yellow-lr.jp2
+Yellow-template-hires = TheLordOfTheRingsLCG/PresentationExtra/Yellow.jp2
+
+Custom-tintable = TheLordOfTheRingsLCG/PresentationExtra/Custom-lr.jp2
+Custom-tintable-hires = TheLordOfTheRingsLCG/PresentationExtra/Custom.jp2

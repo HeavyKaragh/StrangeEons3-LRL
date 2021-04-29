@@ -1,0 +1,42 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/Contract/Neutral-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Contract/Neutral.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/image/Player-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/image/Player.jp2
+
+Portrait-portrait-clip-region = 0,0,413,295
+PortraitBack-portrait-clip-region = 0,0,413,295
+
+Name-region = 57,242,296,27
+Body-region = 56,302,301,192
+Side-region = 142,278,128,14
+Type-region = 139,502,135,17
+
+OptionLeft-region = 49,507,59,9
+OptionLeft-decoration-region = 42,503,72,17
+OptionRight-region = 306,507,59,9
+OptionRight-decoration-region = 299,503,72,17
+
+OptionLeftBack-region = 49,507,59,9
+OptionLeftBack-decoration-region = 42,503,72,17
+OptionRightBack-region = 306,507,59,9
+OptionRightBack-decoration-region = 299,503,72,17
+
+Artist-region = 38,527,100,12
+Copyright-region = 139,527,135,12
+CollectionInfo-region = 275,527,70,12
+Collection-portrait-clip-region = 346,527,12,12
+CollectionNumber-region = 359,527,16,12
+
+Name-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Name-pointsize = 12
+
+Neutral-template = TheLordOfTheRingsLCG/Contract/Neutral-lr.jp2
+Neutral-template-hires = TheLordOfTheRingsLCG/Contract/Neutral.jp2
+
+Side-decoration = TheLordOfTheRingsLCG/Contract/SideDecoration-lr.jp2
+Side-decoration-hires = TheLordOfTheRingsLCG/Contract/SideDecoration.jp2

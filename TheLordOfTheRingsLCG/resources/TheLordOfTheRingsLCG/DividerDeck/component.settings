@@ -1,0 +1,54 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/DividerDeck/Custom-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/DividerDeck/Custom.jp2
+Template-bleeding = TheLordOfTheRingsLCG/image/PokerCard-bleeding.png
+Template-cut = TheLordOfTheRingsLCG/image/PokerCard-cut.png
+Template-cutBig = TheLordOfTheRingsLCG/image/PokerCard-cutBig.png
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/DividerDeck/Custom-lr.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/DividerDeck/Custom.jp2
+
+Portrait-portrait-clip-region = 0,140,413,423
+
+Collection-portrait-clip-region = 49,123,20,20
+Collection-decoration-region = 44,118,30,30
+Collection-decoration = TheLordOfTheRingsLCG/image/SetDecoration.jp2
+
+Collection-portrait-clip-back-region = 344,123,20,20
+Collection-decoration-back-region = 339,118,30,30
+
+EncounterSet-portrait-clip-region = 38,38,28,28
+EncounterSet-decoration-region = 32,32,40,40
+EncounterSet-decoration = TheLordOfTheRingsLCG/image/SetDecoration.jp2
+
+EncounterSet-portrait-clip-back-region = 347,38,28,28
+EncounterSet-decoration-back-region = 341,32,40,40
+
+Name-region = 72,38,269,87
+Name-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass};
+Name-colour = #F0F0F0
+Name-pointsize = 14
+Name-lineTightness = 10
+Name-shadow-width = 2
+Name-shadow-colour = #4f0f0f0f
+Name-shadow-passes = 6
+
+Artist-region = 139,527,136,12
+Artist-format = 
+
+Standard-template = TheLordOfTheRingsLCG/DividerDeck/Standard-lr.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/DividerDeck/Standard.jp2
+
+Nightmare-template = TheLordOfTheRingsLCG/DividerDeck/Nightmare-lr.jp2
+Nightmare-template-hires = TheLordOfTheRingsLCG/DividerDeck/Nightmare.jp2
+
+Collection-template = TheLordOfTheRingsLCG/DividerDeck/Custom-lr.jp2
+Collection-template-hires = TheLordOfTheRingsLCG/DividerDeck/Custom.jp2
+
+Custom-template = TheLordOfTheRingsLCG/DividerDeck/Custom-lr.jp2
+Custom-template-hires = TheLordOfTheRingsLCG/DividerDeck/Custom.jp2
+Custom-tintable = TheLordOfTheRingsLCG/DividerDeck/Custom-inside.jp2
+Custom-outside-tintable = TheLordOfTheRingsLCG/DividerDeck/Custom-outside.jp2

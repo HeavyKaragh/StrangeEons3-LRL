@@ -1,0 +1,15 @@
+Template = Brown
+Overlay-portrait-template = TheLordOfTheRingsLCG/image/empty1x1.png
+OverlayBack-portrait-template = TheLordOfTheRingsLCG/image/empty1x1.png
+PageNumber = 0
+PageTotal = 0
+PageIn = false
+TemplateLayout = Title
+Custom-tint = 10.0,1.0,0.6
+Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+Collection = StrangeEons
+CollectionNumber = 0
+Custom-tint = 0.0,1.0,1.0
+ShowCut = false
+ShowBleeding = false
+BodyIcon-transparency = 2

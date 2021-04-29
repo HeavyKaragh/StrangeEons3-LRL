@@ -1,0 +1,25 @@
+Template = Standard
+Portrait-portrait-template = TheLordOfTheRingsLCG/portrait/Caspar David Friedrich - Abtei im Eichwald.jpg
+PortraitLayout = Medium
+TemplateLayout = Sets
+Artist = Caspar David Friedrich
+GameName = 
+PageNumber = 0
+Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+EncounterSet-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+
+EncounterSet = StrangeEons
+EncounterSet1 = Empty
+EncounterSet2 = Empty
+EncounterSet3 = Empty
+EncounterSet4 = Empty
+EncounterSet5 = Empty
+
+EncounterSet1-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+EncounterSet2-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+EncounterSet3-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+EncounterSet4-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+EncounterSet5-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+Collection = StrangeEons
+CollectionNumber = 0
+Template-tint = 0.0,0.0,1.0
