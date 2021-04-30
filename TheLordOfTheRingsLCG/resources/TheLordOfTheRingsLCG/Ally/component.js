@@ -21,7 +21,7 @@ by Type_control, in the createFrontPainter by Type_writer and in the
 paintFront by writeLine( 'Type' ).
 */
 
-function create( diy ){ debug(1,'\ncreate') ;
+function create(diy){ debug(1,'\ncreate') ;
 /*
 "create" is one of the main functions on scripted components. It's 
 called on "New" component creation. It defines the basic 
@@ -46,9 +46,9 @@ I modified it to make it easier for the users to customize settings and to
 avoid problems with aspect change from loading into newer plugin versions.
 */
 	// custom functions, to load default settings and texts for the card
-	loadSettings( diy ) ;
-	loadExample( diy ) ; 
-	loadPreferences( diy ) ; 
+	loadSettings(diy) ;
+	loadExample(diy) ; 
+	loadPreferences(diy) ; 
 
 	// Next portion of code defines the template of the component. 
 	diy.faceStyle = FaceStyle.PLAIN_BACK ;
@@ -75,10 +75,10 @@ avoid problems with aspect change from loading into newer plugin versions.
 	// I use the custom portrait system because portraits are used in other
 	// component elements, like collection icon or some graphics for custom
 	// template variant.
-	createPortrait( 'Portrait' , diy ) ;
-	createPortrait( 'Collection' , diy ) ;
-	createPortrait( 'Sphere' , diy ) ;
-	createPortrait( 'BodyIcon' , diy ) ;
+	createPortrait('Portrait',diy) ;
+	createPortrait('Collection',diy) ;
+	createPortrait('Sphere',diy) ;
+	createPortrait('BodyIcon',diy) ;
 	// These are custom functions to create the portrait elements.
 	// portraits are the only graphical element that is stored in the
 	// component file. Thus, they are handled in a special way. They have to
@@ -90,7 +90,7 @@ avoid problems with aspect change from loading into newer plugin versions.
 	// I store it in a setting for backwards compatibility use
 }
 
-function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
+function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 /*
 "createInterface" is one of the main functions on scripted components.
 It's called only when a component is going to be edited. It fills 
@@ -108,8 +108,8 @@ editing without accesing external sources. Also, some game specific
 information is included, like officialy used traits or keywords.
 */
 
-	let advancedControls = diy.settings.getBoolean( 'LRL-AdvancedControls' ) ;
-	if( $Template == 'Custom' ) advancedControls = true ;
+	let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls') ;
+	if($Template=='Custom') advancedControls = true ;
 /*
 Advanced controls are optional, providing editing controls that most users 
 won't use. Things like Custom spheres or weird graphical elements or stats. 
@@ -120,7 +120,7 @@ component that uses these features through the Strange Eons project explorer
 is not necessary to set the value to true.
 */
 
-	var bindings = new Bindings( editor , diy ) ;
+	var bindings = new Bindings( editor,diy) ;
 /* 
 "Bindings" is the system that initializes user interface control 
 values into the settings loaded from a saved component or from plugin 
@@ -174,7 +174,8 @@ group together the Name control and Unique button.
 	// is used to make the control as wide as possible in the row. This is 
 	// very useful for text controls.
 		
-	Main_tab.place( Title_panel , 'hfill' ) ; // adds the panel to the tab
+	Main_tab.place( Title_panel , 'hfill' ) ;
+	// adds the panel to the tab and fills available horizontal space
 
 // STATS PANEL
 /*
@@ -198,8 +199,10 @@ Another control group for the component numerical controls.
 		, Attack_control , '' 
 		, Defense_control , '' 
 		, HitPoints_control , ''
+		// these controls are put one beside another
 	) ;
 	Main_tab.place( Stats_panel , 'br hfill' ) ;
+	// "br" adds the panel to the next row of the user interface
 	
 // MAIN PANEL
 /*
@@ -222,6 +225,7 @@ apropiately.
 		Trait_control , 'hfill'
 		, Rules_control , 'br hfill'
 		, Flavour_control , 'br hfill'
+		// all these controls are put one below another
 	) ;
 	Main_tab.place( Effect_panel , 'br hfill' ) ;
 	
@@ -233,17 +237,12 @@ card. Specifically, the text blocks for Victory points is added here.
 	let OtherEffect_panel = new TypeGrid() ;
 	OtherEffect_panel.setTitle( @LRL-panel-OtherEffect ) ;
 	
-	let OptionLeft_control = new uiText( 'OptionLeft' , bindings , [ FRONT ] ) ;
-	let OptionRight_control = new uiText( 'OptionRight' , bindings , [ FRONT ] ) ;
+	let OptionLeft_control = new uiTextLabeled( 'OptionLeft' , bindings , [ FRONT ] ) ;
+	let OptionRight_control = new uiTextLabeled( 'OptionRight' , bindings , [ FRONT ] ) ;
 	
 	OtherEffect_panel.place(
-		@LRL-OptionLeft , '' , OptionLeft_control , 'tab hfill'
-		, @LRL-OptionRight , 'br' , OptionRight_control , 'tab hfill'
-		// "@LRL-OptionLeft" writes a text localized depending on the
-		// Strange Eons "User interface language" defined in the Preferences.
-		// "tab"ulator is used to align controls, for a better look.
-		// "hfill" makes the control as wide as possible in the row.
-		// "br" is used to get put the elment on the next row.
+		OptionLeft_control , 'hfill'
+		, OptionRight_control , 'br hfill'
 	) ;
 	Main_tab.place( OtherEffect_panel , 'br hfill' ) ;
 	
@@ -290,8 +289,8 @@ panel includes all the controls related to it.
 		// custom function that shows a tinter control. It shows a colour
 		// selector and a list of predefined colours.
 		
-		let SpherePortrait_control = new uiPortrait( 'Sphere' , diy ) ;
-		let BodyIconPortrait_control = new uiPortrait( 'BodyIcon' , diy ) ;
+		let SpherePortrait_control = new uiPortrait( 'Sphere',diy) ;
+		let BodyIconPortrait_control = new uiPortrait( 'BodyIcon',diy) ;
 		// custom functions that shows a portrait control used to add own
 		// graphics easily.
 		
@@ -342,7 +341,7 @@ portraits, like the Quest card, they are added here too.
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
 	
 	let Artist_control = new uiText( 'Artist' , bindings , [ FRONT ] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait' , diy ) ;
+	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
 	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
 	// Custom function to add a button to mirror a portrait image horizontally
 	
@@ -380,7 +379,7 @@ less likely to be used controls. For example, controls to change "Type" and
 	let Collection_control = new uiCollectionList( bindings , [FRONT] ) ;
 	// Custom control that builds a icon+text list including all the
 	// Collection icons. There's a similar function for Encounter Sets.
-	let CollectionPortrait_control = new uiPortrait( 'Collection' , diy ) ;
+	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
 	
 	Collection_panel.place(
 		Collection_control , 'hfill' 
@@ -463,26 +462,26 @@ defined as var or const) so they can be accesed in paintFront.
 	// Tinters are Strange Eons functions that paint a image with a given
 	// colour. Several stats are tinted with a fixed colour, and only image
 	// used (that is, the number) changes.
-	ResourceCost_tinter = new createTinter( 'ResourceCost' , diy ) ;
-	HitPoints_tinter = new createTinter( 'HitPoints' , diy ) ;
+	ResourceCost_tinter = new createTinter( 'ResourceCost',diy) ;
+	HitPoints_tinter = new createTinter( 'HitPoints',diy) ;
 
 	
 // TEMPLATE
 	// The control values from the Custom_panel and a image will be passed 
 	// to these tinters to create the required images.
-	CustomBody_tinter = new createTinter( 'Custom-Body' , diy ) ;
-	CustomBodyIcon_tinter = new createTinter( '' , diy ) ;
-	CustomColour_tinter = new createTinter( 'Custom-Colour' , diy ) ;
+	CustomBody_tinter = new createTinter( 'Custom-Body',diy) ;
+	CustomBodyIcon_tinter = new createTinter( '',diy) ;
+	CustomColour_tinter = new createTinter( 'Custom-Colour',diy) ;
 
 // PORTRAIT
 	// These functions provide a way of updating the user defined
 	// images without opening the component in the editor. Its usefull
 	// for creating or updating components through external scripts or
 	// through the plugin preferences.
-	updateExternalPortrait( 'Portrait' , diy ) ;
-	updateExternalPortrait( 'Collection' , diy ) ;
-	updateExternalPortrait( 'Sphere' , diy ) ;
-	updateExternalPortrait( 'BodyIcon' , diy ) ;
+	updateExternalPortrait( 'Portrait',diy) ;
+	updateExternalPortrait( 'Collection',diy) ;
+	updateExternalPortrait( 'Sphere',diy) ;
+	updateExternalPortrait( 'BodyIcon',diy) ;
 }
 
 //function createBackPainter( diy, sheet ){ debug(1,'\ncreateBackPainter') ;
@@ -508,11 +507,11 @@ the back side of the component too: paintBack.
 	paintPortrait( 'Portrait' , diy , g , sheet ) ;
 
 // TEMPLATE
-	if( $Template == 'Custom' ) paintCustomBody( diy , g , sheet ) ; // colorized text box
-	paintTemplate( diy , g , sheet ) ; // this will draw the selected $Template
+	if( $Template == 'Custom' ) paintCustomBody(diy,g,sheet) ; // colorized text box
+	paintTemplate(diy,g,sheet) ; // this will draw the selected $Template
 	//sheet.paintTemplateImage( g ) ; // in some cards, where template cannot be modified,
 	// this is used, and it will draw the image defined in diy.frontTemplateKey
-	if( $Template == 'Custom' ) paintCustomColour( diy , g , sheet ) ; // colorized "pearls"
+	if( $Template == 'Custom' ) paintCustomColour(diy,g,sheet) ; // colorized "pearls"
 	
 // ICONS
 	// Icons may be painted from two different sources: a predefined list
@@ -574,17 +573,17 @@ the back side of the component too: paintBack.
 	writeBody( [ 'Trait' , 'Rules' , 'Flavour' ] , diy , g ) ;
 
 	writeType( diy , g ) ;
-	writeOptionLeft( diy , g , sheet ) ;
-	writeOptionRight( diy , g , sheet ) ;
+	writeOptionLeft(diy,g,sheet) ;
+	writeOptionRight(diy,g,sheet) ;
 	
-	writeArtist( diy , g , sheet ) ;
-	writeCopyright( diy , g , sheet ) ;
-	writeCollectionInfo( diy , g , sheet ) ;
-	writeCollectionNumber( diy , g , sheet ) ;
+	writeArtist(diy,g,sheet) ;
+	writeCopyright(diy,g,sheet) ;
+	writeCollectionInfo(diy,g,sheet) ;
+	writeCollectionNumber(diy,g,sheet) ;
 
 	// This shows the cut or bleed margin over the template, to show
 	// the user how it would look.
-	paintCut( diy , g , sheet ) ;
+	paintCut(diy,g,sheet) ;
 }
 
 //function paintBack( g, diy, sheet ){ debug(1,'\npaintBack') ;
@@ -596,7 +595,7 @@ In cards using PLAIN_BACK (when cardback is a simple image, defined on
 component creation), it's not needed. It's here just for reference.
 */
 //	sheet.paintTemplateImage( g ) ;
-//	paintCut( diy , g , sheet ) ;
+//	paintCut(diy,g,sheet) ;
 //}
 
 if( sourcefile == 'Quickscript' ){
