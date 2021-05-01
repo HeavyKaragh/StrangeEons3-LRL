@@ -3,14 +3,14 @@ const Card = 'DividerDeck' ;
 const CardVersion = 1 ;
 // 1: rewrite using new 2021 library
 
-function create( diy ){ debug(1,'\ncreate') ;
+function create(diy){ debug(1,'\ncreate') ;
 	diy.extensionName = 'TheLordOfTheRingsLCG.seext' ;
 	diy.version = LibraryVersion+CardVersion ;
 	$VersionHistory = diy.version ;
 
-	loadSettings( diy ) ;
-	loadExample( diy ) ; 
-	loadPreferences( diy ) ; 
+	loadSettings(diy) ;
+	loadExample(diy) ; 
+	loadPreferences(diy) ; 
 
 	diy.frontTemplateKey = 'Template' ;
 	diy.backTemplateKey = 'TemplateBack' ;
@@ -18,9 +18,9 @@ function create( diy ){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait' , diy ) ;
-	createPortrait( 'Collection' , diy ) ;
-	createPortrait( 'EncounterSet' , diy ) ;
+	createPortrait( 'Portrait',diy) ;
+	createPortrait( 'Collection',diy) ;
+	createPortrait( 'EncounterSet',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
@@ -45,7 +45,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let EncounterSet_panel = new TypeGrid() ;
 	EncounterSet_panel.setTitle( @LRL-panel-EncounterSet ) ;
 	let EncounterSet_control = new uiEncounterSetList( 'EncounterSet' , bindings , [FRONT,BACK] ) ;
-	let EncounterSetPortrait_control = new uiPortrait( 'EncounterSet' , diy ) ;
+	let EncounterSetPortrait_control = new uiPortrait( 'EncounterSet',diy) ;
 	EncounterSet_panel.place(
 		EncounterSet_control , 'hfill' ,
 		EncounterSetPortrait_control , 'br hfill'
@@ -100,7 +100,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
 	let Artist_control = new uiText( 'Artist' , bindings , [FRONT,BACK] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait' , diy ) ;
+	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
 	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
@@ -120,7 +120,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	Collection_panel.setTitle( @LRL-panel-Collection ) ;
 	//let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [FRONT,BACK] ) ;
 	let Collection_control = new uiCollectionList( bindings , [FRONT,BACK] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection' , diy ) ;
+	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		//, @LRL-Information , '' , CollectionInfo_control , 'hfill' 
@@ -136,8 +136,8 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 function createFrontPainter( diy, sheet ){ debug(1,'\ncreateFrontPainter') ;
 
 // TEMPLATE
-	Custom_tinter = new createTinter( 'Custom' , diy ) ;
-	CustomOutside_tinter = new createTinter( 'Custom-outside' , diy ) ;
+	Custom_tinter = new createTinter( 'Custom',diy) ;
+	CustomOutside_tinter = new createTinter( 'Custom-outside',diy) ;
 
 // STATS
 
@@ -145,9 +145,9 @@ function createFrontPainter( diy, sheet ){ debug(1,'\ncreateFrontPainter') ;
 	Name_writer = new createTextBox( 'Name' , diy , sheet ) ;
 	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
 
-	updateExternalPortrait( 'Portrait' , diy ) ;
-	updateExternalPortrait( 'Collection' , diy ) ;
-	updateExternalPortrait( 'EncounterSet' , diy ) ;
+	updateExternalPortrait( 'Portrait',diy) ;
+	updateExternalPortrait( 'Collection',diy) ;
+	updateExternalPortrait( 'EncounterSet',diy) ;
 }
 
 function createBackPainter(diy,sheet){ debug(1,'\ncreateBackPainter') ; }

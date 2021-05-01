@@ -2,14 +2,14 @@ const Card = 'Presence';
 const CardVersion = 1 ;
 // 1: rewrite using new 2021 library
 
-function create( diy ){ debug(1,'\ncreate') ;
+function create(diy){ debug(1,'\ncreate') ;
 	diy.extensionName = 'TheLordOfTheRingsLCG.seext' ;
 	diy.version = LibraryVersion+CardVersion ;
 	$VersionHistory = diy.version ;
 	
-	loadSettings( diy ) ;
-	loadExample( diy ) ; 
-	loadPreferences( diy ) ; 
+	loadSettings(diy) ;
+	loadExample(diy) ; 
+	loadPreferences(diy) ; 
 	
 	diy.frontTemplateKey = 'Template' ;
 	diy.backTemplateKey = 'TemplateBack' ;
@@ -17,8 +17,8 @@ function create( diy ){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait' , diy ) ;
-	createPortrait( 'Collection' , diy ) ;
+	createPortrait( 'Portrait',diy) ;
+	createPortrait( 'Collection',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
@@ -90,7 +90,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
 	let Artist_control = new uiText( 'Artist' , bindings , [FRONT] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait' , diy ) ;
+	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
 	list = new Array( 'None' , 'Black' ) ;
 	if( advancedControls ) list = list.concat( new Array( 'Custom' ) ) ;
 	let PortraitShadow_control = new uiCycler( 'PortraitShadow' , list , bindings , [FRONT] );
@@ -118,7 +118,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let CollectionNumber_control = new uiSpinner( 'CollectionNumber' , bindings , [FRONT] , 999 ) ;
 	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [FRONT] ) ;
 	let Collection_control = new uiCollectionList( bindings , [FRONT] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection' , diy ) ;
+	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		, @LRL-Number , 'br' , CollectionNumber_control , '' 
@@ -140,7 +140,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 }
 
 function createFrontPainter( diy, sheet ){
-	PortraitShadow_tinter = new createTinter( 'Portrait-shadow' , diy ) ;
+	PortraitShadow_tinter = new createTinter( 'Portrait-shadow',diy) ;
 // TEMPLATE
 
 // TEXT
@@ -150,8 +150,8 @@ function createFrontPainter( diy, sheet ){
 	Type_writer = new createTextBox( 'Type' , diy , sheet ) ;
 	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
 
-	updateExternalPortrait( 'Portrait' , diy ) ;
-	updateExternalPortrait( 'Collection' , diy ) ;
+	updateExternalPortrait( 'Portrait',diy) ;
+	updateExternalPortrait( 'Collection',diy) ;
 }
 
 function paintFront( g , diy , sheet ){ 

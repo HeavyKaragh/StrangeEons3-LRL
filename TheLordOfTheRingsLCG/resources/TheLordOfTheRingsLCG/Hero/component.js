@@ -2,14 +2,14 @@ const Card = 'Hero' ;
 const CardVersion = 1 ;
 // 1: rewrite using new 2021 library
 
-function create( diy ){ debug(1,'\ncreate') ;
+function create(diy){ debug(1,'\ncreate') ;
 	diy.extensionName = 'TheLordOfTheRingsLCG.seext' ;
 	diy.version = LibraryVersion+CardVersion ;
 	$VersionHistory = diy.version ;
 	
-	loadSettings( diy ) ;
-	loadExample( diy ) ; 
-	loadPreferences( diy ) ; 
+	loadSettings(diy) ;
+	loadExample(diy) ; 
+	loadPreferences(diy) ; 
 	
 	diy.frontTemplateKey = 'Template' ;
 	diy.backTemplateKey = 'TemplateBack' ;
@@ -17,10 +17,10 @@ function create( diy ){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait' , diy ) ;
-	createPortrait( 'Collection' , diy ) ;
-	createPortrait( 'Sphere' , diy ) ;
-	createPortrait( 'BodyIcon' , diy ) ;
+	createPortrait( 'Portrait',diy) ;
+	createPortrait( 'Collection',diy) ;
+	createPortrait( 'Sphere',diy) ;
+	createPortrait( 'BodyIcon',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
@@ -99,8 +99,8 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 		let CustomSphere_panel = new TypeGrid() ;
 		CustomSphere_panel.setTitle( @LRL-panel-CustomSphere ) ;
 		let CustomTint_control = new uiTint( 'Custom' , bindings, [FRONT] ) ;
-		let SpherePortrait_control = new uiPortrait( 'Sphere' , diy ) ;
-		let BodyIconPortrait_control = new uiPortrait( 'BodyIcon' , diy ) ;
+		let SpherePortrait_control = new uiPortrait( 'Sphere',diy) ;
+		let BodyIconPortrait_control = new uiPortrait( 'BodyIcon',diy) ;
 		let BodyIconTransparency_control = new uiTransparency( 'BodyIcon' , bindings , [FRONT] ) ;
 		CustomSphere_panel.place(
 			CustomTint_control , 'hfill'
@@ -131,7 +131,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
 	let Artist_control = new uiText( 'Artist' , bindings , [FRONT] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait' , diy ) ;
+	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
 	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
@@ -152,7 +152,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let CollectionNumber_control = new uiSpinner( 'CollectionNumber' , bindings , [FRONT] , 999 ) ;
 	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [FRONT] ) ;
 	let Collection_control = new uiCollectionList( bindings , [FRONT] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection' , diy ) ;
+	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		, @LRL-Number , 'br' , CollectionNumber_control , '' 
@@ -185,12 +185,12 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 function createFrontPainter( diy , sheet ){ debug(1,'createFrontPainter') ;
 	
 // TEMPLATE
-	CustomBody_tinter = new createTinter( 'Custom-Body' , diy ) ;
-	CustomBodyIcon_tinter = new createTinter( '' , diy ) ;
+	CustomBody_tinter = new createTinter( 'Custom-Body',diy) ;
+	CustomBodyIcon_tinter = new createTinter( '',diy) ;
 
 // STATS
-	ThreatCost_tinter = new createTinter( 'ThreatCost' , diy ) ;
-	HitPoints_tinter = new createTinter( 'HitPoints' , diy ) ;
+	ThreatCost_tinter = new createTinter( 'ThreatCost',diy) ;
+	HitPoints_tinter = new createTinter( 'HitPoints',diy) ;
 
 // TEXT
 	Name_writer = new createTextBox( 'Name' , diy , sheet ) ;
@@ -199,10 +199,10 @@ function createFrontPainter( diy , sheet ){ debug(1,'createFrontPainter') ;
 	Type_writer = new createTextBox( 'Type' , diy , sheet ) ;
 	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
 
-	updateExternalPortrait( 'Portrait' , diy ) ;
-	updateExternalPortrait( 'Collection' , diy ) ;
-	updateExternalPortrait( 'Sphere' , diy ) ;
-	updateExternalPortrait( 'BodyIcon' , diy ) ;
+	updateExternalPortrait( 'Portrait',diy) ;
+	updateExternalPortrait( 'Collection',diy) ;
+	updateExternalPortrait( 'Sphere',diy) ;
+	updateExternalPortrait( 'BodyIcon',diy) ;
 }
 
 function paintFront( g , diy , sheet ){ debug(1,'paintFront') ;

@@ -22,14 +22,15 @@ var PathText = ResourcesPath+'text/' ;
 var PathUi = ResourcesPath+'ui/' ;
 var PathIcon = ResourcesPath+'icon/' ;
 var PathImage = ResourcesPath+'image/' ;
-var PathNumber = PathImage+'number/' ;
-var PathNumberTintable = PathImage+'number-tintable/' ;
+var PathNumber = ResourcesPath+'LRLnumber/' ;
+var PathNumberTintable = ResourcesPath+'LRLnumberTintable/' ;
 
 var GameLanguage = Language.getGame() ;
 var InterfaceLanguage = Language.getInterface() ;
 var PortraitList = [] ;
 const FRONT = 0 ;
 const BACK = 1 ;
+const BOTH = [0,1] ;
 
 function getStroke( key , diy ){ debug(3,'\n\tgetStroke: '+key) ;
 	importClass( ca.cgjennings.graphics.filters.StrokeFilter ) ;
@@ -822,7 +823,7 @@ useLibrary( 'diy' );
 useLibrary( 'ui' );
 useLibrary( 'imageutils' );
 
-function create( diy ) {
+function create(diy) {
 	diy.faceStyle = FaceStyle.ONE_FACE;
 	$tintValue = '0,1,1'; // note that this will match the "Enraged" preset
 	$peacefulPreset = '-60,0.43,0.78';
@@ -1079,7 +1080,7 @@ It will also look for Nightmare and Draft variants if needed.
 */
 	let item = diy.settings.get( key ) ; // get the icon name contained inside $key
 	let image ;
-	let regionKey = getKeyForTemplate( key+'-portrait-clip-region' , diy ) ;
+	let regionKey = getKeyForTemplate( key+'-portrait-clip-region',diy) ;
 	switch( String(item) ){
 	case 'null' : throw new Error('\t'+key+' not defined.') ; break ;
 	case 'Empty' : break ;
@@ -1544,7 +1545,7 @@ function filterFunction( filter ){
 
 /* OTHER STUFF */
 
-function loadSettings( diy ){ debug(3,'\n\tloadSettings') ;
+function loadSettings(diy){ debug(3,'\n\tloadSettings') ;
 //revisar
 /*
 This function is called on new component creation.
@@ -1555,7 +1556,7 @@ define text and image positions, or text format.
 	else diy.settings.addSettingsFrom( PathCard+'component.settings' ) ;
 }
 
-function loadExample( diy ){ debug(3,'\n\tloadExample') ;
+function loadExample(diy){ debug(3,'\n\tloadExample') ;
 //revisar
 /*
 This function is called on new component creation.
@@ -1576,15 +1577,15 @@ Then, it loads the settings from the plugin preferences.
 	}
 }
 
-function loadPreferences( diy ){ debug(3,'\n\tloadPreferences') ;
+function loadPreferences(diy){ debug(3,'\n\tloadPreferences') ;
 /*
 This function loads the default value from LRL preferences.
 This is useful when creating a lot of components for the same collection.
 */
-	setValueFromPreferences( 'Copyright' , diy ) ;
-	setValueFromPreferences( 'CollectionInfo' , diy ) ;
-	setValueFromPreferences( 'Collection' , diy ) ;
-	setValueFromPreferences( 'Collection-portrait-template' , diy ) ;
+	setValueFromPreferences( 'Copyright',diy) ;
+	setValueFromPreferences( 'CollectionInfo',diy) ;
+	setValueFromPreferences( 'Collection',diy) ;
+	setValueFromPreferences( 'Collection-portrait-template',diy) ;
 	// If Custom icon is selected in preferences, the custom icon path is used.
 	// This path should include the icon from the current project and start with 'project:'
 
@@ -1592,8 +1593,8 @@ This is useful when creating a lot of components for the same collection.
 	// Check if the setting is used for this component.
 	// $setting should be set in example.properties if needed, even as empty string.
 	// Reading a $setting not defined, returns null.
-		setValueFromPreferences( 'EncounterSet' , diy ) ;
-		setValueFromPreferences( 'EncounterSet-portrait-template' , diy ) ;
+		setValueFromPreferences( 'EncounterSet',diy) ;
+		setValueFromPreferences( 'EncounterSet-portrait-template',diy) ;
 	}
 }
 
@@ -1780,7 +1781,7 @@ explicitly.
 		PortraitList[ index ] = portrait ;
 		try{ portrait = ois.readObject() ; }catch(err){ portrait = null ; }
 	}
-	if( diy.settings.getBoolean( 'LRL-PreferencesUpdate' , false ) ) loadPreferences( diy ) ;
+	if( diy.settings.getBoolean( 'LRL-PreferencesUpdate' , false ) ) loadPreferences(diy) ;
 }
 
 function onWrite( diy , oos ){ debug(1,'\nonWrite') ;
@@ -1793,7 +1794,7 @@ explicitly.
 	for( let index in PortraitList ){ oos.writeObject( PortraitList[ index ] ) ; }
 }
 
-function onClear( diy ){ debug(1,'\nonClear') ;
+function onClear(diy){ debug(1,'\nonClear') ;
 /*
 This is one of the main functions on scripted components.
 This function is called by the Strange Eons user interface on

@@ -2,14 +2,14 @@ const Card = 'Presentation';
 const CardVersion = 1 ;
 // 1: rewrite using new 2021 library
 
-function create( diy ){ debug(1,'\ncreate') ;
+function create(diy){ debug(1,'\ncreate') ;
 	diy.extensionName = 'TheLordOfTheRingsLCG.seext' ;
 	diy.version = LibraryVersion+CardVersion ;
 	$VersionHistory = diy.version ;
 	
-	loadSettings( diy ) ;
-	loadExample( diy ) ;
-	loadPreferences( diy ) ; 
+	loadSettings(diy) ;
+	loadExample(diy) ;
+	loadPreferences(diy) ; 
 	
 	diy.frontTemplateKey = 'Template' ;
 	diy.backTemplateKey = 'TemplateBack' ;
@@ -17,12 +17,12 @@ function create( diy ){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait' , diy ) ;
-	createPortrait( 'Collection' , diy ) ;
-	createPortrait( 'GameName' , diy ) ;
-	createPortrait( 'Name' , diy ) ;
-	createPortrait( 'Background' , diy ) ;
-	createPortrait( 'BackgroundBack' , diy ) ;
+	createPortrait( 'Portrait',diy) ;
+	createPortrait( 'Collection',diy) ;
+	createPortrait( 'GameName',diy) ;
+	createPortrait( 'Name',diy) ;
+	createPortrait( 'Background',diy) ;
+	createPortrait( 'BackgroundBack',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
@@ -97,7 +97,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
 	let Artist_control = new uiText( 'Artist' , bindings , [BACK] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait' , diy ) ;
+	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
 	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
@@ -117,7 +117,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	Collection_panel.setTitle( @LRL-panel-Collection ) ;
 	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [BACK] ) ;
 	let Collection_control = new uiCollectionList( bindings , [BACK] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection' , diy ) ;
+	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		, @LRL-Information , '' , CollectionInfo_control , 'hfill' 
@@ -146,8 +146,8 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	if( advancedControls ){
 		let Type_control = new uiText( 'Type' , bindings , [FRONT] ) ;
 		let GameName_control = new uiParagraphLabeled( 'GameName' , bindings , [FRONT] , 'medium' ) ;
-		let GameNamePortrait_control = new uiPortrait( 'GameName' , diy ) ;
-		let NamePortrait_control = new uiPortrait( 'Name' , diy ) ;
+		let GameNamePortrait_control = new uiPortrait( 'GameName',diy) ;
+		let NamePortrait_control = new uiPortrait( 'Name',diy) ;
 		Other_panel.place(
 			@LRL-Type , 'br' , Type_control , 'hfill'
 			, GameName_control , 'br hfill'
@@ -164,20 +164,20 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 
 function createFrontPainter( diy , sheet ){ debug(1,'\ncreateFrontPainter') ;
 // TEMPLATE
-	Custom_tinter = new createTinter( 'Custom' , diy ) ;
+	Custom_tinter = new createTinter( 'Custom',diy) ;
 	
 // TEXT
 	Name_writer = new createTextBox( 'Name' , diy , sheet ) ;
 	
-	updateExternalPortrait( 'Portrait' , diy ) ;
-	updateExternalPortrait( 'GameName' , diy ) ;
-	updateExternalPortrait( 'Name' , diy ) ;
-	updateExternalPortrait( 'Background' , diy ) ;
+	updateExternalPortrait( 'Portrait',diy) ;
+	updateExternalPortrait( 'GameName',diy) ;
+	updateExternalPortrait( 'Name',diy) ;
+	updateExternalPortrait( 'Background',diy) ;
 }
 
 function createBackPainter( diy, sheet ){ debug(1,'\ncreateBackPainter') ;
 // TEMPLATE
-	CustomBack_tinter = new createTinter( 'CustomBack' , diy ) ;
+	CustomBack_tinter = new createTinter( 'CustomBack',diy) ;
 	
 // TEXT
 	Body_writer = new createTextBox( 'Body' , diy , sheet ) ;
@@ -185,8 +185,8 @@ function createBackPainter( diy, sheet ){ debug(1,'\ncreateBackPainter') ;
 	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
 	Page_writer = new createTextBox( 'Page' , diy , sheet ) ;
 	
-	updateExternalPortrait( 'Collection' , diy ) ;
-	updateExternalPortrait( 'BackgroundBack' , diy ) ;
+	updateExternalPortrait( 'Collection',diy) ;
+	updateExternalPortrait( 'BackgroundBack',diy) ;
 }
 
 function paintFront( g, diy, sheet ){ debug(1,'\npaintFront') ;

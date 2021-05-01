@@ -114,13 +114,13 @@ information is included, like officialy used traits or keywords.
 Advanced controls are optional, providing editing controls that most users 
 won't use. Things like Custom spheres or weird graphical elements or stats. 
 Because Custom template requires these controls, it will override the user 
-setting if it used in the card.
-LRL-AdvancedControls value is irrelevant on component drawing: to export a 
-component that uses these features through the Strange Eons project explorer 
-is not necessary to set the value to true.
+setting if they are used in a loaded card.
+LRL-AdvancedControls value is irrelevant on component drawing, that is, only
+affects the user interface: it's value doesn't matter to export a component
+that uses these features through the Strange Eons project explorer.
 */
 
-	var bindings = new Bindings( editor,diy) ;
+	var bindings = new Bindings(editor,diy) ;
 /* 
 "Bindings" is the system that initializes user interface control 
 values into the settings loaded from a saved component or from plugin 
@@ -156,55 +156,59 @@ group together the Name control and Unique button.
 	// container will be placed later in the tab. I will include only the 
 	// controls related to the title of the card.
 
-	Title_panel.setTitle( @LRL-panel-Title ) ;
-	// This will add a label to the container
-	// "@LRL-panel-Title" passes a text localized depending on the Strange Eons
+	Title_panel.setTitle(@LRL-panel-Title) ;
+	// This will add a label to the container and also show a border around.
+	// "@LRL-panel-Title" passes a text localized depending on Strange Eons
 	// "User interface language" defined in the Preferences.
 	
-	let Name_control = uiNameUnique( diy , bindings , [FRONT] ) ;
+	let Name_control = uiNameUnique(diy,bindings,FRONT) ;
 	// custom function to define the card title text control. It's linked to
 	// diy.nameField that is used in the placement
+	// It also adds a button to add the unique symbol to the card title.
+	// uiName adds the same text control without the button
 
-	Title_panel.place( Name_control , 'hfill' ) ;
-	// "place" is the method that places controls in the container (or in 
+	Title_panel.place(Name_control,'hfill') ;
+	// ".place" is the method that layouts controls in the container (or in 
 	// the user interface tab, as it's used later). For each user interface
-	// control (or container), it's placement options are defined.
-	// "Name_control" control will be drawn, and its placements
-	// options are defined were the '' is. In this case, the "hfill" option
-	// is used to make the control as wide as possible in the row. This is 
-	// very useful for text controls.
+	// control (or container), it's placement options must be defined.
+	// "Name_control" control will be drawn, and its placements options are
+	// defined were the '' is. In this case, the "hfill" option is used to
+	// make the control as wide as possible in the row.
 		
-	Main_tab.place( Title_panel , 'hfill' ) ;
-	// adds the panel to the tab and fills available horizontal space
+	Main_tab.place(Title_panel,'hfill') ;
+	// Adds the panel to the tab and fills available horizontal space
 
 // STATS PANEL
 /*
 Another control group for the component numerical controls.
 */
 	let Stats_panel = new TypeGrid() ;
-	Stats_panel.setTitle( @LRL-panel-Stats ) ;
+	Stats_panel.setTitle(@LRL-panel-Stats) ;
 	
-	let ResourceCost_control = new uiStatIcon( 'ResourceCost' , bindings , [FRONT] , 9 , ['X','-'] ) ;
-	let Willpower_control = new uiStatIcon( 'Willpower' , bindings , [FRONT] , 9 , ['X','-'] ) ;
-	let Attack_control = new uiStatIcon( 'Attack' , bindings , [FRONT] , 9 , ['X','-'] ) ;
-	let Defense_control = new uiStatIcon( 'Defense' , bindings , [FRONT] , 9 , ['X','-'] ) ;
-	let HitPoints_control = new uiStatIcon( 'HitPoints' , bindings , [FRONT] , 19 , ['X','-'] ) ;
+	let ResourceCost_control = new uiStatIcon('ResourceCost',bindings,FRONT,9,['X','-']) ;
+	let Willpower_control = new uiStatIcon('Willpower',bindings,FRONT,9,['X','-']) ;
+	let Attack_control = new uiStatIcon('Attack',bindings,FRONT,9,['X','-']) ;
+	let Defense_control = new uiStatIcon('Defense',bindings,FRONT,9,['X','-']) ;
+	let HitPoints_control = new uiStatIcon('HitPoints',bindings,FRONT,19,['X','-']) ;
 	// custom funtions to define stats. In this case, stats could include
 	// non-numerical options, like - and X, so the control is a list.
 	// each stat is preceded by an icon for identification
 	
 	Stats_panel.place(
-		ResourceCost_control , '' 
-		, Willpower_control , '' 
-		, Attack_control , '' 
-		, Defense_control , '' 
-		, HitPoints_control , ''
+		ResourceCost_control,'' 
+		, Willpower_control,'' 
+		, Attack_control,'' 
+		, Defense_control,'' 
+		, HitPoints_control,''
 		// these controls are put one beside another
 	) ;
-	Main_tab.place( Stats_panel , 'br hfill' ) ;
-	// "br" adds the panel to the next row of the user interface
+	Main_tab.place(Stats_panel,'br hfill') ;
+	// "br" (break) adds the panel to the next row of the user interface,
+	// that is, below the previous Title_panel. Note that 'br' wasn't needed
+	// for the stat controls. Each container (in this case, Stats_panel) uses
+	// it's own control layout.
 	
-// MAIN PANEL
+// EFFECT PANEL
 /*
 The text that defines the card effect and the flavour text is grouped here.
 I've added different controls for the different elements (Trait, Effect
@@ -213,40 +217,46 @@ block, but this way the user can forget about formating the text block
 apropiately. 
 */
 	let Effect_panel = new TypeGrid() ;
-	Effect_panel.setTitle( @LRL-panel-Effect ) ;
+	Effect_panel.setTitle(@LRL-panel-Effect) ;
 	
-	let Trait_control = new uiParagraphLabeled( 'Trait' , bindings , [FRONT] , 'line' ) ;
-	let Rules_control = new uiParagraphLabeled( 'Rules' , bindings , [ FRONT ] , 'big' ) ;
-	let Flavour_control = new uiParagraphLabeled( 'Flavour' , bindings , [ FRONT ] , 'medium' ) ;
-	// custom functions to define text controls that may span several lines.
-	// Trait only needs one line, but this way looks better in the interface
+	let Trait_control = new uiParagraphLabeled('Trait',bindings,FRONT,'line') ;
+	let Rules_control = new uiParagraphLabeled('Rules',bindings,FRONT,'big') ;
+	let Flavour_control = new uiParagraphLabeled('Flavour',bindings,FRONT,'medium') ;
+	// These functions define text controls that may span several lines.
+	// They are labeled above the control depending on $key.
+	// Trait only needs one line, but this way looks better in the interface.
 	
 	Effect_panel.place(
-		Trait_control , 'hfill'
-		, Rules_control , 'br hfill'
-		, Flavour_control , 'br hfill'
-		// all these controls are put one below another
+		Trait_control,'hfill'
+		, Rules_control,'br hfill'
+		, Flavour_control,'br hfill'
+		// These controls are put one below another using "br".
+		// The first element in each container doesn't require "br".
+		// Adding a br on the first control would add more space
+		// between the container top and the first control.
 	) ;
-	Main_tab.place( Effect_panel , 'br hfill' ) ;
+	Main_tab.place(Effect_panel,'br hfill') ;
 	
-// ADVANCED PANEL
+// OTHER EFFECT PANEL
 /*
 Here I include optional controls for stuff that may not be added to the
 card. Specifically, the text blocks for Victory points is added here.
 */
 	let OtherEffect_panel = new TypeGrid() ;
-	OtherEffect_panel.setTitle( @LRL-panel-OtherEffect ) ;
+	OtherEffect_panel.setTitle(@LRL-panel-OtherEffect) ;
 	
-	let OptionLeft_control = new uiTextLabeled( 'OptionLeft' , bindings , [ FRONT ] ) ;
-	let OptionRight_control = new uiTextLabeled( 'OptionRight' , bindings , [ FRONT ] ) ;
+	let OptionLeft_control = new uiTextLabeled('OptionLeft',bindings,FRONT) ;
+	let OptionRight_control = new uiTextLabeled('OptionRight',bindings,FRONT) ;
+	// These functions add a text control preceded with a lebel
+	// determined by $key to control (in this case, OptionLeft or OptionRight)
 	
 	OtherEffect_panel.place(
-		OptionLeft_control , 'hfill'
-		, OptionRight_control , 'br hfill'
+		OptionLeft_control,'hfill'
+		, OptionRight_control,'br hfill'
 	) ;
-	Main_tab.place( OtherEffect_panel , 'br hfill' ) ;
+	Main_tab.place(OtherEffect_panel,'br hfill') ;
 	
-	Main_tab.addToEditor( editor , @LRL-tab-Main ) ;
+	Main_tab.addToEditor(editor,@LRL-tab-Main) ;
 	// Now everything is actually drawn in the editor, and the tab name defined.
 	
 // TEMPLATE TAB
@@ -263,17 +273,18 @@ custom spheres, that is, unofficial spheres.
 This will add the template selector, that means the sphere for player cards.
 */
 	let Template_panel = new TypeGrid() ;
-	Template_panel.setTitle( @LRL-panel-Template ) ;
+	Template_panel.setTitle(@LRL-panel-Template) ;
 	
-	let templateList = new Array( 'Neutral' , 'Leadership' , 'Lore' , 'Spirit' , 'Tactics' ) ;
-	// "templateList" includes all the template variants
-	if( advancedControls ) templateList = templateList.concat( new Array( 'Baggins' , 'Fellowship' , 'Mastery' , 'Custom' ) ) ;
-	// "templateList" may be extended with unusual templates
-	let Template_control = new uiIconList( 'Template' , templateList , bindings , [ FRONT ] ) ;
-	// custom function that shows a selectable icon plus text list control.  
+	let list = new Array('Neutral','Leadership','Lore','Spirit','Tactics') ;
+	// "list" includes all the important template variants
+	if(advancedControls) list = list.concat( new Array('Baggins','Fellowship','Mastery','Custom') ) ;
+	// "list" may be extended with unusual templates
+	let Template_control = new uiIconList('Template',list,bindings,FRONT) ;
+	// This function that shows a selectable icon plus text in a list control,
+	// including all the templates from templateList .  
 	
-	Template_panel.place( Template_control , 'hfill' ) ;
-	Template_tab.place( Template_panel , 'hfill' ) ;
+	Template_panel.place(Template_control,'hfill') ;
+	Template_tab.place(Template_panel,'hfill') ;
 	
 // CUSTOM SPHERE PANEL
 /*
@@ -281,78 +292,78 @@ Users can create their own customized spheres through the use of colorizable
 graphical elements and adding their own graphics for the sphere icon. This
 panel includes all the controls related to it.
 */
-	if( advancedControls ){
+	if(advancedControls){
 		let CustomSphere_panel = new TypeGrid() ;
-		CustomSphere_panel.setTitle( @LRL-panel-CustomSphere ) ;
+		CustomSphere_panel.setTitle(@LRL-panel-CustomSphere) ;
 		
-		let CustomTint_control = new uiTint( 'Custom' , bindings, [ FRONT ] ) ;
-		// custom function that shows a tinter control. It shows a colour
+		let CustomTint_control = new uiTint('Custom',bindings,FRONT) ;
+		// This function shows a tinter control. It shows a colour
 		// selector and a list of predefined colours.
 		
-		let SpherePortrait_control = new uiPortrait( 'Sphere',diy) ;
-		let BodyIconPortrait_control = new uiPortrait( 'BodyIcon',diy) ;
-		// custom functions that shows a portrait control used to add own
-		// graphics easily.
+		let SpherePortrait_control = new uiPortrait('Sphere',diy) ;
+		let BodyIconPortrait_control = new uiPortrait('BodyIcon',diy) ;
+		// These functions show a portrait control used to
+		// add easily your own graphics from your files.
 		
-		let BodyIconTransparency_control = new uiTransparency( 'BodyIcon' , bindings , [ FRONT ] ) ;
-		// custom function that shows a horizontal slider control
+		let BodyIconTransparency_control = new uiTransparency('BodyIcon',bindings,FRONT) ;
+		// This function that shows a horizontal slider control
 		// to select the transparency of "BodyIcon".
 		
-		// In this placement text descriptions of the controls aren't added
-		// because the descriptions are included in the control creator.
 		CustomSphere_panel.place(
-			CustomTint_control , 'hfill'
-			, SpherePortrait_control ,'br hfill' 
-			, BodyIconPortrait_control , 'br hfill' 
-			, BodyIconTransparency_control , 'br hfill'
+			CustomTint_control,'hfill'
+			, SpherePortrait_control,'br hfill' 
+			, BodyIconPortrait_control,'br hfill' 
+			, BodyIconTransparency_control,'br hfill'
+			// In this placement text descriptions of the controls aren't added
+			// because the descriptions are included in the control creator.
 		) ;
-		Template_tab.place( CustomSphere_panel , 'br hfill' ) ;
+		Template_tab.place(CustomSphere_panel,'br hfill') ;
 	}
 	
+// CUTTING PANEL
 /*
 Custom functions to show how the card will look after the cut.
 ShowBleeding is specially interesting during plugin development, to check 
 that component's template show all important stuff inside the safe space.
 */
-	// CUTTING PANEL
 	let Cutting_panel = new TypeGrid() ;
-	Cutting_panel.setTitle( @LRL-panel-Cutting ) ;
-	let ShowCut_control = new uiButtonText( 'ShowCut' , diy , bindings , [ FRONT ] ) ;
-	Cutting_panel.place( ShowCut_control , 'hfill' ) ;
-	if( advancedControls ){
-		let ShowBleeding_control = new uiButtonText( 'ShowBleeding' , diy , bindings , [ FRONT ] ) ;
-		Cutting_panel.place( ShowBleeding_control ,'' ) ;
+	Cutting_panel.setTitle(@LRL-panel-Cutting) ;
+	let ShowCut_control = new uiButtonText('ShowCut',diy,bindings,FRONT) ;
+	Cutting_panel.place(ShowCut_control,'hfill') ;
+	if(advancedControls){
+		let ShowBleeding_control = new uiButtonText('ShowBleeding',diy,bindings,FRONT) ;
+		Cutting_panel.place(ShowBleeding_control,'') ;
 	}
-	Template_tab.place( Cutting_panel , 'br hfill' ) ;
+	Template_tab.place(Cutting_panel,'br hfill') ;
 	
-	Template_tab.addToEditor( editor , @LRL-tab-Template ) ;
+	Template_tab.addToEditor(editor,@LRL-tab-Template) ;
 	
 // PORTRAIT TAB
 /*
 This tab is used only for the main portrait of the component and the
 "Artist" control related to it. When other components have several
-portraits, like the Quest card, they are added here too.
+portraits, like the Quest card, they are added to this tab too.
 */
 	let Portrait_tab = new TypeGrid() ;
 	Portrait_tab.editorTabScrolling = true ;
 	
 // PORTRAIT PANEL	
 	let Portrait_panel = new TypeGrid() ;
-	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
+	Portrait_panel.setTitle(@LRL-panel-Portrait) ;
 	
-	let Artist_control = new uiText( 'Artist' , bindings , [ FRONT ] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
-	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
+	let Artist_control = new uiTextLabeled('Artist',bindings,FRONT) ;
+	let Portrait_control = new uiPortrait('Portrait',diy) ;
+	let PortraitMirror_control = new uiPortraitMirror('Portrait',Portrait_control) ;
 	// Custom function to add a button to mirror a portrait image horizontally
 	
 	Portrait_panel.place(
-		@LRL-Artist , '' , Artist_control , 'hfill' 
-		, Portrait_control , 'br hfill' 
-		, PortraitMirror_control , 'br hfill' 
+		Artist_control,'hfill' 
+		, Portrait_control,'br hfill' 
+		, PortraitMirror_control,'br hfill' 
 	) ;
-	Portrait_tab.place( Portrait_panel , 'hfill' ) ;
+	Portrait_tab.place(Portrait_panel,'hfill') ;
 	
-	Portrait_tab.addToEditor( editor , @LRL-tab-Portrait ) ;
+	Portrait_tab.addToEditor(editor,@LRL-tab-Portrait) ;
 	
 // COLLECTION TAB
 /*
@@ -365,61 +376,53 @@ less likely to be used controls. For example, controls to change "Type" and
 	
 // COLLECTION PANEL
 	let Collection_panel = new TypeGrid() ;
-	Collection_panel.setTitle( @LRL-panel-Collection ) ;
+	Collection_panel.setTitle(@LRL-panel-Collection) ;
 	
-	let CollectionNumber_control = new uiSpinner( 'CollectionNumber' , bindings , [ FRONT ] , 999 ) ;
+	let CollectionNumber_control = new uiSpinnerLabeled('CollectionNumber',bindings,FRONT,999) ;
 	// Custom control to change the collection number
-	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [ FRONT ] ) ;
+	let CollectionInfo_control = new uiTextLabeled('CollectionInfo',bindings,FRONT) ;
 	// This adds a small text field to the component, next to the collection
-	// icon. It's not present on the official components, and is included
-	// to provide some information about the custom release and easily
-	// tell them apart from other custom releases or official products.
-	// It can include the designer name or nick, a word referencing the
-	// release or release collection.
-	let Collection_control = new uiCollectionList( bindings , [FRONT] ) ;
+	// icon. It's not present on the official components, and is included to
+	// provide some information about the custom release and easily tell them
+	// apart from other custom releases or official products. It can include
+	// the designer name or nick, or a word referencing the collection.
+	let Collection_control = new uiCollectionList(bindings,FRONT) ;
 	// Custom control that builds a icon+text list including all the
 	// Collection icons. There's a similar function for Encounter Sets.
-	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
+	let CollectionPortrait_control = new uiPortrait('Collection',diy) ;
 	
 	Collection_panel.place(
-		Collection_control , 'hfill' 
-		, @LRL-Number , 'br' , CollectionNumber_control , '' 
-		, @LRL-Information , '' , CollectionInfo_control , 'hfill' 
-		, CollectionPortrait_control , 'br hfill'
+		Collection_control,'hfill' 
+		, CollectionNumber_control,'br' 
+		, CollectionInfo_control,'hfill' 
+		, CollectionPortrait_control,'br hfill'
 	) ;
-	Collection_tab.place( Collection_panel , 'hfill' ) ;
+	Collection_tab.place(Collection_panel,'hfill') ;
 	
-// COPYRIGHT PANEL
-	let Copyright_panel = new TypeGrid() ;
-	Copyright_panel.setTitle( @LRL-panel-Copyright ) ;
-	
-	let Copyright_control = new uiText( 'Copyright' , bindings , [ FRONT ] ) ;
-	
-	Copyright_panel.place( Copyright_control , 'hfill' ) ;
-	Collection_tab.place( Copyright_panel , 'br hfill' ) ;
-
 // OTHER PANEL
 /*
 A few extra controls may be included to, for example, change default
 texts, like the card type. Useful to create cards in languages not
 supported by the plugin.
 */
-	if( advancedControls ){
-		let Other_panel = new TypeGrid() ;
-		Other_panel.setTitle( @LRL-panel-Other ) ;
-		
-		let Type_control = new uiText( 'Type' , bindings , [ FRONT ] ) ;
-		
-		Other_panel.place( @LRL-Type , '' , Type_control , 'hfill' ) ;
-		Collection_tab.place( Other_panel , 'br hfill' ) ;
+	let Other_panel = new TypeGrid() ;
+	Other_panel.setTitle(@LRL-panel-Other) ;
+	let Copyright_control = new uiTextLabeled('Copyright',bindings,FRONT) ;
+	Other_panel.place(Copyright_control,'hfill') ;
+	if(advancedControls){
+		let Type_control = new uiTextLabeled('Type',bindings,FRONT) ;
+		Other_panel.place(Type_control,'br hfill') ;
+		// This panel placement would put it beside the
+		// previous one if "br" is not used
 	}
+	Collection_tab.place(Other_panel,'br hfill') ;
 
-	Collection_tab.addToEditor( editor , @LRL-tab-Collection ) ;
+	Collection_tab.addToEditor(editor,@LRL-tab-Collection) ;
 
-	// This method links each control to it's respective setting as defined
-	// in the creator of each control. Must be included always and at the end 
-	// of the function.
 	bindings.bind() ; 
+	// This method links each control to it's respective setting as defined
+	// in the creator of each control. Must be included always at the end 
+	// of the create interface function.
 }
 
 function createFrontPainter( diy , sheet ){ debug(1,'\ncreateFrontPainter') ;

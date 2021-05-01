@@ -2,14 +2,14 @@ const Card = 'Scenario';
 const CardVersion = 1 ;
 // 1: rewrite using new 2021 library
 
-function create( diy ){ debug(1,'\ncreate') ;
+function create(diy){ debug(1,'\ncreate') ;
 	diy.extensionName = 'TheLordOfTheRingsLCG.seext' ;
 	diy.version = LibraryVersion+CardVersion ;
 	$VersionHistory = diy.version ;
 	
-	loadSettings( diy ) ;
-	loadExample( diy ) ;
-	loadPreferences( diy ) ; 
+	loadSettings(diy) ;
+	loadExample(diy) ;
+	loadPreferences(diy) ; 
 	
 	diy.frontTemplateKey = 'Template' ;
 	diy.backTemplateKey = 'TemplateBack' ;
@@ -17,14 +17,14 @@ function create( diy ){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait' , diy ) ;
-	createPortrait( 'Collection' , diy ) ;
-	createPortrait( 'EncounterSet' , diy ) ;
-	createPortrait( 'EncounterSet1' , diy ) ;
-	createPortrait( 'EncounterSet2' , diy ) ;
-	createPortrait( 'EncounterSet3' , diy ) ;
-	createPortrait( 'EncounterSet4' , diy ) ;
-	createPortrait( 'EncounterSet5' , diy ) ;
+	createPortrait( 'Portrait',diy) ;
+	createPortrait( 'Collection',diy) ;
+	createPortrait( 'EncounterSet',diy) ;
+	createPortrait( 'EncounterSet1',diy) ;
+	createPortrait( 'EncounterSet2',diy) ;
+	createPortrait( 'EncounterSet3',diy) ;
+	createPortrait( 'EncounterSet4',diy) ;
+	createPortrait( 'EncounterSet5',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
@@ -102,7 +102,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let EncounterSet_panel = new TypeGrid() ;
 	EncounterSet_panel.setTitle( @LRL-panel-EncounterSet ) ;
 	let EncounterSet_control = new uiEncounterSetList( 'EncounterSet' , bindings , [FRONT] ) ;
-	let EncounterSetPortrait_control = new uiPortrait( 'EncounterSet' , diy ) ;
+	let EncounterSetPortrait_control = new uiPortrait( 'EncounterSet',diy) ;
 	EncounterSet_panel.place( 
 		EncounterSet_control , 'hfill' 
 		, EncounterSetPortrait_control , 'br hfill' 
@@ -113,7 +113,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let EncounterSet1_panel = new TypeGrid() ;
 	EncounterSet1_panel.setTitle( @LRL-panel-EncounterSet1 ) ;
 	let EncounterSet1_control = new uiEncounterSetList( 'EncounterSet1' , bindings , [FRONT] ) ;
-	let EncounterSet1Portrait_control = new uiPortrait( 'EncounterSet1' , diy ) ;
+	let EncounterSet1Portrait_control = new uiPortrait( 'EncounterSet1',diy) ;
 	EncounterSet1_panel.place(
 		EncounterSet1_control , 'hfill' ,
 		EncounterSet1Portrait_control , 'br hfill'
@@ -124,7 +124,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let EncounterSet2_panel = new TypeGrid() ;
 	EncounterSet2_panel.setTitle( @LRL-panel-EncounterSet2 ) ;
 	let EncounterSet2_control = new uiEncounterSetList( 'EncounterSet2' , bindings , [FRONT] ) ;
-	let EncounterSet2Portrait_control = new uiPortrait( 'EncounterSet2' , diy ) ;
+	let EncounterSet2Portrait_control = new uiPortrait( 'EncounterSet2',diy) ;
 	EncounterSet2_panel.place(
 		EncounterSet2_control , 'hfill' ,
 		EncounterSet2Portrait_control , 'br hfill'
@@ -135,7 +135,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let EncounterSet3_panel = new TypeGrid() ;
 	EncounterSet3_panel.setTitle( @LRL-panel-EncounterSet3 ) ;
 	let EncounterSet3_control = new uiEncounterSetList( 'EncounterSet3' , bindings , [FRONT] ) ;
-	let EncounterSet3Portrait_control = new uiPortrait( 'EncounterSet3' , diy ) ;
+	let EncounterSet3Portrait_control = new uiPortrait( 'EncounterSet3',diy) ;
 	EncounterSet3_panel.place(
 		EncounterSet3_control , 'hfill' ,
 		EncounterSet3Portrait_control , 'br hfill'
@@ -146,7 +146,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let EncounterSet4_panel = new TypeGrid() ;
 	EncounterSet4_panel.setTitle( @LRL-panel-EncounterSet4 ) ;
 	let EncounterSet4_control = new uiEncounterSetList( 'EncounterSet4' , bindings , [FRONT] ) ;
-	let EncounterSet4Portrait_control = new uiPortrait( 'EncounterSet4' , diy ) ;
+	let EncounterSet4Portrait_control = new uiPortrait( 'EncounterSet4',diy) ;
 	EncounterSet4_panel.place(
 		EncounterSet4_control , 'hfill' ,
 		EncounterSet4Portrait_control , 'br hfill'
@@ -157,7 +157,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let EncounterSet5_panel = new TypeGrid() ;
 	EncounterSet5_panel.setTitle( @LRL-panel-EncounterSet5 ) ;
 	let EncounterSet5_control = new uiEncounterSetList( 'EncounterSet5' , bindings , [FRONT] ) ;
-	let EncounterSet5Portrait_control = new uiPortrait( 'EncounterSet5' , diy ) ;
+	let EncounterSet5Portrait_control = new uiPortrait( 'EncounterSet5',diy) ;
 	EncounterSet5_panel.place(
 		EncounterSet5_control , 'hfill' ,
 		EncounterSet5Portrait_control , 'br hfill'
@@ -202,7 +202,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
 	let Artist_control = new uiText( 'Artist' , bindings , [FRONT] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait' , diy ) ;
+	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
 	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
@@ -222,7 +222,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	Collection_panel.setTitle( @LRL-panel-Collection ) ;
 	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [FRONT,BACK] ) ;
 	let Collection_control = new uiCollectionList( bindings , [FRONT,BACK] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection' , diy ) ;
+	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		, @LRL-Information , '' , CollectionInfo_control , 'hfill' 
@@ -253,8 +253,8 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 
 function createFrontPainter( diy , sheet ){ debug(1,'createFrontPainter') ;
 // TEMPLATE
-	Custom_tinter = new createTinter( 'Custom' , diy ) ;
-	Adapter_tinter = new createTinter( 'Custom' , diy ) ;
+	Custom_tinter = new createTinter( 'Custom',diy) ;
+	Adapter_tinter = new createTinter( 'Custom',diy) ;
 	
 	Name_writer = new createTextBox( 'Name' , diy , sheet ) ;
 	Cycle_writer = new createTextBox( 'Cycle' , diy , sheet ) ;
@@ -263,19 +263,19 @@ function createFrontPainter( diy , sheet ){ debug(1,'createFrontPainter') ;
 	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
 	Type_writer = new createTextBox( 'Type' , diy , sheet ) ;
 	
-	updateExternalPortrait( 'Portrait' , diy ) ;
-	updateExternalPortrait( 'Collection' , diy ) ;
-	updateExternalPortrait( 'EncounterSet' , diy ) ;
-	updateExternalPortrait( 'EncounterSet1' , diy ) ;
-	updateExternalPortrait( 'EncounterSet2' , diy ) ;
-	updateExternalPortrait( 'EncounterSet3' , diy ) ;
-	updateExternalPortrait( 'EncounterSet4' , diy ) ;
-	updateExternalPortrait( 'EncounterSet5' , diy ) ;
+	updateExternalPortrait( 'Portrait',diy) ;
+	updateExternalPortrait( 'Collection',diy) ;
+	updateExternalPortrait( 'EncounterSet',diy) ;
+	updateExternalPortrait( 'EncounterSet1',diy) ;
+	updateExternalPortrait( 'EncounterSet2',diy) ;
+	updateExternalPortrait( 'EncounterSet3',diy) ;
+	updateExternalPortrait( 'EncounterSet4',diy) ;
+	updateExternalPortrait( 'EncounterSet5',diy) ;
 }
 
 function createBackPainter( diy, sheet ){ debug(1,'\ncreateBackPainter') ;
 // TEMPLATE
-	CustomBack_tinter = new createTinter( 'Custom' , diy ) ;
+	CustomBack_tinter = new createTinter( 'Custom',diy) ;
 	CustomBack_tinter.setImage( diy.settings.getImageResource( 'CustomBack-tintable' ) ) ;
 }
 

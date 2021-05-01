@@ -2,14 +2,14 @@ const Card = 'Campaign' ;
 const CardVersion = 1 ;
 // 1: rewrite using new 2021 library
 
-function create( diy ){ debug(1,'\ncreate') ;
+function create(diy){ debug(1,'\ncreate') ;
 	diy.extensionName = 'TheLordOfTheRingsLCG.seext' ;
 	diy.version = LibraryVersion+CardVersion ;
 	$VersionHistory = diy.version ;
 
-	loadSettings( diy ) ;
-	loadExample( diy ) ; 
-	loadPreferences( diy ) ; 
+	loadSettings(diy) ;
+	loadExample(diy) ; 
+	loadPreferences(diy) ; 
 
 	diy.frontTemplateKey = 'Template' ;
 	diy.backTemplateKey = 'TemplateBack' ;
@@ -17,9 +17,9 @@ function create( diy ){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait' , diy ) ;
-	createPortrait( 'Collection' , diy ) ;
-	createPortrait( 'EncounterSet' , diy ) ;
+	createPortrait( 'Portrait',diy) ;
+	createPortrait( 'Collection',diy) ;
+	createPortrait( 'EncounterSet',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
@@ -40,11 +40,11 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	Main_tab.place( Title_panel , 'hfill' ) ;
 	
 	// CYCLE PANEL
-	let Cycle_panel = new TypeGrid() ;
-	Cycle_panel.setTitle( @LRL-panel-Cycle ) ;
-	let Cycle_control = new uiText( 'Cycle' , bindings , [FRONT] ) ;
-	Cycle_panel.place( Cycle_control , 'hfill' ) ;
-	Main_tab.place( Cycle_panel , 'br hfill' ) ;
+	let Campaign_panel = new TypeGrid() ;
+	Campaign_panel.setTitle( @LRL-panel-Campaign ) ;
+	let Campaign_control = new uiText( 'Campaign' , bindings , [FRONT] ) ;
+	Campaign_panel.place( Campaign_control , 'hfill' ) ;
+	Main_tab.place( Campaign_panel , 'br hfill' ) ;
 	
 	// EFFECT PANEL
 	let Effect_panel = new TypeGrid() ;
@@ -57,14 +57,14 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	) ;
 	Main_tab.place( Effect_panel , 'br hfill' ) ;
 	
-	if( advancedControls == true ){
+	if( advancedControls ){
 		let OtherEffect_panel = new TypeGrid() ;
 		OtherEffect_panel.setTitle( @LRL-panel-OtherEffect ) ;
-		let OptionLeft_control = new uiText( 'OptionLeft' , bindings , [ FRONT ] ) ;
-		let OptionRight_control = new uiText( 'OptionRight' , bindings , [ FRONT ] ) ;
+		let OptionLeft_control = new uiTextLabeled( 'OptionLeft' , bindings , [ FRONT ] ) ;
+		let OptionRight_control = new uiTextLabeled( 'OptionRight' , bindings , [ FRONT ] ) ;
 		OtherEffect_panel.place(
-			@LRL-OptionLeft , '' , OptionLeft_control , 'tab hfill'
-			, @LRL-OptionRight , 'br' , OptionRight_control , 'tab hfill'
+			OptionLeft_control , 'hfill'
+			, OptionRight_control , 'br hfill'
 		) ;
 		Main_tab.place( OtherEffect_panel , 'br hfill' ) ;
 	}
@@ -85,14 +85,14 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	) ;
 	MainBack_tab.place( EffectBack_panel , 'br hfill' ) ;
 
-	if( advancedControls == true ){
+	if( advancedControls ){
 		let OtherEffectBack_panel = new TypeGrid() ;
 		OtherEffectBack_panel.setTitle( @LRL-panel-OtherEffect ) ;
-		let OptionLeftBack_control = new uiText( 'OptionLeftBack' , bindings , [ BACK ] ) ;
-		let OptionRightBack_control = new uiText( 'OptionRightBack' , bindings , [ BACK ] ) ;
+		let OptionLeftBack_control = new uiTextLabeled( 'OptionLeftBack' , bindings , [ BACK ] ) ;
+		let OptionRightBack_control = new uiTextLabeled( 'OptionRightBack' , bindings , [ BACK ] ) ;
 		OtherEffectBack_panel.place(
-			@LRL-OptionLeft , '' , OptionLeftBack_control , 'tab hfill'
-			, @LRL-OptionRight , 'br' , OptionRightBack_control , 'tab hfill'
+			OptionLeftBack_control , 'hfill'
+			, OptionRightBack_control , 'br hfill'
 		) ;
 		MainBack_tab.place( OtherEffectBack_panel , 'br hfill' ) ;
 	}
@@ -107,7 +107,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let EncounterSet_panel = new TypeGrid() ;
 	EncounterSet_panel.setTitle( @LRL-panel-EncounterSet ) ;
 	let EncounterSet_control = new uiEncounterSetList( 'EncounterSet' , bindings , [FRONT] ) ;
-	let EncounterSetPortrait_control = new uiPortrait( 'EncounterSet' , diy ) ;
+	let EncounterSetPortrait_control = new uiPortrait( 'EncounterSet',diy) ;
 	EncounterSet_panel.place(
 		EncounterSet_control , 'hfill' ,
 		EncounterSetPortrait_control , 'br hfill'
@@ -123,10 +123,10 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// CUTTING PANEL
 	let Cutting_panel = new TypeGrid() ;
 	Cutting_panel.setTitle( @LRL-panel-Cutting ) ;
-	let ShowCut_control = new uiButtonText( 'ShowCut' , diy , bindings , [ FRONT , BACK ] ) ;
+	let ShowCut_control = new uiButtonText( 'ShowCut' , diy , bindings , BOTH ) ;
 	Cutting_panel.place( ShowCut_control , 'hfill' ) ;
-	if( advancedControls == true ){
-		let ShowBleeding_control = new uiButtonText( 'ShowBleeding' , diy , bindings , [ FRONT , BACK ] ) ;
+	if( advancedControls ){
+		let ShowBleeding_control = new uiButtonText( 'ShowBleeding' , diy , bindings , BOTH ) ;
 		Cutting_panel.place( ShowBleeding_control ,'' ) ;
 	}
 	Template_tab.place( Cutting_panel , 'br hfill' ) ;
@@ -141,7 +141,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
 	let Artist_control = new uiText( 'Artist' , bindings , [ FRONT ] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait' , diy ) ;
+	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
 	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
@@ -162,7 +162,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let CollectionNumber_control = new uiSpinner( 'CollectionNumber' , bindings , [FRONT,BACK] , 999 ) ;
 	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [FRONT,BACK] ) ;
 	let Collection_control = new uiCollectionList( bindings , [FRONT,BACK] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection' , diy ) ;
+	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		, @LRL-Number , 'br' , CollectionNumber_control , '' 
@@ -206,9 +206,9 @@ function createFrontPainter( diy , sheet ){ debug(1,'\ncreateFrontPainter') ;
 	Type_writer = new createTextBox( 'Type' , diy , sheet ) ;
 	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
 
-	updateExternalPortrait( 'Portrait' , diy ) ;
-	updateExternalPortrait( 'EncounterSet' , diy ) ;
-	updateExternalPortrait( 'Collection' , diy ) ;
+	updateExternalPortrait( 'Portrait',diy) ;
+	updateExternalPortrait( 'EncounterSet',diy) ;
+	updateExternalPortrait( 'Collection',diy) ;
 }
 
 function createBackPainter( diy, sheet ){ debug(1,'\ncreateBackPainter') ; }
@@ -254,7 +254,7 @@ function paintBack( g, diy, sheet ){ debug(1,'\npaintBack') ;
 	// TEXTS
 	let region = diy.settings.getRegion( 'BodyBack' ) ;
 	if( ($OptionLeftBack != '') || ($OptionRightBack != '') ){
-		region = settingToArray( 'BodyBack-region' , diy ) ;
+		region = settingToArray( 'BodyBack-region',diy) ;
 		region[3] = Number(region[3])-6 ;
 		region = new Region([Number(region[0]),Number(region[1]),Number(region[2]),Number(region[3])] ) ;
 	}

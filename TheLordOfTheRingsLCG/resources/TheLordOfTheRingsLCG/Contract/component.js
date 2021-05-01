@@ -2,14 +2,14 @@ const Card = 'Contract' ;
 const CardVersion = 1 ;
 // 1: new card using 2021 library
 
-function create( diy ){ debug(1,'\ncreate') ;
+function create(diy){ debug(1,'\ncreate') ;
 	diy.extensionName = 'TheLordOfTheRingsLCG.seext' ;
 	diy.version = LibraryVersion+CardVersion ;
 	$VersionHistory = diy.version ;
 
-	loadSettings( diy ) ;
-	loadExample( diy ) ; 
-	loadPreferences( diy ) ; 
+	loadSettings(diy) ;
+	loadExample(diy) ; 
+	loadPreferences(diy) ; 
 
 	diy.frontTemplateKey = 'Template' ;
 	diy.backTemplateKey = 'TemplateBack' ;
@@ -17,9 +17,9 @@ function create( diy ){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait' , diy ) ;
-	createPortrait( 'PortraitBack' , diy ) ;
-	createPortrait( 'Collection' , diy ) ;
+	createPortrait( 'Portrait',diy) ;
+	createPortrait( 'PortraitBack',diy) ;
+	createPortrait( 'Collection',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
@@ -122,7 +122,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
 	let Artist_control = new uiText( 'Artist' , bindings , [FRONT,BACK] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait' , diy ) ;
+	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
 	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
@@ -134,7 +134,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let PortraitBack_panel = new TypeGrid() ;
 	PortraitBack_panel.setTitle( @LRL-panel-PortraitBack ) ;
 	let ArtistBack_control = new uiText( 'ArtistBack' , bindings , [BACK] ) ;
-	let PortraitBack_control = new uiPortrait( 'PortraitBack' , diy ) ;
+	let PortraitBack_control = new uiPortrait( 'PortraitBack',diy) ;
 	let PortraitShare_control = new uiButtonText( 'PortraitShare' , diy , bindings , [BACK] ) ;
 	let PortraitBackMirror_control = new uiPortraitMirror( 'PortraitBack' , PortraitBack_control ) ;
 	PortraitBack_panel.place(
@@ -156,7 +156,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let CollectionNumber_control = new uiSpinner( 'CollectionNumber' , bindings , [FRONT,BACK] , 999 ) ;
 	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [FRONT,BACK] ) ;
 	let Collection_control = new uiCollectionList( bindings , [FRONT,BACK] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection' , diy ) ;
+	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		, @LRL-Number , 'br' , CollectionNumber_control , '' 
@@ -206,12 +206,12 @@ function createFrontPainter( diy , sheet ){ debug(1,'\ncreateFrontPainter') ;
 	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
 	Side_writer = new createTextBox( 'Side' , diy , sheet ) ;
 
-	updateExternalPortrait( 'Portrait' , diy ) ;
-	updateExternalPortrait( 'Collection' , diy ) ;
+	updateExternalPortrait( 'Portrait',diy) ;
+	updateExternalPortrait( 'Collection',diy) ;
 }
 
 function createBackPainter( diy, sheet ){ debug(1,'\ncreateBackPainter') ;
-	updateExternalPortrait( 'PortraitBack' , diy ) ;
+	updateExternalPortrait( 'PortraitBack',diy) ;
 }
 
 function writeSide( diy , g , sheet ){ debug(1,'\npaintFront') ;
