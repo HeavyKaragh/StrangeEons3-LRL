@@ -17,14 +17,14 @@ function create(diy){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait',diy) ;
-	createPortrait( 'Collection',diy) ;
+	createPortrait('Portrait',diy) ;
+	createPortrait('Collection',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
 function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
-	let advancedControls = diy.settings.getBoolean( 'LRL-AdvancedControls' ) ;
-	if( diy.settings.getBoolean( 'TraitIn' ) ) advancedControls = true ;
+	let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls' ) ;
+	if( diy.settings.getBoolean('TraitIn' ) ) advancedControls = true ;
 	if( $PortraitShadow == 'Custom' ) advancedControls = true ;
 	
 	var bindings = new Bindings( editor , diy ) ;
@@ -44,9 +44,9 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// EFFECT PANEL
 	let Effect_panel = new TypeGrid() ;
 	Effect_panel.setTitle( @LRL-panel-Effect ) ;
-	let Trait_control = new uiParagraphLabeled( 'Trait' , bindings , [FRONT] , 'line' ) ;
-	let Rules_control = new uiParagraphLabeled( 'Rules' , bindings , [FRONT] , 'big' ) ;
-	let Flavour_control = new uiParagraphLabeled( 'Flavour' , bindings , [FRONT] , 'small' ) ;
+	let Trait_control = new uiParagraphLabeled('Trait' , bindings , [FRONT] , 'line' ) ;
+	let Rules_control = new uiParagraphLabeled('Rules' , bindings , [FRONT] , 'big' ) ;
+	let Flavour_control = new uiParagraphLabeled('Flavour' , bindings , [FRONT] , 'small' ) ;
 	Effect_panel.place(
 		Trait_control , 'hfill'
 		, Rules_control , 'br hfill'
@@ -64,7 +64,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	if( advancedControls ){
 		let Layout_panel = new TypeGrid() ; 
 		Layout_panel.setTitle( @LRL-panel-Layout ) ;
-		let TraitIn_control = new uiButtonText( 'TraitIn' , diy , bindings , [FRONT] ) ;
+		let TraitIn_control = new uiButtonText('TraitIn' , diy , bindings , [FRONT] ) ;
 		Layout_panel.place( TraitIn_control , 'hfill' ) ;
 		Template_tab.place( Layout_panel , 'hfill' ) ;
 	}
@@ -72,10 +72,10 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// CUTTING PANEL
 	let Cutting_panel = new TypeGrid() ;
 	Cutting_panel.setTitle( @LRL-panel-Cutting ) ;
-	let ShowCut_control = new uiButtonText( 'ShowCut' , diy , bindings , [FRONT] ) ;
+	let ShowCut_control = new uiButtonText('ShowCut' , diy , bindings , [FRONT] ) ;
 	Cutting_panel.place( ShowCut_control , 'hfill' ) ;
 	if( advancedControls ){
-		let ShowBleeding_control = new uiButtonText( 'ShowBleeding' , diy , bindings , [FRONT] ) ;
+		let ShowBleeding_control = new uiButtonText('ShowBleeding' , diy , bindings , [FRONT] ) ;
 		Cutting_panel.place( ShowBleeding_control ,'' ) ;
 	}
 	Template_tab.place( Cutting_panel , 'br hfill' ) ;
@@ -89,19 +89,19 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// PORTRAIT PANEL
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
-	let Artist_control = new uiText( 'Artist' , bindings , [FRONT] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
-	list = new Array( 'None' , 'Black' ) ;
-	if( advancedControls ) list = list.concat( new Array( 'Custom' ) ) ;
-	let PortraitShadow_control = new uiCycler( 'PortraitShadow' , list , bindings , [FRONT] );
-	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
+	let Artist_control = new uiText('Artist' , bindings , [FRONT] ) ;
+	let Portrait_control = new uiPortrait('Portrait',diy) ;
+	list = new Array('None' , 'Black' ) ;
+	if( advancedControls ) list = list.concat( new Array('Custom' ) ) ;
+	let PortraitShadow_control = new uiCycler('PortraitShadow' , list , bindings , [FRONT] );
+	let PortraitMirror_control = new uiPortraitMirror('Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
 		, Portrait_control , 'br hfill' 
 		, @LRL-PortraitShadow , 'br' , PortraitShadow_control , '' ,	PortraitMirror_control , 'hfill'
 	) ;
 	if( advancedControls ){
-		let PortraitShadowTint_control = new uiTint( 'Portrait-shadow' , bindings, [FRONT] ) ;
+		let PortraitShadowTint_control = new uiTint('Portrait-shadow' , bindings, [FRONT] ) ;
 		Portrait_panel.place( PortraitShadowTint_control , 'br hfill' ) ;
 	}
 	Portrait_tab.place( Portrait_panel , 'hfill' ) ;
@@ -115,10 +115,10 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// COLLECTION PANEL
 	let Collection_panel = new TypeGrid() ;
 	Collection_panel.setTitle( @LRL-panel-Collection ) ;
-	let CollectionNumber_control = new uiSpinner( 'CollectionNumber' , bindings , [FRONT] , 999 ) ;
-	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [FRONT] ) ;
+	let CollectionNumber_control = new uiSpinner('CollectionNumber' , bindings , [FRONT] , 999 ) ;
+	let CollectionInfo_control = new uiText('CollectionInfo' , bindings , [FRONT] ) ;
 	let Collection_control = new uiCollectionList( bindings , [FRONT] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
+	let CollectionPortrait_control = new uiPortrait('Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		, @LRL-Number , 'br' , CollectionNumber_control , '' 
@@ -130,7 +130,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// COPYRIGHT PANEL
 	let Copyright_panel = new TypeGrid() ;
 	Copyright_panel.setTitle( @LRL-panel-Copyright ) ;
-	let Copyright_control = new uiText( 'Copyright' , bindings , [FRONT] ) ;
+	let Copyright_control = new uiText('Copyright' , bindings , [FRONT] ) ;
 	Copyright_panel.place( Copyright_control , 'hfill' ) ;
 	Collection_tab.place( Copyright_panel , 'br hfill' ) ;
 
@@ -140,36 +140,36 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 }
 
 function createFrontPainter( diy, sheet ){
-	PortraitShadow_tinter = new createTinter( 'Portrait-shadow',diy) ;
+	PortraitShadow_tinter = new createTinter('Portrait-shadow',diy) ;
 // TEMPLATE
 
 // TEXT
-	Name_writer = new createTextBox( 'Name' , diy , sheet ) ;
-	Body_writer = new createTextBox( 'Body' , diy , sheet ) ;
-	TraitOut_writer = new createTextBox( 'TraitOut' , diy , sheet ) ;
-	Type_writer = new createTextBox( 'Type' , diy , sheet ) ;
-	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
+	Name_writer = new createTextBox('Name' , diy , sheet ) ;
+	Body_writer = new createTextBox('Body' , diy , sheet ) ;
+	TraitOut_writer = new createTextBox('TraitOut' , diy , sheet ) ;
+	Type_writer = new createTextBox('Type' , diy , sheet ) ;
+	Bottom_writer = new createTextBox('Bottom' , diy , sheet ) ;
 
-	updateExternalPortrait( 'Portrait',diy) ;
-	updateExternalPortrait( 'Collection',diy) ;
+	updateExternalPortrait('Portrait',diy) ;
+	updateExternalPortrait('Collection',diy) ;
 }
 
 function paintFront( g , diy , sheet ){ 
 	
 // PORTRAIT
-	paintPortrait( 'Portrait' , diy , g , sheet ) ;
+	paintPortrait('Portrait' , diy , g , sheet ) ;
 
 // TEMPLATE
 	sheet.paintTemplateImage( g ) ;
 
 // ICONS
-	paintIcon( 'Collection' , diy , g , sheet ) ;
+	paintIcon('Collection' , diy , g , sheet ) ;
 
 // TEXTS
 	writeName( diy , g ) ;
 	if( diy.settings.getBoolean('TraitIn') ) writeBody( [ 'Trait' , 'Rules' , 'Flavour' ] , diy , g ) ;
 	else{
-		if( diy.settings.get( 'Trait' , '' ) != '' ){
+		if( diy.settings.get('Trait' , '' ) != '' ){
 			sheet.paintImage( g , 'TraitOut-decoration' , 'Template-region' ) ;
 			let text = diy.settings.get('TraitOut-format','')+$Trait ;
 			let region = diy.settings.getRegion('TraitOut') ;
@@ -189,17 +189,17 @@ function paintFront( g , diy , sheet ){
 }
 
 if( sourcefile == 'Quickscript' ){
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
 
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
 	Eons.namedObjects.LRL = new gameObject() ;
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
-	GameLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
 
-	testDIYScript( 'LRL' ) ;
+	testDIYScript('LRL' ) ;
 }else{
-	useLibrary( 'res://TheLordOfTheRingsLCG/library.js' ) ;
+	useLibrary('res://TheLordOfTheRingsLCG/library.js' ) ;
 }

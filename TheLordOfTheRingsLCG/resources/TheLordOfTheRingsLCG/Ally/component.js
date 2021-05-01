@@ -18,7 +18,7 @@ and size?) and another that actually paints it (where and when? to
 avoid overlapping other stuff and/or to use a special graphical effect).
 For example, card "Type" setting, ($Type), is defined in the user interface
 by Type_control, in the createFrontPainter by Type_writer and in the
-paintFront by writeLine( 'Type' ).
+paintFront by writeLine('Type' ).
 */
 
 function create(diy){ debug(1,'\ncreate') ;
@@ -455,36 +455,36 @@ defined as var or const) so they can be accesed in paintFront.
 	// Copyright and CollectionNumber). The only difference in those elements
 	// is the horizontal alignment, so an alignment tag is added to the text
 	// through setting-format.
-	Name_writer = new createTextBox( 'Name' , diy , sheet ) ;
-	Body_writer = new createTextBox( 'Body' , diy , sheet ) ;
-	Option_writer = new createTextBox( 'Option' , diy , sheet ) ;
-	Type_writer = new createTextBox( 'Type' , diy , sheet ) ;
-	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
+	Name_writer = new createTextBox('Name' , diy , sheet ) ;
+	Body_writer = new createTextBox('Body' , diy , sheet ) ;
+	Option_writer = new createTextBox('Option' , diy , sheet ) ;
+	Type_writer = new createTextBox('Type' , diy , sheet ) ;
+	Bottom_writer = new createTextBox('Bottom' , diy , sheet ) ;
 
 // STATS
 	// Tinters are Strange Eons functions that paint a image with a given
 	// colour. Several stats are tinted with a fixed colour, and only image
 	// used (that is, the number) changes.
-	ResourceCost_tinter = new createTinter( 'ResourceCost',diy) ;
-	HitPoints_tinter = new createTinter( 'HitPoints',diy) ;
+	ResourceCost_tinter = new createTinter('ResourceCost',diy) ;
+	HitPoints_tinter = new createTinter('HitPoints',diy) ;
 
 	
 // TEMPLATE
 	// The control values from the Custom_panel and a image will be passed 
 	// to these tinters to create the required images.
-	CustomBody_tinter = new createTinter( 'Custom-Body',diy) ;
-	CustomBodyIcon_tinter = new createTinter( '',diy) ;
-	CustomColour_tinter = new createTinter( 'Custom-Colour',diy) ;
+	CustomBody_tinter = new createTinter('Custom-Body',diy) ;
+	CustomBodyIcon_tinter = new createTinter('',diy) ;
+	CustomColour_tinter = new createTinter('Custom-Colour',diy) ;
 
 // PORTRAIT
 	// These functions provide a way of updating the user defined
 	// images without opening the component in the editor. Its usefull
 	// for creating or updating components through external scripts or
 	// through the plugin preferences.
-	updateExternalPortrait( 'Portrait',diy) ;
-	updateExternalPortrait( 'Collection',diy) ;
-	updateExternalPortrait( 'Sphere',diy) ;
-	updateExternalPortrait( 'BodyIcon',diy) ;
+	updateExternalPortrait('Portrait',diy) ;
+	updateExternalPortrait('Collection',diy) ;
+	updateExternalPortrait('Sphere',diy) ;
+	updateExternalPortrait('BodyIcon',diy) ;
 }
 
 //function createBackPainter( diy, sheet ){ debug(1,'\ncreateBackPainter') ;
@@ -507,7 +507,7 @@ the back side of the component too: paintBack.
 // PORTRAIT
 	// This function simply paints the image defined in the corresponding
 	// user interface control in rhe specified region
-	paintPortrait( 'Portrait' , diy , g , sheet ) ;
+	paintPortrait('Portrait' , diy , g , sheet ) ;
 
 // TEMPLATE
 	if( $Template == 'Custom' ) paintCustomBody(diy,g,sheet) ; // colorized text box
@@ -520,23 +520,23 @@ the back side of the component too: paintBack.
 	// Icons may be painted from two different sources: a predefined list
 	// or from the image added to a specific user interface control. Which
 	// one to use is stored in $Collection.
-	paintIcon( 'Collection' , diy , g , sheet ) ;
+	paintIcon('Collection' , diy , g , sheet ) ;
 	// This icon's only source is the user interface control.
-	if( $Template == 'Custom' ) paintPortrait( 'Sphere' , diy , g , sheet ) ;
+	if( $Template == 'Custom' ) paintPortrait('Sphere' , diy , g , sheet ) ;
 
 // STATS
 	// These functions define how to paint a stat. These look for the
 	// value of $Attack, pick a image from the resources contained in 
 	// TheLordOfTheRings-B.seext and paints it $Attack-region.
-	paintStat( 'Willpower' , diy , g , sheet ) ;
-	paintStat( 'Attack' , diy , g , sheet ) ;
-	paintStat( 'Defense' , diy , g , sheet ) ;
+	paintStat('Willpower' , diy , g , sheet ) ;
+	paintStat('Attack' , diy , g , sheet ) ;
+	paintStat('Defense' , diy , g , sheet ) ;
 	// When tinted, a tintable image (colored, different from the plain black
 	// images used in other stats) containing the number determined by
 	// $HitPoints is passed to the tinter, which will return it in the colour
 	// defined in $HitPoints-tint, and then painted in $HitPoints-region.
-	paintStatTinted( 'ResourceCost' , ResourceCost_tinter , diy , g , sheet ) ;
-	paintStatTinted( 'HitPoints' , HitPoints_tinter , diy , g , sheet ) ;
+	paintStatTinted('ResourceCost' , ResourceCost_tinter , diy , g , sheet ) ;
+	paintStatTinted('HitPoints' , HitPoints_tinter , diy , g , sheet ) ;
 	
 // TEXTS
 	// These functions put the text in the writers defined in
@@ -606,17 +606,17 @@ if( sourcefile == 'Quickscript' ){
 "Quickscript" code is used to load the settings, texts and libraries
 used while running the script in the editor pressing F5.
 */
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
 
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
 	Eons.namedObjects.LRL = new gameObject() ;
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
-	GameLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
 
-	testDIYScript( 'LRL' ) ;
+	testDIYScript('LRL' ) ;
 }else{
-	useLibrary( 'res://TheLordOfTheRingsLCG/library.js' ) ;
+	useLibrary('res://TheLordOfTheRingsLCG/library.js' ) ;
 }

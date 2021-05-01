@@ -18,14 +18,14 @@ function create(diy){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait',diy) ;
-	createPortrait( 'Collection',diy) ;
-	createPortrait( 'EncounterSet',diy) ;
+	createPortrait('Portrait',diy) ;
+	createPortrait('Collection',diy) ;
+	createPortrait('EncounterSet',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
 function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
-	let advancedControls = diy.settings.getBoolean( 'LRL-AdvancedControls' ) ;
+	let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls' ) ;
 
 	var bindings = new Bindings( editor , diy ) ;
 	let list ;
@@ -44,8 +44,8 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// ENCOUNTER SET PANEL
 	let EncounterSet_panel = new TypeGrid() ;
 	EncounterSet_panel.setTitle( @LRL-panel-EncounterSet ) ;
-	let EncounterSet_control = new uiEncounterSetList( 'EncounterSet' , bindings , [FRONT,BACK] ) ;
-	let EncounterSetPortrait_control = new uiPortrait( 'EncounterSet',diy) ;
+	let EncounterSet_control = new uiEncounterSetList('EncounterSet' , bindings , [FRONT,BACK] ) ;
+	let EncounterSetPortrait_control = new uiPortrait('EncounterSet',diy) ;
 	EncounterSet_panel.place(
 		EncounterSet_control , 'hfill' ,
 		EncounterSetPortrait_control , 'br hfill'
@@ -62,14 +62,14 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let Template_panel = new TypeGrid() ;
 	Template_panel.setTitle( @LRL-panel-Template ) ;
 
-	list = new Array( 'Standard' , 'Nightmare' ) ;
+	list = new Array('Standard' , 'Nightmare' ) ;
 	if( advancedControls ) list = list.concat( new Array('Collection','Custom') ) ;
-	let Template_control = new uiIconList( 'Template' , list , bindings , [FRONT,BACK] ) ;
+	let Template_control = new uiIconList('Template' , list , bindings , [FRONT,BACK] ) ;
 	Template_panel.place( Template_control , 'hfill' ) ;
 	if( advancedControls ){
-		CustomTint_control = new uiTint( 'Custom' , bindings ) ;
+		CustomTint_control = new uiTint('Custom' , bindings ) ;
 		CustomTint_control.title = @LRL-uiTint-TemplateTint ;
-		CustomOutsideTint_control = new uiTint( 'Custom-outside' , bindings ) ;
+		CustomOutsideTint_control = new uiTint('Custom-outside' , bindings ) ;
 		CustomOutsideTint_control.title = @LRL-uiTint-TemplateTextTint ;
 		Template_panel.place(
 			CustomTint_control , 'br hfill'
@@ -81,11 +81,11 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// CUTTING PANEL
 	let Cutting_panel = new TypeGrid() ;
 	Cutting_panel.setTitle( @LRL-panel-Cutting ) ;
-	list = new Array( 'CutNo' , 'Cut' , 'CutBig' ) ;
-	let ShowCut_control = new uiCycler( 'ShowCut' , list , bindings , [FRONT,BACK] );
+	list = new Array('CutNo' , 'Cut' , 'CutBig' ) ;
+	let ShowCut_control = new uiCycler('ShowCut' , list , bindings , [FRONT,BACK] );
 	Cutting_panel.place( ShowCut_control , 'hfill' ) ;
 	if( advancedControls ){
-		let ShowBleeding_control = new uiButtonText( 'ShowBleeding' , diy , bindings , [FRONT,BACK] ) ;
+		let ShowBleeding_control = new uiButtonText('ShowBleeding' , diy , bindings , [FRONT,BACK] ) ;
 		Cutting_panel.place( ShowBleeding_control ,'' ) ;
 	}
 	Template_tab.place( Cutting_panel , 'br hfill' ) ;
@@ -99,9 +99,9 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// PORTRAIT PANEL
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
-	let Artist_control = new uiText( 'Artist' , bindings , [FRONT,BACK] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
-	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
+	let Artist_control = new uiText('Artist' , bindings , [FRONT,BACK] ) ;
+	let Portrait_control = new uiPortrait('Portrait',diy) ;
+	let PortraitMirror_control = new uiPortraitMirror('Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
 		, Portrait_control , 'br hfill' 
@@ -118,9 +118,9 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// COLLECTION PANEL
 	let Collection_panel = new TypeGrid() ;
 	Collection_panel.setTitle( @LRL-panel-Collection ) ;
-	//let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [FRONT,BACK] ) ;
+	//let CollectionInfo_control = new uiText('CollectionInfo' , bindings , [FRONT,BACK] ) ;
 	let Collection_control = new uiCollectionList( bindings , [FRONT,BACK] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
+	let CollectionPortrait_control = new uiPortrait('Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		//, @LRL-Information , '' , CollectionInfo_control , 'hfill' 
@@ -136,18 +136,18 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 function createFrontPainter( diy, sheet ){ debug(1,'\ncreateFrontPainter') ;
 
 // TEMPLATE
-	Custom_tinter = new createTinter( 'Custom',diy) ;
-	CustomOutside_tinter = new createTinter( 'Custom-outside',diy) ;
+	Custom_tinter = new createTinter('Custom',diy) ;
+	CustomOutside_tinter = new createTinter('Custom-outside',diy) ;
 
 // STATS
 
 // TEXT
-	Name_writer = new createTextBox( 'Name' , diy , sheet ) ;
-	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
+	Name_writer = new createTextBox('Name' , diy , sheet ) ;
+	Bottom_writer = new createTextBox('Bottom' , diy , sheet ) ;
 
-	updateExternalPortrait( 'Portrait',diy) ;
-	updateExternalPortrait( 'Collection',diy) ;
-	updateExternalPortrait( 'EncounterSet',diy) ;
+	updateExternalPortrait('Portrait',diy) ;
+	updateExternalPortrait('Collection',diy) ;
+	updateExternalPortrait('EncounterSet',diy) ;
 }
 
 function createBackPainter(diy,sheet){ debug(1,'\ncreateBackPainter') ; }
@@ -194,14 +194,14 @@ function paintCommon( diy , g , sheet ){ debug(2,'\npaintCommon') ;
 	}
 	
 // PORTRAIT
-	paintPortrait( 'Portrait' , diy , g , sheet ) ;
+	paintPortrait('Portrait' , diy , g , sheet ) ;
 	
 // TEMPLATE
 	if( ($Template=='Custom') || ($Template=='Collection') ){
 		let tint ; let tintOut ;
 		if( ($Template=='Custom') || ($Collection == 'Empty') || ($Collection == 'Custom') ){
-			tint = diy.settings.getTint( 'Custom' ) ;
-			tintOut = diy.settings.getTint( 'Custom-outside' ) ;
+			tint = diy.settings.getTint('Custom' ) ;
+			tintOut = diy.settings.getTint('Custom-outside' ) ;
 		}else{
 			tint = diy.settings.getTint( $Collection ) ;
 			tintOut = diy.settings.getTint( $Collection+'-outside' ) ;
@@ -214,8 +214,8 @@ function paintCommon( diy , g , sheet ){ debug(2,'\npaintCommon') ;
 	paintTemplate( diy , g ,sheet ) ;
 
 	// ICONS
-	paintIconDecoratedThis( 'EncounterSet' , diy , g , sheet ) ;
-	paintIconDecoratedThis( 'Collection' , diy , g , sheet ) ;
+	paintIconDecoratedThis('EncounterSet' , diy , g , sheet ) ;
+	paintIconDecoratedThis('Collection' , diy , g , sheet ) ;
 	
 	// TEXT
 	writeTextShadowed('Name',Name_writer,diy,g,sheet) ;
@@ -223,7 +223,7 @@ function paintCommon( diy , g , sheet ){ debug(2,'\npaintCommon') ;
 	writeArtist( diy , g , sheet ) ;
 	
 	// CUT
-	if( diy.settings.getBoolean( 'ShowBleeding' ) ){
+	if( diy.settings.getBoolean('ShowBleeding' ) ){
 		debug( 4 , '\tShowBleeding' ) ;
 		sheet.paintImage( g , 'Template-bleeding' , 'Template-region' ) ;
 	}
@@ -243,17 +243,17 @@ function paintBack( g , diy , sheet ){ debug(1,'\npaintBack') ;
 }
 
 if( sourcefile == 'Quickscript' ){
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
 
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
 	Eons.namedObjects.LRL = new gameObject() ;
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
-	GameLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
 
-	testDIYScript( 'LRL' ) ;
+	testDIYScript('LRL' ) ;
 }else{
-	useLibrary( 'res://TheLordOfTheRingsLCG/library.js' ) ;
+	useLibrary('res://TheLordOfTheRingsLCG/library.js' ) ;
 }

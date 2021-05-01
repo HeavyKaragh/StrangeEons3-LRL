@@ -2,10 +2,10 @@
 // The Lord of the Rings: The Card Game
 
 // libraries
-useLibrary( 'imageutils') ;
-useLibrary( 'markup' ) ;
-useLibrary( 'extension' ) ;
-useLibrary( 'ui' ) ;
+useLibrary('imageutils') ;
+useLibrary('markup' ) ;
+useLibrary('extension' ) ;
+useLibrary('ui' ) ;
 
 var GameLanguage = Language.getGame() ;
 var InterfaceLanguage = Language.getInterface() ;
@@ -90,8 +90,8 @@ and game .properties files' localized versions are available).
 		ImageUtils.get( PathUi+'TheLordOfTheRingsLCG.png' )
 //'LRL',@LRL-TheLordOfTheRingsLCG,#LRL-TheLordOfTheRingsLCG,ImageUtils.get(PathUi+'TheLordOfTheRingsLCG.png'),null
 	) ;
-	GAME.masterSettings.addSettingsFrom( 'TheLordOfTheRingsLCG/LRL.settings' ) ;
-	GAME.masterSettings.addSettingsFrom( 'TheLordOfTheRingsLCG/LRL-I.settings' ) ;
+	GAME.masterSettings.addSettingsFrom('TheLordOfTheRingsLCG/LRL.settings' ) ;
+	GAME.masterSettings.addSettingsFrom('TheLordOfTheRingsLCG/LRL-I.settings' ) ;
 	if( $LRL-uiIconSize == null ) $LRL-uiIconSize = 24 ;
 	if( $LRL-IllustratorUnknown == null ) $LRL-IllustratorUnknown = '' ;
 	if( $LRL-IllustratorShort == null ) $LRL-IllustratorShort =  '' ;
@@ -113,14 +113,14 @@ and game .properties files' localized versions are available).
 	pc.addHelp( @LRL-preferences-guideLink , @LRL-preferences-guide , false ) ;
 
 	if( $LRL-AdvancedControls == null ) $LRL-AdvancedControls = false ;
-	pc.addCheckBox( 'LRL-AdvancedControls' , @LRL-preferences-AdvancedControls , false ) ;
+	pc.addCheckBox('LRL-AdvancedControls' , @LRL-preferences-AdvancedControls , false ) ;
 	pc.join() ; 
 	pc.addTip( @LRL-tip-AdvancedControls ) ;
 	
 	if( $LRL-debug == null ) $LRL-debug = 5 ;
 	pc.label( @LRL-preferences-debug ) ;
 	pc.join() ; 
-	pc.addDropDown( 'LRL-debug'
+	pc.addDropDown('LRL-debug'
 		, [ @LRL-preferences-debug-0 , @LRL-preferences-debug-1 , @LRL-preferences-debug-2 , @LRL-preferences-debug-3 , @LRL-preferences-debug-4 , @LRL-preferences-debug-5 ] // interface labels
 		, [ 0 , 1 , 2 , 3 , 4 , 5 ] // actual setting values
 	) ;
@@ -130,34 +130,34 @@ and game .properties files' localized versions are available).
 	pc.subheading( @LRL-preferences-default ) ;
 	
 	if( $LRL-PreferencesUpdate == null ) $LRL-PreferencesUpdate = false ; 
-	pc.addCheckBox( 'LRL-PreferencesUpdate' , @LRL-preferences-PreferencesUpdate , false ) ;
+	pc.addCheckBox('LRL-PreferencesUpdate' , @LRL-preferences-PreferencesUpdate , false ) ;
 	pc.join() ; 
 	pc.addTip( @LRL-tip-PreferencesUpdate ) ;
 	
 	if( $LRL-CollectionInfo == null ) $LRL-CollectionInfo = '' ; 
-	pc.addField( 'LRL-CollectionInfo' , @LRL-preferences-CollectionInfo , ShortText ) ;
+	pc.addField('LRL-CollectionInfo' , @LRL-preferences-CollectionInfo , ShortText ) ;
 	pc.join(); 
 	pc.addTip( @LRL-tip-CollectionInfo ) ;
 
 	if( $LRL-Copyright == null ) $LRL-Copyright = '' ; 
-	pc.addField( 'LRL-Copyright' , @LRL-preferences-Copyright , MediumText ) ;
+	pc.addField('LRL-Copyright' , @LRL-preferences-Copyright , MediumText ) ;
 	pc.join() ; 
 	pc.addTip( @LRL-tip-Copyright ) ;
 
 	if( $LRL-Collection == null ) $LRL-Collection = 'KeepValue' ; 
 	pc.label( @LRL-preferences-Collection ) ;
 	pc.join() ; 
-	let values = new Array( 'KeepValue' ).concat( Eons.namedObjects.LRL.DefaultIconList ) ;
+	let values = new Array('KeepValue' ).concat( Eons.namedObjects.LRL.DefaultIconList ) ;
 	values = values.concat( Eons.namedObjects.LRL.CollectionList ) ;
 	let labels = new Array();
 	for( index in values ){ labels[index] = @('LRL-'+values[index]) ; }
-	pc.addDropDown( 'LRL-Collection' , labels , values ) ;
+	pc.addDropDown('LRL-Collection' , labels , values ) ;
 	pc.join() ; 
 	pc.addTip( @LRL-tip-Collection ) ;
 	
 	if( $LRL-Collection-portrait-template == null ) $LRL-Collection-portrait-template = '' ; 
 	pc.indent() ; 
-	pc.addField( 'LRL-Collection-portrait-template' , @LRL-preferences-pathToIcon , LongText ) ;
+	pc.addField('LRL-Collection-portrait-template' , @LRL-preferences-pathToIcon , LongText ) ;
 	pc.join() ; 
 	pc.addTip( @LRL-tip-CollectionPath ) ;
 //	pc.join() ; 
@@ -175,17 +175,17 @@ and game .properties files' localized versions are available).
 	if( $LRL-EncounterSet == null ) $LRL-EncounterSet = 'KeepValue' ; 
 	pc.label( @LRL-preferences-EncounterSet ) ;
 	pc.join() ; 
-	values = new Array( 'KeepValue' ).concat( Eons.namedObjects.LRL.DefaultIconList ) ;
+	values = new Array('KeepValue' ).concat( Eons.namedObjects.LRL.DefaultIconList ) ;
 	values = values.concat( Eons.namedObjects.LRL.EncounterSetList ) ;
 	labels = new Array() ;
 	for( index in values ){ labels[index] = @('LRL-'+values[index]) ; }
-	pc.addDropDown( 'LRL-EncounterSet' , labels , values ) ;
+	pc.addDropDown('LRL-EncounterSet' , labels , values ) ;
 	pc.join() ; 
 	pc.addTip( @LRL-tip-EncounterSet ) ;
 	
 	if( $LRL-EncounterSet-portrait-template == null ) $LRL-EncounterSet-portrait-template = '' ; 
 	pc.indent() ; 
-	pc.addField( 'LRL-EncounterSet-portrait-template' , @LRL-preferences-pathToIcon , LongText ) ;
+	pc.addField('LRL-EncounterSet-portrait-template' , @LRL-preferences-pathToIcon , LongText ) ;
 	pc.join() ; 
 	pc.addTip( @LRL-tip-EncounterSetPath ) ;
 //	pc.join() ; 
@@ -248,67 +248,67 @@ and game .properties files' localized versions are available).
 //	pc.addTip( @LRL-textJustified-tip ) ;
 //	
 //	if( $LRL-Enemy-justified == null ) $LRL-Enemy-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Enemy-justified' , @LRL-Enemy , false ) ;
+//	pc.addCheckBox('LRL-Enemy-justified' , @LRL-Enemy , false ) ;
 //	
 //	if( $LRL-Location-justified == null ) $LRL-Location-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Location-justified' , @LRL-Location , false ) ;
+//	pc.addCheckBox('LRL-Location-justified' , @LRL-Location , false ) ;
 //	
 //	if( $LRL-Objective-justified == null ) $LRL-Objective-justified = 'no' ;
-//	pc.addCheckBox( 'LRL-Objective-justified' , @LRL-Objective , false ) ;
+//	pc.addCheckBox('LRL-Objective-justified' , @LRL-Objective , false ) ;
 //	
 //	if( $LRL-ObjectiveAlly-justified == null ) $LRL-ObjectiveAlly-justified = 'no' ;
-//	pc.addCheckBox( 'LRL-ObjectiveAlly-justified' , @LRL-ObjectiveAlly , false ) ;
+//	pc.addCheckBox('LRL-ObjectiveAlly-justified' , @LRL-ObjectiveAlly , false ) ;
 //	
 //	if( $LRL-SideQuestEncounter-justified == null ) $LRL-SideQuestEncounter-justified = 'yes' ;
-//	pc.addCheckBox( 'LRL-SideQuestEncounter-justified' , @LRL-SideQuestEncounter , false ) ;
+//	pc.addCheckBox('LRL-SideQuestEncounter-justified' , @LRL-SideQuestEncounter , false ) ;
 //	
 //	if( $LRL-Treachery-justified == null ) $LRL-Treachery-justified = 'no' ;
-//	pc.addCheckBox( 'LRL-Treachery-justified' , @LRL-Treachery , false ) ;
+//	pc.addCheckBox('LRL-Treachery-justified' , @LRL-Treachery , false ) ;
 //	
 //	if( $LRL-Quest-justified == null ) $LRL-Quest-justified = 'yes' ;
-//	pc.addCheckBox( 'LRL-Quest-justified' , @LRL-Quest , false ) ;
+//	pc.addCheckBox('LRL-Quest-justified' , @LRL-Quest , false ) ;
 //	
 //	if( $LRL-Campaign-justified == null ) $LRL-Campaign-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Campaign-justified' , @LRL-Campaign , false ) ;
+//	pc.addCheckBox('LRL-Campaign-justified' , @LRL-Campaign , false ) ;
 //	
 //	if( $LRL-Preparation-justified == null ) $LRL-Preparation-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Preparation-justified' , @LRL-Preparation , false ) ;
+//	pc.addCheckBox('LRL-Preparation-justified' , @LRL-Preparation , false ) ;
 //
 //	if( $LRL-Hero-justified == null ) $LRL-Hero-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Hero-justified' , @LRL-Hero , false ) ;
+//	pc.addCheckBox('LRL-Hero-justified' , @LRL-Hero , false ) ;
 //	
 //	if( $LRL-Ally-justified == null ) $LRL-Ally-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Ally-justified' , @LRL-Ally , false ) ;
+//	pc.addCheckBox('LRL-Ally-justified' , @LRL-Ally , false ) ;
 //	
 //	if( $LRL-Attachment-justified == null ) $LRL-Attachment-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Attachment-justified' , @LRL-Attachment , false ) ;
+//	pc.addCheckBox('LRL-Attachment-justified' , @LRL-Attachment , false ) ;
 //	
 //	if( $LRL-Event-justified == null ) $LRL-Event-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Event-justified' , @LRL-Event , false ) ;
+//	pc.addCheckBox('LRL-Event-justified' , @LRL-Event , false ) ;
 //	
 //	if( $LRL-Treasure-justified == null ) $LRL-Treasure-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Treasure-justified' , @LRL-Treasure , false ) ;
+//	pc.addCheckBox('LRL-Treasure-justified' , @LRL-Treasure , false ) ;
 //	
 //	if( $LRL-Gift-justified == null ) $LRL-Gift-justified = 'no' ; 
-//	pc.addCheckBox( 'LRL-Gift-justified' , @LRL-Gift , false ) ;
+//	pc.addCheckBox('LRL-Gift-justified' , @LRL-Gift , false ) ;
 //	
 //	if( $LRL-SideQuestPlayer-justified == null ) $LRL-SideQuestPlayer-justified = 'yes' ; 
-//	pc.addCheckBox( 'LRL-SideQuestPlayer-justified' , @LRL-SideQuestPlayer , false ) ;
+//	pc.addCheckBox('LRL-SideQuestPlayer-justified' , @LRL-SideQuestPlayer , false ) ;
 //	
 //	if( $LRL-QuestSheet-justified == null ) $LRL-QuestSheet-justified = 'yes' ; 
-//	pc.addCheckBox( 'LRL-QuestSheet-justified' , @LRL-QuestSheet , false ) ;
+//	pc.addCheckBox('LRL-QuestSheet-justified' , @LRL-QuestSheet , false ) ;
 //	
 //	if( $LRL-RulesCard-justified == null ) $LRL-RulesCard-justified = 'yes' ; 
-//	pc.addCheckBox( 'LRL-RulesCard-justified' , @LRL-RulesCard , false ) ;
+//	pc.addCheckBox('LRL-RulesCard-justified' , @LRL-RulesCard , false ) ;
 //	
 //	if( $LRL-Presentation-justified == null ) $LRL-Presentation-justified = 'yes' ; 
-//	pc.addCheckBox( 'LRL-Presentation-justified' , @LRL-Presentation , false ) ;
+//	pc.addCheckBox('LRL-Presentation-justified' , @LRL-Presentation , false ) ;
 //	
 //	if( $LRL-Scenario-justified == null ) $LRL-Scenario-justified = 'yes' ; 
-//	pc.addCheckBox( 'LRL-Scenario-justified' , @LRL-Scenario , false ) ;
+//	pc.addCheckBox('LRL-Scenario-justified' , @LRL-Scenario , false ) ;
 //	
 //	if( $LRL-Set-justified == null ) $LRL-Set-justified = 'yes' ; 
-//	pc.addCheckBox( 'LRL-Set-justified' , @LRL-Set , false ) ;
+//	pc.addCheckBox('LRL-Set-justified' , @LRL-Set , false ) ;
 //
 ////	if( $LRL-Draft == null ) $LRL-Draft = 'yes' ;
 ////	pc.addCheckBox('LRL-Draft',@LRL-Draft,false);
@@ -318,7 +318,7 @@ and game .properties files' localized versions are available).
 //	pc.subheading( @LRL-byComponent ) ;
 //	
 //	if( $LRL-Hero-Promo-outOfBox == null ) $LRL-Hero-Promo-outOfBox = 'yes' ; 
-//	pc.addCheckBox( 'LRL-HeroPromo-outOfBox' , @LRL-HeroPromo-outOfBox , false ) ;
+//	pc.addCheckBox('LRL-HeroPromo-outOfBox' , @LRL-HeroPromo-outOfBox , false ) ;
 //
 //	
 //	pc.subheading( @LRL-localization ) ;
@@ -332,16 +332,16 @@ and game .properties files' localized versions are available).
 //		[ 'last' , 'current' , 'specified' ]
 //	) ;
 //	pc.join() ; 
-//	pc.addField( 'LRL-locale' , '' , 6 ) ;
+//	pc.addField('LRL-locale' , '' , 6 ) ;
 //	pc.join() ; 
 //	pc.addTip( @LRL-locale-tip ) ;
 //	
 ////	pc.subheading( @LRL-preferences-subheading-debug ) ;
-////	pc.addCheckBox( 'LRL-debug' , @LRL-preferences-debug , false ) ;
+////	pc.addCheckBox('LRL-debug' , @LRL-preferences-debug , false ) ;
 ////	pc.join() ; 
 ////	pc.addTip( @LRL-preferences-tip-debug ) ;
 //	
-//	pc.addCheckBox( 'LRL-dontDelete' , @LRL-preferences-dontDelete , false ) ;
+//	pc.addCheckBox('LRL-dontDelete' , @LRL-preferences-dontDelete , false ) ;
 //	pc.join() ; 
 //	pc.addTip( @LRL-dontDelete-tip ) ;
 	
@@ -447,7 +447,7 @@ function gameObject(){// GAME ){
 	debug( 3 , 'FullIconList: '+this.FullIconList ) ;
 	
 	// Register fonts to be used in the plugin
-	useLibrary( 'fontutils' ) ;
+	useLibrary('fontutils' ) ;
 	var pathLRLfont = 'TheLordOfTheRingsLCG/font/LRLfont.ttf' ;
 	var pathLRLsymbols = 'TheLordOfTheRingsLCG/font/LRLsymbols.ttf' ;
 	var pathLRLwindlass = 'TheLordOfTheRingsLCG/font/LRLwindlass.ttf' ;
@@ -457,7 +457,7 @@ function gameObject(){// GAME ){
 	this.LRLwindlass = FontUtils.registerFontFamilyFromResources.apply( this , [pathLRLwindlass] ) ;
 
 //	this.DumbFont = FontUtils.registerFontFamilyFromResources.apply(this,['TheLordOfTheRingsLCG/font/Dumbledor.ttf']);
-//	this.UnicodeFont = registerFont( 'Sun-ExtA.ttf' );
+//	this.UnicodeFont = registerFont('Sun-ExtA.ttf' );
 
 	// "StyleList" defines the tags for text styles used in boxes 
 	this.StyleList = new Array(

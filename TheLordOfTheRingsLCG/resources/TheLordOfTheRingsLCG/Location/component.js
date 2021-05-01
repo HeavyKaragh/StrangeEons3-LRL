@@ -17,14 +17,14 @@ function create(diy){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait',diy) ;
-	createPortrait( 'Collection',diy) ;
-	createPortrait( 'EncounterSet',diy) ;
+	createPortrait('Portrait',diy) ;
+	createPortrait('Collection',diy) ;
+	createPortrait('EncounterSet',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
 function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
-	let advancedControls = diy.settings.getBoolean( 'LRL-AdvancedControls' ) ;
+	let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls' ) ;
 	if( $Template != 'Standard' ) advancedControls = true ;
 
 	var bindings = new Bindings( editor , diy ) ;
@@ -44,8 +44,8 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// STATS PANEL
 	let Stats_panel = new TypeGrid() ;
 	Stats_panel.setTitle( @LRL-panel-Stats ) ;
-	let Threat_control = new uiStatIcon( 'Threat' , bindings , [FRONT] ) ;
-	let Progress_control = new uiStatIcon( 'Progress' , bindings , [FRONT] ) ;
+	let Threat_control = new uiStatIcon('Threat' , bindings , [FRONT] ) ;
+	let Progress_control = new uiStatIcon('Progress' , bindings , [FRONT] ) ;
 	Stats_panel.place(
 		Threat_control , '' 
 		, Progress_control , 'grow' 
@@ -55,10 +55,10 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// EFFECT PANEL
 	let Effect_panel = new TypeGrid() ;
 	Effect_panel.setTitle( @LRL-panel-Effect ) ;
-	let Trait_control = new uiParagraphLabeled( 'Trait' , bindings , [FRONT] , 'line' ) ;
-	let Rules_control = new uiParagraphLabeled( 'Rules' , bindings , [FRONT] , 'big' ) ;
-	let Shadow_control = new uiParagraphLabeled( 'Shadow' , bindings , [FRONT] , 'medium' ) ;
-	let Flavour_control = new uiParagraphLabeled( 'Flavour' , bindings , [FRONT] , 'medium' ) ;
+	let Trait_control = new uiParagraphLabeled('Trait' , bindings , [FRONT] , 'line' ) ;
+	let Rules_control = new uiParagraphLabeled('Rules' , bindings , [FRONT] , 'big' ) ;
+	let Shadow_control = new uiParagraphLabeled('Shadow' , bindings , [FRONT] , 'medium' ) ;
+	let Flavour_control = new uiParagraphLabeled('Flavour' , bindings , [FRONT] , 'medium' ) ;
 	Effect_panel.place(
 		Trait_control , 'hfill'
 		, Rules_control , 'br hfill'
@@ -70,9 +70,9 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// OTHER PANEL
 	let OtherEffect_panel = new TypeGrid() ;
 	OtherEffect_panel.setTitle( @LRL-panel-OtherEffect ) ;
-	let OptionLeft_control = new uiText( 'OptionLeft' , bindings , [FRONT] ) ;
-	let OptionRight_control = new uiText( 'OptionRight' , bindings , [FRONT] ) ;
-	let OptionSpecial_control = new uiIconList( 'OptionSpecial' , GO.OptionSpecialList , bindings , [FRONT] ) ;
+	let OptionLeft_control = new uiText('OptionLeft' , bindings , [FRONT] ) ;
+	let OptionRight_control = new uiText('OptionRight' , bindings , [FRONT] ) ;
+	let OptionSpecial_control = new uiIconList('OptionSpecial' , GO.OptionSpecialList , bindings , [FRONT] ) ;
 	OtherEffect_panel.place(
 		@LRL-OptionLeft , '' , OptionLeft_control , 'tab hfill'
 		, @LRL-OptionRight , 'br' , OptionRight_control , 'tab hfill'
@@ -89,19 +89,19 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// ENCOUNTER SET PANEL
 	let EncounterSet_panel = new TypeGrid() ;
 	EncounterSet_panel.setTitle( @LRL-panel-EncounterSet ) ;
-	let EncounterSet_control = new uiEncounterSetList( 'EncounterSet' , bindings , [FRONT] ) ;
-	let EncounterSetNumber_control = new uiSpinner( 'EncounterSetNumber' , bindings , [FRONT] ) ;
-	let EncounterSetTotal_control = new uiSpinner( 'EncounterSetTotal' , bindings , [FRONT] ) ;
+	let EncounterSet_control = new uiEncounterSetList('EncounterSet' , bindings , [FRONT] ) ;
+	let EncounterSetNumber_control = new uiSpinner('EncounterSetNumber' , bindings , [FRONT] ) ;
+	let EncounterSetTotal_control = new uiSpinner('EncounterSetTotal' , bindings , [FRONT] ) ;
 	EncounterSet_panel.place(
 		EncounterSet_control , 'hfill' ,
 		@LRL-Number, 'br' , EncounterSetNumber_control , '' , @LRL-Total,'', EncounterSetTotal_control , ''
 	) ;
 	if( advancedControls ){
-		list = new Array( 'Standard' , 'Gold' , 'Red' , 'Green' , 'Blue' , 'Purple' ) ;
-		let Difficulty_control = new uiIconList( 'Difficulty' , list , bindings , [FRONT] ) ;
+		list = new Array('Standard' , 'Gold' , 'Red' , 'Green' , 'Blue' , 'Purple' ) ;
+		let Difficulty_control = new uiIconList('Difficulty' , list , bindings , [FRONT] ) ;
 		EncounterSet_panel.place( @LRL-Difficulty, '' , Difficulty_control , 'hfill' ) ;
 	}
-	let EncounterSetPortrait_control = new uiPortrait( 'EncounterSet',diy) ;
+	let EncounterSetPortrait_control = new uiPortrait('EncounterSet',diy) ;
 	EncounterSet_panel.place( EncounterSetPortrait_control , 'br hfill' ) ;
 	EncounterSet_tab.place( EncounterSet_panel , 'br hfill' ) ;
 	
@@ -115,8 +115,8 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	if( advancedControls ){
 		let Template_panel = new TypeGrid() ;
 		Template_panel.setTitle( @LRL-panel-Template ) ;
-		list = new Array( 'Standard' , 'Nightmare' ) ;
-		let Template_control = new uiIconList( 'Template' , list , bindings , [FRONT] ) ;
+		list = new Array('Standard' , 'Nightmare' ) ;
+		let Template_control = new uiIconList('Template' , list , bindings , [FRONT] ) ;
 		Template_panel.place( Template_control , 'hfill' ) ;
 		Template_tab.place( Template_panel , 'hfill' ) ;
 	}
@@ -124,10 +124,10 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// CUTTING PANEL
 	let Cutting_panel = new TypeGrid() ;
 	Cutting_panel.setTitle( @LRL-panel-Cutting ) ;
-	let ShowCut_control = new uiButtonText( 'ShowCut' , diy , bindings , [FRONT] ) ;
+	let ShowCut_control = new uiButtonText('ShowCut' , diy , bindings , [FRONT] ) ;
 	Cutting_panel.place( ShowCut_control , 'hfill' ) ;
 	if( advancedControls ){
-		let ShowBleeding_control = new uiButtonText( 'ShowBleeding' , diy , bindings , [FRONT] ) ;
+		let ShowBleeding_control = new uiButtonText('ShowBleeding' , diy , bindings , [FRONT] ) ;
 		Cutting_panel.place( ShowBleeding_control ,'' ) ;
 	}
 	Template_tab.place( Cutting_panel , 'br hfill' ) ;
@@ -141,9 +141,9 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// PORTRAIT PANEL
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
-	let Artist_control = new uiText( 'Artist' , bindings , [FRONT] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
-	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
+	let Artist_control = new uiText('Artist' , bindings , [FRONT] ) ;
+	let Portrait_control = new uiPortrait('Portrait',diy) ;
+	let PortraitMirror_control = new uiPortraitMirror('Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
 		, Portrait_control , 'br hfill' 
@@ -160,10 +160,10 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// COLLECTION PANEL
 	let Collection_panel = new TypeGrid() ;
 	Collection_panel.setTitle( @LRL-panel-Collection ) ;
-	let CollectionNumber_control = new uiSpinner( 'CollectionNumber' , bindings , [FRONT] , 999 ) ;
-	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [FRONT] ) ;
+	let CollectionNumber_control = new uiSpinner('CollectionNumber' , bindings , [FRONT] , 999 ) ;
+	let CollectionInfo_control = new uiText('CollectionInfo' , bindings , [FRONT] ) ;
 	let Collection_control = new uiCollectionList( bindings , [FRONT] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
+	let CollectionPortrait_control = new uiPortrait('Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		, @LRL-Number , 'br' , CollectionNumber_control , '' 
@@ -175,7 +175,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// COPYRIGHT PANEL
 	let Copyright_panel = new TypeGrid() ;
 	Copyright_panel.setTitle( @LRL-panel-Copyright ) ;
-	let Copyright_control = new uiText( 'Copyright' , bindings , [FRONT] ) ;
+	let Copyright_control = new uiText('Copyright' , bindings , [FRONT] ) ;
 	Copyright_panel.place( Copyright_control , 'hfill' ) ;
 	Collection_tab.place( Copyright_panel , 'br hfill' ) ;
 
@@ -183,7 +183,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	if( advancedControls == true ){
 		let Other_panel = new TypeGrid() ;
 		Other_panel.setTitle( @LRL-panel-Other ) ;	
-		let Type_control = new uiText( 'Type' , bindings , [FRONT] ) ;
+		let Type_control = new uiText('Type' , bindings , [FRONT] ) ;
 		Other_panel.place( @LRL-Type , '' , Type_control , 'tab hfill' ) ;
 		Collection_tab.place( Other_panel , 'br hfill' ) ;
 	}
@@ -195,50 +195,50 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 
 function createFrontPainter( diy , sheet ){ debug(1,'createFrontPainter') ;
 // TEMPLATE
-	Difficulty_tinter = new createTinter( 'Difficulty',diy) ;
+	Difficulty_tinter = new createTinter('Difficulty',diy) ;
 
 // STATS
-	Progress_tinter = new createTinter( 'Progress',diy) ;
+	Progress_tinter = new createTinter('Progress',diy) ;
 
 // TEXT
-	Name_writer = new createTextBox( 'Name' , diy , sheet ) ;
-	Body_writer = new createTextBox( 'Body' , diy , sheet ) ;
-	Option_writer = new createTextBox( 'Option' , diy , sheet ) ;
-	Type_writer = new createTextBox( 'Type' , diy , sheet ) ;
-	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
-	Subtype_writer = new createTextBox( 'Subtype' , diy , sheet ) ;
-	EncounterSetNumber_writer = new createTextBox( 'EncounterSetNumber' , diy , sheet ) ;
+	Name_writer = new createTextBox('Name' , diy , sheet ) ;
+	Body_writer = new createTextBox('Body' , diy , sheet ) ;
+	Option_writer = new createTextBox('Option' , diy , sheet ) ;
+	Type_writer = new createTextBox('Type' , diy , sheet ) ;
+	Bottom_writer = new createTextBox('Bottom' , diy , sheet ) ;
+	Subtype_writer = new createTextBox('Subtype' , diy , sheet ) ;
+	EncounterSetNumber_writer = new createTextBox('EncounterSetNumber' , diy , sheet ) ;
 
-	updateExternalPortrait( 'Portrait',diy) ;
-	updateExternalPortrait( 'Collection',diy) ;
-	updateExternalPortrait( 'EncounterSet',diy) ;
+	updateExternalPortrait('Portrait',diy) ;
+	updateExternalPortrait('Collection',diy) ;
+	updateExternalPortrait('EncounterSet',diy) ;
 }
 
 function paintFront( g , diy , sheet ){ debug(1,'paintFront') ;
 
 // PORTRAIT
-	paintPortrait( 'Portrait' , diy , g , sheet ) ;
+	paintPortrait('Portrait' , diy , g , sheet ) ;
 
 // TEMPLATE
 	paintTemplate( diy , g , sheet ) ;
 	if( $Template == 'Standard' ) paintDifficulty( diy , g , sheet ) ;
 
 // ICONS
-	paintIcon( 'Collection' , diy , g , sheet ) ;
-	paintIcon( 'EncounterSet' , diy , g , sheet ) ;
-	paintIcon( 'OptionSpecial' , diy , g , sheet ) ;
+	paintIcon('Collection' , diy , g , sheet ) ;
+	paintIcon('EncounterSet' , diy , g , sheet ) ;
+	paintIcon('OptionSpecial' , diy , g , sheet ) ;
 
 // STATS
-	paintStatTinted( 'Progress' , Progress_tinter , diy , g , sheet ) ;
-	paintStat( 'Threat' , diy , g , sheet ) ;
+	paintStatTinted('Progress' , Progress_tinter , diy , g , sheet ) ;
+	paintStat('Threat' , diy , g , sheet ) ;
 
 // TEXTS
 	writeName( diy , g ) ;
 	writeBody( [ 'Trait' , 'Rules' , 'Shadow' , 'Flavour' ] , diy , g ) ;
 //	switch( $Template ){
-//	case 'Nightmare': region = diy.settings.getRegion( 'Nightmare-Body' ) ; break ;
+//	case 'Nightmare': region = diy.settings.getRegion('Nightmare-Body' ) ; break ;
 //	default:
-//		region = diy.settings.getRegion( 'Body' ) ;
+//		region = diy.settings.getRegion('Body' ) ;
 //	}
 	writeEncounterSetNumber( diy , g ) ;
 	
@@ -255,17 +255,17 @@ function paintFront( g , diy , sheet ){ debug(1,'paintFront') ;
 }
 
 if( sourcefile == 'Quickscript' ){
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
 
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
 	Eons.namedObjects.LRL = new gameObject() ;
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
-	GameLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
 
-	testDIYScript( 'LRL' ) ;
+	testDIYScript('LRL' ) ;
 }else{
-	useLibrary( 'res://TheLordOfTheRingsLCG/library.js' ) ;
+	useLibrary('res://TheLordOfTheRingsLCG/library.js' ) ;
 }

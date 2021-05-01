@@ -17,15 +17,15 @@ function create(diy){ debug(1,'\ncreate') ;
 	diy.bleedMargin = 9 ;
 	
 	diy.customPortraitHandling = true ;
-	createPortrait( 'Portrait',diy) ;
-	createPortrait( 'Collection',diy) ;
-	createPortrait( 'GameName',diy) ;
-	createPortrait( 'Name',diy) ;
+	createPortrait('Portrait',diy) ;
+	createPortrait('Collection',diy) ;
+	createPortrait('GameName',diy) ;
+	createPortrait('Name',diy) ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
 function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
-	let advancedControls = diy.settings.getBoolean( 'LRL-AdvancedControls' ) ;
+	let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls' ) ;
 	if( $Template == 'Custom' ) advancedControls = true ;
 
 	var bindings = new Bindings( editor , diy ) ;
@@ -43,9 +43,9 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	Main_tab.place( Title_panel , 'hfill' ) ;
 
 	// EFFECT PANEL
-	let Story_control = new uiParagraphLabeled( 'Story' , bindings , [BACK] , 'big' ) ;
-	let Description_control = new uiParagraphLabeled( 'Description' , bindings , [BACK] , 'huge' ) ;
-	let Flavour_control = new uiParagraphLabeled( 'Flavour' , bindings , [BACK] , 'medium' ) ;
+	let Story_control = new uiParagraphLabeled('Story' , bindings , [BACK] , 'big' ) ;
+	let Description_control = new uiParagraphLabeled('Description' , bindings , [BACK] , 'huge' ) ;
+	let Flavour_control = new uiParagraphLabeled('Flavour' , bindings , [BACK] , 'medium' ) ;
 	let Effect_panel = new TypeGrid() ;
 	Effect_panel.setTitle( @LRL-panel-Effect ) ;
 	Effect_panel.place(
@@ -65,14 +65,14 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	let Template_panel = new TypeGrid() ;
 	Template_panel.setTitle( @LRL-panel-Template ) ;
 
-	list = new Array( 'Standard' , 'Nightmare' ) ;
+	list = new Array('Standard' , 'Nightmare' ) ;
 	if( advancedControls ) list = list.concat( new Array('Collection','Custom') ) ;
-	let Template_control = new uiIconList( 'Template' , list , bindings , [FRONT,BACK] ) ;
+	let Template_control = new uiIconList('Template' , list , bindings , [FRONT,BACK] ) ;
 	Template_panel.place( Template_control , 'hfill' ) ;
 	if( advancedControls ){
-		CustomTint_control = new uiTint( 'Custom' , bindings ) ;
+		CustomTint_control = new uiTint('Custom' , bindings ) ;
 		CustomTint_control.title = @LRL-uiTint-TemplateTint ;
-		CustomOutsideTint_control = new uiTint( 'Custom-outside' , bindings ) ;
+		CustomOutsideTint_control = new uiTint('Custom-outside' , bindings ) ;
 		CustomOutsideTint_control.title = @LRL-uiTint-TemplateTextTint ;
 		Template_panel.place(
 			CustomTint_control , 'br hfill'
@@ -84,10 +84,10 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// CUTTING PANEL
 	let Cutting_panel = new TypeGrid() ;
 	Cutting_panel.setTitle( @LRL-panel-Cutting ) ;
-	let ShowCut_control = new uiButtonText( 'ShowCut' , diy , bindings , [FRONT,BACK] ) ;
+	let ShowCut_control = new uiButtonText('ShowCut' , diy , bindings , [FRONT,BACK] ) ;
 	Cutting_panel.place( ShowCut_control , 'hfill' ) ;
 	if( advancedControls ){
-		let ShowBleeding_control = new uiButtonText( 'ShowBleeding' , diy , bindings , [FRONT,BACK] ) ;
+		let ShowBleeding_control = new uiButtonText('ShowBleeding' , diy , bindings , [FRONT,BACK] ) ;
 		Cutting_panel.place( ShowBleeding_control ,'' ) ;
 	}
 	Template_tab.place( Cutting_panel , 'br hfill' ) ;
@@ -100,9 +100,9 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	
 	let Portrait_panel = new TypeGrid() ;
 	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
-	let Artist_control = new uiText( 'Artist' , bindings , [FRONT] ) ;
-	let Portrait_control = new uiPortrait( 'Portrait',diy) ;
-	let PortraitMirror_control = new uiPortraitMirror( 'Portrait' , Portrait_control ) ;
+	let Artist_control = new uiText('Artist' , bindings , [FRONT] ) ;
+	let Portrait_control = new uiPortrait('Portrait',diy) ;
+	let PortraitMirror_control = new uiPortraitMirror('Portrait' , Portrait_control ) ;
 	Portrait_panel.place(
 		@LRL-Artist , '' , Artist_control , 'hfill' 
 		, Portrait_control , 'br hfill' 
@@ -119,9 +119,9 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// COLLECTION PANEL
 	let Collection_panel = new TypeGrid() ;
 	Collection_panel.setTitle( @LRL-panel-Collection ) ;
-	let CollectionInfo_control = new uiText( 'CollectionInfo' , bindings , [BACK] ) ;
+	let CollectionInfo_control = new uiText('CollectionInfo' , bindings , [BACK] ) ;
 	let Collection_control = new uiCollectionList( bindings , [BACK] ) ;
-	let CollectionPortrait_control = new uiPortrait( 'Collection',diy) ;
+	let CollectionPortrait_control = new uiPortrait('Collection',diy) ;
 	Collection_panel.place(
 		Collection_control , 'hfill' 
 		, @LRL-Information , '' , CollectionInfo_control , 'hfill' 
@@ -132,7 +132,7 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	// COPYRIGHT PANEL
 	let Copyright_panel = new TypeGrid() ;
 	Copyright_panel.setTitle( @LRL-panel-Copyright ) ;
-	let Copyright_control = new uiText( 'Copyright' , bindings , [BACK] ) ;
+	let Copyright_control = new uiText('Copyright' , bindings , [BACK] ) ;
 	Copyright_panel.place( Copyright_control , 'hfill' ) ;
 	Collection_tab.place( Copyright_panel , 'br hfill' ) ;
 
@@ -140,10 +140,10 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	if( advancedControls == true ){
 		let Other_panel = new TypeGrid() ;
 		Other_panel.setTitle( @LRL-panel-Other ) ;	
-		let GameName_control = new uiParagraphLabeled( 'GameName' , bindings , [FRONT] , 'medium' ) ;
-		let Type_control = new uiText( 'Type' , bindings , [BACK] ) ;
-		let GameNamePortrait_control = new uiPortrait( 'GameName',diy) ;
-		let NamePortrait_control = new uiPortrait( 'Name',diy) ;
+		let GameName_control = new uiParagraphLabeled('GameName' , bindings , [FRONT] , 'medium' ) ;
+		let Type_control = new uiText('Type' , bindings , [BACK] ) ;
+		let GameNamePortrait_control = new uiPortrait('GameName',diy) ;
+		let NamePortrait_control = new uiPortrait('Name',diy) ;
 		Other_panel.place(
 			@LRL-Type , '' , Type_control , 'tab hfill'
 			, GameName_control , 'br hfill'
@@ -160,41 +160,41 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 
 function createFrontPainter( diy , sheet ){ debug(1,'\ncreateFrontPainter') ;
 // TEMPLATE
-	Custom_tinter = new createTinter( 'Custom',diy) ;
-	CustomOutside_tinter = new createTinter( 'Custom-outside',diy) ;
+	Custom_tinter = new createTinter('Custom',diy) ;
+	CustomOutside_tinter = new createTinter('Custom-outside',diy) ;
 	
 // TEXT
-	Name_writer = new createTextBox( 'Name' , diy , sheet ) ;
+	Name_writer = new createTextBox('Name' , diy , sheet ) ;
 	
-	updateExternalPortrait( 'Portrait',diy) ;
-	updateExternalPortrait( 'GameName',diy) ;
-	updateExternalPortrait( 'Name',diy) ;
+	updateExternalPortrait('Portrait',diy) ;
+	updateExternalPortrait('GameName',diy) ;
+	updateExternalPortrait('Name',diy) ;
 }
 
 function createBackPainter( diy, sheet ){ debug(1,'\ncreateBackPainter') ;
 // TEMPLATE
-	CustomBack_tinter = new createTinter( 'CustomBack',diy) ;
+	CustomBack_tinter = new createTinter('CustomBack',diy) ;
 	
 // TEXT
-	Body_writer = new createTextBox( 'Body' , diy , sheet ) ;
-	Bottom_writer = new createTextBox( 'Bottom' , diy , sheet ) ;
-	Type_writer = new createTextBox( 'Type' , diy , sheet ) ;
-	Page_writer = new createTextBox( 'Page' , diy , sheet ) ;
+	Body_writer = new createTextBox('Body' , diy , sheet ) ;
+	Bottom_writer = new createTextBox('Bottom' , diy , sheet ) ;
+	Type_writer = new createTextBox('Type' , diy , sheet ) ;
+	Page_writer = new createTextBox('Page' , diy , sheet ) ;
 	
-	updateExternalPortrait( 'Collection',diy) ;
-	updateExternalPortrait( 'BackgroundBack',diy) ;
+	updateExternalPortrait('Collection',diy) ;
+	updateExternalPortrait('BackgroundBack',diy) ;
 }
 
 function paintFront( g, diy, sheet ){ debug(1,'\npaintFront') ;
 // PORTRAIT
-	paintPortrait( 'Portrait' , diy , g , sheet ) ;
+	paintPortrait('Portrait' , diy , g , sheet ) ;
 
 // TEMPLATE
 	if( ($Template=='Custom') || ($Template=='Collection') ){
 		let tint ; let tintOut ;
 		if( ($Template=='Custom') || ($Collection == 'Empty') || ($Collection == 'Custom') ){
-			tint = diy.settings.getTint( 'Custom' ) ;
-			tintOut = diy.settings.getTint( 'Custom-outside' ) ;
+			tint = diy.settings.getTint('Custom' ) ;
+			tintOut = diy.settings.getTint('Custom-outside' ) ;
 		}else{
 			tint = diy.settings.getTint( $Collection ) ;
 			tintOut = diy.settings.getTint( $Collection+'-outside' ) ;
@@ -207,10 +207,10 @@ function paintFront( g, diy, sheet ){ debug(1,'\npaintFront') ;
 	paintTemplate( diy , g ,sheet ) ;
 
 // TEXTS
-	paintPortrait( 'Name' , diy , g ,sheet ) ;
+	paintPortrait('Name' , diy , g ,sheet ) ;
 	writeTextShadowed('Name',Name_writer,diy,g,sheet) ;
 	
-	paintPortrait( 'GameName' , diy , g , sheet ) ;
+	paintPortrait('GameName' , diy , g , sheet ) ;
 	writeTextShadowed('GameName',Name_writer,diy,g,sheet) ;
 
 	paintCut( diy , g ,sheet ) ;
@@ -221,7 +221,7 @@ function paintBack( g, diy, sheet ){ debug(1,'\npaintBack') ;
 	if( ($Template=='Custom') || ($Template=='Collection') ){
 		let tint ; let tintOut ;
 		if( ($Template=='Custom') || ($Collection == 'Empty') || ($Collection == 'Custom') ){
-			tintOut = diy.settings.getTint( 'Custom-outside' ) ;
+			tintOut = diy.settings.getTint('Custom-outside' ) ;
 		}else tintOut = diy.settings.getTint( $Collection+'-outside' ) ;
 		
 		CustomBack_tinter.setFactors( tintOut[0] , tintOut[1] , tintOut[2] ) ;
@@ -230,12 +230,12 @@ function paintBack( g, diy, sheet ){ debug(1,'\npaintBack') ;
 	paintTemplate( diy , g ,sheet ) ;
 
 // ICONS
-	paintIcon( 'Collection' , diy , g ,sheet ) ;
+	paintIcon('Collection' , diy , g ,sheet ) ;
 
 // TEXTS
 	writeParagraph( 
 		[ 'Story' , 'Description' , 'Flavour' ] , Body_writer , 
-		 diy.settings.getRegion( 'Body' ) , diy , g 
+		 diy.settings.getRegion('Body' ) , diy , g 
 	) ;
 	
 	writeArtist( diy , g , sheet ) ;
@@ -248,17 +248,17 @@ function paintBack( g, diy, sheet ){ debug(1,'\npaintBack') ;
 }
 
 if( sourcefile == 'Quickscript' ){
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
-	Settings.shared.addSettingsFrom( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
 
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
 	Eons.namedObjects.LRL = new gameObject() ;
-	useLibrary( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
-	GameLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
-	InterfaceLanguage.addStrings( 'project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
 
-	testDIYScript( 'LRL' ) ;
+	testDIYScript('LRL' ) ;
 }else{
-	useLibrary( 'res://TheLordOfTheRingsLCG/library.js' ) ;
+	useLibrary('res://TheLordOfTheRingsLCG/library.js' ) ;
 }

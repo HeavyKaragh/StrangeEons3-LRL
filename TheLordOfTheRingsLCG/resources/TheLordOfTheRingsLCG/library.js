@@ -1,10 +1,10 @@
-useLibrary( 'diy' ) ;
-useLibrary( 'common' ) ;
-useLibrary( 'ui' ) ;
-useLibrary( 'markup' ) ;
-useLibrary( 'fontutils' ) ;
-useLibrary( 'imageutils' ) ;
-useLibrary( 'tints' ) ;
+useLibrary('diy' ) ;
+useLibrary('common' ) ;
+useLibrary('ui' ) ;
+useLibrary('markup' ) ;
+useLibrary('fontutils' ) ;
+useLibrary('imageutils' ) ;
+useLibrary('tints' ) ;
 importClass( arkham.component.DefaultPortrait ) ;
 importClass( ca.cgjennings.graphics.ImageUtilities ) ;
 
@@ -78,7 +78,7 @@ Returns the main locale used by the component. This is used to support several
 text translations in the same component.
 */
 	let output = String( Language.getGameLocale() ) ;
-	output = output.split( '_' ) ;
+	output = output.split('_' ) ;
 	output = output[ 0 ] ;
 
 	debug( 4 , 	'\tOutput: '+output ) ;
@@ -97,8 +97,8 @@ or 'KeepValue'.
 
 	debug(5,'\tLRL-PreferencesUpdate: '+$LRL-PreferencesUpdate) ;
 	let output = '' ;
-	if( diy.settings.getBoolean( 'LRL-PreferencesUpdate', false ) ){
-		let value = diy.settings.get( 'LRL-'+key , '' ) ;
+	if( diy.settings.getBoolean('LRL-PreferencesUpdate', false ) ){
+		let value = diy.settings.get('LRL-'+key , '' ) ;
 		if( ( value != '' ) // used to avoid overwriting texts
 		&& ( value != 'KeepValue' ) // used to avoid overwriting lists 
 		){
@@ -226,7 +226,7 @@ function uiEncounterSetList( key , bindings , sides ){ debug(3,'\n\tuiEncounterS
 function uiCollectionList( bindings , sides ){ debug(3,'\n\tuiCollectionList') ;
 	if( sides == null ) sides = [FRONT,BACK] ;
 	let uiControl = new comboBox( GO.CollectionCombo , null ) ;
-	bindings.add( 'Collection' , uiControl , sides ) ;
+	bindings.add('Collection' , uiControl , sides ) ;
 	return uiControl ;
 }
 
@@ -280,7 +280,7 @@ Component "sides" will be updated on control edit.
 	if( sides == null ) sides = [ FRONT , BACK ] ;
 
 	let control =  new textField( $Name , 20 , null ) ;
-	bindings.add( 'Name' , control , sides ) ;
+	bindings.add('Name' , control , sides ) ;
 	diy.nameField =  control ;
 	
 	return control ;
@@ -293,7 +293,7 @@ icon control.
 */
 	let controlGrid = new TypeGrid() ;
 
-	let Unique_control = new uiButtonIcon( 'Unique' , diy , bindings , sides ) ;
+	let Unique_control = new uiButtonIcon('Unique' , diy , bindings , sides ) ;
 	let Name_control =  uiName( diy , bindings , sides ) ;
 	
 	controlGrid.place( Unique_control,'' , Name_control,'hfill' ) ;
@@ -310,7 +310,7 @@ This is a variant for paragraph oriented card titles, like Presentation.
 	if( sides == null ) sides = [ FRONT , BACK ] ;
 
 	let control = new textArea( $Name , 3 , 30 , true , true ) ;
-	bindings.add( 'Name' , control , sides ) ;
+	bindings.add('Name' , control , sides ) ;
 //	diy.nameField =  control ; // no funciona
 
 	return control ;
@@ -386,9 +386,9 @@ function writeSubtype( diy , g ){ debug(2,'\n\twriteSubtype') ;
 	let text = #('LRL-'+$Template) ;
 	if( diy.settings.get('Subtype','') != '' ) text = $Subtype ;
 
-	text = diy.settings.get( 'Subtype-format' , '' )+text ;
+	text = diy.settings.get('Subtype-format' , '' )+text ;
 	debug(5,'\tText: '+text) ;
-	writeLine( text , Subtype_writer , diy.settings.getRegion( 'Subtype' ) , g ) ;
+	writeLine( text , Subtype_writer , diy.settings.getRegion('Subtype' ) , g ) ;
 }
 
 function writeEncounterSetNumber( diy , g ){ debug(2,'\n\twriteEncounterSetNumber') ;
@@ -400,8 +400,8 @@ function writeEncounterSetNumber( diy , g ){ debug(2,'\n\twriteEncounterSetNumbe
 		}else text = $EncounterSetNumber ;
 	}
 
-	text = diy.settings.get( 'EncounterSetNumber-format' , '' )+text ;
-	writeLine( text , EncounterSetNumber_writer , diy.settings.getRegion( 'EncounterSetNumber' ) , g ) ;
+	text = diy.settings.get('EncounterSetNumber-format' , '' )+text ;
+	writeLine( text , EncounterSetNumber_writer , diy.settings.getRegion('EncounterSetNumber' ) , g ) ;
 }
 
 function writeName( diy , g ){ debug(2,'\n\twriteName') ;
@@ -410,7 +410,7 @@ function writeName( diy , g ){ debug(2,'\n\twriteName') ;
 	if( diy.settings.getBoolean('Unique') ) text = $Unique-format+text ;
 
 	text = $Name-format+text ;
-	writeLine( text , Name_writer , diy.settings.getRegion( 'Name' ) , g ) ;
+	writeLine( text , Name_writer , diy.settings.getRegion('Name' ) , g ) ;
 }
 
 function writeNameRotated( diy , g ){ debug(2,'\n\twriteNameRotated') ;
@@ -425,7 +425,7 @@ Draws $key on the component template $key-region rotated.
 	text = $Name-format+text ;
 	Name_writer.markupText = text ;
 
-	let region = diy.settings.getRegion( 'Name' ) ;
+	let region = diy.settings.getRegion('Name' ) ;
 	let oldTransform = g.getTransform() ;
 	g.rotate( -Math.PI/2 , 0 , 0 ) ; // quitar 0s
 	let newRegion = region.clone() ;
@@ -590,29 +590,29 @@ function writePageBack( diy , g , sheet ){ debug(2,'\n\twriteOptionLeft') ;
 		//usar getRegion(d(parent, dx, dy, dw, dh)) \u00bf\u00bf\u00bf???
 		sheet.paintImage( g , 'Page-decoration' , 'Page-decoration-back-region' ) ;
 		
-		let text = diy.settings.get( 'LRL-Page' , #LRL-Page )+String(Number($PageNumber)+1) ;
-		if( $PageTotal != 0 ) text = text+diy.settings.get( 'LRL-PageOf' , #LRL-PageOf )+$PageTotal ;
-		text = diy.settings.get( 'Page-format' , '' )+text ;
+		let text = diy.settings.get('LRL-Page' , #LRL-Page )+String(Number($PageNumber)+1) ;
+		if( $PageTotal != 0 ) text = text+diy.settings.get('LRL-PageOf' , #LRL-PageOf )+$PageTotal ;
+		text = diy.settings.get('Page-format' , '' )+text ;
 		
 		Page_writer.markupText = text ;
-		Page_writer.drawAsSingleLine( g , diy.settings.getRegion( 'Page-back' ) ) ;
+		Page_writer.drawAsSingleLine( g , diy.settings.getRegion('Page-back' ) ) ;
 	}
 }
 
 function writeOptionLeft( diy , g , sheet ){ debug(2,'\n\twriteOptionLeft') ;
-	if ( $OptionLeft != '' ) writeLineDecorated( 'OptionLeft' , Option_writer , diy , g , sheet ) ;
+	if ( $OptionLeft != '' ) writeLineDecorated('OptionLeft' , Option_writer , diy , g , sheet ) ;
 }
 
 function writeOptionRight( diy , g , sheet ){ debug(2,'\n\twriteOptionRight') ;
-	if ( $OptionRight != '' ) writeLineDecorated( 'OptionRight' , Option_writer , diy , g , sheet ) ;
+	if ( $OptionRight != '' ) writeLineDecorated('OptionRight' , Option_writer , diy , g , sheet ) ;
 }
 
 function writeOptionLeftBack( diy , g , sheet ){ debug(2,'\n\twriteOptionLeftBack') ;
-	if ( $OptionLeftBack != '' ) writeLineDecorated( 'OptionLeftBack' , Option_writer , diy , g , sheet ) ;
+	if ( $OptionLeftBack != '' ) writeLineDecorated('OptionLeftBack' , Option_writer , diy , g , sheet ) ;
 }
 
 function writeOptionRightBack( diy , g , sheet ){ debug(2,'\n\twriteOptionRightBack') ;
-	if ( $OptionRightBack != '' ) writeLineDecorated( 'OptionRightBack' , Option_writer , diy , g , sheet ) ;
+	if ( $OptionRightBack != '' ) writeLineDecorated('OptionRightBack' , Option_writer , diy , g , sheet ) ;
 }
 
 function formatArtist( key , diy ){ debug(2,'\n\tformatArtist') ;
@@ -647,21 +647,21 @@ function writeArtist( diy , g , sheet ){ debug(2,'\n\twriteArtist') ;
 }
 
 function writeArtistBack( diy , g , sheet ){ debug(2,'\n\twriteArtistBack') ;
-	if( diy.settings.getBoolean( 'PortraitShare' , true ) ){
+	if( diy.settings.getBoolean('PortraitShare' , true ) ){
 		debug( 5 , '\tPortrait shared.' ) ;
 		writeTextOutlined(
-			formatArtist( 'Artist' , diy ) ,
+			formatArtist('Artist' , diy ) ,
 			Bottom_writer ,
-			diy.settings.getRegion( 'Artist' ) ,
-			getStroke( 'Bottom' , diy ) ,
+			diy.settings.getRegion('Artist' ) ,
+			getStroke('Bottom' , diy ) ,
 			diy , g , sheet
 		) ;
 	}else{
 		writeTextOutlined(
-			formatArtist( 'ArtistBack' , diy ) ,
+			formatArtist('ArtistBack' , diy ) ,
 			Bottom_writer ,
-			diy.settings.getRegion( 'Artist' ) ,
-			getStroke( 'Bottom' , diy ) ,
+			diy.settings.getRegion('Artist' ) ,
+			getStroke('Bottom' , diy ) ,
 			diy , g , sheet
 		) ;
 	}
@@ -669,30 +669,30 @@ function writeArtistBack( diy , g , sheet ){ debug(2,'\n\twriteArtistBack') ;
 
 function writeCopyright( diy , g , sheet ){ debug(2,'\n\twriteCopyright') ;
 	writeTextOutlined(
-		diy.settings.get( 'Copyright-format' , '' )+$Copyright ,
+		diy.settings.get('Copyright-format' , '' )+$Copyright ,
 		Bottom_writer ,
-		diy.settings.getRegion( 'Copyright' ) ,
-		getStroke( 'Bottom' , diy ) ,
+		diy.settings.getRegion('Copyright' ) ,
+		getStroke('Bottom' , diy ) ,
 		diy , g , sheet
 	) ;
 }
 function writeCollectionInfo( diy , g , sheet ){ debug(2,'\n\twriteCollectionInfo') ;
 	writeTextOutlined(
-		diy.settings.get( 'CollectionInfo-format' , '' )+$CollectionInfo ,
+		diy.settings.get('CollectionInfo-format' , '' )+$CollectionInfo ,
 		Bottom_writer ,
-		diy.settings.getRegion( 'CollectionInfo' ) ,
-		getStroke( 'Bottom' , diy ) ,
+		diy.settings.getRegion('CollectionInfo' ) ,
+		getStroke('Bottom' , diy ) ,
 		diy , g , sheet
 	) ;
 }
 function writeCollectionNumber( diy , g , sheet ){ debug(2,'\n\twriteCollectionNumber') ;
-	if( diy.settings.getInt( 'CollectionNumber' , 0 ) === 0 ) let text = '---' ;
+	if( diy.settings.getInt('CollectionNumber' , 0 ) === 0 ) let text = '---' ;
 	else text = $CollectionNumber ;
 	writeTextOutlined(
-		diy.settings.get( 'CollectionNumber-format' , '' )+text ,
+		diy.settings.get('CollectionNumber-format' , '' )+text ,
 		Bottom_writer ,
-		diy.settings.getRegion( 'CollectionNumber' ) ,
-		getStroke( 'Bottom' , diy ) ,
+		diy.settings.getRegion('CollectionNumber' ) ,
+		getStroke('Bottom' , diy ) ,
 		diy , g , sheet
 	) ;
 }
@@ -746,7 +746,7 @@ Instead of forcing the user to add format tags for each part, a text user
 interface control is added for each part, and when card will be painted
 format tags are added along to each part and then every part is put together.
 */
-	if( parts == null ) parts = new Array( 'Rules' ) ;
+	if( parts == null ) parts = new Array('Rules' ) ;
 
 	let text = '' ;
 	
@@ -754,7 +754,7 @@ format tags are added along to each part and then every part is put together.
 		let key = parts[ index ] ;
 		let newText = diy.settings.get( key , '' ) ;
 		if( newText != '' ){
-			if( text != '' ) text = text+diy.settings.get( 'Body-break' , '' ) ;
+			if( text != '' ) text = text+diy.settings.get('Body-break' , '' ) ;
 			let format = diy.settings.get( key+'-format' , '' ) ;
 			let formatEnd = diy.settings.get( key+'-formatEnd' , '' ) ;
 			text = text+format+newText+formatEnd ;
@@ -771,22 +771,22 @@ function writeBody( parts , diy , g ){ debug(2,'\n\twriteBody') ;
 	
 //// sacar TraitOut a componente
 //	if( diy.settings.getBoolean('TraitOut') ){ // \u00bfconvertir en permanente?
-//		let index = parts.indexOf( 'Trait' ) ;
+//		let index = parts.indexOf('Trait' ) ;
 //		if (index > -1) {
 //			writeParagraph(
 //				[ 'Trait' ] , Body_writer ,
-//				diy.settings.getRegion( 'TraitOut-Trait' , diy.settings.getRegion( 'Body' ) ) , diy , g
+//				diy.settings.getRegion('TraitOut-Trait' , diy.settings.getRegion('Body' ) ) , diy , g
 //			) ;
 //			parts.splice( index, 1 ) ;
 //			writeParagraph(
 //				parts , Body_writer ,
-//				diy.settings.getRegion( 'TraitOut-Body' , diy.settings.getRegion( 'Body' ) ) , diy , g
+//				diy.settings.getRegion('TraitOut-Body' , diy.settings.getRegion('Body' ) ) , diy , g
 //			) ;
 //		}else{
-//			writeParagraph( parts , Body_writer , diy.settings.getRegion( 'Body' ) , diy , g ) ;
+//			writeParagraph( parts , Body_writer , diy.settings.getRegion('Body' ) , diy , g ) ;
 //		}
 //	}else{
-//		writeParagraph( parts , Body_writer , diy.settings.getRegion( 'Body' ) , diy , g ) ;
+//		writeParagraph( parts , Body_writer , diy.settings.getRegion('Body' ) , diy , g ) ;
 //	}
 }
 
@@ -819,9 +819,9 @@ Here is the code of the demo I'll add to the authoring kit:
 // Run from the code editor window or by right clicking in the project pane.
 //
 
-useLibrary( 'diy' );
-useLibrary( 'ui' );
-useLibrary( 'imageutils' );
+useLibrary('diy' );
+useLibrary('ui' );
+useLibrary('imageutils' );
 
 function create(diy) {
 	diy.faceStyle = FaceStyle.ONE_FACE;
@@ -844,7 +844,7 @@ function createInterface( diy, editor ) {
 	panel.add( hsbPanel );
 
 	let bindings = new Bindings( editor, diy );
-	bindings.add( 'tintValue', hsbPanel );
+	bindings.add('tintValue', hsbPanel );
 	panel.addToEditor( editor, 'Tint Presets Demo' );
 	bindings.bind();
 }
@@ -922,7 +922,7 @@ testDIYScript();
 //plugin ui folder's "name" PNG file.
 //Icon size depends on the plugin's "uiIconSize" setting.
 //*/
-//	if( list == null  ){ list == new Array( 'null' ) ;
+//	if( list == null  ){ list == new Array('null' ) ;
 //		debug( 0 , "\tList not defined." ) ;
 //		return ;
 //	}else{
@@ -967,7 +967,7 @@ Creates a toggle button with an icon from the plugin "ui" folder's "key" PNG fil
 */
 	if( sides == null ) sides = [FRONT,BACK] ;
 
-	let uiControl = new toggleButton( '' , uiIcon(key) , diy.settings.getBoolean(key,false) , null ) ;
+	let uiControl = new toggleButton('' , uiIcon(key) , diy.settings.getBoolean(key,false) , null ) ;
 	bindings.add( key , uiControl , sides ) ;
 
 	return uiControl ;
@@ -994,12 +994,12 @@ Creates a toggle button with a text label.
 //*/
 //	
 //	var combo = new Array(
-//		ListItem( 'none' , @LRL-None , ImageUtils.createIcon( ImageUtils.get( PathUi+'Empty.png' ) , IconSize , IconSize ) ) ,
-//		ListItem( 'Sailing' , @LRL-Sailing , ImageUtils.createIcon( ImageUtils.get( PathUi+'Sailing.png' ) , IconSize , IconSize ) ) ,
-//		ListItem( 'EyeOfSauron' , @LRL-EyeOfSauron , ImageUtils.createIcon( ImageUtils.get( PathUi+'EyeOfSauron.png' ) , IconSize , IconSize ) ) ,
-//		ListItem( 'EyeOfSauron2' , @LRL-EyeOfSauron+' x2' , ImageUtils.createIcon( ImageUtils.get( PathUi+'EyeOfSauron2.png' ) , IconSize , IconSize ) ) ,
-//		ListItem( 'EyeOfSauron3' , @LRL-EyeOfSauron+' x3' , ImageUtils.createIcon( ImageUtils.get( PathUi+'EyeOfSauron3.png' ) , IconSize , IconSize ) ) ,
-//		ListItem( 'EyeOfSauron4' , @LRL-EyeOfSauron+' x4' , ImageUtils.createIcon( ImageUtils.get( PathUi+'EyeOfSauron4.png' ) , IconSize , IconSize ) )
+//		ListItem('none' , @LRL-None , ImageUtils.createIcon( ImageUtils.get( PathUi+'Empty.png' ) , IconSize , IconSize ) ) ,
+//		ListItem('Sailing' , @LRL-Sailing , ImageUtils.createIcon( ImageUtils.get( PathUi+'Sailing.png' ) , IconSize , IconSize ) ) ,
+//		ListItem('EyeOfSauron' , @LRL-EyeOfSauron , ImageUtils.createIcon( ImageUtils.get( PathUi+'EyeOfSauron.png' ) , IconSize , IconSize ) ) ,
+//		ListItem('EyeOfSauron2' , @LRL-EyeOfSauron+' x2' , ImageUtils.createIcon( ImageUtils.get( PathUi+'EyeOfSauron2.png' ) , IconSize , IconSize ) ) ,
+//		ListItem('EyeOfSauron3' , @LRL-EyeOfSauron+' x3' , ImageUtils.createIcon( ImageUtils.get( PathUi+'EyeOfSauron3.png' ) , IconSize , IconSize ) ) ,
+//		ListItem('EyeOfSauron4' , @LRL-EyeOfSauron+' x4' , ImageUtils.createIcon( ImageUtils.get( PathUi+'EyeOfSauron4.png' ) , IconSize , IconSize ) )
 //	) ;
 //
 //	bindings.add( key , combo , [ 0 , 1 ] ) ;
@@ -1013,7 +1013,7 @@ Creates a toggle button with a text label.
 //	to this list.
 //*/
 //	
-//	//var collectionsList = settingToArray( 'collectionsList' ) ;
+//	//var collectionsList = settingToArray('collectionsList' ) ;
 //
 //	var collections = new Array() ;
 //	for(
@@ -1065,7 +1065,7 @@ function paintAdapter( list , diy , g , sheet ){ debug(3,'\n\tpaintAdapter') ;
 	for( let index = 0 ; index<list.length ; index++ ) if( diy.settings.get(list[index]) != 'Empty' ) selector=index+1 ;
 	debug(5,'\tSelector: '+selector) ;
 	
-	if( diy.settings.get( 'Adapter-'+selector , '' ) != '' ) image = diy.settings.getImageResource( 'Adapter-'+selector ) ;
+	if( diy.settings.get('Adapter-'+selector , '' ) != '' ) image = diy.settings.getImageResource('Adapter-'+selector ) ;
 	if( diy.settings.get( $Template+'-Adapter-'+selector , '' ) != '' ) image = diy.settings.getImageResource( $Template+'-Adapter-'+selector ) ;
 	
 	if( image != null ) sheet.paintImage( g , image , 'Template-region' ) ;
@@ -1118,9 +1118,9 @@ function getIcon( key , diy ){ debug(3,'\n\tgetIcon: '+key+':'+diy.settings.get(
 function paintGameLogo( diy , g , sheet ){ debug(3,'\n\tpaintLogo') ;
 	let image ;
 	switch( getLocale() ){
-	case 'es' : image = diy.settings.getImageResource( 'GameLogo-es' ) ; break ;
-	case 'pl' : image = diy.settings.getImageResource( 'GameLogo-pl' ) ; break ;
-	case 'en' : default : image = diy.settings.getImageResource( 'GameLogo-en' ) ; break ;
+	case 'es' : image = diy.settings.getImageResource('GameLogo-es' ) ; break ;
+	case 'pl' : image = diy.settings.getImageResource('GameLogo-pl' ) ; break ;
+	case 'en' : default : image = diy.settings.getImageResource('GameLogo-en' ) ; break ;
 	}
 	sheet.paintImage( g , image , 'Template-region' ) ;
 }
@@ -1174,7 +1174,7 @@ Use only the key without the "Card" type.
 //*/
 //	
 //	var index = PortraitList.length ;
-//	PortraitList[ index ] = new DefaultPortrait( portraitIndexOf( 'Main' ) , Card+'-'+key ) ;
+//	PortraitList[ index ] = new DefaultPortrait( portraitIndexOf('Main' ) , Card+'-'+key ) ;
 //	PortraitList[ index ].backgroundFilled = false ;
 //	PortraitList[ index ].installDefault() ;
 //}
@@ -1442,11 +1442,11 @@ Note this is different from using the basic paintTemplateImage.
 }
 
 function paintCut( diy , g , sheet ){ debug( 3 , '\n\tpaintCut' ) ;
-	if( diy.settings.getBoolean( 'ShowBleeding' ) ){
+	if( diy.settings.getBoolean('ShowBleeding' ) ){
 		debug( 4 , '\tShowBleeding' ) ;
 		sheet.paintImage( g , 'Template-bleeding' , 'Template-region' ) ;
 	}
-	if( diy.settings.getBoolean( 'ShowCut' ) ){
+	if( diy.settings.getBoolean('ShowCut' ) ){
 		debug( 4 , '\tShowCut' ) ;
 		sheet.paintImage( g , 'Template-cut' , 'Template-region' ) ;
 	}
@@ -1460,7 +1460,7 @@ This function paints the Difficulty decorations.
 	case 'Standard' : break ;
 	case 'Custom' :
 		debug( 5 , '\tDifficulty tint: '+$Difficulty-tint ) ;
-		let tint = diy.settings.getTint( 'Difficulty-tint' ) ; //mover a listener
+		let tint = diy.settings.getTint('Difficulty-tint' ) ; //mover a listener
 		Difficulty_tinter.setFactors( tint[0] , tint[1] , tint[2] ) ;
 		sheet.paintImage( g , Difficulty_tinter.getTintedImage() , 'Difficulty' ) ;
 		break ;
@@ -1485,14 +1485,14 @@ CustomBody_tinter must de defined in createFrontPainter.
 CustomBodyIcon_tinter is optional.
 */
 	debug( 5 , '\tTint: '+$Custom-tint ) ;
-	let tint = diy.settings.getTint( 'Custom-tint' ) ;
+	let tint = diy.settings.getTint('Custom-tint' ) ;
 	CustomBody_tinter.setFactors( tint[0] , tint[1] , tint[2] ) ; // mover a listener
 	let image = CustomBody_tinter.getTintedImage() ;
 	sheet.paintImage( g , image , 'Template-region' ) ;
 
 	if(CustomBodyIcon_tinter){
 		debug( 2 , '\tpaintCustomBodyIcon: '+$Difficulty ) ;
-		image = PortraitList[ portraitIndexOf( 'BodyIcon' ) ].getImage() ; // get image from portrait
+		image = PortraitList[ portraitIndexOf('BodyIcon' ) ].getImage() ; // get image from portrait
 		CustomBodyIcon_tinter.setImage( image ) ; // put image into tinter
 		CustomBodyIcon_tinter.setFactors( tint[0] , tint[1] , tint[2] ) ; // modify tinter colour
 		image = CustomBodyIcon_tinter.getTintedImage() ; // get tinted image
@@ -1507,7 +1507,7 @@ function paintCustomColour( diy , g , sheet ){ debug( 2 , '\n\tpaintCustomColour
 This function paints the small tinted sphere decorations.
 */
 	debug( 5 , '\tTint: '+$Custom-tint ) ;
-	let tint = diy.settings.getTint( 'Custom-tint' ) ;
+	let tint = diy.settings.getTint('Custom-tint' ) ;
 	CustomColour_tinter.setFactors( tint[0] , tint[1] , tint[2] ) ; // mover a listener
 	sheet.paintImage( g , CustomColour_tinter.getTintedImage() , 'Template-region' ) ;
 }
@@ -1527,7 +1527,7 @@ in the paintFront/Back functions.
 	let tint ;
 	if( diy.settings.get( key+'-tint' ) == null){
 		debug( 0 , '\tWARNING: '+key+'-tint: UNDEFINED' ) ;
-		tint = diy.settings.getTint( 'Custom' ) ;
+		tint = diy.settings.getTint('Custom' ) ;
 	}else{
 		debug( 5 , '\t'+key+'-tint: '+diy.settings.get( key+'-tint' ) ) ;
 		tint = diy.settings.getTint( key ) ;
@@ -1552,7 +1552,7 @@ This function is called on new component creation.
 It loads default component settings for regions that
 define text and image positions, or text format.
 */
-	if( sourcefile == 'Quickscript' ) diy.settings.addSettingsFrom( 'project:TheLordOfTheRingsLCG/resources/'+PathCard+'component.settings' ) ;
+	if( sourcefile == 'Quickscript' ) diy.settings.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/'+PathCard+'component.settings' ) ;
 	else diy.settings.addSettingsFrom( PathCard+'component.settings' ) ;
 }
 
@@ -1564,8 +1564,8 @@ It loads example component settings and localized strings.
 Then, it loads the settings from the plugin preferences.
 */
 	if( sourcefile == 'Quickscript' ){
-		diy.settings.addSettingsFrom( 'project:TheLordOfTheRingsLCG/resources/'+PathCard+'example.settings' ) ;
-		diy.settings.addSettingsFrom( 'project:TheLordOfTheRingsLCG/resources/'+PathCard+'example.properties' ) ;
+		diy.settings.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/'+PathCard+'example.settings' ) ;
+		diy.settings.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/'+PathCard+'example.properties' ) ;
 	}else{
 		diy.settings.addSettingsFrom( PathCard+'example.settings' ) ;
 		let locale = getLocale() ;
@@ -1582,19 +1582,19 @@ function loadPreferences(diy){ debug(3,'\n\tloadPreferences') ;
 This function loads the default value from LRL preferences.
 This is useful when creating a lot of components for the same collection.
 */
-	setValueFromPreferences( 'Copyright',diy) ;
-	setValueFromPreferences( 'CollectionInfo',diy) ;
-	setValueFromPreferences( 'Collection',diy) ;
-	setValueFromPreferences( 'Collection-portrait-template',diy) ;
+	setValueFromPreferences('Copyright',diy) ;
+	setValueFromPreferences('CollectionInfo',diy) ;
+	setValueFromPreferences('Collection',diy) ;
+	setValueFromPreferences('Collection-portrait-template',diy) ;
 	// If Custom icon is selected in preferences, the custom icon path is used.
 	// This path should include the icon from the current project and start with 'project:'
 
-	if( diy.settings.get( 'EncounterSet' ) != null ){
+	if( diy.settings.get('EncounterSet' ) != null ){
 	// Check if the setting is used for this component.
 	// $setting should be set in example.properties if needed, even as empty string.
 	// Reading a $setting not defined, returns null.
-		setValueFromPreferences( 'EncounterSet',diy) ;
-		setValueFromPreferences( 'EncounterSet-portrait-template',diy) ;
+		setValueFromPreferences('EncounterSet',diy) ;
+		setValueFromPreferences('EncounterSet-portrait-template',diy) ;
 	}
 }
 
@@ -1602,14 +1602,14 @@ This is useful when creating a lot of components for the same collection.
 ///*
 //	This function paints all the stuff that is the same in both sides of the component,
 //*/
-//	paintPortrait( 'Portrait' , g , sheet ) ;
+//	paintPortrait('Portrait' , g , sheet ) ;
 //
 //// TEMPLATE
 //	var hsb;
 //	switch( String($Template) ){
 //	case 'CustomDifficulty':
 //	case 'CustomSphere':
-//		hsb = diy.settings.getTint( 'Template' ) ;
+//		hsb = diy.settings.getTint('Template' ) ;
 //		Template_tinter.setFactors( hsb[0] , hsb[1] , hsb[2] ) ;
 //		break;
 //	default:
@@ -1621,7 +1621,7 @@ This is useful when creating a lot of components for the same collection.
 //
 //	switch( String($Template) ){
 //	case 'CustomDifficulty':
-//		hsb = diy.settings.getTint( 'Template' ) ;
+//		hsb = diy.settings.getTint('Template' ) ;
 //		EncounterDeco_tinter.setFactors( hsb[0] , hsb[1] , hsb[2] ) ;
 //		sheet.paintImage( g , EncounterDeco_tinter.getTintedImage() , Card+'-template' ) ;
 //		break;
@@ -1655,7 +1655,7 @@ This is useful when creating a lot of components for the same collection.
 //		decoType = 'Player';
 //	}
 //
-//	EncounterSetIcon = getIcon( 'EncounterSet' ) ;
+//	EncounterSetIcon = getIcon('EncounterSet' ) ;
 //	switch( String($IconLayout) ){
 //	case 'Left':
 //		adapterImage = ImageUtils.get( PathCard+decoType+'-adapter-Left.jp2' ) ;
@@ -1693,7 +1693,7 @@ This is useful when creating a lot of components for the same collection.
 //		adapterImage = ImageUtils.get( PathCard+decoType+'-adapter-Title.jp2' ) ;
 //		if( sheet.getSheetIndex() == BACK ) adapterImage = ImageUtils.mirror( adapterImage ) ;
 //		sheet.paintImage( g , adapterImage , Card+'-adapter' ) ;
-//		CollectionIcon = getIcon( 'Collection' ) ;
+//		CollectionIcon = getIcon('Collection' ) ;
 //		if( sheet.getSheetIndex() === FRONT ){
 //			sheet.paintImage( g , EncounterSetIcon , Card+'-icon-TitleLeft' ) ;
 //			sheet.paintImage( g , CollectionIcon , Card+'-icon-TitleRight' ) ;
@@ -1705,7 +1705,7 @@ This is useful when creating a lot of components for the same collection.
 //				regionLeft = diy.settings.getRegion( Card+'-icon-TitleLeft' ) ;
 //				regionRight = diy.settings.getRegion( Card+'-icon-TitleRight' ) ;
 //			}
-//			if( diy.settings.getBoolean( 'IconSwap' , false ) === true ){
+//			if( diy.settings.getBoolean('IconSwap' , false ) === true ){
 //				sheet.paintImage( g , EncounterSetIcon , regionRight ) ;
 //				sheet.paintImage( g , CollectionIcon , regionLeft ) ;
 //			}else{
@@ -1715,14 +1715,14 @@ This is useful when creating a lot of components for the same collection.
 //		}
 //		if( (Card == 'DividerHorizontal') && (sheet.getSheetIndex() == BACK) ){
 //			Name_writer.markupText = $Name ;
-//			Name_writer.drawAsSingleLine( g , diy.settings.getRegion( 'DividerHorizontal-Name-back' ) ) ;
-//		}else{ writeLine( 'Name' , Name_writer , g , diy ) ; }
+//			Name_writer.drawAsSingleLine( g , diy.settings.getRegion('DividerHorizontal-Name-back' ) ) ;
+//		}else{ writeLine('Name' , Name_writer , g , diy ) ; }
 //	}
 //
 //// ICONS
-//	writeTextOutlined( 'Artist' , Artist_writer , getStroke( 'Bottom' , diy ) , diy , g , sheet ) ;
-//	paintIcon( 'Collection' , g , sheet ) ;
-//	paintIcon( 'EncounterSet' , g , sheet ) ;
+//	writeTextOutlined('Artist' , Artist_writer , getStroke('Bottom' , diy ) , diy , g , sheet ) ;
+//	paintIcon('Collection' , g , sheet ) ;
+//	paintIcon('EncounterSet' , g , sheet ) ;
 //
 //}
 
@@ -1764,7 +1764,7 @@ This function is called by Strange Eons on component file loading.
 When using custom portrait handling, Portraits must be loaded
 explicitly.
 */
-	if( diy.settings.get( 'VersionHistory' , '' ) == '' ){
+	if( diy.settings.get('VersionHistory' , '' ) == '' ){
 		debug( 0 , 'VersionHistory nonexistent.' ) ;
 		$VersionHistory = diy.version ;
 	}
@@ -1781,7 +1781,7 @@ explicitly.
 		PortraitList[ index ] = portrait ;
 		try{ portrait = ois.readObject() ; }catch(err){ portrait = null ; }
 	}
-	if( diy.settings.getBoolean( 'LRL-PreferencesUpdate' , false ) ) loadPreferences(diy) ;
+	if( diy.settings.getBoolean('LRL-PreferencesUpdate' , false ) ) loadPreferences(diy) ;
 }
 
 function onWrite( diy , oos ){ debug(1,'\nonWrite') ;
