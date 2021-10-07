@@ -1,2 +1,2 @@
 @cat-rules
-	@LRL-component-Campaign = diy:TheLordOfTheRingsLCG/Campaign/component.js | TheLordOfTheRingsLCG/Campaign/ui.png | LRL
+	@LRL-Campaign-component = diy:TheLordOfTheRingsLCG/Campaign/component.js | TheLordOfTheRingsLCG/Campaign/ui.png | LRL

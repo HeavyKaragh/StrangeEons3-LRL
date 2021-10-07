@@ -23,10 +23,10 @@ function create(diy){ debug(1,'\ncreate') ;
 	$PortraitListCount = getPortraitCount() ;
 }
 
-function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
-	let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls' ) ;
+function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
+	let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls') ;
 
-	var bindings = new Bindings( editor , diy ) ;
+	var bindings = new Bindings(editor,diy) ;
 	let list ;
 	
 // MAIN TAB
@@ -35,24 +35,24 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	
 	// TITLE PANEL
 	let Title_panel = new TypeGrid() ;
-	Title_panel.setTitle( @LRL-panel-Title ) ;
-	let Name_control = uiName( diy , bindings , [FRONT,BACK] ) ;
-	Title_panel.place( Name_control , 'hfill' ) ;
-	Main_tab.place( Title_panel , 'hfill' ) ;
+	Title_panel.setTitle(@LRL-Title) ;
+	let Name_control = uiName(diy,bindings,BOTH) ;
+	Title_panel.place(Name_control,'hfill') ;
+	Main_tab.place(Title_panel,'hfill') ;
 
 	// GROUP ICON PANEL
 	let Group_panel = new TypeGrid() ;
-	Group_panel.setTitle( @LRL-panel-Group ) ;
-	list = GO.DefaultIconList.concat( GO.FullIconList ) ; // this icon list includes collection, set and others
-	let Group_control = new uiIconList('Group' , list , bindings , [FRONT,BACK] ) ;
+	Group_panel.setTitle(@LRL-Group) ;
+	list = GO.DefaultIconList.concat(GO.FullIconList) ; // this icon list includes collection, set and others
+	let Group_control = new uiListIcon('Group',list,bindings,BOTH) ;
 	let GroupPortrait_control = new uiPortrait('Group',diy) ;
 	Group_panel.place(
-		Group_control , 'hfill' ,
-		GroupPortrait_control , 'br hfill'
+		Group_control,'hfill'
+		, GroupPortrait_control,'br hfill'
 	) ;
-	Main_tab.place( Group_panel , 'br hfill' ) ;
+	Main_tab.place(Group_panel,'br hfill') ;
 
-	Main_tab.addToEditor( editor , @LRL-tab-Main ) ;
+	Main_tab.addToEditor(editor,@LRL-Main) ;
 	
 // TEMPLATE TAB
 	let Template_tab = new TypeGrid() ;
@@ -60,40 +60,41 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	
 	// TEMPLATE PANEL
 	let Template_panel = new TypeGrid() ;
-	Template_panel.setTitle( @LRL-panel-Template ) ;
-	list = new Array('Encounter' , 'Player' ) ;
-	let Template_control = new uiIconList('Template' , list , bindings , [FRONT,BACK] ) ;
-	list = new Array('Title' , 'Left' , 'LeftMiddle' , 'RightMiddle' , 'Right' ) ;
-	let IconLayout_control = new uiCycler('Layout' , list , bindings , [FRONT,BACK] );
-	let IconSwap_control = new uiButtonText('IconSwap' , diy , bindings , [BACK] ) ;
-	Template_panel.place( 
-		Template_control , 'hfill' ,
-		@LRL-uiIconList-IconLayout, 'br' , IconLayout_control , 'hfill' , IconSwap_control , ''
+	Template_panel.setTitle(@LRL-Template) ;
+	list = new Array('Encounter','Player') ;
+	let Template_control = new uiListIcon('Template',list,bindings,BOTH) ;
+	list = new Array('Title','Left','LeftMiddle','RightMiddle','Right') ;
+	let IconLayout_control = new uiCyclerLabeled('Layout',list,bindings,BOTH);
+	let IconSwap_control = new uiButtonText('IconSwap',diy,bindings,BACK) ;
+	Template_panel.place(
+		Template_control,'hfill'
+		, IconLayout_control,''
+		, IconSwap_control,''
 	) ;
-	if( advancedControls ){
-		list = new Array('Collection' , 'Custom' ) ;
-		let TintBy_control = new uiCycler('TintBy' , list , bindings , [FRONT,BACK] ) ;
-		let CustomTint_control = new uiTint('Custom' , bindings, [FRONT,BACK] ) ;
+	if(advancedControls){
+		list = new Array('Collection','Custom') ;
+		let TintBy_control = new uiCyclerLabeled('TintBy',list,bindings,BOTH) ;
+		let CustomTint_control = new uiTint('Custom',bindings, BOTH) ;
 		Template_panel.place(
-			@LRL-uiCycler-TintBy, 'br' , TintBy_control , 'hfill' 
-			, CustomTint_control , 'br hfill' 
+			TintBy_control,'br hfill' 
+			, CustomTint_control,'br hfill' 
 		) ;
 	}
-	Template_tab.place( Template_panel , 'br hfill' ) ;
+	Template_tab.place(Template_panel,'br hfill') ;
 	
 	// CUTTING PANEL
 	let Cutting_panel = new TypeGrid() ;
-	Cutting_panel.setTitle( @LRL-panel-Cutting ) ;
-	list = new Array('CutNo' , 'Cut' , 'CutBig' ) ;
-	let ShowCut_control = new uiCycler('ShowCut' , list , bindings , [FRONT,BACK] );
-	Cutting_panel.place( ShowCut_control , 'hfill' ) ;
-	if( advancedControls == true ){
-		let ShowBleeding_control = new uiButtonText('ShowBleeding' , diy , bindings , [ FRONT , BACK ] ) ;
-		Cutting_panel.place( ShowBleeding_control ,'' ) ;
+	Cutting_panel.setTitle(@LRL-Cutting) ;
+	list = new Array('CutNo','Cut','CutBig') ;
+	let ShowCut_control = new uiCyclerLabeled('ShowCut',list,bindings,BOTH );
+	Cutting_panel.place(ShowCut_control,'hfill') ;
+	if(advancedControls){
+		let ShowBleeding_control = new uiButtonText('ShowBleeding',diy,bindings,BOTH) ;
+		Cutting_panel.place(ShowBleeding_control ,'') ;
 	}
-	Template_tab.place( Cutting_panel , 'br hfill' ) ;
+	Template_tab.place(Cutting_panel,'br hfill') ;
 	
-	Template_tab.addToEditor( editor , @LRL-tab-Template ) ;
+	Template_tab.addToEditor(editor,@LRL-Template) ;
 
 // PORTRAIT TAB
 	let Portrait_tab = new TypeGrid() ;
@@ -101,18 +102,18 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	
 	// PORTRAIT PANEL
 	let Portrait_panel = new TypeGrid() ;
-	Portrait_panel.setTitle( @LRL-panel-Portrait ) ;
-	let Artist_control = new uiText('Artist' , bindings , [ FRONT ] ) ;
+	Portrait_panel.setTitle(@LRL-Portrait) ;
+	let Artist_control = new uiTextLabeled('Artist',bindings,FRONT) ;
 	let Portrait_control = new uiPortrait('Portrait',diy) ;
-	let PortraitMirror_control = new uiPortraitMirror('Portrait' , Portrait_control ) ;
+	let PortraitMirror_control = new uiPortraitMirror('Portrait',Portrait_control) ;
 	Portrait_panel.place(
-		@LRL-Artist , '' , Artist_control , 'hfill' 
-		, Portrait_control , 'br hfill' 
-		, PortraitMirror_control , 'br hfill' 
+		Artist_control,'hfill' 
+		, Portrait_control,'br hfill' 
+		, PortraitMirror_control,'br hfill' 
 	) ;
-	Portrait_tab.place( Portrait_panel , 'hfill' ) ;
+	Portrait_tab.place(Portrait_panel,'hfill') ;
 	
-	Portrait_tab.addToEditor( editor , @LRL-tab-Portrait ) ;
+	Portrait_tab.addToEditor(editor,@LRL-Portrait) ;
 	
 // COLLECTION TAB
 	let Collection_tab = new TypeGrid() ; 
@@ -120,23 +121,23 @@ function createInterface( diy , editor , sheet ){ debug(1,'\ncreateInterface') ;
 	
 	// COLLECTION PANEL
 	let Collection_panel = new TypeGrid() ;
-	Collection_panel.setTitle( @LRL-panel-Collection ) ;
-	//let CollectionInfo_control = new uiText('CollectionInfo' , bindings , [FRONT,BACK] ) ;
-	let Collection_control = new uiCollectionList( bindings , [FRONT] ) ;
+	Collection_panel.setTitle(@LRL-Collection) ;
+	//let CollectionInfo_control = new uiTextLabeled('CollectionInfo',bindings,BOTH) ;
+	let Collection_control = new uiCollectionList(bindings,FRONT) ;
 	let CollectionPortrait_control = new uiPortrait('Collection',diy) ;
 	Collection_panel.place(
-		Collection_control , 'hfill' 
-		//, @LRL-Information , '' , CollectionInfo_control , 'hfill' 
-		, CollectionPortrait_control , 'br hfill'
+		Collection_control,'hfill' 
+		//, CollectionInfo_control,'hfill' 
+		, CollectionPortrait_control,'br hfill'
 	) ;
-	Collection_tab.place( Collection_panel , 'hfill' ) ;
+	Collection_tab.place(Collection_panel,'hfill') ;
 
-	Collection_tab.addToEditor( editor , @LRL-tab-Collection ) ;
+	Collection_tab.addToEditor(editor,@LRL-Collection) ;
 
 	bindings.bind() ;
 }
 
-function createFrontPainter( diy, sheet ){ debug(1,'\ncreateFrontPainter') ;
+function createFrontPainter(diy,sheet){ debug(1,'\ncreateFrontPainter') ;
 
 // TEMPLATE
 	Custom_tinter = new createTinter('Custom',diy) ;
@@ -144,8 +145,8 @@ function createFrontPainter( diy, sheet ){ debug(1,'\ncreateFrontPainter') ;
 // STATS
 
 // TEXT
-	Name_writer = new createTextBox('Name' , diy , sheet ) ;
-	Bottom_writer = new createTextBox('Bottom' , diy , sheet ) ;
+	Name_writer = new createTextBox('Name',diy,sheet) ;
+	Bottom_writer = new createTextBox('Bottom',diy,sheet) ;
 
 	updateExternalPortrait('Portrait',diy) ;
 	updateExternalPortrait('Collection',diy) ;
@@ -154,59 +155,59 @@ function createFrontPainter( diy, sheet ){ debug(1,'\ncreateFrontPainter') ;
 
 function createBackPainter(diy,sheet){ debug(1,'\ncreateBackPainter') ; }
 
-function paintCommon( layout , diy , g , sheet ){ debug(2,'\npaintCommon') ;
-	debug( 5 , 'Side: '+sheet.getSheetIndex() ) ;
-	debug( 5 , 'Layout: '+layout ) ;
+function paintCommon(layout,diy,g,sheet ){ debug(2,'\npaintCommon') ;
+	debug(5,'Side: '+sheet.getSheetIndex()) ;
+	debug(5,'Layout: '+layout) ;
 
 // PORTRAIT
-	paintPortrait('Portrait' , diy , g , sheet ) ;
+	paintPortrait('Portrait',diy,g,sheet) ;
 	
 // TEMPLATE
 	let tint ;
-	if( ($TintBy == 'Custom') || ($Collection == 'Empty') || ($Collection == 'Custom') ) tint = diy.settings.getTint('Custom' ) ;
-	else tint = diy.settings.getTint( $Collection ) ;
+	if( ($TintBy=='Custom') || ($Collection=='Empty') || ($Collection=='Custom') ) tint = diy.settings.getTint('Custom') ;
+	else tint = diy.settings.getTint($Collection) ;
 	
-	Custom_tinter.setFactors( tint[0] , tint[1] , tint[2] ) ;
-	sheet.paintImage( g , Custom_tinter.getTintedImage() , 'Template-region' ) ;
+	Custom_tinter.setFactors(tint[0],tint[1],tint[2]) ;
+	sheet.paintImage(g,Custom_tinter.getTintedImage(),'Template-region') ;
 	
-	paintTemplate( diy , g , sheet ) ;
-	sheet.paintImage( g , $Template+'-'+layout , 'Template-region' ) ; // Group icon decoration
+	paintTemplate(diy,g,sheet) ;
+	sheet.paintImage(g,$Template+'-'+layout,'Template-region') ; // Group icon decoration
 	
 // TEXT
-	writeArtist( diy , g , sheet ) ;
+	writeArtist(diy,g,sheet) ;
 	
-	if( diy.settings.getBoolean('ShowBleeding' ) ){
-		debug( 4 , '\tShowBleeding' ) ;
-		sheet.paintImage( g , 'Template-bleeding' , 'Template-region' ) ;
+	if(diy.settings.getBoolean('ShowBleeding')){
+		debug(4,'\tShowBleeding') ;
+		sheet.paintImage(g,'Template-bleeding','Template-region') ;
 	}
-	if( $ShowCut != 'CutNo' ){
-		debug( 4 , '\tShowCut' ) ;
-		if( $ShowCut == 'Cut' ) sheet.paintImage( g , 'Template-cut-'+layout , 'Template-region' ) ;
-		if( $ShowCut == 'CutBig' ) sheet.paintImage( g , 'Template-cutBig-'+layout , 'Template-region' ) ;
+	if($ShowCut!='CutNo'){
+		debug(4,'\tShowCut') ;
+		if($ShowCut=='Cut') sheet.paintImage(g,'Template-cut-'+layout,'Template-region') ;
+		if($ShowCut=='CutBig') sheet.paintImage(g,'Template-cutBig-'+layout,'Template-region') ;
 	}
 	
 }
 
-function paintFront( g , diy , sheet ){ debug(1,'\npaintFront') ;
-	let layout = $Layout ;
+function paintFront(g,diy,sheet){ debug(1,'\npaintFront') ;
+	let layout = diy.settings.get('Layout','Title') ;
 
-	paintCommon( layout , diy , g , sheet ) ;
+	paintCommon(layout,diy,g,sheet) ;
 
-	if( layout == 'Title' ) writeName( diy , g ) ;
+	if(layout=='Title') writeName(diy,g) ;
 
-	switch( String(layout) ){
+	switch(String(layout)){
 	case 'Title' :
-		sheet.paintImage( g , getIcon('Group' , diy ) , 'Group-Title-region' ) ;
-		sheet.paintImage( g , getIcon('Collection' , diy ) , 'Collection-Title-region' ) ;
+		sheet.paintImage(g,getIcon('Group',diy),'Group-Title-region') ;
+		sheet.paintImage(g,getIcon('Collection',diy),'Collection-Title-region') ;
 		break ;
 	default :
-		sheet.paintImage( g , getIcon('Group' , diy ) , 'Group-'+layout ) ;
+		sheet.paintImage(g,getIcon('Group',diy),'Group-'+layout) ;
 	}
 }
 
-function paintBack( g , diy , sheet ){ debug(1,'\npaintBack') ;
-	let layout = $Layout ;
-	switch( String(layout) ){
+function paintBack(g,diy,sheet){ debug(1,'\npaintBack') ;
+	let layout = diy.settings.get('Layout','Title') ;
+	switch(String(layout)){
 	case 'Title' : layout = 'Title-back' ; break ;
 	case 'Left' : layout = 'Right' ; break ;
 	case 'LeftMiddle' : layout = 'RightMiddle' ; break ;
@@ -214,44 +215,43 @@ function paintBack( g , diy , sheet ){ debug(1,'\npaintBack') ;
 	case 'RightMiddle' : layout = 'LeftMiddle' ; break ;
 	}
 
-	paintCommon( layout , diy , g , sheet ) ;
-	
-	if( layout == 'Title-back' ){
+	paintCommon(layout,diy,g,sheet) ;
+	if(String(layout)=='Title-back'){
 		let text = $Name ;
-		if( diy.settings.getBoolean('Unique') == true ) text = $Unique-format+text ;
+		if(diy.settings.getBoolean('Unique')) text = diy.settings.get('Unique-format','')+text ;
 	
-		text = $Name-format+text ;
-		writeLine( text , Name_writer , diy.settings.getRegion('Name-back' ) , g ) ;
+		text = diy.settings.get('Name-format','')+text ;
+		writeLine(text,Name_writer,diy.settings.getRegion('Name-back'),g) ;
 	}
 	
-	switch( String(layout) ){
+	switch(String(layout)){
 	case 'Title-back' :
 		let groupRegion= 'Group-Title-back-region' ;
 		let collectionRegion = 'Collection-Title-back-region' ;
-		if( diy.settings.getBoolean('IconSwap' , false ) ){
+		if(diy.settings.getBoolean('IconSwap')){
 			groupRegion = 'Collection-Title-back-region' ;
 			collectionRegion = 'Group-Title-back-region' ;
 		}
-		sheet.paintImage( g , getIcon('Group' , diy ) , groupRegion ) ;
-		sheet.paintImage( g , getIcon('Collection' , diy ) , collectionRegion ) ;
+		sheet.paintImage(g,getIcon('Group',diy),groupRegion) ;
+		sheet.paintImage(g,getIcon('Collection',diy),collectionRegion) ;
 		break ;
 	default :
-		sheet.paintImage( g , getIcon('Group' , diy ) , 'Group-'+layout ) ;
+		sheet.paintImage(g,getIcon('Group',diy),'Group-'+layout) ;
 	}
 }
 
-if( sourcefile == 'Quickscript' ){
-	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
-	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
+if(sourcefile=='Quickscript'){
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings') ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings') ;
 
-	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js') ;
 	Eons.namedObjects.LRL = new gameObject() ;
-	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
-	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
-	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
-	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js') ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game') ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface') ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons') ;	
 
-	testDIYScript('LRL' ) ;
+	testDIYScript('LRL') ;
 }else{
-	useLibrary('res://TheLordOfTheRingsLCG/library.js' ) ;
+	useLibrary('res://TheLordOfTheRingsLCG/library.js') ;
 }

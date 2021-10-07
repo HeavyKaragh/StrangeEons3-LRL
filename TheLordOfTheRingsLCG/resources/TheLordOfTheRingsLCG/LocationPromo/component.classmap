@@ -1,2 +1,2 @@
 @cat-effects
-	@LRL-component-LocationPromo = diy:TheLordOfTheRingsLCG/LocationPromo/component.js | TheLordOfTheRingsLCG/LocationPromo/ui.png | LRL
+	@LRL-LocationPromo-component = diy:TheLordOfTheRingsLCG/LocationPromo/component.js | TheLordOfTheRingsLCG/LocationPromo/ui.png | LRL

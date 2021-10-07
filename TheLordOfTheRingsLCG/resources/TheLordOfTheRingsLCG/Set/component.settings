@@ -9,7 +9,7 @@ TemplateBack-template = TheLordOfTheRingsLCG/Set/StandardBack-lr.jp2
 TemplateBack-template-hires = TheLordOfTheRingsLCG/Set/StandardBack.jp2
 
 Portrait-portrait-clip-region = 0,62,413,204
-EncounterSet-portrait-clip-region = 39,39,44,44
+Set-portrait-clip-region = 39,39,44,44
 
 Standard-template = TheLordOfTheRingsLCG/Set/Standard-lr.jp2
 Standard-template-hires = TheLordOfTheRingsLCG/Set/Standard.jp2

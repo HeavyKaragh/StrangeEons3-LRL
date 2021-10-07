@@ -7,12 +7,12 @@ Collection-portrait-clip-region = 58,176,40,40
 CollectionBis-portrait-clip-region = 1152,176,40,40
 Portrait-portrait-clip-region = 115,1025,1020,500
 
-EncounterSet-portrait-clip-region = 313,518,36,36
-EncounterSet1-portrait-clip-region = 380,518,36,36
-EncounterSet2-portrait-clip-region = 246,518,36,36
-EncounterSet3-portrait-clip-region = 447,518,36,36
-EncounterSet4-portrait-clip-region = 179,518,36,36
-EncounterSet5-portrait-clip-region = 514,518,36,36
+Set-portrait-clip-region = 313,518,36,36
+Set1-portrait-clip-region = 380,518,36,36
+Set2-portrait-clip-region = 246,518,36,36
+Set3-portrait-clip-region = 447,518,36,36
+Set4-portrait-clip-region = 179,518,36,36
+Set5-portrait-clip-region = 514,518,36,36
 
 
 GameLogo-en = TheLordOfTheRingsLCG/QuestSheet/GameLogo_en-lr.jp2
@@ -33,12 +33,16 @@ Sets-Body-region = 128,580,480,926
 Plain-Body-region = 128,120,480,1386
 BodyRight-region = 644,120,480,1386
 
-GameName-region = 110,110,516,390
-GameName-stroke = Medium
-GameName-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}
-GameName-alignment = middle,center
-GameName-pointsize = 30
-GameName-colour = #FFFFFF
+Group-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}; WIDTH: SEMICONDENSED
+Group-alignment = middle,center
+Group-pointsize = 8
+Group-colour = #FFFFFF
+Group-region = 110,110,516,390
+Group-stroke = Medium
+Group-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}
+Group-alignment = middle,center
+Group-pointsize = 30
+Group-colour = #FFFFFF
 
 Name-region = 110,400,516,90
 Name-stroke = Medium

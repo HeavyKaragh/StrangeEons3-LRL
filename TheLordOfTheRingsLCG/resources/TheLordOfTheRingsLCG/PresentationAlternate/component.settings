@@ -22,12 +22,16 @@ Name-shadow-width = 2
 Name-shadow-colour = #4f0f0f0f
 Name-shadow-passes = 6
 
-GameName-region = 62,20,289,105
-GameName-portrait-clip-region = 62,20,289,105
-GameName-portrait-clipping = false
-GameName-shadow-width = 2
-GameName-shadow-colour = #4f0f0f0f
-GameName-shadow-passes = 6
+Group-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}; WIDTH: SEMICONDENSED
+Group-alignment = middle,center
+Group-pointsize = 8
+Group-colour = #FFFFFF
+Group-region = 62,20,289,105
+Group-portrait-clip-region = 62,20,289,105
+Group-portrait-clipping = false
+Group-shadow-width = 2
+Group-shadow-colour = #4f0f0f0f
+Group-shadow-passes = 6
 
 Body-region = 50,68,313,442
 Type-region = 50,50,313,16

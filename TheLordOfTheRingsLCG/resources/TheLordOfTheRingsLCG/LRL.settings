@@ -1,5 +1,5 @@
 ShadowSeparatorSize = 1.5
-Unique-format = <lrs>u<u+2005></lrs>
+Unique-format = <lrs>u<u+2006></lrs>
 
 Number = TheLordOfTheRingsLCG/image/number/00.png
 Number-tintable = TheLordOfTheRingsLCG/image/number-tintable/00.png
@@ -7,12 +7,12 @@ Number-tintable = TheLordOfTheRingsLCG/image/number-tintable/00.png
 Portrait-portrait-background = true
 PortraitBack-portrait-background = true
 Collection-portrait-fit = true
-EncounterSet-portrait-fit = true
-EncounterSet1-portrait-fit = true
-EncounterSet2-portrait-fit = true
-EncounterSet3-portrait-fit = true
-EncounterSet4-portrait-fit = true
-EncounterSet5-portrait-fit = true
+Set-portrait-fit = true
+Set1-portrait-fit = true
+Set2-portrait-fit = true
+Set3-portrait-fit = true
+Set4-portrait-fit = true
+Set5-portrait-fit = true
 
 OptionLeft-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
 OptionRight-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
@@ -26,7 +26,6 @@ Page-tint = 0.0,0.0,1.0
 Progress-tint = 20.0,0.6,0.9
 ResourceCost-tint = 180.0,0.0,1.0
 Stage-tint = 190.0,0.6,0.9
-Difficulty-tint = 0.0,0.2,1.0
 Region-tint = 0.0,0.2,1.0
 ThreatCost-tint = 200.0,0.7,0.7
 White-tint = 0.0,0.0,0.9
@@ -42,7 +41,7 @@ Template-out-tint = 0.0,0.9,0.8
 # Encounter cards' decorations tints
 Gold-tint = 40.0,1.0,1.0
 #Standard-tint = 0.0,0.0,0.5
-#EncounterSet-tint = 40.0,1.0,1.0
+#Set-tint = 40.0,1.0,1.0
 #Saga-tint = 20.0,0.6,0.9
 #Ring-tint = 0.4,0.7,1.0
 #Nightmare-tint = 0.0,1.0,0.5
@@ -66,23 +65,13 @@ Name-pointsize = 10
 Name-colour = #000000
 Name-format = 
 
-Adventure-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
-Adventure-alignment = middle,center
-Adventure-pointsize = 7
-Adventure-colour = #000000
-
-Cycle-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
-Cycle-alignment = middle,center
-Cycle-pointsize = 7
-Cycle-colour = #000000
+Group-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Group-alignment = middle,center
+Group-pointsize = 7
+Group-colour = #000000
 
 Description-format = <left>
 Description-formatEnd = 
-
-GameName-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}; WIDTH: SEMICONDENSED
-GameName-alignment = middle,center
-GameName-pointsize = 8
-GameName-colour = #FFFFFF
 
 Side-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
 Side-alignment = middle,center
@@ -154,24 +143,21 @@ Bottom-stroke = Medium
 Bottom-stroke-width = 2
 Bottom-stroke-colour = #F0000000
 
-
 Artist-format = <left>
 CollectionNumber-format = <left>
 CollectionInfo-format = <right>
 Copyright-format = <center>
 
-EncounterSetNumber-style = FAMILY: {Eons.namedObjects.LRL.BodyFont}; WEIGHT: BOLD
-EncounterSetNumber-alignment = middle,center
-EncounterSetNumber-pointsize = 4.5
-EncounterSetNumber-colour = #FFFFFF
-EncounterSetOf = /
+SetNumber-style = FAMILY: {Eons.namedObjects.LRL.BodyFont}; WEIGHT: BOLD
+SetNumber-alignment = middle,center
+SetNumber-pointsize = 4.5
+SetNumber-colour = #FFFFFF
 
 Page-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}; WIDTH: SEMICONDENSED; WEIGHT: BOLD
 Page-alignment = middle,center
 Page-pointsize = 5
 Page-colour = #000000
 PageIn-format = <b><right><size 6>
-
 
 #tags
 LRLtitle-tag = lrt

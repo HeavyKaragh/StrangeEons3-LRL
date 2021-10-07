@@ -11,11 +11,11 @@ TemplateBack-template-hires = TheLordOfTheRingsLCG/image/EncounterHorizontal.jp2
 Portrait-portrait-clip-region = 0,0,563,413
 Portrait-shadow = TheLordOfTheRingsLCG/image/PokerCardHorizontal-shadow.jp2
 Portrait-shadow-tintable = TheLordOfTheRingsLCG/image/PokerCardHorizontal-shadow-tintable.jp2
-EncounterSet-portrait-clip-region = 481,189,36,36
+Set-portrait-clip-region = 481,189,36,36
 
 Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2
 Difficulty-region = 473,180,52,52
-EncounterSetNumber-region = 487,229,24,12
+SetNumber-region = 487,229,24,12
 
 Name-region = 90,39,381,27
 Progress-region = 52,203,36,24

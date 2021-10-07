@@ -1,2 +1,2 @@
 @cat-markers
-	@LRL-component-PresentationExtra = diy:TheLordOfTheRingsLCG/PresentationExtra/component.js | TheLordOfTheRingsLCG/PresentationExtra/ui.png | LRL
+	@LRL-PresentationExtra-component = diy:TheLordOfTheRingsLCG/PresentationExtra/component.js | TheLordOfTheRingsLCG/PresentationExtra/ui.png | LRL

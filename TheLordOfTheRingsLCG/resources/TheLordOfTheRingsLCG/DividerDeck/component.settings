@@ -20,12 +20,12 @@ Collection-decoration = TheLordOfTheRingsLCG/image/SetDecoration.jp2
 Collection-portrait-clip-back-region = 344,123,20,20
 Collection-decoration-back-region = 339,118,30,30
 
-EncounterSet-portrait-clip-region = 38,38,28,28
-EncounterSet-decoration-region = 32,32,40,40
-EncounterSet-decoration = TheLordOfTheRingsLCG/image/SetDecoration.jp2
+Set-portrait-clip-region = 38,38,28,28
+Set-decoration-region = 32,32,40,40
+Set-decoration = TheLordOfTheRingsLCG/image/SetDecoration.jp2
 
-EncounterSet-portrait-clip-back-region = 347,38,28,28
-EncounterSet-decoration-back-region = 341,32,40,40
+Set-portrait-clip-back-region = 347,38,28,28
+Set-decoration-back-region = 341,32,40,40
 
 Name-region = 72,38,269,87
 Name-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass};

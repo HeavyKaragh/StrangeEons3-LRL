@@ -35,19 +35,19 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	Main_tab.editorTabScrolling = true ;
 	
 	let Title_panel = new TypeGrid() ;
-	Title_panel.setTitle(@LRL-panel-Title) ;
+	Title_panel.setTitle(@LRL-Title) ;
 	let Name_control = uiNameUnique(diy,bindings,FRONT) ;
 	Title_panel.place(Name_control,'hfill') ;
 	Main_tab.place(Title_panel,'hfill') ;
 	
 	let Stats_panel = new TypeGrid() ;
-	Stats_panel.setTitle(@LRL-panel-Stats ) ;
+	Stats_panel.setTitle(@LRL-Stats) ;
 	let ResourceCost_control = new uiStatIcon('ResourceCost',bindings,FRONT,9,['X','-']) ;
 	Stats_panel.place(ResourceCost_control,'') ;
 	Main_tab.place(Stats_panel,'br hfill') ;
 	
 	let Effect_panel = new TypeGrid() ;
-	Effect_panel.setTitle(@LRL-panel-Effect ) ;
+	Effect_panel.setTitle(@LRL-Effect) ;
 	let Trait_control = new uiParagraphLabeled('Trait',bindings,FRONT,'line') ;
 	let Rules_control = new uiParagraphLabeled('Rules',bindings,FRONT,'big') ;
 	let Flavour_control = new uiParagraphLabeled('Flavour',bindings,FRONT,'medium') ;
@@ -59,7 +59,7 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	Main_tab.place(Effect_panel,'br hfill') ;
 
 	let OtherEffect_panel = new TypeGrid() ;
-	OtherEffect_panel.setTitle(@LRL-panel-OtherEffect) ;
+	OtherEffect_panel.setTitle(@LRL-OtherEffect) ;
 	let OptionLeft_control = new uiTextLabeled('OptionLeft',bindings,FRONT) ;
 	let OptionRight_control = new uiTextLabeled('OptionRight',bindings,FRONT) ;
 	OtherEffect_panel.place(
@@ -68,23 +68,23 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	) ;
 	Main_tab.place(OtherEffect_panel,'br hfill') ;
 
-	Main_tab.addToEditor(editor,@LRL-tab-Main) ;
+	Main_tab.addToEditor(editor,@LRL-Main) ;
 	
 // TEMPLATE TAB
 	let Template_tab = new TypeGrid() ;
 	Template_tab.editorTabScrolling = true ;
 
 	let Template_panel = new TypeGrid() ;
-	Template_panel.setTitle(@LRL-panel-Template) ;
+	Template_panel.setTitle(@LRL-Template) ;
 	let list = new Array('Neutral','Leadership','Lore','Spirit','Tactics') ;
-	if(advancedControls) list = list.concat( new Array('Baggins','Fellowship','Mastery','Custom','Boon') ) ;
-	let Template_control = new uiIconList('Template',list,bindings,FRONT) ;
+	if(advancedControls) list = list.concat( new Array('Baggins','Fellowship','Mastery','Custom','Boon')) ;
+	let Template_control = new uiListIcon('Template',list,bindings,FRONT) ;
 	Template_panel.place(Template_control,'hfill') ;
 	Template_tab.place(Template_panel,'hfill') ;
 	
 	if(advancedControls){
 		let CustomSphere_panel = new TypeGrid() ;
-		CustomSphere_panel.setTitle(@LRL-panel-CustomSphere) ;
+		CustomSphere_panel.setTitle(@LRL-CustomSphere) ;
 		let CustomTint_control = new uiTint('Custom',bindings,FRONT) ;
 		let SpherePortrait_control = new uiPortrait('Sphere',diy) ;
 		let BodyIconPortrait_control = new uiPortrait('BodyIcon',diy) ;
@@ -100,7 +100,7 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	
 	// CUTTING PANEL
 	let Cutting_panel = new TypeGrid() ;
-	Cutting_panel.setTitle(@LRL-panel-Cutting) ;
+	Cutting_panel.setTitle(@LRL-Cutting) ;
 	let ShowCut_control = new uiButtonText('ShowCut',diy,bindings,FRONT) ;
 	Cutting_panel.place(ShowCut_control,'hfill') ;
 	if(advancedControls){
@@ -109,14 +109,14 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	}
 	Template_tab.place(Cutting_panel,'br hfill') ;
 	
-	Template_tab.addToEditor(editor,@LRL-tab-Template) ;
+	Template_tab.addToEditor(editor,@LRL-Template) ;
 		
 // PORTRAIT TAB
 	let Portrait_tab = new TypeGrid() ;
 	Portrait_tab.editorTabScrolling = true ;
 	
 	let Portrait_panel = new TypeGrid() ;
-	Portrait_panel.setTitle(@LRL-panel-Portrait) ;
+	Portrait_panel.setTitle(@LRL-Portrait) ;
 	let Artist_control = new uiTextLabeled('Artist',bindings,FRONT) ;
 	let Portrait_control = new uiPortrait('Portrait',diy) ;
 	let PortraitMirror_control = new uiPortraitMirror('Portrait',Portrait_control) ;
@@ -127,7 +127,7 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	) ;
 	Portrait_tab.place(Portrait_panel,'hfill') ;
 	
-	Portrait_tab.addToEditor(editor,@LRL-tab-Portrait) ;
+	Portrait_tab.addToEditor(editor,@LRL-Portrait) ;
 	
 // COLLECTION TAB
 	let Collection_tab = new TypeGrid() ; 
@@ -135,21 +135,22 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	
 	// COLLECTION PANEL
 	let Collection_panel = new TypeGrid() ;
-	Collection_panel.setTitle(@LRL-panel-Collection) ;
+	Collection_panel.setTitle(@LRL-Collection) ;
 	let CollectionNumber_control = new uiSpinnerLabeled('CollectionNumber',bindings,FRONT,999) ;
 	let CollectionInfo_control = new uiTextLabeled('CollectionInfo',bindings,FRONT) ;
 	let Collection_control = new uiCollectionList(bindings,FRONT) ;
 	let CollectionPortrait_control = new uiPortrait('Collection',diy) ;
 	Collection_panel.place(
 		Collection_control,'hfill' 
-		, CollectionNumber_control , 'br' 
+		, CollectionNumber_control,'br' 
 		, CollectionInfo_control,'hfill' 
 		, CollectionPortrait_control,'br hfill'
 	) ;
 	Collection_tab.place(Collection_panel,'hfill') ;
-		
+	
+	// OTHER PANEL
 	let Other_panel = new TypeGrid() ;
-	Other_panel.setTitle(@LRL-panel-Other) ;
+	Other_panel.setTitle(@LRL-Other) ;
 	let Copyright_control = new uiTextLabeled('Copyright',bindings,FRONT) ;
 	Other_panel.place(Copyright_control,'hfill') ;
 	if(advancedControls){
@@ -162,12 +163,12 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	}
 	Collection_tab.place(Other_panel,'br hfill') ;
 
-	Collection_tab.addToEditor(editor,@LRL-tab-Collection) ;
+	Collection_tab.addToEditor(editor,@LRL-Collection) ;
 
 	bindings.bind() ; 
 }
 
-function createFrontPainter( diy , sheet ){ debug(1,'\ncreateFrontPainter') ;
+function createFrontPainter(diy,sheet){ debug(1,'\ncreateFrontPainter') ;
 	
 // TEMPLATE
 	CustomBody_tinter = new createTinter('Custom-Body',diy) ;
@@ -178,12 +179,12 @@ function createFrontPainter( diy , sheet ){ debug(1,'\ncreateFrontPainter') ;
 	ResourceCost_tinter = new createTinter('ResourceCost',diy) ;
 
 // TEXT
-	Name_writer = new createTextBox('Name' , diy , sheet ) ;
-	Body_writer = new createTextBox('Body' , diy , sheet ) ;
-	Option_writer = new createTextBox('Option' , diy , sheet ) ;
-	Type_writer = new createTextBox('Type' , diy , sheet ) ;
-	Bottom_writer = new createTextBox('Bottom' , diy , sheet ) ;
-	Subtype_writer = new createTextBox('Subtype' , diy , sheet ) ;
+	Name_writer = new createTextBox('Name',diy,sheet) ;
+	Body_writer = new createTextBox('Body',diy,sheet) ;
+	Option_writer = new createTextBox('Option',diy,sheet) ;
+	Type_writer = new createTextBox('Type',diy,sheet) ;
+	Bottom_writer = new createTextBox('Bottom',diy,sheet) ;
+	Subtype_writer = new createTextBox('Subtype',diy,sheet) ;
 
 	updateExternalPortrait('Portrait',diy) ;
 	updateExternalPortrait('Collection',diy) ;
@@ -191,39 +192,39 @@ function createFrontPainter( diy , sheet ){ debug(1,'\ncreateFrontPainter') ;
 	updateExternalPortrait('BodyIcon',diy) ;
 }
 
-function paintFront( g , diy , sheet ){ debug(1,'\npaintFront') ;
+function paintFront(g,diy,sheet){ debug(1,'\npaintFront') ;
 	
 // PORTRAIT
-	paintPortrait('Portrait' , diy , g , sheet ) ;
+	paintPortrait('Portrait',diy,g,sheet) ;
 
 // TEMPLATE
-	if( $Template == 'Custom' ) paintCustomBody(diy,g,sheet) ; // colorized text box
+	if($Template=='Custom') paintCustomBody(diy,g,sheet) ; // colorized text box
 	paintTemplate(diy,g,sheet) ; // this will draw the selected $Template
-	if( $Template == 'Custom' ) paintCustomColour(diy,g,sheet) ; // colorized "pearls"
+	if($Template=='Custom') paintCustomColour(diy,g,sheet) ; // colorized "pearls"
 	
 // ICONS
-	paintIcon('Collection' , diy , g , sheet ) ;
-	if( $Template == 'Custom' ) paintPortrait('Sphere' , diy , g , sheet ) ;
+	paintIcon('Collection',diy,g,sheet) ;
+	if($Template=='Custom') paintPortrait('Sphere',diy,g,sheet) ;
 
 // STATS
-	paintStatTinted('ResourceCost' , ResourceCost_tinter , diy , g , sheet ) ;
+	paintStatTinted('ResourceCost',ResourceCost_tinter,diy,g,sheet) ;
 
 // TEXTS
 	writeName(diy,g) ;
-	writeBody( [ 'Trait','Rules','Flavour' ],diy,g) ;
-//	switch( $Template ){
+	writeBody(['Trait','Rules','Flavour'],diy,g) ;
+//	switch($Template ){
 //	case 'Neutral':
 //	case 'Boon':
-//		Body_writer.setPageShape( PageShape.RECTANGLE_SHAPE ) ;
+//		Body_writer.setPageShape(PageShape.RECTANGLE_SHAPE) ;
 //		break;
 //	default:
-//		Body_writer.setPageShape( diy.settings.getCupShape('Sphere-Body-shape' ) ) ;
+//		Body_writer.setPageShape(diy.settings.getCupShape('Sphere-Body-shape')) ;
 //	}
 	
 	writeType(diy,g) ;
-	if( $Template == 'Boon' ) writeSubtype(diy,g) ; 
-	writeOptionLeft(diy,g,sheet) ;
-	writeOptionRight(diy,g,sheet) ;
+	if($Template=='Boon') writeSubtype(diy,g) ; 
+	writeOption('OptionLeft',diy,g,sheet) ;
+	writeOption('OptionRight',diy,g,sheet) ;
 	
 	writeArtist(diy,g,sheet) ;
 	writeCopyright(diy,g,sheet) ;
@@ -233,7 +234,7 @@ function paintFront( g , diy , sheet ){ debug(1,'\npaintFront') ;
 	paintCut(diy,g,sheet) ;
 }
 
-if( sourcefile == 'Quickscript' ){
+if(sourcefile=='Quickscript'){
 	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings') ;
 	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings') ;
 

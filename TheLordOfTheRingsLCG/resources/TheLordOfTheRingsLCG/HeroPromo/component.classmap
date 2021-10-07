@@ -1,2 +1,2 @@
 @cat-characters
-	@LRL-component-HeroPromo = diy:TheLordOfTheRingsLCG/HeroPromo/component.js | TheLordOfTheRingsLCG/HeroPromo/ui.png | LRL
+	@LRL-HeroPromo-component = diy:TheLordOfTheRingsLCG/HeroPromo/component.js | TheLordOfTheRingsLCG/HeroPromo/ui.png | LRL

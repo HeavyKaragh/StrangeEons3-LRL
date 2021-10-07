@@ -9,7 +9,7 @@ TemplateBack-template = TheLordOfTheRingsLCG/image/Player-lr.jp2
 TemplateBack-template-hires = TheLordOfTheRingsLCG/image/Player.jp2
 
 Portrait-portrait-clip-region = 0,61,413,265
-EncounterSet-portrait-clip-region = 331,482,36,36
+Set-portrait-clip-region = 331,482,36,36
 
 ResourceCost-region = 45,61,44,30
 

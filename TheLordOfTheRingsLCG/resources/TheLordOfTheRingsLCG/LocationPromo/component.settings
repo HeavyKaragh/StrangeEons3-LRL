@@ -1,5 +1,5 @@
 Collection-portrait-clip-region = 322,512,12,12
-EncounterSet-portrait-clip-region = 44,58,36,36
+Set-portrait-clip-region = 44,58,36,36
 Portrait-portrait-clip-region = 0,0,375,525
 
 Progress-region = 37,268,36,24

@@ -1,2 +1,2 @@
 @cat-markers
-	@LRL-component-Set = diy:TheLordOfTheRingsLCG/Set/component.js | TheLordOfTheRingsLCG/Set/ui.png | LRL
+	@LRL-Set-component = diy:TheLordOfTheRingsLCG/Set/component.js | TheLordOfTheRingsLCG/Set/ui.png | LRL

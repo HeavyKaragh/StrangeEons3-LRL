@@ -9,11 +9,11 @@ TemplateBack-template = TheLordOfTheRingsLCG/image/Encounter-lr.jp2
 TemplateBack-template-hires = TheLordOfTheRingsLCG/image/Encounter.jp2
 
 Portrait-portrait-clip-region = 70,0,343,327
-EncounterSet-portrait-clip-region = 324,272,36,36
+Set-portrait-clip-region = 324,272,36,36
 
 Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2
 Difficulty-region = 315,263,52,52
-EncounterSetNumber-region = 330,316,24,12
+SetNumber-region = 330,316,24,12
 
 Name-region = 53,103,23,175
 Body-region = 57,336,299,157

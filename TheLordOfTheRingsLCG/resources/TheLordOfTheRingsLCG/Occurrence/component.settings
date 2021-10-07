@@ -9,7 +9,7 @@ TemplateBack-template = TheLordOfTheRingsLCG/Occurrence/StandardBack-lr.jp2
 TemplateBack-template-hires = TheLordOfTheRingsLCG/Occurrence/StandardBack.jp2
 
 Portrait-portrait-clip-region = 0,165,413,170
-EncounterSet-portrait-clip-region = 340,39,34,34
+Set-portrait-clip-region = 340,39,34,34
 
 Difficulty-region = 329,34,50,50
 Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2

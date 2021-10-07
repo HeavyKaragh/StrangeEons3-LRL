@@ -18,7 +18,7 @@ and size?) and another that actually paints it (where and when? to
 avoid overlapping other stuff and/or to use a special graphical effect).
 For example, card "Type" setting, ($Type), is defined in the user interface
 by Type_control, in the createFrontPainter by Type_writer and in the
-paintFront by writeLine('Type' ).
+paintFront by writeLine('Type').
 */
 
 function create(diy){ debug(1,'\ncreate') ;
@@ -156,9 +156,9 @@ group together the Name control and Unique button.
 	// container will be placed later in the tab. I will include only the 
 	// controls related to the title of the card.
 
-	Title_panel.setTitle(@LRL-panel-Title) ;
+	Title_panel.setTitle(@LRL-Title) ;
 	// This will add a label to the container and also show a border around.
-	// "@LRL-panel-Title" passes a text localized depending on Strange Eons
+	// "@LRL-Title" passes a text localized depending on Strange Eons
 	// "User interface language" defined in the Preferences.
 	
 	let Name_control = uiNameUnique(diy,bindings,FRONT) ;
@@ -183,7 +183,7 @@ group together the Name control and Unique button.
 Another control group for the component numerical controls.
 */
 	let Stats_panel = new TypeGrid() ;
-	Stats_panel.setTitle(@LRL-panel-Stats) ;
+	Stats_panel.setTitle(@LRL-Stats) ;
 	
 	let ResourceCost_control = new uiStatIcon('ResourceCost',bindings,FRONT,9,['X','-']) ;
 	let Willpower_control = new uiStatIcon('Willpower',bindings,FRONT,9,['X','-']) ;
@@ -217,7 +217,7 @@ block, but this way the user can forget about formating the text block
 apropiately. 
 */
 	let Effect_panel = new TypeGrid() ;
-	Effect_panel.setTitle(@LRL-panel-Effect) ;
+	Effect_panel.setTitle(@LRL-Effect) ;
 	
 	let Trait_control = new uiParagraphLabeled('Trait',bindings,FRONT,'line') ;
 	let Rules_control = new uiParagraphLabeled('Rules',bindings,FRONT,'big') ;
@@ -243,7 +243,7 @@ Here I include optional controls for stuff that may not be added to the
 card. Specifically, the text blocks for Victory points is added here.
 */
 	let OtherEffect_panel = new TypeGrid() ;
-	OtherEffect_panel.setTitle(@LRL-panel-OtherEffect) ;
+	OtherEffect_panel.setTitle(@LRL-OtherEffect) ;
 	
 	let OptionLeft_control = new uiTextLabeled('OptionLeft',bindings,FRONT) ;
 	let OptionRight_control = new uiTextLabeled('OptionRight',bindings,FRONT) ;
@@ -256,7 +256,7 @@ card. Specifically, the text blocks for Victory points is added here.
 	) ;
 	Main_tab.place(OtherEffect_panel,'br hfill') ;
 	
-	Main_tab.addToEditor(editor,@LRL-tab-Main) ;
+	Main_tab.addToEditor(editor,@LRL-Main) ;
 	// Now everything is actually drawn in the editor, and the tab name defined.
 	
 // TEMPLATE TAB
@@ -273,15 +273,15 @@ custom spheres, that is, unofficial spheres.
 This will add the template selector, that means the sphere for player cards.
 */
 	let Template_panel = new TypeGrid() ;
-	Template_panel.setTitle(@LRL-panel-Template) ;
+	Template_panel.setTitle(@LRL-Template) ;
 	
 	let list = new Array('Neutral','Leadership','Lore','Spirit','Tactics') ;
 	// "list" includes all the important template variants
-	if(advancedControls) list = list.concat( new Array('Baggins','Fellowship','Mastery','Custom') ) ;
+	if(advancedControls) list = list.concat( new Array('Baggins','Fellowship','Mastery','Custom')) ;
 	// "list" may be extended with unusual templates
-	let Template_control = new uiIconList('Template',list,bindings,FRONT) ;
+	let Template_control = new uiListIcon('Template',list,bindings,FRONT) ;
 	// This function that shows a selectable icon plus text in a list control,
-	// including all the templates from templateList .  
+	// including all the templates from list . 
 	
 	Template_panel.place(Template_control,'hfill') ;
 	Template_tab.place(Template_panel,'hfill') ;
@@ -294,7 +294,7 @@ panel includes all the controls related to it.
 */
 	if(advancedControls){
 		let CustomSphere_panel = new TypeGrid() ;
-		CustomSphere_panel.setTitle(@LRL-panel-CustomSphere) ;
+		CustomSphere_panel.setTitle(@LRL-CustomSphere) ;
 		
 		let CustomTint_control = new uiTint('Custom',bindings,FRONT) ;
 		// This function shows a tinter control. It shows a colour
@@ -327,7 +327,7 @@ ShowBleeding is specially interesting during plugin development, to check
 that component's template show all important stuff inside the safe space.
 */
 	let Cutting_panel = new TypeGrid() ;
-	Cutting_panel.setTitle(@LRL-panel-Cutting) ;
+	Cutting_panel.setTitle(@LRL-Cutting) ;
 	let ShowCut_control = new uiButtonText('ShowCut',diy,bindings,FRONT) ;
 	Cutting_panel.place(ShowCut_control,'hfill') ;
 	if(advancedControls){
@@ -336,7 +336,7 @@ that component's template show all important stuff inside the safe space.
 	}
 	Template_tab.place(Cutting_panel,'br hfill') ;
 	
-	Template_tab.addToEditor(editor,@LRL-tab-Template) ;
+	Template_tab.addToEditor(editor,@LRL-Template) ;
 	
 // PORTRAIT TAB
 /*
@@ -349,7 +349,7 @@ portraits, like the Quest card, they are added to this tab too.
 	
 // PORTRAIT PANEL	
 	let Portrait_panel = new TypeGrid() ;
-	Portrait_panel.setTitle(@LRL-panel-Portrait) ;
+	Portrait_panel.setTitle(@LRL-Portrait) ;
 	
 	let Artist_control = new uiTextLabeled('Artist',bindings,FRONT) ;
 	let Portrait_control = new uiPortrait('Portrait',diy) ;
@@ -363,7 +363,7 @@ portraits, like the Quest card, they are added to this tab too.
 	) ;
 	Portrait_tab.place(Portrait_panel,'hfill') ;
 	
-	Portrait_tab.addToEditor(editor,@LRL-tab-Portrait) ;
+	Portrait_tab.addToEditor(editor,@LRL-Portrait) ;
 	
 // COLLECTION TAB
 /*
@@ -376,7 +376,7 @@ less likely to be used controls. For example, controls to change "Type" and
 	
 // COLLECTION PANEL
 	let Collection_panel = new TypeGrid() ;
-	Collection_panel.setTitle(@LRL-panel-Collection) ;
+	Collection_panel.setTitle(@LRL-Collection) ;
 	
 	let CollectionNumber_control = new uiSpinnerLabeled('CollectionNumber',bindings,FRONT,999) ;
 	// Custom control to change the collection number
@@ -406,7 +406,7 @@ texts, like the card type. Useful to create cards in languages not
 supported by the plugin.
 */
 	let Other_panel = new TypeGrid() ;
-	Other_panel.setTitle(@LRL-panel-Other) ;
+	Other_panel.setTitle(@LRL-Other) ;
 	let Copyright_control = new uiTextLabeled('Copyright',bindings,FRONT) ;
 	Other_panel.place(Copyright_control,'hfill') ;
 	if(advancedControls){
@@ -417,7 +417,7 @@ supported by the plugin.
 	}
 	Collection_tab.place(Other_panel,'br hfill') ;
 
-	Collection_tab.addToEditor(editor,@LRL-tab-Collection) ;
+	Collection_tab.addToEditor(editor,@LRL-Collection) ;
 
 	bindings.bind() ; 
 	// This method links each control to it's respective setting as defined
@@ -425,7 +425,7 @@ supported by the plugin.
 	// of the create interface function.
 }
 
-function createFrontPainter( diy , sheet ){ debug(1,'\ncreateFrontPainter') ;
+function createFrontPainter(diy,sheet){ debug(1,'\ncreateFrontPainter') ;
 /*
 "createFrontPainter" is one of the main functions on scripted 
 components. It's called only once when a component is going to be 
@@ -455,11 +455,11 @@ defined as var or const) so they can be accesed in paintFront.
 	// Copyright and CollectionNumber). The only difference in those elements
 	// is the horizontal alignment, so an alignment tag is added to the text
 	// through setting-format.
-	Name_writer = new createTextBox('Name' , diy , sheet ) ;
-	Body_writer = new createTextBox('Body' , diy , sheet ) ;
-	Option_writer = new createTextBox('Option' , diy , sheet ) ;
-	Type_writer = new createTextBox('Type' , diy , sheet ) ;
-	Bottom_writer = new createTextBox('Bottom' , diy , sheet ) ;
+	Name_writer = new createTextBox('Name',diy,sheet) ;
+	Body_writer = new createTextBox('Body',diy,sheet) ;
+	Option_writer = new createTextBox('Option',diy,sheet) ;
+	Type_writer = new createTextBox('Type',diy,sheet) ;
+	Bottom_writer = new createTextBox('Bottom',diy,sheet) ;
 
 // STATS
 	// Tinters are Strange Eons functions that paint a image with a given
@@ -487,7 +487,7 @@ defined as var or const) so they can be accesed in paintFront.
 	updateExternalPortrait('BodyIcon',diy) ;
 }
 
-//function createBackPainter( diy, sheet ){ debug(1,'\ncreateBackPainter') ;
+//function createBackPainter(diy,sheet){ debug(1,'\ncreateBackPainter') ;
 /*
 "createBackPainter" is one of the main functions on scripted components.
 This is functionally identical to createFrontPainter, but is used for 
@@ -497,7 +497,7 @@ component creation), it's not needed. It's here just for reference.
 */
 //}
 
-function paintFront( g , diy , sheet ){ debug(1,'\npaintFront') ;
+function paintFront(g,diy,sheet){ debug(1,'\npaintFront') ;
 /*
 "paintFront" is one of the main functions on scripted components. It's 
 called whenever a component is actually going to be drawn by Strange 
@@ -507,36 +507,36 @@ the back side of the component too: paintBack.
 // PORTRAIT
 	// This function simply paints the image defined in the corresponding
 	// user interface control in rhe specified region
-	paintPortrait('Portrait' , diy , g , sheet ) ;
+	paintPortrait('Portrait',diy,g,sheet) ;
 
 // TEMPLATE
-	if( $Template == 'Custom' ) paintCustomBody(diy,g,sheet) ; // colorized text box
+	if($Template=='Custom') paintCustomBody(diy,g,sheet) ; // colorized text box
 	paintTemplate(diy,g,sheet) ; // this will draw the selected $Template
-	//sheet.paintTemplateImage( g ) ; // in some cards, where template cannot be modified,
+	//sheet.paintTemplateImage(g) ; // in some cards, where template cannot be modified,
 	// this is used, and it will draw the image defined in diy.frontTemplateKey
-	if( $Template == 'Custom' ) paintCustomColour(diy,g,sheet) ; // colorized "pearls"
+	if($Template=='Custom') paintCustomColour(diy,g,sheet) ; // colorized "pearls"
 	
 // ICONS
 	// Icons may be painted from two different sources: a predefined list
 	// or from the image added to a specific user interface control. Which
 	// one to use is stored in $Collection.
-	paintIcon('Collection' , diy , g , sheet ) ;
+	paintIcon('Collection',diy,g,sheet) ;
 	// This icon's only source is the user interface control.
-	if( $Template == 'Custom' ) paintPortrait('Sphere' , diy , g , sheet ) ;
+	if($Template=='Custom') paintPortrait('Sphere',diy,g,sheet) ;
 
 // STATS
 	// These functions define how to paint a stat. These look for the
 	// value of $Attack, pick a image from the resources contained in 
 	// TheLordOfTheRings-B.seext and paints it $Attack-region.
-	paintStat('Willpower' , diy , g , sheet ) ;
-	paintStat('Attack' , diy , g , sheet ) ;
-	paintStat('Defense' , diy , g , sheet ) ;
+	paintStat('Willpower',diy,g,sheet) ;
+	paintStat('Attack',diy,g,sheet) ;
+	paintStat('Defense',diy,g,sheet) ;
 	// When tinted, a tintable image (colored, different from the plain black
 	// images used in other stats) containing the number determined by
 	// $HitPoints is passed to the tinter, which will return it in the colour
 	// defined in $HitPoints-tint, and then painted in $HitPoints-region.
-	paintStatTinted('ResourceCost' , ResourceCost_tinter , diy , g , sheet ) ;
-	paintStatTinted('HitPoints' , HitPoints_tinter , diy , g , sheet ) ;
+	paintStatTinted('ResourceCost',ResourceCost_tinter,diy,g,sheet) ;
+	paintStatTinted('HitPoints',HitPoints_tinter,diy,g,sheet) ;
 	
 // TEXTS
 	// These functions put the text in the writers defined in
@@ -551,7 +551,7 @@ the back side of the component too: paintBack.
 	// $Name-format : is optional, and provides a way of formating
 	//			the text through html tags without including them
 	//			in the user interface field.
-	writeName( diy , g ) ;
+	writeName(diy,g) ;
 	// The text region containing the card effect contains distinctly
 	// formated texts. Each text uses it's own user interface control,
 	// saving the user the trouble to add formatting stuff.
@@ -573,11 +573,11 @@ the back side of the component too: paintBack.
 	// $Flavour-formatEnd
 	// Also, note that Encounter cards' $Shadow-format adds the image
 	// of the ShadowSeparator.
-	writeBody( [ 'Trait' , 'Rules' , 'Flavour' ] , diy , g ) ;
+	writeBody(['Trait','Rules','Flavour'],diy,g) ;
 
-	writeType( diy , g ) ;
-	writeOptionLeft(diy,g,sheet) ;
-	writeOptionRight(diy,g,sheet) ;
+	writeType(diy,g) ;
+	writeOption('OptionLeft',diy,g,sheet) ;
+	writeOption('OptionRight',diy,g,sheet) ;
 	
 	writeArtist(diy,g,sheet) ;
 	writeCopyright(diy,g,sheet) ;
@@ -589,7 +589,7 @@ the back side of the component too: paintBack.
 	paintCut(diy,g,sheet) ;
 }
 
-//function paintBack( g, diy, sheet ){ debug(1,'\npaintBack') ;
+//function paintBack(g,diy,sheet){ debug(1,'\npaintBack') ;
 /*
 "paintBack" is one of the main functions on scripted components. This 
 is functionally identical to paintFront, but is used for the back side
@@ -597,26 +597,26 @@ of the component.
 In cards using PLAIN_BACK (when cardback is a simple image, defined on
 component creation), it's not needed. It's here just for reference.
 */
-//	sheet.paintTemplateImage( g ) ;
+//	sheet.paintTemplateImage(g) ;
 //	paintCut(diy,g,sheet) ;
 //}
 
-if( sourcefile == 'Quickscript' ){
+if(sourcefile=='Quickscript'){
 /*
 "Quickscript" code is used to load the settings, texts and libraries
 used while running the script in the editor pressing F5.
 */
-	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings' ) ;
-	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings' ) ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings') ;
+	Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings') ;
 
-	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js' ) ;
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js') ;
 	Eons.namedObjects.LRL = new gameObject() ;
-	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js' ) ;
-	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game' ) ;
-	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface' ) ;
-	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons' ) ;	
+	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js') ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game') ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface') ;
+	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons') ;	
 
-	testDIYScript('LRL' ) ;
+	testDIYScript('LRL') ;
 }else{
-	useLibrary('res://TheLordOfTheRingsLCG/library.js' ) ;
+	useLibrary('res://TheLordOfTheRingsLCG/library.js') ;
 }

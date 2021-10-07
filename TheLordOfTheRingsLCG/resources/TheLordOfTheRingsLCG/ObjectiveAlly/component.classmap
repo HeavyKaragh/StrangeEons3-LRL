@@ -1,2 +1,2 @@
 @cat-characters
-	@LRL-component-ObjectiveAlly = diy:TheLordOfTheRingsLCG/ObjectiveAlly/component.js | TheLordOfTheRingsLCG/ObjectiveAlly/ui.png | LRL
+	@LRL-ObjectiveAlly-component = diy:TheLordOfTheRingsLCG/ObjectiveAlly/component.js | TheLordOfTheRingsLCG/ObjectiveAlly/ui.png | LRL

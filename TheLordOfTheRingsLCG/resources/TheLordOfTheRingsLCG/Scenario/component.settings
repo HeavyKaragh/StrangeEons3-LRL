@@ -9,13 +9,13 @@ TemplateBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-lr.jp2
 TemplateBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack.jp2
 
 Portrait-portrait-clip-region = 0,66,413,230
-EncounterSet-portrait-clip-region = 40,40,44,44
+Set-portrait-clip-region = 40,40,44,44
 
-EncounterSet1-portrait-clip-region = 41,92,22,22
-EncounterSet2-portrait-clip-region = 41,114,22,22
-EncounterSet3-portrait-clip-region = 41,136,22,22
-EncounterSet4-portrait-clip-region = 41,158,22,22
-EncounterSet5-portrait-clip-region = 41,180,22,22
+Set1-portrait-clip-region = 41,92,22,22
+Set2-portrait-clip-region = 41,114,22,22
+Set3-portrait-clip-region = 41,136,22,22
+Set4-portrait-clip-region = 41,158,22,22
+Set5-portrait-clip-region = 41,180,22,22
 
 Standard-template = TheLordOfTheRingsLCG/Scenario/Standard-lr.jp2
 Standard-template-hires = TheLordOfTheRingsLCG/Scenario/Standard.jp2
@@ -49,7 +49,7 @@ OptionRight-region = 306,507,59,9
 OptionRightDecoration-region = 299,503,72,17
 
 Name-region = 96,42,270,22
-Cycle-region = 100,72,262,10
+Group-region = 100,72,262,10
 Body-region = 48,298,316,196
 BodyBack-region = 48,42,316,474
 Type-region = 136,502,140,17

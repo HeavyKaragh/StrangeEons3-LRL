@@ -1,2 +1,2 @@
 @cat-markers
-	@LRL-component-DividerHorizontal = diy:TheLordOfTheRingsLCG/DividerHorizontal/component.js | TheLordOfTheRingsLCG/DividerHorizontal/ui.png | LRL
+	@LRL-DividerHorizontal-component = diy:TheLordOfTheRingsLCG/DividerHorizontal/component.js | TheLordOfTheRingsLCG/DividerHorizontal/ui.png | LRL

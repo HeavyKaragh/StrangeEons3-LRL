@@ -35,18 +35,18 @@ Page-decoration-back-region = 52,524,72,18
 
 Adapter-corrector = 19
 
-EncounterSet-portrait-clip-region = 99,77,21,21
-EncounterSet1-portrait-clip-region = 138,77,21,21
-EncounterSet2-portrait-clip-region = 176,77,21,21
-EncounterSet3-portrait-clip-region = 215,77,21,21
-EncounterSet4-portrait-clip-region = 255,77,21,21
-EncounterSet5-portrait-clip-region = 297,77,21,21
+Set-portrait-clip-region = 99,77,21,21
+Set1-portrait-clip-region = 138,77,21,21
+Set2-portrait-clip-region = 176,77,21,21
+Set3-portrait-clip-region = 215,77,21,21
+Set4-portrait-clip-region = 255,77,21,21
+Set5-portrait-clip-region = 297,77,21,21
 #
-#EncounterSetM1-region = 119,77,21,21
-#EncounterSetM2-region = 157,77,21,21
-#EncounterSetM3-region = 197,77,21,21
-#EncounterSetM4-region = 236,77,21,21
-#EncounterSetM5-region = 275,77,21,21
+#SetM1-region = 119,77,21,21
+#SetM2-region = 157,77,21,21
+#SetM3-region = 197,77,21,21
+#SetM4-region = 236,77,21,21
+#SetM5-region = 275,77,21,21
 
 Adapter-0 = TheLordOfTheRingsLCG/image/empty1x1.png
 Adapter-1 = TheLordOfTheRingsLCG/Rules/Adapter-1.jp2

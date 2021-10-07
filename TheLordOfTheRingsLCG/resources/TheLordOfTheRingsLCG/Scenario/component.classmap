@@ -1,2 +1,2 @@
 @cat-markers
-	@LRL-component-Scenario = diy:TheLordOfTheRingsLCG/Scenario/component.js | TheLordOfTheRingsLCG/Scenario/ui.png | LRL
+	@LRL-Scenario-component = diy:TheLordOfTheRingsLCG/Scenario/component.js | TheLordOfTheRingsLCG/Scenario/ui.png | LRL
