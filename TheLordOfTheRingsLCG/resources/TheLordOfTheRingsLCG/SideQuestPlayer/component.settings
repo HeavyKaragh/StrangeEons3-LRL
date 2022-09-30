@@ -1,7 +1,7 @@
 Template-region = 0,0,563,413
 Template-ppi = 150
-Template-template = TheLordOfTheRingsLCG/SideQuestPlayer/Neutral-lr.jp2
-Template-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Neutral.jp2
+Template-template = TheLordOfTheRingsLCG/SideQuestPlayer/Leadership-lr.jp2
+Template-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Leadership.jp2
 
 TemplateBack-region = 0,0,563,413
 TemplateBack-ppi = 150

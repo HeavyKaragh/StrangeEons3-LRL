@@ -397,15 +397,15 @@ function formatText(key,diy){ debug(3,'\n\tformatText: '+key) ;
 	return output ;
 }
 
-function writeGroup(diy,g){ debug(2,'\n\twriteGroup') ;
-	let text = formatText('Group',diy);
-	let region = diy.settings.getRegion('Group');
-	let format = diy.settings.get('Group-format','')
+function writeCampaign(diy,g){ debug(2,'\n\twriteCampaign') ;
+	let text = formatText('Campaign',diy);
+	let region = diy.settings.getRegion('Campaign');
+	let format = diy.settings.get('Campaign-format','')
 	
 	text = format+text ;
 	
 	debug(5,'\tText: '+text) ;
-	writeLine(text,Group_writer,region,g) ;
+	writeLine(text,Campaign_writer,region,g) ;
 }
 
 function writeType(diy,g){ debug(2,'\n\twriteType') ;
@@ -456,6 +456,9 @@ function writeSetNumber(diy,g){ debug(2,'\n\twriteSetNumber') ;
 }
 
 function writeName(diy,g){ debug(2,'\n\twriteName') ;
+/*
+Draws $key on the component template in the $key-region.
+*/
 	let text = diy.settings.get('Name','') ;
 	let region = diy.settings.getRegion('Name') ;
 	let format = diy.settings.get('Name-format','')
@@ -471,14 +474,14 @@ function writeName(diy,g){ debug(2,'\n\twriteName') ;
 function writeNameRotated(diy,g){ debug(2,'\n\twriteNameRotated') ;
 // usar nuevo drawtitlerotated
 /*
-Draws $key on the component template $key-region rotated.
+Draws $key rotated on the component template in the $key-region.
 */
 	let text = diy.settings.get('Name','') ;
 	let region = diy.settings.getRegion('Name') ;
 	let format = diy.settings.get('Name-format','')
 	let unique = diy.settings.get('Unique-format','<lrs>u<u+2006></lrs>') ;
 
-	if(diy.settings.getBoolean('Unique')) text = unique+text ;
+	if(diy.settings.getBoolean('Unique',false)) text = unique+text ;
 	text = format+text ;
 	
 	debug(5,'\tText: '+text) ;
@@ -697,12 +700,10 @@ function writeCollectionInfo(diy,g,sheet){ debug(2,'\n\twriteCollectionInfo') ;
 	writeTextOutlined(text,Bottom_writer,region,stroke,diy,g,sheet) ;
 }
 function writeCollectionNumber(diy,g,sheet){ debug(2,'\n\twriteCollectionNumber') ;
-	let text ;
-	let number = diy.settings.get('CollectionNumber',0) ;
+	let text = diy.settings.get('CollectionNumber','0') ;
+	if(text == '0') text = '---' ;
 	let region = diy.settings.getRegion('CollectionNumber') ;
 	let stroke = getStroke('Bottom',diy) ;
-	if(number>0) text = $CollectionNumber ;
-	else text = '---' ;
 	writeTextOutlined(text,Bottom_writer,region,stroke,diy,g,sheet) ;
 }
 
@@ -922,9 +923,12 @@ testDIYScript();
 		, @LRL-Red,$Red-tint
 		, @LRL-Green,$Green-tint
 		, @LRL-Blue,$Blue-tint
-		, @LRL-Purple,$Purple-tint
 		, @LRL-Yellow,$Yellow-tint
-		, @LRL-Brown,$Brown-tint
+		, @LRL-Magenta,$Magenta-tint
+		, @LRL-Cyan,$Cyan-tint
+		, @LRL-White,$White-tint
+		, @LRL-Grey,$Grey-tint
+		, @LRL-Black,$Black-tint
 	) ;
  	bindings.add(key+'-tint',control,sides) ;
 	return control ;
@@ -1153,28 +1157,30 @@ Use only the key without the "Card" type.
 */
 	let index = PortraitList.length ;
 	PortraitList[index] = new DefaultPortrait(diy,key,false) ;
-	PortraitList[index].setBackgroundFilled(diy.settings.getBoolean(key+'-portrait-backgroundFilled',false)) ;
+	PortraitList[index].setBackgroundFilled(diy.settings.getBoolean(key+'-portrait-backgroundFilled',true)) ;
 	PortraitList[index].setClipping(diy.settings.getBoolean(key+'-portrait-clipping',true)) ;
-	PortraitList[index].setScaleUsesMinimum(diy.settings.getBoolean(key+'-portrait-fit',false)) ;
-//	if(diy.settings.get(Card+'-'+key+'-stencil',null )!=null ){
-//		PortraitList[index].setClipStencil(
-//			ImageUtils.get(Card+'-'+key+'-stencil')
-////			ca.cgjennings.apps.arkham.component.AbstractPortrait.createStencil(
-////				ImageUtils.get(Card+'-'+key+'-stencil') ,
-////				diy.settings.getRegion(Card+'-'+key+'-portrait-clip-region')
-////			)
-//		) ;
-//		PortraitList[index].setClipping(true)
-//	}
-	debug(5,'\t-portrait-clip-region: '+$(key+'-portrait-clip-region')) ;
-	debug(5,'\t-portrait-template: '+$(key+'-portrait-template')) ;
-	debug(5,'\t-portrait-scale: '+$(key+'-portrait-scale')) ;
-	debug(5,'\t-portrait-panx: '+$(key+'-portrait-panx')) ;
-	debug(5,'\t-portrait-pany: '+$(key+'-portrait-pany')) ;
-	debug(5,'\t-portrait-rotation: '+$(key+'-portrait-rotation')) ;
-	debug(5,'\t-portrait-background: '+$(key+'-portrait-background')) ;
-	debug(5,'\t-portrait-clipping: '+$(key+'-portrait-clipping')) ;
-	debug(5,'\t-portrait-fit: '+$(key+'-portrait-fit')) ;
+	PortraitList[index].setScaleUsesMinimum(diy.settings.getBoolean(key+'-portrait-scaleUsesMinimum',false)) ;
+
+	if(diy.settings.getBoolean(key+'-portrait-stencil',true)){
+		let image = diy.settings.getImageResource(diy.frontTemplateKey+'-template')
+		if(diy.settings.get(key) == 'PortraitBack'){
+			image = diy.settings.getImageResource(diy.backTemplateKey+'-template');
+		}
+		let region = diy.settings.getRegion(key+'-portrait-clip-region');
+		let stencil = PortraitList[index].createStencil(image,region);
+		PortraitList[index].setClipStencil( stencil ) ;
+	}
+
+	debug(5,'\t-portrait-clip-region: '+diy.settings.get(key+'-portrait-clip-region')) ;
+	debug(5,'\t-portrait-template: '+diy.settings.get(key+'-portrait-template')) ;
+	debug(5,'\t-portrait-scale: '+diy.settings.get(key+'-portrait-scale')) ;
+	debug(5,'\t-portrait-panx: '+diy.settings.get(key+'-portrait-panx')) ;
+	debug(5,'\t-portrait-pany: '+diy.settings.get(key+'-portrait-pany')) ;
+	debug(5,'\t-portrait-rotation: '+diy.settings.get(key+'-portrait-rotation')) ;
+	debug(5,'\t-portrait-backgroundFilled: '+diy.settings.get(key+'-portrait-backgroundFilled')) ;
+	debug(5,'\t-portrait-clipping: '+diy.settings.get(key+'-portrait-clipping')) ;
+	debug(5,'\t-portrait-scaleUsesMinimum: '+diy.settings.get(key+'-portrait-scaleUsesMinimum')) ;
+	debug(5,'\t-portrait-stencil: '+diy.settings.get(key+'-portrait-stencil')) ;
 
 	PortraitList[index].installDefault() ;
 	debug(4,'\tPortrait index: '+portraitIndexOf(key)) ;
@@ -1392,13 +1398,13 @@ function uiSpinner(key,bindings,sides,limit){ debug(3,'\n\tuiSpinner: '+key) ;
 	return control ;
 }
 
-function uiSpinnerLabeled(key,bindings,sides,limit){ debug(3,'\n\tuiSpinner: '+key) ;
+function uiSpinnerLabeled(key,bindings,sides,limit){ debug(3,'\n\tuiSpinnerLabeled: '+key) ;
+	let control = new uiSpinner(key,bindings,sides,limit) ;
+	
 	let grid = new Grid() ;
 	let label = @('LRL-'+key+'-uiSpinnerLabeled') ;
 	if(label=="[MISSING: LRL-"+key+"-uiSpinnerLabeled]") label = @('LRL-'+key) ;
 	label = '<html><b>'+label+':' ;
-	let control = new spinner(0,limit,1,0,null) ;
-	
 	grid.place(label,'',control,'wmin 50lp') ;
 	return grid ;
 }

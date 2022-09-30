@@ -12,7 +12,7 @@ Portrait-portrait-clip-region = 0,0,413,245
 
 Set-portrait-clip-region = 325,191,37,37
 
-Group-region = 68,243,274,20
+Campaign-region = 68,243,274,20
 BodyBack-region = 56,55,301,453
 Body-region = 56,273,301,220
 Name-region = 98,38,216,25

@@ -4,15 +4,51 @@ Unique-format = <lrs>u<u+2006></lrs>
 Number = TheLordOfTheRingsLCG/image/number/00.png
 Number-tintable = TheLordOfTheRingsLCG/image/number-tintable/00.png
 
-Portrait-portrait-background = true
-PortraitBack-portrait-background = true
-Collection-portrait-fit = true
-Set-portrait-fit = true
-Set1-portrait-fit = true
-Set2-portrait-fit = true
-Set3-portrait-fit = true
-Set4-portrait-fit = true
-Set5-portrait-fit = true
+Collection-portrait-backgroundFilled = false
+Collection-portrait-clipping = false
+Collection-portrait-scaleUsesMinimum = true
+Collection-portrait-stencil = false
+
+Set-portrait-backgroundFilled = false
+Set-portrait-clipping = false
+Set-portrait-scaleUsesMinimum = true
+Set-portrait-stencil = false
+
+Sphere-portrait-backgroundFilled = false
+Sphere-portrait-clipping = false
+Sphere-portrait-scaleUsesMinimum = true
+Sphere-portrait-stencil = false
+
+BodyIcon-portrait-backgroundFilled = false
+BodyIcon-portrait-clipping = false
+BodyIcon-portrait-scaleUsesMinimum = true
+BodyIcon-portrait-stencil = false
+BodyIcon-transparency = 2
+
+Set1-portrait-backgroundFilled = false
+Set1-portrait-clipping = false
+Set1-portrait-scaleUsesMinimum = true
+Set1-portrait-stencil = false
+
+Set2-portrait-backgroundFilled = false
+Set2-portrait-clipping = false
+Set2-portrait-scaleUsesMinimum = true
+Set2-portrait-stencil = false
+
+Set3-portrait-backgroundFilled = false
+Set3-portrait-clipping = false
+Set3-portrait-scaleUsesMinimum = true
+Set3-portrait-stencil = false
+
+Set4-portrait-backgroundFilled = false
+Set4-portrait-clipping = false
+Set4-portrait-scaleUsesMinimum = true
+Set4-portrait-stencil = false
+
+Set5-portrait-backgroundFilled = false
+Set5-portrait-clipping = false
+Set5-portrait-scaleUsesMinimum = true
+Set5-portrait-stencil = false
 
 OptionLeft-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
 OptionRight-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
@@ -28,16 +64,20 @@ ResourceCost-tint = 180.0,0.0,1.0
 Stage-tint = 190.0,0.6,0.9
 Region-tint = 0.0,0.2,1.0
 ThreatCost-tint = 200.0,0.7,0.7
-White-tint = 0.0,0.0,0.9
+# generic tints
 Red-tint = 0.0,1.0,1.0
 Green-tint = 120.0,1.0,1.0
+Blue-tint = -120.0,1.0,1.0
 Yellow-tint = 60.0,1.0,1.0
-Blue-tint = -180.0,1.0,1.0
+Magenta-tint = -60.0,1.0,1.0
+Cyan-tint = 180.0,1.0,1.0
+White-tint = 0.0,0.0,1.0
+Grey-tint = 0.0,0.0,0.5
 Black-tint = 0.0,0.0,0.0
-Purple-tint = -60.0,1.0,1.0
-Brown-tint = 30.0,1.0,1.0
+
 Template-tint = 10.0,1.0,0.6
 Template-out-tint = 0.0,0.9,0.8
+
 # Encounter cards' decorations tints
 Gold-tint = 40.0,1.0,1.0
 #Standard-tint = 0.0,0.0,0.5
@@ -46,6 +86,7 @@ Gold-tint = 40.0,1.0,1.0
 #Ring-tint = 0.4,0.7,1.0
 #Nightmare-tint = 0.0,1.0,0.5
 #Nightmare-out-tint = 0.0,1.0,0.5
+
 # Player cards' decorations tints
 Neutral-tint = 0.0,0.0,0.9
 Leadership-tint = -58.0,0.5,1.0
@@ -64,6 +105,11 @@ Name-alignment = middle,center
 Name-pointsize = 10
 Name-colour = #000000
 Name-format = 
+
+Campaign-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Campaign-alignment = middle,center
+Campaign-pointsize = 7
+Campaign-colour = #000000
 
 Group-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
 Group-alignment = middle,center
@@ -231,10 +277,6 @@ Template-cutBig = TheLordOfTheRingsLCG/image/PokerCard-cutBig.png
 Template-bleeding = TheLordOfTheRingsLCG/image/PokerCard-bleeding.png
 #Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2
 #Difficulty = Standard
-
-#Sphere-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
-#BodyIcon-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
-#BodyIcon-transparency = 2
 
 #Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
 #Collection = StrangeEons

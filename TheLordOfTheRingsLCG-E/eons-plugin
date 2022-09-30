@@ -1,4 +1,4 @@
-id = CATALOGUEID{30d37f1e-825a-41da-ace1-50c04616a254:2021-4-12-8-28-24-966}
+id = CATALOGUEID{30d37f1e-825a-41da-ace1-50c04616a254:2022-5-30-6-51-33-541}
 
 priority = EXPANSION
 ui-languages = en_US,es_ES,de_DE,fr_FR,pl_PL,it_IT
@@ -12,9 +12,10 @@ catalog-name_it_IT = Il Signore degli Anelli LCG, Incontri
 catalog-credit = Karagh, GeckoTH
 catalog-description = <p>This plug-in allows creating components for <i><b>The \
     Lord of the Rings: The Card Game</b></i> by Fantasy Flight Games.\n<p>This \
-    expansion includes these Encounter deck components:\n<ul>\n<li><b>Enemy:</b> \
-    Standard, Easy, Nightmare, Ship, custom\n<li><b>Location:</b> Standard, Easy, \
-    Nightmare, custom\n<li><b>Treachery:</b> Standard, Easy, Nightmare, Burden, \
+    expansion includes these official Encounter deck card \
+    types:\n<ul>\n<li><b>Enemy:</b> Standard, Easy, Nightmare, Ship, \
+    custom\n<li><b>Location:</b> Standard, Easy, Nightmare, \
+    custom\n<li><b>Treachery:</b> Standard, Easy, Nightmare, Burden, \
     custom\n<li><b>Objective:</b> Standard, Easy, Burden, \
     custom\n<li><b>Objective-Ally:</b> Standard, Easy, Ship, Boon, \
     custom\n<li><b>Side Quest</b>\n</ul>
@@ -42,7 +43,7 @@ catalog-description_it_IT = <p>Questo plug-in permette di creare componenti per 
 
 catalog-game = LRL
 catalog-tags = component, beta
-catalog-minver = 3970
+catalog-minver = 4241
 catalog-replaces = \
     CATALOGUEID{3920d77a-0d34-4d61-a4cb-7f6517ce8b60:2018-3-24-18-44-35-158}
 

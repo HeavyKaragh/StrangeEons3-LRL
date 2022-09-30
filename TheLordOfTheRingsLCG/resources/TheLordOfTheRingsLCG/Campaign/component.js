@@ -39,12 +39,12 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	Title_panel.place(Name_control,'hfill') ;
 	Main_tab.place(Title_panel,'hfill') ;
 	
-	// CYCLE PANEL
-	let Group_panel = new TypeGrid() ;
-	Group_panel.setTitle(@LRL-Group) ;
-	let Group_control = new uiText('Group',bindings,FRONT) ;
-	Group_panel.place(Group_control,'hfill') ;
-	Main_tab.place(Group_panel,'br hfill') ;
+	// CAMPAIGN PANEL
+	let Campaign_panel = new TypeGrid() ;
+	Campaign_panel.setTitle(@LRL-Campaign) ;
+	let Campaign_control = new uiText('Campaign',bindings,FRONT) ;
+	Campaign_panel.place(Campaign_control,'hfill') ;
+	Main_tab.place(Campaign_panel,'br hfill') ;
 	
 	// EFFECT PANEL
 	let Effect_panel = new TypeGrid() ;
@@ -195,7 +195,7 @@ function createFrontPainter(diy,sheet){ debug(1,'\ncreateFrontPainter') ;
 
 // TEXT
 	Name_writer = new createTextBox('Name',diy,sheet) ;
-	Group_writer = new createTextBox('Group',diy,sheet) ;
+	Campaign_writer = new createTextBox('Campaign',diy,sheet) ;
 	Body_writer = new createTextBox('Body',diy,sheet) ;
 	Option_writer = new createTextBox('Option',diy,sheet) ;
 	Type_writer = new createTextBox('Type',diy,sheet) ;
@@ -223,7 +223,7 @@ function paintFront(g,diy,sheet){ debug(1,'\npaintFront') ;
 
 // TEXTS
 	writeName(diy,g) ;
-	writeGroup(diy,g) ;
+	writeCampaign(diy,g) ;
 	writeBody(['Rules','Flavour'],diy,g) ;
 	
 	writeType(diy,g) ;

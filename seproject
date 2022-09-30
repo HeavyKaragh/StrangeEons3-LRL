@@ -1,11 +1,8 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
-first-row = 1
-selected-members = \
-    :TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Enemy/component.settings
-open-folders = \
-    :TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources:TheLordOfTheRingsLCG/resourc\
-    es/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Enemy
+first-row = 0
+selected-members = 
+open-folders = 
 notes = 
 res-id = dani
 export-file = plugin_se3-christ

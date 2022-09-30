@@ -2,26 +2,26 @@
 # 
 # To simplify adding new icons, avoiding the need to touch the plugin scripts too much,
 # all icons are refered through settings. A three level tree structure is used:
-# 	Top: release type, game variant or other type of relation. This is the only list
-#		that is included in the plugin code (in LRL.js), and it references the 
-# 		"$xxx-Collection-list"s
+# 	Top (TheLordOfTheRingsLCG-ProductGroup-list): release type, game variant or other 
+#		type of relation. This references the "$xxx-Collection-list"s
 #		TheLordOfTheRingsLCG: Core set and deluxe boxes, plus their dependant cycles
 #		SagaBox: Saga boxes
 #		PrintOnDemand: Print on Demand releases
 #		OtherOfficial: OtherOfficial releases
 #		TalesFromTheCards: blogs' First Age releases. These are unofficial expansions.
+#		ALongExpectedParty: fan projects' releases. These are unofficial expansions.
 #		OtherUnofficial: Unofficial releases
-# 	Middle: Collection icons refered by the Top relations
-# 	Low: Encounter Set icons refered by the Middle relations
-# Thus, when creating the Collection icon list, GameObject's GameCollectionList is checked for each
-# $refered-Collection-list.
-# To create the Encounter Set icon list, each $refered-Collection-list list is checked for each
-# $refered-Set-list.
+# 	Middle ($xxx-Collection-list): Collection icons refered by the Top relations
+# 	Low ($xxx-Set-list): Encounter Set icons refered by the Middle relations
+# Thus, when creating the Collection icon list, GameObject's GameCollectionList is 
+# checked for each $xxx-Collection-list.
+# To create the Encounter Set icon list, each $xxx-Collection-list list is checked
+# to read each $xxx-Set-list.
 #
-# For each Collection, there are 2 tint settings. They are used in the CardDivider
-# component, and resemble the colors used in their product package.
+# For each Collection, there are 2 tint settings. They are used in the Presentation
+# and other accesory components, and set the colors used as the product package.
 
-TheLordOfTheRingsLCG-ProductGroup-list = TheLordOfTheRingsLCG,SagaBox,PrintOnDemand,CustomScenarioKit,OtherOfficial,TalesFromTheCards,OtherUnofficial
+TheLordOfTheRingsLCG-ProductGroup-list = TheLordOfTheRingsLCG,SagaBox,PrintOnDemand,CustomScenarioKit,OtherOfficial,TalesFromTheCards,ALongExpectedParty,OtherUnofficial
 TheLordOfTheRingsLCG-Sphere-list = 	Leadership,Lore,Spirit,Tactics,Neutral,Baggins,Fellowship,Mastery
 
 TheLordOfTheRingsLCG-Collection-list = CoreSet,ShadowsOfMirkwood,KhazadDum,Dwarrowdelf,HeirsOfNumenor,AgainstTheShadow,TheVoiceOfIsengard,TheRingMaker,TheLostRealm,AngmarAwakened,TheGreyHavens,DreamChaser,TheSandsOfHarad,TheHaradrim
@@ -138,7 +138,7 @@ TheHuntForTheDreadnaught-Set-list = TheHuntForTheDreadnaughtSet
 TheHuntForTheDreadnaught-tint = 0.0,0.0,0.0
 TheHuntForTheDreadnaught-outside-tint = 0.0,0.0,0.0
 
-#Custom Quest Kit
+#Custom Scenario Kit
 CustomScenarioKit-Collection-list = TheWoodlandRealm,TheWizardsQuest,TheMinesOfMoria,EscapeFromKhazadDum
 TheWoodlandRealm-Set-list = TheWoodlandRealmSet
 TheWoodlandRealm-tint = 0.0,0.0,0.0
@@ -165,6 +165,17 @@ FirstAge-outside-tint = -160.0,0.1,0.25
 DoomMastered-Set-list = TrialUponTheMarches,AmongTheOutlaws,BetrayalOfMim,TheFallOfNargothrond
 DoomMastered-tint = -160.0,0.6,0.4
 DoomMastered-outside-tint = -160.0,0.1,0.25
+
+ALongExpectedParty-Collection-list = ChildrenOfEorl,OathsOfTheRohirrim,TheScouringOfTheShire
+ChildrenOfEorl-Set-list = AmbushAtErelas,TheBattleForTheBeacon,TheHorseLordsIre,RohanLands,RohanWeather,RohanEncampment,DunlendingWarriors,FaithlessRohirrim,OrcHost
+ChildrenOfEorl-tint = -160.0,0.6,0.4
+ChildrenOfEorl-outside-tint = -160.0,0.1,0.25
+OathsOfTheRohirrim-Set-list = TheAldburgPlot,FireOnTheEastemnet,TheGapOfRohan,TheGlitteringCaves,SearchForTheHorn,ExploringTheCaves,MusteringOfTheRohirrim,BloodInTheIsen
+OathsOfTheRohirrim-tint = -160.0,0.6,0.4
+OathsOfTheRohirrim-outside-tint = -160.0,0.1,0.25
+TheScouringOfTheShire-Set-list = TheScouringOfTheShire
+TheScouringOfTheShire-tint = 0.0,0.0,0.0
+TheScouringOfTheShire-outside-tint = 0.0,0.0,0.0
 
 OtherUnofficial-Collection-list = SusurrosDelBosqueViejo
 SusurrosDelBosqueViejo-Set-list = SusurrosDelBosqueViejo
