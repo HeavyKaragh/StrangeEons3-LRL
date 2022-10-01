@@ -775,6 +775,7 @@ format tags are added along to each part and then every part is put together.
 	}
 	writer.setMarkupText(text) ;
 	updateNameTags(writer,diy) ;
+	//$key-measuredHeight = writer.measure(g,region);
 	writer.draw(g,region) ;
 }
 function writeBody(parts,diy,g){ debug(2,'\n\twriteBody') ;

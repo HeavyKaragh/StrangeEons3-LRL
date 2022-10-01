@@ -7,7 +7,8 @@
 #		TheLordOfTheRingsLCG: Core set and deluxe boxes, plus their dependant cycles
 #		SagaBox: Saga boxes
 #		PrintOnDemand: Print on Demand releases
-#		OtherOfficial: OtherOfficial releases
+#		CustomScenarioKit: These are separated because they use different back card
+#		OtherOfficial: Other official releases
 #		TalesFromTheCards: blogs' First Age releases. These are unofficial expansions.
 #		ALongExpectedParty: fan projects' releases. These are unofficial expansions.
 #		OtherUnofficial: Unofficial releases
@@ -102,7 +103,7 @@ TheLandOfShadow-outside-tint = -120.0,0.35,0.3
 TheFlameOfTheWest-Set-list = ThePassingOfTheGreyCompany,TheSiegeOfGondor,TheBattleOfThePelennorFields
 TheFlameOfTheWest-tint = 0.0,0.85,0.65
 TheFlameOfTheWest-outside-tint = 10.0,0.3,0.3
-TheMountainOfFire-Set-list = TheTowerOfCirithUngol,TheBlackGateOpens,MountDoom,OrcsOfMordor,DeepShadows,TheMountainOfFireEpic
+TheMountainOfFire-Set-list = TheTowerOfCirithUngol,TheBlackGateOpens,MountDoom,OrcsOfMordor,DeepShadows,EpicMultiplayerMode
 TheMountainOfFire-tint = 0.0,0.85,0.65
 TheMountainOfFire-outside-tint = 10.0,0.3,0.3
 
