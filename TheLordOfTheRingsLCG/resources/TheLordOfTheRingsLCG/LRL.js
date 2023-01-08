@@ -83,6 +83,7 @@ and game .properties files' localized versions are available).
 	InterfaceLanguage.addStrings(PathText+'interface') ;
 	InterfaceLanguage.addStrings(PathText+'icons') ;
 	GameLanguage.addStrings(PathText+'game') ;
+	GameLanguage.addStrings(PathText+'icons') ;
 	
 	// create plugin/game environment (identity within Strange Eons, settings scope, ...) 
 	const GAME = Game.register(

@@ -222,7 +222,7 @@ function paintFront(g,diy,sheet){ debug(1,'paintFront') ;
 	else Body_writer.setPageShape(PageShape.RECTANGLE_SHAPE) ;
 	writeBody(['Trait','Rules','Shadow','Flavour'],diy,g) ;
 	
-	if($Template!='Ring') writeGroup(diy,g) ;
+	if($Template!='Ring') writeScenario(diy,g) ;
 	if($Template=='Standard') writeSetNumber(diy,g) ;
 	
 	writeType(diy,g) ;
@@ -246,6 +246,7 @@ if(sourcefile=='Quickscript'){
 	Eons.namedObjects.LRL = new gameObject() ;
 	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js') ;
 	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game') ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons') ;	
 	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface') ;
 	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons') ;	
 

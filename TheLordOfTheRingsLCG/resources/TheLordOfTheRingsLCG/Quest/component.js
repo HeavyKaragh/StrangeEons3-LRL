@@ -51,7 +51,7 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	// QUEST PANEL
 	let Quest_panel = new TypeGrid() ;
 	Quest_panel.setTitle(@LRL-Quest) ;
-	let Group_control = new uiText('Group',bindings,BOTH) ;
+	let Scenario_control = new uiText('Scenario',bindings,BOTH) ;
 	let Stage_control = new uiSpinnerLabeled('Stage',bindings, BOTH,9) ;
 	Quest_panel.place( Group_control,'hfill' , Stage_control,'' ) ;
 	Main_tab.place(Quest_panel,'br hfill') ;
@@ -337,7 +337,7 @@ function createFrontPainter(diy,sheet){ debug(1,'createFrontPainter') ;
 
 // TEXT
 	Name_writer = new createTextBox('Name',diy,sheet) ;
-	Group_writer = new createTextBox('Group',diy,sheet) ;
+	Scenario_writer = new createTextBox('Scenario',diy,sheet) ;
 	Body_writer = new createTextBox('Body',diy,sheet) ;
 	Option_writer = new createTextBox('Option',diy,sheet) ;
 	Bottom_writer = new createTextBox('Bottom',diy,sheet) ;
@@ -429,7 +429,7 @@ function paintFront(g,diy,sheet){ debug(1,'\npaintFront') ;
 	
 // TEXTS
 	writeName(diy,g) ;
-	writeGroup(diy,g) ;
+	writeScenario(diy,g) ;
 	if ($OptionRight!=''){
 		writeOption('OptionRight',diy,g,sheet) ;
 		Body_writer.setPageShape(diy.settings.getCupShape('Option-Body-shape')) ;
@@ -526,6 +526,7 @@ if(sourcefile=='Quickscript'){
 	Eons.namedObjects.LRL = new gameObject() ;
 	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js') ;
 	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game') ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons') ;	
 	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface') ;
 	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons') ;	
 

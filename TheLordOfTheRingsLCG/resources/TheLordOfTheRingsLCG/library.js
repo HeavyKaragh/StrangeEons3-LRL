@@ -335,6 +335,20 @@ icon control.
 	return grid ;
 }
 
+function uiNameBySet(diy,bindings,sides){ debug(2,'\n\tuiNameBySet') ;
+/*
+Creates the component title/name control that can use the text of the
+selected Encounter Set.
+*/
+	let grid = new TypeGrid() ;
+
+	let BySet_control = new uiButtonText('BySet',diy,bindings,sides) ;
+	let Name_control = uiName(diy,bindings,sides) ;
+	grid.place(Name_control,'hfill',BySet_control,'') ;
+	
+	return grid ;
+}
+
 function uiNameParagraph(diy,bindings,sides){ debug(2,'\n\tuiNameParagraph') ;
 /*
 Creates the component title/name control. It's different from other text
@@ -364,6 +378,21 @@ to $key. Component "sides" will be updated on control edit.
 	return control ;
 }
 
+function uiCampaign(diy,bindings,sides){ debug(2,'\n\tuiCampaign') ;
+/*
+Creates the component title/name control that can use the text of the
+selected Encounter Set.
+*/
+	let grid = new TypeGrid() ;
+
+	let ByCollection_control = new uiButtonText('ByCollection',diy,bindings,sides) ;
+	let text_control = uiText('Campaign',bindings,sides) ;
+	let part_control = new uiListText('CampaignPart',['-','1','2','3','4','5','6','7','8','9','10'],bindings,sides)
+	grid.place(text_control,'hfill',ByCollection_control,'',part_control,'') ;
+	
+	return grid ;
+}
+
 function uiTextLabeled(key,bindings,sides){ debug(2,'\n\tuiTextLabeled: '+key) ;
 /*
 Returns a user interface textField. Value will be initialized and binded
@@ -387,8 +416,8 @@ Draws $key on the component template $key-region.
 }
 
 function formatText(key,diy){ debug(3,'\n\tformatText: '+key) ;
-	let format = diy.settings.get(key+'-format','') ;
 	let text = diy.settings.get(key,'') ;
+	let format = diy.settings.get(key+'-format','') ;
 	let formatEnd = diy.settings.get(key+'-formatEnd','') ;
 	
 	let output = format+text+formatEnd ;
@@ -399,8 +428,8 @@ function formatText(key,diy){ debug(3,'\n\tformatText: '+key) ;
 
 function writeCampaign(diy,g){ debug(2,'\n\twriteCampaign') ;
 	let text = formatText('Campaign',diy);
-	let region = diy.settings.getRegion('Campaign');
 	let format = diy.settings.get('Campaign-format','')
+	let region = diy.settings.getRegion('Campaign');
 	
 	text = format+text ;
 	
@@ -408,10 +437,21 @@ function writeCampaign(diy,g){ debug(2,'\n\twriteCampaign') ;
 	writeLine(text,Campaign_writer,region,g) ;
 }
 
+function writeScenario(diy,g){ debug(2,'\n\twriteScenario') ;
+	let text = formatText('Scenario',diy);
+	let format = diy.settings.get('Scenario-format','')
+	let region = diy.settings.getRegion('Scenario');
+	
+	text = format+text ;
+	
+	debug(5,'\tText: '+text) ;
+	writeLine(text,Scenario_writer,region,g) ;
+}
+
 function writeType(diy,g){ debug(2,'\n\twriteType') ;
 	let text = diy.settings.get('Type','') ;
-	let region = diy.settings.getRegion('Type') ;
 	let format = diy.settings.get('Type-format','')
+	let region = diy.settings.getRegion('Type') ;
 	
 	if(text==''){
 		text = #('LRL-'+$Template+'-'+Card) ;
@@ -425,8 +465,8 @@ function writeType(diy,g){ debug(2,'\n\twriteType') ;
 
 function writeSubtype(diy,g){ debug(2,'\n\twriteSubtype') ;
 	let text = diy.settings.get('Subtype','') ;
-	let region = diy.settings.getRegion($Template+'-Subtype',diy.settings.getRegion('Subtype')) ;
 	let format = diy.settings.get('Subtype-format','')
+	let region = diy.settings.getRegion($Template+'-Subtype',diy.settings.getRegion('Subtype')) ;
 	
 	if(text=='') text = #('LRL-'+$Template) ;
 	text = format+text ;
@@ -497,6 +537,60 @@ Draws $key rotated on the component template in the $key-region.
 	newRegion.setRect(-h-y,x,h,w) ;
 	Name_writer.draw(g,newRegion) ;
 	g.setTransform(oldTransform) ;
+}
+
+function writeTextBySet(key,writer,diy,g){ debug(2,'\n\twriteTextBySet') ;
+/*
+Writes $name or #set in the $name-region.
+*/
+	let text = diy.settings.get(key,'') ;
+	let format = diy.settings.get(key+'-format','')
+	let region = diy.settings.getRegion(key) ;
+
+	if(diy.settings.getBoolean('BySet',false)) text = #('LRL-'+$Set) ;
+	text = format+text ;
+	
+	debug(5,'\tText: '+text) ;
+	writeLine(text,writer,region,g) ;
+}
+
+function writeTextByCollection(key,writer,diy,g){ debug(2,'\n\twriteTextByCollection') ;
+/*
+Writes $name or #collection in the $name-region.
+*/
+	let text = diy.settings.get(key,'') ;
+	let format = diy.settings.get(key+'-format','')
+	let region = diy.settings.getRegion(key) ;
+
+	if(diy.settings.getBoolean('ByCollection',false)) text = #('LRL-'+$Collection) ;
+	text = format+text ;
+	
+	debug(5,'\tText: '+text) ;
+	writeLine(text,writer,region,g) ;
+}
+
+function writeCampaignPart(diy,g){ debug(2,'\n\twriteCampaignPart') ;
+/*
+Writes $name or #collection in the $name-region.
+*/
+	let text = diy.settings.get('Campaign','') ;
+	let format = diy.settings.get('Campaign-format','')
+	let prefix = diy.settings.get('CampaignPart-prefix','')
+	let part = diy.settings.get('CampaignPart','-')
+	let postfix = diy.settings.get('CampaignPart-postfix','')
+	let region = diy.settings.getRegion('Campaign') ;
+
+	if(diy.settings.getBoolean('ByCollection',false)) text = #('LRL-'+$Collection) ;
+	
+	if(String(part)== '-' ) text = format+text ;
+	else{
+		if(prefix == '' ) prefix = #LRL-CampaignPart-prefix ;
+		if(postfix == '' ) postfix = #LRL-CampaignPart-postfix ;
+		part = #('LRL-CampaignPart-'+part) ;
+		text = format+text+prefix+part+postfix ;
+	}
+	debug(5,'\tText: '+text) ;
+	writeLine(text,Campaign_writer,region,g) ;
 }
 
 function writeTextOutlined(text,writer,region,stroke,diy,g,sheet){ debug(3,'\n\twriteTextOutlined') ;

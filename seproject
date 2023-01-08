@@ -1,8 +1,36 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
 first-row = 0
-selected-members = 
-open-folders = 
+selected-members = \
+    :TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Campaign/component.js
+open-folders = \
+    :TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources:TheLordOfTheRingsLCG/resourc\
+    es/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Ally:\
+    TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Attachment:TheLordOfTheRingsL\
+    CG/resources/TheLordOfTheRingsLCG/Campaign:TheLordOfTheRingsLCG/resources/TheLord\
+    OfTheRingsLCG/Contract:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Divide\
+    rDeck:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/DividerHorizontal:TheLo\
+    rdOfTheRingsLCG/resources/TheLordOfTheRingsLCG/DividerVertical:TheLordOfTheRingsL\
+    CG/resources/TheLordOfTheRingsLCG/Enemy:TheLordOfTheRingsLCG/resources/TheLordOfT\
+    heRingsLCG/Event:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Gift:TheLord\
+    OfTheRingsLCG/resources/TheLordOfTheRingsLCG/Haven:TheLordOfTheRingsLCG/resources\
+    /TheLordOfTheRingsLCG/Hero:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/He\
+    roPromo:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Location:TheLordOfThe\
+    RingsLCG/resources/TheLordOfTheRingsLCG/LocationPromo:TheLordOfTheRingsLCG/resour\
+    ces/TheLordOfTheRingsLCG/Objective:TheLordOfTheRingsLCG/resources/TheLordOfTheRin\
+    gsLCG/ObjectiveAlly:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Occurrenc\
+    e:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Presence:TheLordOfTheRingsL\
+    CG/resources/TheLordOfTheRingsLCG/Presentation:TheLordOfTheRingsLCG/resources/The\
+    LordOfTheRingsLCG/PresentationAlternate:TheLordOfTheRingsLCG/resources/TheLordOfT\
+    heRingsLCG/PresentationExtra:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/\
+    Quest:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/QuestSheet:TheLordOfThe\
+    RingsLCG/resources/TheLordOfTheRingsLCG/Rules:TheLordOfTheRingsLCG/resources/TheL\
+    ordOfTheRingsLCG/Scenario:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Set\
+    :TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Setup:TheLordOfTheRingsLCG/r\
+    esources/TheLordOfTheRingsLCG/SideQuest:TheLordOfTheRingsLCG/resources/TheLordOfT\
+    heRingsLCG/SideQuestPlayer:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Tr\
+    eachery:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Treasure:TheLordOfThe\
+    RingsLCG/resources/TheLordOfTheRingsLCG/text
 notes = 
 res-id = dani
 export-file = plugin_se3-christ

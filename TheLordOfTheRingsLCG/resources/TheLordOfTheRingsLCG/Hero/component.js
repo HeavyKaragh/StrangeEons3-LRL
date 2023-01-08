@@ -26,7 +26,11 @@ function create(diy){ debug(1,'\ncreate') ;
 
 function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls') ;
-	if($Template=='Custom') advancedControls = true ;
+   	if ( ($Template == 'Custom') 
+    || ($Template == 'Baggins')
+    || ($Template == 'Fellowship')
+    || ($Template == 'Mastery')
+    ) advancedControls = true;
 
 	var bindings = new Bindings(editor,diy) ;
 	let list ;
@@ -245,6 +249,7 @@ if(sourcefile=='Quickscript'){
 	Eons.namedObjects.LRL = new gameObject() ;
 	useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/library.js') ;
 	GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game') ;
+	GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons') ;	
 	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface') ;
 	InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons') ;	
 
