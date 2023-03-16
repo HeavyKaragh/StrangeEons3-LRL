@@ -9,3 +9,5 @@ CollectionNumber = 0
 Custom-tint = 0.0,1.0,1.0
 ShowCut = false
 ShowBleeding = false
+BySet = false
+ByCollection = false

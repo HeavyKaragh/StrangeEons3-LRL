@@ -39,13 +39,13 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	Title_panel.place(Name_control,'hfill') ;
 	Main_tab.place(Title_panel,'hfill') ;
 	
-//	// CAMPAIGN PANEL
-//	let Campaign_panel = new TypeGrid() ;
-//	Campaign_panel.setTitle(@LRL-Campaign) ;
-//	let Campaign_control = new uiText('Campaign',bindings,FRONT) ;
-//	Campaign_panel.place(Campaign_control,'hfill') ;
-//	Main_tab.place(Campaign_panel,'br hfill') ;
-//	
+	// CAMPAIGN PANEL
+	let Campaign_panel = new TypeGrid() ;
+	Campaign_panel.setTitle(@LRL-Campaign) ;
+	let Campaign_control = new uiCampaign(diy,bindings,FRONT) ;
+	Campaign_panel.place(Campaign_control,'hfill') ;
+	Main_tab.place(Campaign_panel,'br hfill') ;
+	
 	// EFFECT PANEL
 	let Effect_panel = new TypeGrid() ;
 	Effect_panel.setTitle(@LRL-Effect) ;
@@ -102,13 +102,6 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 // ENCOUNTER SET TAB
 	var Set_tab = new TypeGrid() ;
 	Set_tab.editorTabScrolling = true ;
-	
-	// CAMPAIGN PANEL
-	let Campaign_panel = new TypeGrid() ;
-	Campaign_panel.setTitle(@LRL-Campaign) ;
-	let Campaign_control = new uiCampaign(diy,bindings,FRONT) ;
-	Campaign_panel.place(Campaign_control,'hfill') ;
-	Set_tab.place(Campaign_panel,'br hfill') ;
 	
 	// ENCOUNTER SET PANEL
 	let Set_panel = new TypeGrid() ;
@@ -229,7 +222,7 @@ function paintFront(g,diy,sheet){ debug(1,'\npaintFront') ;
 // STATS
 
 // TEXTS
-	writeTextBySet('Name',Name_writer,diy,g) ;
+	writeNameBySet(diy,g) ;
 	writeCampaignPart(diy,g) ;
 	writeBody(['Rules','Flavour'],diy,g) ;
 	

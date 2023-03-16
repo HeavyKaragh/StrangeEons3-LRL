@@ -53,7 +53,7 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	Quest_panel.setTitle(@LRL-Quest) ;
 	let Scenario_control = new uiText('Scenario',bindings,BOTH) ;
 	let Stage_control = new uiSpinnerLabeled('Stage',bindings, BOTH,9) ;
-	Quest_panel.place( Group_control,'hfill' , Stage_control,'' ) ;
+	Quest_panel.place( Scenario_control,'hfill' , Stage_control,'' ) ;
 	Main_tab.place(Quest_panel,'br hfill') ;
 	
 	// EFFECT PANEL
@@ -143,7 +143,7 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	let Set_control = new uiSetList(bindings,BOTH) ;
 	Set_panel.place(Set_control,'hfill') ;
 	if(advancedControls){
-		list = new Array('Standard','Gold','Red','Green','Blue','Purple') ;
+		list = new Array('Standard','Gold','Red','Green','Blue','Magenta') ;
 		let Difficulty_control = new uiListIconLabeled('Difficulty',list,bindings,FRONT) ;
 		Set_panel.place(Difficulty_control,'hfill') ;
 	}

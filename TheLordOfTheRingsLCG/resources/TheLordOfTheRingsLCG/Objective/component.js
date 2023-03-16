@@ -40,6 +40,13 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	let Name_control = uiNameUnique(diy,bindings,FRONT) ;
 	Title_panel.place(Name_control,'hfill') ;
 	Main_tab.place(Title_panel,'hfill') ;
+
+	// SCENARIO PANEL
+	let Scenario_panel = new TypeGrid() ;
+	Scenario_panel.setTitle(@LRL-Scenario) ;
+	let Scenario_control = new uiText('Scenario',bindings,BOTH) ;
+	Scenario_panel.place( Scenario_control,'hfill' ) ;
+	Main_tab.place(Scenario_panel,'br hfill') ;
 	
 	// EFFECT PANEL
 	let Effect_panel = new TypeGrid() ;
@@ -85,7 +92,7 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 		SetNumber_control,'br'
 	) ;
 	if(advancedControls){
-		list = new Array('Standard','Gold','Red','Green','Blue','Purple') ;
+		list = new Array('Standard','Gold','Red','Green','Blue','Magenta') ;
 		let Difficulty_control = new uiListIconLabeled('Difficulty',list,bindings,FRONT) ;
 		Set_panel.place(Difficulty_control,'hfill') ;
 	}
@@ -181,6 +188,7 @@ function createFrontPainter(diy,sheet){
 
 // TEXT
 	Name_writer = new createTextBox('Name',diy,sheet) ;
+	Scenario_writer = new createTextBox('Scenario',diy,sheet) ;
 	Body_writer = new createTextBox('Body',diy,sheet) ;
 	Option_writer = new createTextBox('Option',diy,sheet) ;
 	Type_writer = new createTextBox('Type',diy,sheet) ;

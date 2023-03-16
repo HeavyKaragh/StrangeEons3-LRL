@@ -85,7 +85,7 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 		SetNumber_control,'br'
 	) ;
 	if(advancedControls){
-		list = new Array('Standard','Gold','Red','Green','Blue','Purple') ;
+		list = new Array('Standard','Gold','Red','Green','Blue','Magenta') ;
 		let Difficulty_control = new uiListIconLabeled('Difficulty',list,bindings,FRONT) ;
 		Set_panel.place(Difficulty_control,'hfill') ;
 	}

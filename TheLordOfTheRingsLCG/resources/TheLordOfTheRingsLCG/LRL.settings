@@ -116,6 +116,11 @@ Group-alignment = middle,center
 Group-pointsize = 7
 Group-colour = #000000
 
+Scenario-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Scenario-alignment = middle,center
+Scenario-pointsize = 7
+Scenario-colour = #000000
+
 Description-format = <left>
 Description-formatEnd = 
 

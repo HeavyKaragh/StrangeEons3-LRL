@@ -20,7 +20,7 @@ Body-region = 64,323,285,170
 Type-region = 135,502,144,17
 OptionSpecial-portrait-clip-region = 75,494,24,24
 
-Group-region = 67,71,276,15
+Scenario-region = 67,71,276,15
 Subtype-region = 159,300,100,13
 
 OptionLeft-region = 58,507,59,9

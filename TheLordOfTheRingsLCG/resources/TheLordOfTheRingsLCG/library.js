@@ -380,8 +380,9 @@ to $key. Component "sides" will be updated on control edit.
 
 function uiCampaign(diy,bindings,sides){ debug(2,'\n\tuiCampaign') ;
 /*
-Creates the component title/name control that can use the text of the
-selected Encounter Set.
+Creates the component Campaign control that can use the text of the
+selected Collection and select an optional "part x" sufix.
+To be used with writeCampaignPart(diy,g).
 */
 	let grid = new TypeGrid() ;
 
@@ -541,7 +542,7 @@ Draws $key rotated on the component template in the $key-region.
 
 function writeTextBySet(key,writer,diy,g){ debug(2,'\n\twriteTextBySet') ;
 /*
-Writes $name or #set in the $name-region.
+Writes $text or #set in the $text-region.
 */
 	let text = diy.settings.get(key,'') ;
 	let format = diy.settings.get(key+'-format','')
@@ -552,6 +553,13 @@ Writes $name or #set in the $name-region.
 	
 	debug(5,'\tText: '+text) ;
 	writeLine(text,writer,region,g) ;
+}
+
+function writeNameBySet(diy,g){ debug(2,'\n\twriteNameBySet') ;
+/*
+Writes $name or #set in the $name-region.
+*/
+	writeTextBySet('Name',Name_writer,diy,g) ;
 }
 
 function writeTextByCollection(key,writer,diy,g){ debug(2,'\n\twriteTextByCollection') ;
@@ -567,6 +575,13 @@ Writes $name or #collection in the $name-region.
 	
 	debug(5,'\tText: '+text) ;
 	writeLine(text,writer,region,g) ;
+}
+
+function writeNameBySet(diy,g){ debug(2,'\n\twriteNameBySet') ;
+/*
+Writes $name or #set in the $name-region.
+*/
+	writeTextBySet('Name',Name_writer,diy,g) ;
 }
 
 function writeCampaignPart(diy,g){ debug(2,'\n\twriteCampaignPart') ;

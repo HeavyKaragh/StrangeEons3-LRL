@@ -82,7 +82,7 @@ function createInterface(diy,editor,sheet){ debug(1,'\ncreateInterface') ;
 	let Cutting_panel = new TypeGrid() ;
 	Cutting_panel.setTitle(@LRL-Cutting) ;
 	list = new Array('CutNo','Cut','CutBig') ;
-	let ShowCut_control = new uiGroupr('ShowCut',list,bindings,BOTH );
+	let ShowCut_control = new uiGroup('ShowCut',list,bindings,BOTH );
 	Cutting_panel.place(ShowCut_control,'hfill') ;
 	if(advancedControls){
 		let ShowBleeding_control = new uiButtonText('ShowBleeding',diy,bindings,BOTH) ;
