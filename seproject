@@ -1,10 +1,7 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
-first-row = 9
-selected-members = \
-    :TheLordOfTheRingsLCG-A.seext:TheLordOfTheRingsLCG-B.seext:TheLordOfTheRingsLCG-E\
-    .seext:TheLordOfTheRingsLCG-I.seext:TheLordOfTheRingsLCG-P.seext:TheLordOfTheRing\
-    sLCG-U.seext:TheLordOfTheRingsLCG-V.seext:TheLordOfTheRingsLCG.seext
+first-row = 10
+selected-members = :TheLordOfTheRingsLCG.seext
 open-folders = 
 notes = 
 res-id = dani

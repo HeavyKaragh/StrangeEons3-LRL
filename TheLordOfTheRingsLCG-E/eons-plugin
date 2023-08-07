@@ -1,4 +1,4 @@
-id = CATALOGUEID{30d37f1e-825a-41da-ace1-50c04616a254:2023-2-16-18-16-14-704}
+id = CATALOGUEID{30d37f1e-825a-41da-ace1-50c04616a254:2023-7-3-11-0-11-440}
 
 priority = EXPANSION
 ui-languages = en_US,es_ES,de_DE,fr_FR,pl_PL,it_IT
@@ -18,7 +18,8 @@ catalog-description = <p>This plug-in allows creating components for <i><b>The \
     difficulty\n<li><b>Treachery:</b> Standard, Easy, Nightmare, Burden, custom \
     difficulty\n<li><b>Objective:</b> Standard, Easy, Burden, custom \
     difficulty\n<li><b>Objective-Ally:</b> Standard, Easy, Ship, Boon, custom \
-    difficulty\n<li><b>Side Quest</b>\n</ul>
+    difficulty\n<li><b>Side Quest</b>\n<li><b>Promotional variants:</b> Enemy, \
+    Location, Treachery, Objective, Objective-Ally\n</ul>
 catalog-description_es_ES = <p>Este complemento permite crear componentes para \
     <i><b>El Señor de los Anillos: El Juego de Cartas</b></i> de Fantasy Flight \
     Games.</p>\n<p>Esta expansión incluye las siguientes cartas de \

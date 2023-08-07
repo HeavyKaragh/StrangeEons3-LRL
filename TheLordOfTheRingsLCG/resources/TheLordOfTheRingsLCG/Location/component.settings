@@ -1,25 +1,27 @@
 Template-region = 0,0,413,563
 Template-ppi = 150
-Template-template = TheLordOfTheRingsLCG/Location/Standard-lr.jp2
-Template-template-hires = TheLordOfTheRingsLCG/Location/Standard.jp2
+Template-template = TheLordOfTheRingsLCG/Location/Standard-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Location/Standard-300.jp2
 
 TemplateBack-region = 0,0,413,563
 TemplateBack-ppi = 150
-TemplateBack-template = TheLordOfTheRingsLCG/image/Encounter-lr.jp2
-TemplateBack-template-hires = TheLordOfTheRingsLCG/image/Encounter.jp2
+TemplateBack-template = TheLordOfTheRingsLCG/template/Encounter-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/template/Encounter-300.jp2
 
 Portrait-portrait-clip-region = 0,65,413,258
-Set-portrait-clip-region = 323,269,36,36
+Encounterset-portrait-clip-region = 323,269,36,36
 
-Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2
+Difficulty-tintable = TheLordOfTheRingsLCG/image/Difficulty-tintable.jp2
+#Difficulty-tintable-hires = 
 Difficulty-region = 315,260,52,52
-SetNumber-region = 329,313,24,12
+EncountersetNumber-region = 329,313,24,12
 
 Progress-region = 55,283,36,24
 Threat-region = 59,92,15,15
 
-Name-region = 97,38,215,24
-Body-region = 56,325,301,168
+Title-region = 97,38,215,24
+Traits-region = 56,325,301,18
+Body-region = 56,343,301,168
 Type-region = 135,502,144,18
 OptionSpecial-portrait-clip-region = 55,494,24,24
 
@@ -34,9 +36,9 @@ CollectionInfo-region = 275,527,70,12
 Collection-portrait-clip-region = 346,527,12,12
 CollectionNumber-region = 359,527,16,12
 
-Standard-template = TheLordOfTheRingsLCG/Location/Standard-lr.jp2
-Standard-template-hires = TheLordOfTheRingsLCG/Location/Standard.jp2
+Standard-template = TheLordOfTheRingsLCG/Location/Standard-150.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Location/Standard-300.jp2
 
-Nightmare-template = TheLordOfTheRingsLCG/Location/Nightmare-lr.jp2
-Nightmare-template-hires = TheLordOfTheRingsLCG/Location/Nightmare.jp2
+Nightmare-template = TheLordOfTheRingsLCG/Location/Nightmare-150.jp2
+Nightmare-template-hires = TheLordOfTheRingsLCG/Location/Nightmare-300.jp2
 Nightmare-Body-region = 56,334,300,163

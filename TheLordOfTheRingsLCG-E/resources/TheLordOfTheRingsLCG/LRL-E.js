@@ -2,12 +2,16 @@ useLibrary( 'extension' ) ;
 
 const componentList = new Array(
 	'Enemy'
+//	, 'EnemyPromo'
 	, 'Location'
 //	, 'LocationPromo'
 	, 'Objective'
+//	, 'ObjectivePromo'
 	, 'ObjectiveAlly'
+//	, 'ObjectiveAllyPromo'
 	, 'SideQuest'
 	, 'Treachery'
+//	, 'TreacheryPromo'
 ) ;
 
 function getName(){ return @LRL-E ; }

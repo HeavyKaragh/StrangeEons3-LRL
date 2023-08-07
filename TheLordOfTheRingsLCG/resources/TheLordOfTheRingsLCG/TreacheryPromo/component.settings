@@ -1,0 +1,48 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/TreacheryPromo/Standard-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/TreacheryPromo/Standard-300.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/template/Encounter-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/template/Encounter-300.jp2
+
+Portrait-portrait-clip-region = 70,0,343,327
+Encounterset-portrait-clip-region = 324,272,36,36
+
+Difficulty-tintable = TheLordOfTheRingsLCG/image/Difficulty-tintable.jp2
+#Difficulty-tintable-hires = 
+Difficulty-region = 315,263,52,52
+EncountersetNumber-region = 330,316,24,12
+
+Title-region = 53,103,23,175
+Traits-region = 57,336,299,18
+Body-region = 57,354,299,157
+Type-region = 135,502,144,17
+OptionSpecial-portrait-clip-region = 55,494,24,24
+
+Subtype-region = 159,304,100,13
+
+Burden-Body-region = 63,322,286,169
+Burden-Body-shape = 51,51,344,0,0
+
+OptionLeft-region = 49,507,59,9
+OptionLeft-decoration-region = 42,503,72,17
+OptionRight-region = 306,507,59,9
+OptionRight-decoration-region = 299,503,72,17
+
+Artist-region = 38,527,100,12
+Copyright-region = 139,527,135,12
+CollectionInfo-region = 275,527,70,12
+Collection-portrait-clip-region = 346,527,12,12
+CollectionNumber-region = 359,527,16,12
+
+Standard-template = TheLordOfTheRingsLCG/TreacheryPromo/Standard-150.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/TreacheryPromo/Standard-300.jp2
+
+Nightmare-template = TheLordOfTheRingsLCG/TreacheryPromo/Nightmare-150.jp2
+Nightmare-template-hires = TheLordOfTheRingsLCG/TreacheryPromo/Nightmare-300.jp2
+
+Burden-template = TheLordOfTheRingsLCG/TreacheryPromo/Burden-150.jp2
+Burden-template-hires = TheLordOfTheRingsLCG/TreacheryPromo/Burden-300.jp2

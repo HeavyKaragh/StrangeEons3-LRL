@@ -1,4 +1,4 @@
-id = CATALOGUEID{6a986b9f-11a6-4e6e-bec9-c9f60455b979:2023-2-16-18-16-21-594}
+id = CATALOGUEID{6a986b9f-11a6-4e6e-bec9-c9f60455b979:2023-7-3-11-0-17-827}
 
 priority = EXPANSION
 ui-languages = en_US,es_ES,de_DE,fr_FR,pl_PL,it_IT
@@ -19,7 +19,8 @@ catalog-description = <p>This plug-in allows creating components for <i><b>The \
     Neutral, Leadership, Lore, Spirit, Tactics, Baggins, Fellowship, Mastery, \
     Boon\n<li><b>Event:</b> Custom sphere, Neutral, Leadership, Lore, Spirit, \
     Tactics, Baggins, Fellowship, Mastery, Boon\n<li><b>Contract</b>\n<li><b>Player \
-    Side Quest</b>\n<li><b>Treasure</b>\n</ul>
+    Side Quest</b>\n<li><b>Treasure</b>\n<li><b>Promotional variants:</b> Hero, \
+    Ally, Attachment, Event\n</ul>
 catalog-description_es_ES = <p>Este complemento permite crear componentes para \
     <i><b>El Señor de los Anillos: El Juego de Cartas</b></i> de Fantasy Flight \
     Games.</p>\n<p>Esta expansión incluye las siguientes cartas de \

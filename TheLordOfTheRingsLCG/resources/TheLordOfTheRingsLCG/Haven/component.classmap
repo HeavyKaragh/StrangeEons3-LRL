@@ -1,2 +1,2 @@
 @cat-effects
-	@LRL-Haven-component = diy:TheLordOfTheRingsLCG/Haven/component.js | TheLordOfTheRingsLCG/Haven/ui.png | LRL
+	@LRL-Haven = diy:TheLordOfTheRingsLCG/Haven/component.js | TheLordOfTheRingsLCG/Haven/ui.png | LRL

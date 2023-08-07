@@ -1,5 +1,5 @@
-ShadowSeparatorSize = 1.5
-Unique-format = <lrs>u<u+2006></lrs>
+ShadowSeparator-size = 1.5
+Title-unique-format = <lrs>u<u+2006></lrs>
 
 Number = TheLordOfTheRingsLCG/image/number/00.png
 Number-tintable = TheLordOfTheRingsLCG/image/number-tintable/00.png
@@ -9,15 +9,20 @@ Collection-portrait-clipping = false
 Collection-portrait-scaleUsesMinimum = true
 Collection-portrait-stencil = false
 
-Set-portrait-backgroundFilled = false
-Set-portrait-clipping = false
-Set-portrait-scaleUsesMinimum = true
-Set-portrait-stencil = false
+Encounterset-portrait-backgroundFilled = false
+Encounterset-portrait-clipping = false
+Encounterset-portrait-scaleUsesMinimum = true
+Encounterset-portrait-stencil = false
 
-Sphere-portrait-backgroundFilled = false
-Sphere-portrait-clipping = false
-Sphere-portrait-scaleUsesMinimum = true
-Sphere-portrait-stencil = false
+Group-portrait-backgroundFilled = false
+Group-portrait-clipping = false
+Group-portrait-scaleUsesMinimum = true
+Group-portrait-stencil = false
+
+SphereIcon-portrait-backgroundFilled = false
+SphereIcon-portrait-clipping = false
+SphereIcon-portrait-scaleUsesMinimum = true
+SphereIcon-portrait-stencil = false
 
 BodyIcon-portrait-backgroundFilled = false
 BodyIcon-portrait-clipping = false
@@ -25,35 +30,35 @@ BodyIcon-portrait-scaleUsesMinimum = true
 BodyIcon-portrait-stencil = false
 BodyIcon-transparency = 2
 
-Set1-portrait-backgroundFilled = false
-Set1-portrait-clipping = false
-Set1-portrait-scaleUsesMinimum = true
-Set1-portrait-stencil = false
+Encounterset1-portrait-backgroundFilled = false
+Encounterset1-portrait-clipping = false
+Encounterset1-portrait-scaleUsesMinimum = true
+Encounterset1-portrait-stencil = false
 
-Set2-portrait-backgroundFilled = false
-Set2-portrait-clipping = false
-Set2-portrait-scaleUsesMinimum = true
-Set2-portrait-stencil = false
+Encounterset2-portrait-backgroundFilled = false
+Encounterset2-portrait-clipping = false
+Encounterset2-portrait-scaleUsesMinimum = true
+Encounterset2-portrait-stencil = false
 
-Set3-portrait-backgroundFilled = false
-Set3-portrait-clipping = false
-Set3-portrait-scaleUsesMinimum = true
-Set3-portrait-stencil = false
+Encounterset3-portrait-backgroundFilled = false
+Encounterset3-portrait-clipping = false
+Encounterset3-portrait-scaleUsesMinimum = true
+Encounterset3-portrait-stencil = false
 
-Set4-portrait-backgroundFilled = false
-Set4-portrait-clipping = false
-Set4-portrait-scaleUsesMinimum = true
-Set4-portrait-stencil = false
+Encounterset4-portrait-backgroundFilled = false
+Encounterset4-portrait-clipping = false
+Encounterset4-portrait-scaleUsesMinimum = true
+Encounterset4-portrait-stencil = false
 
-Set5-portrait-backgroundFilled = false
-Set5-portrait-clipping = false
-Set5-portrait-scaleUsesMinimum = true
-Set5-portrait-stencil = false
+Encounterset5-portrait-backgroundFilled = false
+Encounterset5-portrait-clipping = false
+Encounterset5-portrait-scaleUsesMinimum = true
+Encounterset5-portrait-stencil = false
 
-OptionLeft-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
-OptionRight-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
-OptionLeftBack-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
-OptionRightBack-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
+OptionLeft-decoration = TheLordOfTheRingsLCG/image/Option-decoration.jp2
+OptionRight-decoration = TheLordOfTheRingsLCG/image/Option-decoration.jp2
+OptionLeftBack-decoration = TheLordOfTheRingsLCG/image/Option-decoration.jp2
+OptionRightBack-decoration = TheLordOfTheRingsLCG/image/Option-decoration.jp2
 
 # tints
 Engagement-tint = 20.0,0.6,0.9
@@ -68,9 +73,12 @@ ThreatCost-tint = 200.0,0.7,0.7
 Red-tint = 0.0,1.0,1.0
 Green-tint = 120.0,1.0,1.0
 Blue-tint = -120.0,1.0,1.0
-Yellow-tint = 60.0,1.0,1.0
-Magenta-tint = -60.0,1.0,1.0
 Cyan-tint = 180.0,1.0,1.0
+Magenta-tint = -60.0,1.0,1.0
+Yellow-tint = 60.0,1.0,1.0
+Brown-tint = 30.0,1.0,0.6
+Mulberry-tint = -70.0,1.0,0.8
+Purple-tint = -60.0,1.0,0.8
 White-tint = 0.0,0.0,1.0
 Grey-tint = 0.0,0.0,0.5
 Black-tint = 0.0,0.0,0.0
@@ -78,10 +86,20 @@ Black-tint = 0.0,0.0,0.0
 Template-tint = 10.0,1.0,0.6
 Template-out-tint = 0.0,0.9,0.8
 
+Portrait-portrait-rotation = true
+Portrait-portrait-backgroundFilled = true
+Portrait-portrait-clipping = true
+Portrait-portrait-scaleUsesMinimum = true
+Portrait-portrait-stencil = true
+
+Portrait-shadow-tint = 0.0,1.0,0.5
+
+PortraitBack-shadow-tint = 0.0,1.0,0.5
+
 # Encounter cards' decorations tints
 Gold-tint = 40.0,1.0,1.0
 #Standard-tint = 0.0,0.0,0.5
-#Set-tint = 40.0,1.0,1.0
+#Encounterset-tint = 40.0,1.0,1.0
 #Saga-tint = 20.0,0.6,0.9
 #Ring-tint = 0.4,0.7,1.0
 #Nightmare-tint = 0.0,1.0,0.5
@@ -96,15 +114,18 @@ Tactics-tint = 10.0,0.5,0.8
 Fellowship-tint = 20.0,0.5,1.0
 Baggins-tint = 50.0,1.0,1.0
 Mastery-tint = 30.0,0.5,1.0
-Custom-tint = 0.0,1.0,1.0
+SphereColour-tint = 0.0,1.0,1.0
+#Difficulty-tint = 0.0,1.0,1.0
+CustomRegion-tint = 0.0,1.0,1.0
+CustomDifficulty-tint = 0.0,1.0,1.0
 Difficulty-tint = 0.0,1.0,1.0
 
 # text
-Name-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
-Name-alignment = middle,center
-Name-pointsize = 10
-Name-colour = #000000
-Name-format = 
+Title-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Title-alignment = middle,center
+Title-pointsize = 10
+Title-colour = #000000
+Title-format = 
 
 Campaign-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
 Campaign-alignment = middle,center
@@ -120,6 +141,11 @@ Scenario-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
 Scenario-alignment = middle,center
 Scenario-pointsize = 7
 Scenario-colour = #000000
+
+GrandAdventure-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+GrandAdventure-alignment = middle,center
+GrandAdventure-pointsize = 7
+GrandAdventure-colour = #000000
 
 Description-format = <left>
 Description-formatEnd = 
@@ -138,8 +164,12 @@ Body-break = <br><image res://TheLordOfTheRingsLCG/image/empty1x1.png 0.05 0.05>
 Body-format = 
 Body-formatEnd = 
 
-Trait-format = <center><size 9><i><b>
-Trait-formatEnd = </size></i></b>
+Traits-style = FAMILY: {Eons.namedObjects.LRL.BodyFont}; WIDTH: SEMICONDENSED; WEIGHT: BOLD; POSTURE: OBLIQUE
+Traits-alignment = center,middle
+Traits-pointsize = 9
+Traits-colour = #000000
+Traits-format =
+Traits-formatEnd =
 
 Story-format = <left><size 8><i>
 Story-formatEnd = </size></i>
@@ -147,11 +177,11 @@ Story-formatEnd = </size></i>
 StoryBack-format = <left><size 8><i>
 StoryBack-formatEnd = </size></i>
 
-Rules-format = <left>
-Rules-formatEnd = 
+Effect-format = <left>
+Effect-formatEnd = 
 
-RulesBack-format = <left>
-RulesBack-formatEnd = 
+EffectBack-format = <left>
+EffectBack-formatEnd = 
 
 Shadow-format = <center><image res://TheLordOfTheRingsLCG/image/ShadowSeparator.png 1.5in><br><size 8><i>
 Shadow-formatEnd = </size></i>
@@ -168,8 +198,15 @@ FlavourBack-formatEnd = </size></i>
 
 Success-format = 
 Success-formatEnd = 
+
 Failure-format = 
 Failure-formatEnd = 
+
+Choice1-format = <center><image res://TheLordOfTheRingsLCG/image/ChoiceSeparator.png 1.5in 0.06in><br><left>
+Choice1-formatEnd = 
+
+Choice2-format = <center><image res://TheLordOfTheRingsLCG/image/ChoiceSeparator.png 1.5in 0.06in><br><left>
+Choice2-formatEnd = 
 
 Option-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}; WIDTH: SEMICONDENSED
 Option-alignment = middle,center
@@ -199,10 +236,10 @@ CollectionNumber-format = <left>
 CollectionInfo-format = <right>
 Copyright-format = <center>
 
-SetNumber-style = FAMILY: {Eons.namedObjects.LRL.BodyFont}; WEIGHT: BOLD
-SetNumber-alignment = middle,center
-SetNumber-pointsize = 4.5
-SetNumber-colour = #FFFFFF
+EncountersetNumber-style = FAMILY: {Eons.namedObjects.LRL.BodyFont}; WEIGHT: BOLD
+EncountersetNumber-alignment = middle,center
+EncountersetNumber-pointsize = 4.5
+EncountersetNumber-colour = #FFFFFF
 
 Page-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}; WIDTH: SEMICONDENSED; WEIGHT: BOLD
 Page-alignment = middle,center
@@ -223,8 +260,10 @@ Section-tag = se
 Section-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}; FOREGROUND: #B00000
 
 # image replacements
-Shadow-tag = sha
-Shadow-tag-replacement = <image res://TheLordOfTheRingsLCG/image/ShadowSeparator.png 1.5in>
+ChoiceSeparator-tag = cho
+ChoiceSeparator-tag-replacement = <image res://TheLordOfTheRingsLCG/image/ChoiceSeparator.png 1.5in 0.06in>
+ShadowSeparator-tag = sha
+ShadowSeparator-tag-replacement = <image res://TheLordOfTheRingsLCG/image/ShadowSeparator.png 1.5in>
 HorizontalSpacer-tag = hs
 HorizontalSpacer-tag-replacement = <image res://TheLordOfTheRingsLCG/image/empty1x1.png 0.3 0.05>
 VerticalSpacer-tag = vs
@@ -274,14 +313,15 @@ PerPlayer-tag = pp
 PerPlayer-tag-replacement = <lrs>8</lrs>
 EmptyImage = TheLordOfTheRingsLCG/image/empty1x1.png
 
-StrangeEons-tint = 0.0,0.0,1.0
+StrangeEons-inside-tint = 0.0,0.0,1.0
 StrangeEons-outside-tint = 0.0,0.0,0.20
 
 Template-cut = TheLordOfTheRingsLCG/image/PokerCard-cut.png
 Template-cutBig = TheLordOfTheRingsLCG/image/PokerCard-cutBig.png
 Template-bleeding = TheLordOfTheRingsLCG/image/PokerCard-bleeding.png
-#Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2
-#Difficulty = Standard
+Difficulty-tintable = TheLordOfTheRingsLCG/image/Difficulty-tintable.jp2
+Difficulty = Standard
+Encounterset-decoration = TheLordOfTheRingsLCG/image/Encounterset-decoration.jp2
 
 #Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
 #Collection = StrangeEons
@@ -290,49 +330,25 @@ Template-bleeding = TheLordOfTheRingsLCG/image/PokerCard-bleeding.png
 #Custom-tint = 0.0,1.0,1.0
 #ShowCut = false
 
-#PokerCard-template = TheLordOfTheRingsLCG/image/PokerCard.png
-#PokerCard-region = 0,0,413,563
-#PokerCard-template-ppi = 150
-#PokerCard-cut = TheLordOfTheRingsLCG/image/PokerCard-cut.png
-#PokerCard-cutBig = TheLordOfTheRingsLCG/image/PokerCard-cutBig.png
-#PokerCard-bleeding = TheLordOfTheRingsLCG/image/PokerCard-bleeding.png
-#
-#PokerCardHorizontal-template = TheLordOfTheRingsLCG/image/PokerCardHorizontal.png
-#PokerCardHorizontal-region = 0,0,563,413
-#PokerCardHorizontal-template-ppi = 150
-#PokerCardHorizontal-cut = TheLordOfTheRingsLCG/image/PokerCardHorizontal-cut.png
-#PokerCardHorizontal-cutBig = TheLordOfTheRingsLCG/image/PokerCardHorizontal-cutBig.png
-#PokerCardHorizontal-bleeding = TheLordOfTheRingsLCG/image/PokerCardHorizontal-bleeding.png
-#
-#Encounter-template = TheLordOfTheRingsLCG/image/Encounter-lr.jp2
+Encounter-template = TheLordOfTheRingsLCG/template/Encounter-150.jp2
 #Encounter-region = 0,0,413,563
 #Encounter-template-ppi = 150
-#Encounter-template-hires = TheLordOfTheRingsLCG/image/Encounter.jp2
-#Encounter-cut = TheLordOfTheRingsLCG/image/PokerCard-cut.png
-#Encounter-cutBig = TheLordOfTheRingsLCG/image/PokerCard-cutBig.png
-#Encounter-bleeding = TheLordOfTheRingsLCG/image/PokerCard-bleeding.png
+Encounter-template-hires = TheLordOfTheRingsLCG/template/Encounter-300.jp2
 #
-#EncounterHorizontal-template = TheLordOfTheRingsLCG/image/EncounterHorizontal-lr.jp2
+#EncounterHorizontal-template = TheLordOfTheRingsLCG/template/EncounterHorizontal-150.jp2
 #EncounterHorizontal-region = 0,0,563,413
 #EncounterHorizontal-template-ppi = 150
-#EncounterHorizontal-template-hires = TheLordOfTheRingsLCG/image/EncounterHorizontal.jp2
-#EncounterHorizontal-cut = TheLordOfTheRingsLCG/image/PokerCardHorizontal-cut.png
-#EncounterHorizontal-cutBig = TheLordOfTheRingsLCG/image/PokerCardHorizontal-cutBig.png
-#EncounterHorizontal-bleeding = TheLordOfTheRingsLCG/image/PokerCardHorizontal-bleeding.png
+#EncounterHorizontal-template-hires = TheLordOfTheRingsLCG/template/EncounterHorizontal-300.jp2
 #
-#Player-template = TheLordOfTheRingsLCG/image/Player-lr.jp2
+Player-template = TheLordOfTheRingsLCG/template/Player-150.jp2
 #Player-region = 0,0,413,563
 #Player-template-ppi = 150
-#Player-template-hires = TheLordOfTheRingsLCG/image/Player.jp2
+Player-template-hires = TheLordOfTheRingsLCG/template/Player-300.jp2
 #
-#PlayerHorizontal-template = TheLordOfTheRingsLCG/image/PlayerHorizontal-lr.jp2
+#PlayerHorizontal-template = TheLordOfTheRingsLCG/template/PlayerHorizontal-150.jp2
 #PlayerHorizontal-region = 0,0,563,413
 #PlayerHorizontal-template-ppi = 150
-#PlayerHorizontal-template-hires = TheLordOfTheRingsLCG/image/PlayerHorizontal.jp2
-#PlayerHorizontal-cut = TheLordOfTheRingsLCG/image/PokerCardHorizontal-cut.png
-#PlayerHorizontal-cutBig = TheLordOfTheRingsLCG/image/PokerCardHorizontal-cutBig.png
-#PlayerHorizontal-bleeding = TheLordOfTheRingsLCG/image/PokerCardHorizontal-bleeding.png
-
+#PlayerHorizontal-template-hires = TheLordOfTheRingsLCG/template/PlayerHorizontal-300.jp2
 
 #OptionSpecial = none
 #CollectionNumber = 0

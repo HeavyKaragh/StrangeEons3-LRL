@@ -1,23 +1,33 @@
 Template-region = 0,0,563,413
 Template-ppi = 150
-Template-template = TheLordOfTheRingsLCG/SideQuest/Standard-lr.jp2
-Template-template-hires = TheLordOfTheRingsLCG/SideQuest/Standard.jp2
+Template-template = TheLordOfTheRingsLCG/SideQuest/Standard-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/SideQuest/Standard-300.jp2
 
 TemplateBack-region = 0,0,563,413
 TemplateBack-ppi = 150
-TemplateBack-template = TheLordOfTheRingsLCG/image/EncounterHorizontal-lr.jp2
-TemplateBack-template-hires = TheLordOfTheRingsLCG/image/EncounterHorizontal.jp2
+TemplateBack-template = TheLordOfTheRingsLCG/template/EncounterHorizontal-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/template/EncounterHorizontal-300.jp2
+
+EncounterHorizontal-template = TheLordOfTheRingsLCG/template/EncounterHorizontal-150.jp2
+EncounterHorizontal-template-hires = TheLordOfTheRingsLCG/template/EncounterHorizontal-300.jp2
+
+PlayerHorizontal-template = TheLordOfTheRingsLCG/template/PlayerHorizontal-150.jp2
+PlayerHorizontal-template-hires = TheLordOfTheRingsLCG/template/PlayerHorizontal-300.jp2
 
 Portrait-portrait-clip-region = 0,0,563,413
-Portrait-shadow = TheLordOfTheRingsLCG/image/PokerCardHorizontal-shadow.jp2
-Portrait-shadow-tintable = TheLordOfTheRingsLCG/image/PokerCardHorizontal-shadow-tintable.jp2
-Set-portrait-clip-region = 481,189,36,36
+Portrait-shadow-Black = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-150.jp2
+Portrait-shadow-Black-hires = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-300.jp2
+Portrait-shadow-tintable = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-tintable-150.jp2
+Portrait-shadow-tintable-hires = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-tintable-300.jp2
 
-Difficulty-tintable = TheLordOfTheRingsLCG/image/Custom-Difficulty.jp2
+Encounterset-portrait-clip-region = 481,189,36,36
+
+Difficulty-tintable = TheLordOfTheRingsLCG/image/Difficulty-tintable.jp2
+#Difficulty-tintable = 
 Difficulty-region = 473,180,52,52
-SetNumber-region = 487,229,24,12
+EncountersetNumber-region = 487,229,24,12
 
-Name-region = 90,39,381,27
+Title-region = 90,39,381,27
 Progress-region = 52,203,36,24
 Body-region = 49,244,463,123
 
@@ -32,10 +42,9 @@ CollectionInfo-region = 425,377,70,12
 Collection-portrait-clip-region = 496,377,12,12
 CollectionNumber-region = 509,377,16,12
 
+Title-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
+Title-pointsize = 12
+Title-colour = #000000
 
-Name-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
-Name-pointsize = 12
-Name-colour = #000000
-
-Standard-template = TheLordOfTheRingsLCG/SideQuest/Standard-lr.jp2
-Standard-template-hires = TheLordOfTheRingsLCG/SideQuest/Standard.jp2
+Standard-template = TheLordOfTheRingsLCG/SideQuest/Standard-150.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/SideQuest/Standard-300.jp2

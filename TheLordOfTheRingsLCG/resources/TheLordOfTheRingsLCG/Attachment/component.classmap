@@ -1,2 +1,2 @@
 @cat-inventory
-	@LRL-Attachment-component = diy:TheLordOfTheRingsLCG/Attachment/component.js | TheLordOfTheRingsLCG/Attachment/ui.png | LRL
+	@LRL-Attachment = diy:TheLordOfTheRingsLCG/Attachment/component.js | TheLordOfTheRingsLCG/Attachment/ui.png | LRL

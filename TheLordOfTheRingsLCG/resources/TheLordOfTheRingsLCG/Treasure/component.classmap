@@ -1,2 +1,2 @@
 @cat-inventory
-	@LRL-Treasure-component = diy:TheLordOfTheRingsLCG/Treasure/component.js | TheLordOfTheRingsLCG/Treasure/ui.png | LRL
+	@LRL-Treasure = diy:TheLordOfTheRingsLCG/Treasure/component.js | TheLordOfTheRingsLCG/Treasure/ui.png | LRL

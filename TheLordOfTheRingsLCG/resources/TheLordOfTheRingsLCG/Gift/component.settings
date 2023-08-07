@@ -1,26 +1,26 @@
 Template-region = 0,0,413,563
 Template-ppi = 150
-Template-template = TheLordOfTheRingsLCG/Gift/Leadership-lr.jp2
-Template-template-hires = TheLordOfTheRingsLCG/Gift/Leadership.jp2
+Template-template = TheLordOfTheRingsLCG/Gift/Neutral-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Gift/Neutral-300.jp2
 
 TemplateBack-region = 0,0,413,563
 TemplateBack-ppi = 150
-TemplateBack-template = TheLordOfTheRingsLCG/image/Player-lr.jp2
-TemplateBack-template-hires = TheLordOfTheRingsLCG/image/Player.jp2
+TemplateBack-template = TheLordOfTheRingsLCG/template/Player-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/template/Player-300.jp2
 
-Sphere-portrait-clip-region = 320,229,40,40
+SphereIcon-portrait-clip-region = 320,229,40,40
 Portrait-portrait-clip-region = 0,53,413,228
 
 Body-region = 56,291,301,203
-Name-region = 90,40,232,23
+Title-region = 90,40,232,23
 Type-region = 139,500,135,23
 
 Body-shape = 18,18,140,0,0
 
 OptionLeft-region = 49,507,59,9
-OptionLeftDecoration-region = 42,503,72,17
+OptionLeft-decoration-region = 42,503,72,17
 OptionRight-region = 306,507,59,9
-OptionRightDecoration-region = 299,503,72,17
+OptionRight-decoration-region = 299,503,72,17
 
 Artist-region = 38,527,100,12
 Copyright-region = 139,527,135,12
@@ -28,30 +28,31 @@ CollectionInfo-region = 275,527,70,12
 Collection-portrait-clip-region = 346,527,12,12
 CollectionNumber-region = 359,527,16,12
 
-Neutral-template = TheLordOfTheRingsLCG/Gift/Neutral-lr.jp2
-Neutral-template-hires = TheLordOfTheRingsLCG/Gift/Neutral.jp2
+Neutral-template = TheLordOfTheRingsLCG/Gift/Neutral-150.jp2
+Neutral-template-hires = TheLordOfTheRingsLCG/Gift/Neutral-300.jp2
 
-Custom-template = TheLordOfTheRingsLCG/Gift/Custom-lr.jp2
-Custom-template-hires = TheLordOfTheRingsLCG/Gift/Custom.jp2
-Custom-Colour-tintable = TheLordOfTheRingsLCG/Gift/Custom-Sphere.jp2
+CustomSphere-template = TheLordOfTheRingsLCG/Gift/CustomSphere-150.jp2
+CustomSphere-template-hires = TheLordOfTheRingsLCG/Gift/CustomSphere-300.jp2
+Sphere-decoration-tintable = TheLordOfTheRingsLCG/Gift/CustomSphere-decoration-tintable-150.jp2
+Sphere-decoration-tintable = TheLordOfTheRingsLCG/Gift/CustomSphere-decoration-tintable-300.jp2
 
-Leadership-template = TheLordOfTheRingsLCG/Gift/Leadership-lr.jp2
-Leadership-template-hires = TheLordOfTheRingsLCG/Gift/Leadership.jp2
+Leadership-template = TheLordOfTheRingsLCG/Gift/Leadership-150.jp2
+Leadership-template-hires = TheLordOfTheRingsLCG/Gift/Leadership-300.jp2
 
-Spirit-template = TheLordOfTheRingsLCG/Gift/Spirit-lr.jp2
-Spirit-template-hires = TheLordOfTheRingsLCG/Gift/Spirit.jp2
+Spirit-template = TheLordOfTheRingsLCG/Gift/Spirit-150.jp2
+Spirit-template-hires = TheLordOfTheRingsLCG/Gift/Spirit-300.jp2
 
-Tactics-template = TheLordOfTheRingsLCG/Gift/Tactics-lr.jp2
-Tactics-template-hires = TheLordOfTheRingsLCG/Gift/Tactics.jp2
+Tactics-template = TheLordOfTheRingsLCG/Gift/Tactics-150.jp2
+Tactics-template-hires = TheLordOfTheRingsLCG/Gift/Tactics-300.jp2
 
-Lore-template = TheLordOfTheRingsLCG/Gift/Lore-lr.jp2
-Lore-template-hires = TheLordOfTheRingsLCG/Gift/Lore.jp2
+Lore-template = TheLordOfTheRingsLCG/Gift/Lore-150.jp2
+Lore-template-hires = TheLordOfTheRingsLCG/Gift/Lore-300.jp2
 
-Baggins-template = TheLordOfTheRingsLCG/Gift/Baggins-lr.jp2
-Baggins-template-hires = TheLordOfTheRingsLCG/Gift/Baggins.jp2
+Baggins-template = TheLordOfTheRingsLCG/Gift/Baggins-150.jp2
+Baggins-template-hires = TheLordOfTheRingsLCG/Gift/Baggins-300.jp2
 
-Fellowship-template = TheLordOfTheRingsLCG/Gift/Fellowship-lr.jp2
-Fellowship-template-hires = TheLordOfTheRingsLCG/Gift/Fellowship.jp2
+Fellowship-template = TheLordOfTheRingsLCG/Gift/Fellowship-150.jp2
+Fellowship-template-hires = TheLordOfTheRingsLCG/Gift/Fellowship-300.jp2
 
-Mastery-template = TheLordOfTheRingsLCG/Gift/Mastery-lr.jp2
-Mastery-template-hires = TheLordOfTheRingsLCG/Gift/Mastery.jp2
+Mastery-template = TheLordOfTheRingsLCG/Gift/Mastery-150.jp2
+Mastery-template-hires = TheLordOfTheRingsLCG/Gift/Mastery-300.jp2

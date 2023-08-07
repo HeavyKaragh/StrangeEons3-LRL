@@ -1,55 +1,69 @@
 Template-region = 0,0,413,563
 Template-ppi = 150
-Template-template = TheLordOfTheRingsLCG/Scenario/Standard-lr.jp2
-Template-template-hires = TheLordOfTheRingsLCG/Scenario/Standard.jp2
+Template-template = TheLordOfTheRingsLCG/Scenario/Standard-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Scenario/Standard-300.jp2
 
 TemplateBack-region = 0,0,413,563
 TemplateBack-ppi = 150
-TemplateBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-lr.jp2
-TemplateBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack.jp2
+TemplateBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack-300.jp2
 
 Portrait-portrait-clip-region = 0,66,413,230
-Set-portrait-clip-region = 40,40,44,44
+Encounterset-portrait-clip-region = 40,40,44,44
 
-Set1-portrait-clip-region = 41,92,22,22
-Set2-portrait-clip-region = 41,114,22,22
-Set3-portrait-clip-region = 41,136,22,22
-Set4-portrait-clip-region = 41,158,22,22
-Set5-portrait-clip-region = 41,180,22,22
+Encounterset1-portrait-clip-region = 41,92,22,22
+Encounterset2-portrait-clip-region = 41,114,22,22
+Encounterset3-portrait-clip-region = 41,136,22,22
+Encounterset4-portrait-clip-region = 41,158,22,22
+Encounterset5-portrait-clip-region = 41,180,22,22
 
-Standard-template = TheLordOfTheRingsLCG/Scenario/Standard-lr.jp2
-Standard-template-hires = TheLordOfTheRingsLCG/Scenario/Standard.jp2
+Standard-template = TheLordOfTheRingsLCG/Scenario/Standard-150.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Scenario/Standard-300.jp2
+Standard-overlay = TheLordOfTheRingsLCG/Scenario/Standard-overlay-150.jp2
+Standard-overlay-hires = TheLordOfTheRingsLCG/Scenario/Standard-overlay-300.jp2
 
-Adapter-1 = TheLordOfTheRingsLCG/Scenario/Adapter-1.jp2
-Adapter-2 = TheLordOfTheRingsLCG/Scenario/Adapter-2.jp2
-Adapter-3 = TheLordOfTheRingsLCG/Scenario/Adapter-3.jp2
-Adapter-4 = TheLordOfTheRingsLCG/Scenario/Adapter-4.jp2
-Adapter-5 = TheLordOfTheRingsLCG/Scenario/Adapter-5.jp2
+adapter1 = TheLordOfTheRingsLCG/Scenario/adapter1-150.jp2
+adapter1-hires = TheLordOfTheRingsLCG/Scenario/adapter1-300.jp2
+adapter2 = TheLordOfTheRingsLCG/Scenario/adapter2-150.jp2
+adapter2-hires = TheLordOfTheRingsLCG/Scenario/adapter2-300.jp2
+adapter3 = TheLordOfTheRingsLCG/Scenario/adapter3-150.jp2
+adapter3-hires = TheLordOfTheRingsLCG/Scenario/adapter3-300.jp2
+adapter4 = TheLordOfTheRingsLCG/Scenario/adapter4-150.jp2
+adapter4-hires = TheLordOfTheRingsLCG/Scenario/adapter4-300.jp2
+adapter5 = TheLordOfTheRingsLCG/Scenario/adapter5-150.jp2
+adapter5-hires = TheLordOfTheRingsLCG/Scenario/adapter5-300.jp2
 
-StandardBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-lr.jp2
-StandardBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack.jp2
+StandardBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-150.jp2
+StandardBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack-300.jp2
 
-Custom-template = TheLordOfTheRingsLCG/Scenario/Standard-lr.jp2
-Custom-template-hires = TheLordOfTheRingsLCG/Scenario/Standard.jp2
-Custom-tintable = TheLordOfTheRingsLCG/Scenario/Custom-tintable.jp2
+CustomColour-template = TheLordOfTheRingsLCG/Scenario/Standard-150.jp2
+CustomColour-template-hires = TheLordOfTheRingsLCG/Scenario/Standard-300.jp2
+CustomColour-tintable = TheLordOfTheRingsLCG/Scenario/CustomColour-tintable-150.jp2
+CustomColour-tintablee-hires = TheLordOfTheRingsLCG/Scenario/CustomColour-tintable-300.jp2
 
-Adapter-1-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-1-tintable.jp2
-Adapter-2-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-2-tintable.jp2
-Adapter-3-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-3-tintable.jp2
-Adapter-4-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-4-tintable.jp2
-Adapter-5-tintable = TheLordOfTheRingsLCG/Scenario/Adapter-5-tintable.jp2
+CustomColourBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-150.jp2
+CustomColourBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack-300.jp2
+CustomColourBack-tintable = TheLordOfTheRingsLCG/Scenario/CustomColourBack-tintable-150.jp2
+CustomColourBack-tintablee-hires = TheLordOfTheRingsLCG/Scenario/CustomColourBack-tintable-300.jp2
 
-CustomBack-template = TheLordOfTheRingsLCG/Scenario/StandardBack-lr.jp2
-CustomBack-template-hires = TheLordOfTheRingsLCG/Scenario/StandardBack.jp2
-CustomBack-tintable = TheLordOfTheRingsLCG/Scenario/CustomBack-tintable.jp2
+CustomColour-adapter1-tintable = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter1-tintable-150.jp2
+CustomColour-adapter1-tintable-hires = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter1-tintable-300.jp2
+CustomColour-adapter2-tintable = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter2-tintable-150.jp2
+CustomColour-adapter2-tintable-hires = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter2-tintable-300.jp2
+CustomColour-adapter3-tintable = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter3-tintable-150.jp2
+CustomColour-adapter3-tintable-hires = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter3-tintable-300.jp2
+CustomColour-adapter4-tintable = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter4-tintable-150.jp2
+CustomColour-adapter4-tintable-hires = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter4-tintable-300.jp2
+CustomColour-adapter5-tintable = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter5-tintable-150.jp2
+CustomColour-adapter5-tintable-hires = TheLordOfTheRingsLCG/Scenario/CustomColour-adapter5-tintable-300.jp2
 
 OptionLeft-region = 49,507,59,9
 OptionLeftDecoration-region = 42,503,72,17
 OptionRight-region = 306,507,59,9
 OptionRightDecoration-region = 299,503,72,17
 
-Name-region = 96,42,270,22
-Group-region = 100,72,262,10
+Title-region = 96,42,270,22
+Campaign-region = 100,72,262,10
 Body-region = 48,298,316,196
 BodyBack-region = 48,42,316,474
 Type-region = 136,502,140,17

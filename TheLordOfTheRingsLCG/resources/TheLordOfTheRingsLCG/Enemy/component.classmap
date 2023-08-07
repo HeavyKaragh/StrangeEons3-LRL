@@ -1,2 +1,2 @@
 @cat-enemies
-	@LRL-Enemy-component = diy:TheLordOfTheRingsLCG/Enemy/component.js | TheLordOfTheRingsLCG/Enemy/ui.png | LRL
+	@LRL-Enemy = diy:TheLordOfTheRingsLCG/Enemy/component.js | TheLordOfTheRingsLCG/Enemy/ui.png | LRL

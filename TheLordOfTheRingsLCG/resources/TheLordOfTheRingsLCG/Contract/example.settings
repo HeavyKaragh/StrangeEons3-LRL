@@ -1,12 +1,7 @@
-Template = Neutral
+Template = SingleSided
 Portrait-portrait-template = TheLordOfTheRingsLCG/portrait/Michael C Hayes - Galadriel.jpg
 PortraitBack-portrait-template = TheLordOfTheRingsLCG/portrait/Caspar David Friedrich - Abtei im Eichwald.jpg
 CollectionNumber = 0
-PortraitShare = 1
-Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
-Set-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
+PortraitBack-share = true
+Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
 Collection = StrangeEons
-CollectionNumber = 0
-Custom-tint = 0.0,1.0,1.0
-ShowCut = false
-ShowBleeding = false

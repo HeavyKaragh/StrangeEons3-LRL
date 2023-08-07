@@ -1,2 +1,2 @@
 @cat-effects
-	@LRL-Event-component = diy:TheLordOfTheRingsLCG/Event/component.js | TheLordOfTheRingsLCG/Event/ui.png | LRL
+	@LRL-Event = diy:TheLordOfTheRingsLCG/Event/component.js | TheLordOfTheRingsLCG/Event/ui.png | LRL

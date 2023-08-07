@@ -1,2 +1,2 @@
 @cat-rules
-	@LRL-Setup-component = diy:TheLordOfTheRingsLCG/Setup/component.js | TheLordOfTheRingsLCG/Setup/ui.png | LRL
+	@LRL-Setup = diy:TheLordOfTheRingsLCG/Setup/component.js | TheLordOfTheRingsLCG/Setup/ui.png | LRL

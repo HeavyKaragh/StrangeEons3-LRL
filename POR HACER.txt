@@ -1,3 +1,10 @@
+<lrs>u</lrs> en 
+
+
+
+side quest: añadir difficulty al dibujado 
+Objective: añadir difficulty
+
 
 revisar imagenes de cut y bleeding
 

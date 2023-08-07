@@ -1,2 +1,2 @@
 @cat-rules
-	@LRL-SideQuest-component = diy:TheLordOfTheRingsLCG/SideQuest/component.js | TheLordOfTheRingsLCG/SideQuest/ui.png | LRL
+	@LRL-SideQuest = diy:TheLordOfTheRingsLCG/SideQuest/component.js | TheLordOfTheRingsLCG/SideQuest/ui.png | LRL

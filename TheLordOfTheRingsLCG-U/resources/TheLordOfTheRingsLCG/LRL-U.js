@@ -5,6 +5,7 @@ const componentList = new Array(
 	, 'Haven'
 	, 'Presence'
 	, 'Occurrence'
+	, 'Adventure'
 ) ;
 
 function getName(){ return @LRL-U ; }

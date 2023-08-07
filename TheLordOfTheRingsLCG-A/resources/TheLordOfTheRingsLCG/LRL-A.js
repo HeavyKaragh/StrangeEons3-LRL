@@ -7,8 +7,8 @@ const componentList = new Array(
 	, 'PresentationAlternate'
 	, 'Rules'
 	, 'Scenario'
-	, 'Set'
-	, 'DividerVertical'
+	, 'Encounterset'
+	, 'Divider'
 	, 'DividerHorizontal'
 	, 'DividerDeck'
 ) ;

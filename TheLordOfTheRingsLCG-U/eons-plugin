@@ -1,4 +1,4 @@
-id = CATALOGUEID{bf51efe4-9648-4cb2-90cd-12ecee2f76af:2023-2-16-18-16-26-592}
+id = CATALOGUEID{bf51efe4-9648-4cb2-90cd-12ecee2f76af:2023-7-3-11-0-29-626}
 
 priority = EXPANSION
 ui-languages = en_US,es_ES,de_DE,fr_FR,pl_PL,it_IT
@@ -14,7 +14,7 @@ catalog-description = <p>This plug-in allows creating components for <i><b>The \
     Lord of the Rings: The Card Game</b></i> by Fantasy Flight Games.</p>\n<p>This \
     expansion includes unofficial game \
     componets:</p>\n<ul>\n<li><b>Gift</b>\n<li><b>Haven</b>\n<li><b>Presence</b>\n<li\
-    ><b>Occurrence</b>\n</ul>
+    ><b>Occurrence</b>\n<li><b>Adventure</b>\n</ul>
 catalog-description_es_ES = <p>Este complemento permite crear componentes para \
     <i><b>El Señor de los Anillos: El Juego de Cartas</b></i> de Fantasy Flight \
     Games.</p>\n<p>Esta expansión incluye componentes que no pertenecen al mazo de \

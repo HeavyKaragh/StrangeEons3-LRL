@@ -2,11 +2,14 @@ useLibrary( 'extension' ) ;
 
 const componentList = new Array(
 	'Ally'
+	, 'AllyPromo'
 	, 'Attachment'
+	, 'AttachmentPromo'
 	, 'Contract'
 	, 'Event'
+	, 'EventPromo'
 	, 'Hero'
-//	, 'HeroPromo'
+	, 'HeroPromo'
 	, 'SideQuestPlayer'
 	, 'Treasure'
 ) ;

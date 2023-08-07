@@ -1,0 +1,16 @@
+Template = Leadership
+TemplateBack = Player
+Portrait-portrait-template = TheLordOfTheRingsLCG/portrait/John Howe - Black Rider.jpg
+ResourceCost = 1
+Type =
+Artist = John Howe
+SphereIcon-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
+BodyIcon-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
+Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
+Collection = StrangeEons
+CollectionNumber = 0
+CustomSphere-tint = 0.0,1.0,1.0
+BodyIcon-transparency = 2
+Title-length = Short
+TextBox-size = Small
+BodyIcon-tinted = true

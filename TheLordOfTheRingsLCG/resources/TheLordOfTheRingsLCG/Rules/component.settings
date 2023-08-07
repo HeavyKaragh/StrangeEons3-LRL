@@ -1,64 +1,73 @@
 Template-region = 0,0,413,563
 Template-ppi = 150
-Template-template = TheLordOfTheRingsLCG/Rules/Standard-lr.jp2
-Template-template-hires = TheLordOfTheRingsLCG/Rules/Standard.jp2
+Template-template = TheLordOfTheRingsLCG/Rules/Standard-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Rules/Standard-300.jp2
 
 TemplateBack-region = 0,0,413,563
 TemplateBack-ppi = 150
-TemplateBack-template = TheLordOfTheRingsLCG/Rules/Standard-lr.jp2
-TemplateBack-template-hires = TheLordOfTheRingsLCG/Rules/Standard.jp2
+TemplateBack-template = TheLordOfTheRingsLCG/Rules/Standard-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/Rules/Standard-300.jp2
 
 PortraitBack-portrait-clip-region = 48,278,316,247
-PortraitBack-Overlay = TheLordOfTheRingsLCG/Rules/Overlay.jp2
-PortraitBack-Overlay-small = TheLordOfTheRingsLCG/Rules/Overlay-small.jp2
+PortraitBack-overlay = TheLordOfTheRingsLCG/Rules/PortraitBack-overlay-150.jp2
+PortraitBack-overlay-hires = TheLordOfTheRingsLCG/Rules/PortraitBack-overlay-300.jp2
+PortraitBack-overlay-small = TheLordOfTheRingsLCG/Rules/PortraitBack-overlay-small-150.jp2
+PortraitBack-overlay-small-hires = TheLordOfTheRingsLCG/Rules/PortraitBack-overlay-small-300.jp2
 
-Name-region = 50,38,313,30
-Name-stroke = Medium
-Name-stroke-width = 2
-Name-stroke-colour = #F0000000
+Title-region = 50,38,313,30
+Title-stroke = Medium
+Title-stroke-width = 2
+Title-stroke-colour = #F0000000
 
-Body-region = 60,38,293,487
+BodyFront-region = 60,38,293,487
+BodyFront-Plain-region = 60,38,293,487
+BodyFront-Title-region = 60,70,293,455
+BodyFront-Sets-region = 60,110,293,415
+
 BodyBack-region = 60,38,293,487
-None-BodyBack-region = 60,38,293,487
-Small-BodyBack-region = 60,38,293,320
-Medium-BodyBack-region = 60,38,293,250
-Plain-Body-region = 60,38,293,487
-Title-Body-region = 60,70,293,455
-Sets-Body-region = 60,38,293,487
+BodyBack-None-region = 60,38,293,487
+BodyBack-Small-region = 60,38,293,320
+BodyBack-Medium-region = 60,38,293,250
 
 Page-region = 295,527,59,10
 Page-decoration-region = 288,524,72,18
-Page-decoration = TheLordOfTheRingsLCG/image/VictoryDecoration.jp2
+Page-decoration = TheLordOfTheRingsLCG/image/Option-decoration.jp2
 
 Page-back-region = 59,527,59,10
 Page-decoration-back-region = 52,524,72,18
 
-Adapter-corrector = 19
+adapter-corrector = 19
 
-Set-portrait-clip-region = 99,77,21,21
-Set1-portrait-clip-region = 138,77,21,21
-Set2-portrait-clip-region = 176,77,21,21
-Set3-portrait-clip-region = 215,77,21,21
-Set4-portrait-clip-region = 255,77,21,21
-Set5-portrait-clip-region = 297,77,21,21
+Encounterset-portrait-clip-region = 99,77,21,21
+Encounterset1-portrait-clip-region = 138,77,21,21
+Encounterset2-portrait-clip-region = 176,77,21,21
+Encounterset3-portrait-clip-region = 215,77,21,21
+Encounterset4-portrait-clip-region = 255,77,21,21
+Encounterset5-portrait-clip-region = 297,77,21,21
 #
-#SetM1-region = 119,77,21,21
-#SetM2-region = 157,77,21,21
-#SetM3-region = 197,77,21,21
-#SetM4-region = 236,77,21,21
-#SetM5-region = 275,77,21,21
+#EncountersetM1-region = 119,77,21,21
+#EncountersetM2-region = 157,77,21,21
+#EncountersetM3-region = 197,77,21,21
+#EncountersetM4-region = 236,77,21,21
+#EncountersetM5-region = 275,77,21,21
 
-Adapter-0 = TheLordOfTheRingsLCG/image/empty1x1.png
-Adapter-1 = TheLordOfTheRingsLCG/Rules/Adapter-1.jp2
-Adapter-2 = TheLordOfTheRingsLCG/Rules/Adapter-2.jp2
-Adapter-3 = TheLordOfTheRingsLCG/Rules/Adapter-3.jp2
-Adapter-4 = TheLordOfTheRingsLCG/Rules/Adapter-4.jp2
-Adapter-5 = TheLordOfTheRingsLCG/Rules/Adapter-5.jp2
-Adapter-6 = TheLordOfTheRingsLCG/Rules/Adapter-6.jp2
+adapter0 = TheLordOfTheRingsLCG/image/empty1x1.png
+adapter1 = TheLordOfTheRingsLCG/Rules/adapter1-150.jp2
+adapter1-hires = TheLordOfTheRingsLCG/Rules/adapter1-300.jp2
+adapter2 = TheLordOfTheRingsLCG/Rules/adapter2-150.jp2
+adapter2-hires = TheLordOfTheRingsLCG/Rules/adapter2-300.jp2
+adapter3 = TheLordOfTheRingsLCG/Rules/adapter3-150.jp2
+adapter3-hires = TheLordOfTheRingsLCG/Rules/adapter3-300.jp2
+adapter4 = TheLordOfTheRingsLCG/Rules/adapter4-150.jp2
+adapter4-hires = TheLordOfTheRingsLCG/Rules/adapter4-300.jp2
+adapter5 = TheLordOfTheRingsLCG/Rules/adapter5-150.jp2
+adapter5-hires = TheLordOfTheRingsLCG/Rules/adapter5-300.jp2
+adapter6 = TheLordOfTheRingsLCG/Rules/adapter6-150.jp2
+adapter6-hires = TheLordOfTheRingsLCG/Rules/adapter6-300.jp2
 
-Name-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}; WIDTH: SEMICONDENSED
-Name-pointsize = 10
-Name-colour = #FFFFFF
+Title-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}; WIDTH: SEMICONDENSED
+Title-pointsize = 10
+Title-colour = #FFFFFF
 
 Collection-portrait-clip-region = 108,1054,24,24
 CollectionInfo-region = 134,1054,148,24
@@ -68,13 +77,13 @@ Bottom-colour = #000000
 
 ArtistBack-region = 139,527,136,12
 
-Standard-template = TheLordOfTheRingsLCG/Rules/Standard-lr.jp2
-Standard-template-hires = TheLordOfTheRingsLCG/Rules/Standard.jp2
+Standard-template = TheLordOfTheRingsLCG/Rules/Standard-150.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Rules/Standard-300.jp2
 
 OptionLeft-region = 49,507,59,9
-OptionLeftDecoration-region = 42,503,72,17
+OptionLeft-decoration-region = 42,503,72,17
 OptionRight-region = 306,507,59,9
-OptionRightDecoration-region = 299,503,72,17
+OptionRight-decoration-region = 299,503,72,17
 
 Copyright-region = 139,527,136,12
 CollectionInfo-region = 276,527,70,12

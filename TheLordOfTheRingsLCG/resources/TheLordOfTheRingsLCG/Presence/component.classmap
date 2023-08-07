@@ -1,2 +1,2 @@
 @cat-effects
-	@LRL-Presence-component = diy:TheLordOfTheRingsLCG/Presence/component.js | TheLordOfTheRingsLCG/Presence/ui.png | LRL
+	@LRL-Presence = diy:TheLordOfTheRingsLCG/Presence/component.js | TheLordOfTheRingsLCG/Presence/ui.png | LRL

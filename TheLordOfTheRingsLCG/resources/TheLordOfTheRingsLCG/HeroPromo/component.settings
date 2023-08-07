@@ -1,34 +1,182 @@
-Portrait-portrait-clip-region = 0,0,375,525
-CustomSphere-portrait-clip-region = 300,406,37,37
-BodyIcon-portrait-clip-region = 158,445,60,60
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/HeroPromo/Neutral-Small-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/HeroPromo/Neutral-Small-300.jp2
 
-Collection-portrait-clip-region = 322,512,12,12
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/template/Player-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/template/Player-300.jp2
 
-SphereBody-region = 44,433,290,78
-SphereDecoration-region = 240,390,110,100
-Attack-region = 14,100,27,20
-Body-region = 52,445,272,61
-Body-shape = 0,90,463,0,0
-Defense-region = 14,136,27,20
-HitPoints-region = 31,407,50,37
-Name-region = 85,412,206,24
-OptionRight-region = 612,1014,118,18
-OptionRightDecoration-region = 598,1006,145,35
-ThreatCost-region = 30,25,27,20
-Type-region = 256,442,50,16
-Willpower-region = 14,65,27,20
+Body-pointsize = 7
+Body-lineTightness = 0.5
 
-Artist-region = 38,527,100,12
-Copyright-region = 139,527,135,12
-CollectionInfo-region = 275,527,70,12
-Collection-portrait-clip-region = 346,527,12,12
-CollectionNumber-region = 359,527,16,12
+Traits-pointsize = 8
 
-Collection-inBox-portrait-clip-region = 295,497,10,10
-Body-inBox-region = 52,445,272,52
-Artist-inBox-region = 58,497,90,10
-Copyright-inBox-region = 149,497,90,10
-CollectionInfo-inBox-region = 240,497,54,10
-CollectionNumber-inBox-region = 306,497,12,10
+Portrait-portrait-clip-region = 0,0,413,563
 
-Stat-tint = 180.0,0.0,1.0
+SphereIcon-portrait-clip-region = 325,419,36,36
+SphereIcon-Small-portrait-clip-region = 325,419,36,36
+SphereIcon-Medium-portrait-clip-region = 325,385,36,36
+SphereIcon-Big-portrait-clip-region = 325,351,36,36
+
+BodyIcon-portrait-clip-region = 184,473,46,46
+BodyIcon-Small-portrait-clip-region = 184,473,46,46
+BodyIcon-Medium-portrait-clip-region = 166,439,80,80
+BodyIcon-Big-portrait-clip-region = 150,405,114,114
+
+HitPoints-region = 47,420,42,32
+HitPoints-Small-region = 47,420,42,32
+HitPoints-Medium-region = 47,386,42,32
+HitPoints-Big-region = 47,352,42,32
+
+Stats-White = TheLordOfTheRingsLCG/HeroPromo/Stats-White-150.jp2
+Stats-White-hires = TheLordOfTheRingsLCG/HeroPromo/Stats-White-300.jp2
+
+Stats-Scroll = TheLordOfTheRingsLCG/HeroPromo/Stats-Scroll-150.jp2
+Stats-Scroll-hires = TheLordOfTheRingsLCG/HeroPromo/Stats-Scroll-300.jp2
+
+ThreatCost-region = 50,42,26,20
+ThreatCost-White-region = 50,42,26,20
+ThreatCost-Scroll-region = 44,41,36,24
+
+Willpower-region = 36,82,22,22
+Willpower-White-region = 34,82,28,22
+Willpower-Scroll-region = 43,90,14,14
+
+Attack-region = 36,116,22,22
+Attack-White-region = 34,116,28,22
+Attack-Scroll-region = 43,118,14,14
+
+Defense-region = 36,154,22,22
+Defense-White-region = 34,154,28,22
+Defense-Scroll-region = 43,146,14,14
+
+Title-region = 96,426,221,22
+Title-Small-region = 96,426,221,22
+Title-Medium-region = 96,392,221,22
+Title-Big-region = 96,358,221,22
+
+Traits-region = 78,456,184,18
+Traits-Small-region = 78,456,184,18
+Traits-Medium-region = 78,422,184,18
+Traits-Big-region = 78,388,184,18
+
+Body-region = 66,474,284,47
+Body-Small-region = 66,474,284,47
+Body-Medium-region = 66,440,284,81
+Body-Big-region = 66,406,284,115
+
+#Body-shape = 0,0,0,0,0
+#Body-Small-shape = 0,0,474,0,0
+#Body-Medium-shape = 0,0,440,0,0
+#Body-Big-shape = 0,0,406,0,0
+
+#Victory-shape = 0,-88,-18,0,0
+
+Type-pointsize = 6
+Type-region = 280,456,56,12
+Neutral-Type-region-modifier = 0,0,18,0
+Type-Small-region = 280,456,56,12
+Type-Medium-region = 280,422,56,12
+Type-Big-region = 280,388,56,12
+
+#OptionLeft-region = 49,507,59,9
+#OptionLeft-decoration-region = 42,503,72,17
+OptionRight-region = 291,510,59,9
+OptionRight-decoration-region = 284,506,72,17
+
+Artist-region = 52,527,92,12
+Copyright-region = 145,527,123,12
+CollectionInfo-region = 269,527,62,12
+Collection-portrait-clip-region =332,527,12,12
+CollectionNumber-region = 345,527,16,12
+
+Neutral-template = TheLordOfTheRingsLCG/HeroPromo/Neutral-Small-150.jp2
+Neutral-template-hires = TheLordOfTheRingsLCG/HeroPromo/Neutral-Small-300.jp2
+Neutral-Small-template = TheLordOfTheRingsLCG/HeroPromo/Neutral-Small-150.jp2
+Neutral-Small-template-hires = TheLordOfTheRingsLCG/HeroPromo/Neutral-Small-300.jp2
+Neutral-Medium-template = TheLordOfTheRingsLCG/HeroPromo/Neutral-Medium-150.jp2
+Neutral-Medium-template-hires = TheLordOfTheRingsLCG/HeroPromo/Neutral-Medium-300.jp2
+Neutral-Big-template = TheLordOfTheRingsLCG/HeroPromo/Neutral-Big-150.jp2
+Neutral-Big-template-hires = TheLordOfTheRingsLCG/HeroPromo/Neutral-Big-300.jp2
+
+CustomSphere-template = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Small-150.jp2
+CustomSphere-template-hires = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Small-300.jp2
+CustomSphere-Small-template = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Small-150.jp2
+CustomSphere-Small-template-hires = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Small-300.jp2
+CustomSphere-Medium-template = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Medium-150.jp2
+CustomSphere-Medium-template-hires = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Medium-300.jp2
+CustomSphere-Big-template = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Big-150.jp2
+CustomSphere-Big-template-hires = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Big-300.jp2
+Body-tintable = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Body-Small-tintable-150.jp2
+Body-tintable-hires = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Body-Small-tintable-300.jp2
+Body-Small-tintable = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Body-Small-tintable-150.jp2
+Body-Small-tintable-hires = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Body-Small-tintable-300.jp2
+Body-Medium-tintable = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Body-Medium-tintable-150.jp2
+Body-Medium-tintable-hires = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Body-Medium-tintable-300.jp2
+Body-Big-tintable = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Body-Big-tintable-150.jp2
+Body-Big-tintable-hires = TheLordOfTheRingsLCG/HeroPromo/CustomSphere-Body-Big-tintable-300.jp2
+
+Leadership-template = TheLordOfTheRingsLCG/HeroPromo/Leadership-Small-150.jp2
+Leadership-template-hires = TheLordOfTheRingsLCG/HeroPromo/Leadership-Small-300.jp2
+Leadership-Small-template = TheLordOfTheRingsLCG/HeroPromo/Leadership-Small-150.jp2
+Leadership-Small-template-hires = TheLordOfTheRingsLCG/HeroPromo/Leadership-Small-300.jp2
+Leadership-Medium-template = TheLordOfTheRingsLCG/HeroPromo/Leadership-Medium-150.jp2
+Leadership-Medium-template-hires = TheLordOfTheRingsLCG/HeroPromo/Leadership-Medium-300.jp2
+Leadership-Big-template = TheLordOfTheRingsLCG/HeroPromo/Leadership-Big-150.jp2
+Leadership-Big-template-hires = TheLordOfTheRingsLCG/HeroPromo/Leadership-Big-300.jp2
+
+Spirit-template = TheLordOfTheRingsLCG/HeroPromo/Spirit-Small-150.jp2
+Spirit-template-hires = TheLordOfTheRingsLCG/HeroPromo/Spirit-Small-300.jp2
+Spirit-Small-template = TheLordOfTheRingsLCG/HeroPromo/Spirit-Small-150.jp2
+Spirit-Small-template-hires = TheLordOfTheRingsLCG/HeroPromo/Spirit-Small-300.jp2
+Spirit-Medium-template = TheLordOfTheRingsLCG/HeroPromo/Spirit-Medium-150.jp2
+Spirit-Medium-template-hires = TheLordOfTheRingsLCG/HeroPromo/Spirit-Medium-300.jp2
+Spirit-Big-template = TheLordOfTheRingsLCG/HeroPromo/Spirit-Big-150.jp2
+Spirit-Big-template-hires = TheLordOfTheRingsLCG/HeroPromo/Spirit-Big-300.jp2
+
+Tactics-template = TheLordOfTheRingsLCG/HeroPromo/Tactics-Small-150.jp2
+Tactics-template-hires = TheLordOfTheRingsLCG/HeroPromo/Tactics-Small-300.jp2
+Tactics-Small-template = TheLordOfTheRingsLCG/HeroPromo/Tactics-Small-150.jp2
+Tactics-Small-template-hires = TheLordOfTheRingsLCG/HeroPromo/Tactics-Small-300.jp2
+Tactics-Medium-template = TheLordOfTheRingsLCG/HeroPromo/Tactics-Medium-150.jp2
+Tactics-Medium-template-hires = TheLordOfTheRingsLCG/HeroPromo/Tactics-Medium-300.jp2
+Tactics-Big-template = TheLordOfTheRingsLCG/HeroPromo/Tactics-Big-150.jp2
+Tactics-Big-template-hires = TheLordOfTheRingsLCG/HeroPromo/Tactics-Big-300.jp2
+
+Lore-template = TheLordOfTheRingsLCG/HeroPromo/Lore-Small-150.jp2
+Lore-template-hires = TheLordOfTheRingsLCG/HeroPromo/Lore-Small-300.jp2
+Lore-Small-template = TheLordOfTheRingsLCG/HeroPromo/Lore-Small-150.jp2
+Lore-Small-template-hires = TheLordOfTheRingsLCG/HeroPromo/Lore-Small-300.jp2
+Lore-Medium-template = TheLordOfTheRingsLCG/HeroPromo/Lore-Medium-150.jp2
+Lore-Medium-template-hires = TheLordOfTheRingsLCG/HeroPromo/Lore-Medium-300.jp2
+Lore-Big-template = TheLordOfTheRingsLCG/HeroPromo/Lore-Big-150.jp2
+Lore-Big-template-hires = TheLordOfTheRingsLCG/HeroPromo/Lore-Big-300.jp2
+
+Baggins-template = TheLordOfTheRingsLCG/HeroPromo/Baggins-Small-150.jp2
+Baggins-template-hires = TheLordOfTheRingsLCG/HeroPromo/Baggins-Small-300.jp2
+Baggins-Small-template = TheLordOfTheRingsLCG/HeroPromo/Baggins-Small-150.jp2
+Baggins-Small-template-hires = TheLordOfTheRingsLCG/HeroPromo/Baggins-Small-300.jp2
+Baggins-Medium-template = TheLordOfTheRingsLCG/HeroPromo/Baggins-Medium-150.jp2
+Baggins-Medium-template-hires = TheLordOfTheRingsLCG/HeroPromo/Baggins-Medium-300.jp2
+Baggins-Big-template = TheLordOfTheRingsLCG/HeroPromo/Baggins-Big-150.jp2
+Baggins-Big-template-hires = TheLordOfTheRingsLCG/HeroPromo/Baggins-Big-300.jp2
+
+Fellowship-template = TheLordOfTheRingsLCG/HeroPromo/Fellowship-Small-150.jp2
+Fellowship-template-hires = TheLordOfTheRingsLCG/HeroPromo/Fellowship-Small-300.jp2
+Fellowship-Small-template = TheLordOfTheRingsLCG/HeroPromo/Fellowship-Small-150.jp2
+Fellowship-Small-template-hires = TheLordOfTheRingsLCG/HeroPromo/Fellowship-Small-300.jp2
+Fellowship-Medium-template = TheLordOfTheRingsLCG/HeroPromo/Fellowship-Medium-150.jp2
+Fellowship-Medium-template-hires = TheLordOfTheRingsLCG/HeroPromo/Fellowship-Medium-300.jp2
+Fellowship-Big-template = TheLordOfTheRingsLCG/HeroPromo/Fellowship-Big-150.jp2
+Fellowship-Big-template-hires = TheLordOfTheRingsLCG/HeroPromo/Fellowship-Big-300.jp2
+
+Mastery-template = TheLordOfTheRingsLCG/HeroPromo/Mastery-Small-150.jp2
+Mastery-template-hires = TheLordOfTheRingsLCG/HeroPromo/Mastery-Small-300.jp2
+Mastery-Small-template = TheLordOfTheRingsLCG/HeroPromo/Mastery-Small-150.jp2
+Mastery-Small-template-hires = TheLordOfTheRingsLCG/HeroPromo/Mastery-Small-300.jp2
+Mastery-Medium-template = TheLordOfTheRingsLCG/HeroPromo/Mastery-Medium-150.jp2
+Mastery-Medium-template-hires = TheLordOfTheRingsLCG/HeroPromo/Mastery-Medium-300.jp2
+Mastery-Big-template = TheLordOfTheRingsLCG/HeroPromo/Mastery-Big-150.jp2
+Mastery-Big-template-hires = TheLordOfTheRingsLCG/HeroPromo/Mastery-Big-300.jp2

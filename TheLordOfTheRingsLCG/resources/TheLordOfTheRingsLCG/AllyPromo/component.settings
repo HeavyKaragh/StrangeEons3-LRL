@@ -1,0 +1,174 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/AllyPromo/Neutral-Small-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/AllyPromo/Neutral-Small-300.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/template/Player-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/template/Player-300.jp2
+
+Portrait-portrait-clip-region = 0,0,413,563
+
+Body-pointsize = 7
+Body-lineTightness = 0.5
+
+Traits-pointsize = 8
+
+SphereIcon-portrait-clip-region = 325,419,36,36
+SphereIcon-Small-portrait-clip-region = 325,419,36,36
+SphereIcon-Medium-portrait-clip-region = 325,385,36,36
+SphereIcon-Big-portrait-clip-region = 325,351,36,36
+
+BodyIcon-portrait-clip-region = 184,473,46,46
+BodyIcon-Small-portrait-clip-region = 184,473,46,46
+BodyIcon-Medium-portrait-clip-region = 166,439,80,80
+BodyIcon-Big-portrait-clip-region = 150,405,114,114
+
+ResourceCost-region = 66,39,56,40
+ResourceCost-White-region = 41,48,44,34
+ResourceCost-Scroll-region = 41,48,44,34
+
+HitPoints-region = 47,420,42,32
+HitPoints-Small-region = 47,420,42,32
+HitPoints-Medium-region = 47,386,42,32
+HitPoints-Big-region = 47,352,42,32
+
+Stats-White = TheLordOfTheRingsLCG/AllyPromo/Stats-White-150.jp2
+Stats-White-hires = TheLordOfTheRingsLCG/AllyPromo/Stats-White-300.jp2
+
+Stats-Scroll = TheLordOfTheRingsLCG/AllyPromo/Stats-Scroll-150.jp2
+Stats-Scroll-hires = TheLordOfTheRingsLCG/AllyPromo/Stats-Scroll-300.jp2
+
+Willpower-region = 36,82,22,22
+Willpower-White-region = 34,115,28,22
+Willpower-Scroll-region = 43,116,16,16
+
+Attack-region = 36,116,22,22
+Attack-White-region = 34,149,28,22
+Attack-Scroll-region = 43,142,16,16
+
+Defense-region = 36,154,22,22
+Defense-White-region = 34,187,28,22
+Defense-Scroll-region = 43,172,16,16
+
+Title-region = 96,426,221,22
+Title-Small-region = 96,426,221,22
+Title-Medium-region = 96,392,221,22
+Title-Big-region = 96,358,221,22
+
+Traits-region = 78,456,184,18
+Traits-Small-region = 78,456,184,18
+Traits-Medium-region = 78,422,184,18
+Traits-Big-region = 78,388,184,18
+
+Body-region = 66,474,284,47
+Body-Small-region = 66,474,284,47
+Body-Medium-region = 66,440,284,81
+Body-Big-region = 66,406,284,115
+
+OptionRight-region = 291,510,59,9
+OptionRight-decoration-region = 284,506,72,17
+
+Type-pointsize = 6
+Type-region = 280,456,56,12
+Neutral-Type-region-modifier = 0,0,18,0
+Type-Small-region = 280,456,56,12
+Type-Medium-region = 280,422,56,12
+Type-Big-region = 280,388,56,12
+
+Artist-region = 52,527,92,12
+Copyright-region = 145,527,123,12
+CollectionInfo-region = 269,527,62,12
+Collection-portrait-clip-region =332,527,12,12
+CollectionNumber-region = 345,527,16,12
+
+Neutral-template = TheLordOfTheRingsLCG/AllyPromo/Neutral-Small-150.jp2
+Neutral-template-hires = TheLordOfTheRingsLCG/AllyPromo/Neutral-Small-300.jp2
+Neutral-Small-template = TheLordOfTheRingsLCG/AllyPromo/Neutral-Small-150.jp2
+Neutral-Small-template-hires = TheLordOfTheRingsLCG/AllyPromo/Neutral-Small-300.jp2
+Neutral-Medium-template = TheLordOfTheRingsLCG/AllyPromo/Neutral-Medium-150.jp2
+Neutral-Medium-template-hires = TheLordOfTheRingsLCG/AllyPromo/Neutral-Medium-300.jp2
+Neutral-Big-template = TheLordOfTheRingsLCG/AllyPromo/Neutral-Big-150.jp2
+Neutral-Big-template-hires = TheLordOfTheRingsLCG/AllyPromo/Neutral-Big-300.jp2
+
+CustomSphere-template = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Small-150.jp2
+CustomSphere-template-hires = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Small-300.jp2
+CustomSphere-Small-template = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Small-150.jp2
+CustomSphere-Small-template-hires = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Small-300.jp2
+CustomSphere-Medium-template = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Medium-150.jp2
+CustomSphere-Medium-template-hires = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Medium-300.jp2
+CustomSphere-Big-template = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Big-150.jp2
+CustomSphere-Big-template-hires = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Big-300.jp2
+
+Body-tintable = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Body-Small-tintable-150.jp2
+Body-tintable-hires = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Body-Small-tintable-300.jp2
+Body-Small-tintable = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Body-Small-tintable-150.jp2
+Body-Small-tintable-hires = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Body-Small-tintable-300.jp2
+Body-Medium-tintable = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Body-Medium-tintable-150.jp2
+Body-Medium-tintable-hires = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Body-Medium-tintable-300.jp2
+Body-Big-tintable = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Body-Big-tintable-150.jp2
+Body-Big-tintable-hires = TheLordOfTheRingsLCG/AllyPromo/CustomSphere-Body-Big-tintable-300.jp2
+
+Leadership-template = TheLordOfTheRingsLCG/AllyPromo/Leadership-Small-150.jp2
+Leadership-template-hires = TheLordOfTheRingsLCG/AllyPromo/Leadership-Small-300.jp2
+Leadership-Small-template = TheLordOfTheRingsLCG/AllyPromo/Leadership-Small-150.jp2
+Leadership-Small-template-hires = TheLordOfTheRingsLCG/AllyPromo/Leadership-Small-300.jp2
+Leadership-Medium-template = TheLordOfTheRingsLCG/AllyPromo/Leadership-Medium-150.jp2
+Leadership-Medium-template-hires = TheLordOfTheRingsLCG/AllyPromo/Leadership-Medium-300.jp2
+Leadership-Big-template = TheLordOfTheRingsLCG/AllyPromo/Leadership-Big-150.jp2
+Leadership-Big-template-hires = TheLordOfTheRingsLCG/AllyPromo/Leadership-Big-300.jp2
+
+Spirit-template = TheLordOfTheRingsLCG/AllyPromo/Spirit-Small-150.jp2
+Spirit-template-hires = TheLordOfTheRingsLCG/AllyPromo/Spirit-Small-300.jp2
+Spirit-Small-template = TheLordOfTheRingsLCG/AllyPromo/Spirit-Small-150.jp2
+Spirit-Small-template-hires = TheLordOfTheRingsLCG/AllyPromo/Spirit-Small-300.jp2
+Spirit-Medium-template = TheLordOfTheRingsLCG/AllyPromo/Spirit-Medium-150.jp2
+Spirit-Medium-template-hires = TheLordOfTheRingsLCG/AllyPromo/Spirit-Medium-300.jp2
+Spirit-Big-template = TheLordOfTheRingsLCG/AllyPromo/Spirit-Big-150.jp2
+Spirit-Big-template-hires = TheLordOfTheRingsLCG/AllyPromo/Spirit-Big-300.jp2
+
+Tactics-template = TheLordOfTheRingsLCG/AllyPromo/Tactics-Small-150.jp2
+Tactics-template-hires = TheLordOfTheRingsLCG/AllyPromo/Tactics-Small-300.jp2
+Tactics-Small-template = TheLordOfTheRingsLCG/AllyPromo/Tactics-Small-150.jp2
+Tactics-Small-template-hires = TheLordOfTheRingsLCG/AllyPromo/Tactics-Small-300.jp2
+Tactics-Medium-template = TheLordOfTheRingsLCG/AllyPromo/Tactics-Medium-150.jp2
+Tactics-Medium-template-hires = TheLordOfTheRingsLCG/AllyPromo/Tactics-Medium-300.jp2
+Tactics-Big-template = TheLordOfTheRingsLCG/AllyPromo/Tactics-Big-150.jp2
+Tactics-Big-template-hires = TheLordOfTheRingsLCG/AllyPromo/Tactics-Big-300.jp2
+
+Lore-template = TheLordOfTheRingsLCG/AllyPromo/Lore-Small-150.jp2
+Lore-template-hires = TheLordOfTheRingsLCG/AllyPromo/Lore-Small-300.jp2
+Lore-Small-template = TheLordOfTheRingsLCG/AllyPromo/Lore-Small-150.jp2
+Lore-Small-template-hires = TheLordOfTheRingsLCG/AllyPromo/Lore-Small-300.jp2
+Lore-Medium-template = TheLordOfTheRingsLCG/AllyPromo/Lore-Medium-150.jp2
+Lore-Medium-template-hires = TheLordOfTheRingsLCG/AllyPromo/Lore-Medium-300.jp2
+Lore-Big-template = TheLordOfTheRingsLCG/AllyPromo/Lore-Big-150.jp2
+Lore-Big-template-hires = TheLordOfTheRingsLCG/AllyPromo/Lore-Big-300.jp2
+
+Baggins-template = TheLordOfTheRingsLCG/AllyPromo/Baggins-Small-150.jp2
+Baggins-template-hires = TheLordOfTheRingsLCG/AllyPromo/Baggins-Small-300.jp2
+Baggins-Small-template = TheLordOfTheRingsLCG/AllyPromo/Baggins-Small-150.jp2
+Baggins-Small-template-hires = TheLordOfTheRingsLCG/AllyPromo/Baggins-Small-300.jp2
+Baggins-Medium-template = TheLordOfTheRingsLCG/AllyPromo/Baggins-Medium-150.jp2
+Baggins-Medium-template-hires = TheLordOfTheRingsLCG/AllyPromo/Baggins-Medium-300.jp2
+Baggins-Big-template = TheLordOfTheRingsLCG/AllyPromo/Baggins-Big-150.jp2
+Baggins-Big-template-hires = TheLordOfTheRingsLCG/AllyPromo/Baggins-Big-300.jp2
+
+Fellowship-template = TheLordOfTheRingsLCG/AllyPromo/Fellowship-Small-150.jp2
+Fellowship-template-hires = TheLordOfTheRingsLCG/AllyPromo/Fellowship-Small-300.jp2
+Fellowship-Small-template = TheLordOfTheRingsLCG/AllyPromo/Fellowship-Small-150.jp2
+Fellowship-Small-template-hires = TheLordOfTheRingsLCG/AllyPromo/Fellowship-Small-300.jp2
+Fellowship-Medium-template = TheLordOfTheRingsLCG/AllyPromo/Fellowship-Medium-150.jp2
+Fellowship-Medium-template-hires = TheLordOfTheRingsLCG/AllyPromo/Fellowship-Medium-300.jp2
+Fellowship-Big-template = TheLordOfTheRingsLCG/AllyPromo/Fellowship-Big-150.jp2
+Fellowship-Big-template-hires = TheLordOfTheRingsLCG/AllyPromo/Fellowship-Big-300.jp2
+
+Mastery-template = TheLordOfTheRingsLCG/AllyPromo/Mastery-Small-150.jp2
+Mastery-template-hires = TheLordOfTheRingsLCG/AllyPromo/Mastery-Small-300.jp2
+Mastery-Small-template = TheLordOfTheRingsLCG/AllyPromo/Mastery-Small-150.jp2
+Mastery-Small-template-hires = TheLordOfTheRingsLCG/AllyPromo/Mastery-Small-300.jp2
+Mastery-Medium-template = TheLordOfTheRingsLCG/AllyPromo/Mastery-Medium-150.jp2
+Mastery-Medium-template-hires = TheLordOfTheRingsLCG/AllyPromo/Mastery-Medium-300.jp2
+Mastery-Big-template = TheLordOfTheRingsLCG/AllyPromo/Mastery-Big-150.jp2
+Mastery-Big-template-hires = TheLordOfTheRingsLCG/AllyPromo/Mastery-Big-300.jp2

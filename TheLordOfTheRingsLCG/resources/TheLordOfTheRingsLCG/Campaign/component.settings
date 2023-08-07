@@ -1,41 +1,48 @@
 Template-region = 0,0,413,563
 Template-ppi = 150
-Template-template = TheLordOfTheRingsLCG/Campaign/Standard-lr.jp2
-Template-template-hires = TheLordOfTheRingsLCG/Campaign/Standard.jp2
+Template-template = TheLordOfTheRingsLCG/Campaign/Standard-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Campaign/Standard-300.jp2
 
 TemplateBack-region = 0,0,413,563
 TemplateBack-ppi = 150
-TemplateBack-template = TheLordOfTheRingsLCG/Campaign/StandardBack-lr.jp2
-TemplateBack-template-hires = TheLordOfTheRingsLCG/Campaign/StandardBack.jp2
+TemplateBack-template = TheLordOfTheRingsLCG/Campaign/StandardBack-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/Campaign/StandardBack-300.jp2
 
 Portrait-portrait-clip-region = 0,0,413,245
 
-Set-portrait-clip-region = 325,191,37,37
+Encounterset-portrait-clip-region = 325,191,37,37
 
 Campaign-region = 68,243,274,20
-BodyBack-region = 56,55,301,453
+
 Body-region = 56,273,301,220
-Name-region = 98,38,216,25
+BodyBack-region = 56,55,301,453
+
+Title-region = 98,38,216,25
+
 Type-region = 134,501,143,18
 
 OptionLeft-region = 49,507,59,9
 OptionLeft-decoration-region = 42,503,72,17
-OptionRight-region = 306,507,59,9
-OptionRight-decoration-region = 299,503,72,17
-
 OptionLeftBack-region = 49,507,59,9
 OptionLeftBack-decoration-region = 42,503,72,17
+
+OptionRight-region = 306,507,59,9
+OptionRight-decoration-region = 299,503,72,17
 OptionRightBack-region = 306,507,59,9
 OptionRightBack-decoration-region = 299,503,72,17
 
 Artist-region = 38,527,100,12
+
 Copyright-region = 139,527,135,12
-CollectionInfo-region = 275,527,70,12
+
 Collection-portrait-clip-region = 346,527,12,12
+
 CollectionNumber-region = 359,527,16,12
 
-Standard-template = TheLordOfTheRingsLCG/Campaign/Standard-lr.jp2
-Standard-template-hires = TheLordOfTheRingsLCG/Campaign/Standard.jp2
+CollectionInfo-region = 275,527,70,12
 
-StandardBack-template = TheLordOfTheRingsLCG/Campaign/StandardBack-lr.jp2
-StandardBack-template-hires = TheLordOfTheRingsLCG/Campaign/StandardBack.jp2
+Standard-template = TheLordOfTheRingsLCG/Campaign/Standard-150.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Campaign/Standard-300.jp2
+
+StandardBack-template = TheLordOfTheRingsLCG/Campaign/StandardBack-150.jp2
+StandardBack-template-hires = TheLordOfTheRingsLCG/Campaign/StandardBack-300.jp2

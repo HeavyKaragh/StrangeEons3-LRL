@@ -1,2 +1,2 @@
 @cat-effects
-	@LRL-Occurrence-component = diy:TheLordOfTheRingsLCG/Occurrence/component.js | TheLordOfTheRingsLCG/Occurrence/ui.png | LRL
+	@LRL-Occurrence = diy:TheLordOfTheRingsLCG/Occurrence/component.js | TheLordOfTheRingsLCG/Occurrence/ui.png | LRL

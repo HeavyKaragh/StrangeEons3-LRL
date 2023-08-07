@@ -1,13 +1,10 @@
 Template = Nightmare
 Portrait-portrait-template = TheLordOfTheRingsLCG/portrait/Caspar David Friedrich - Abtei im Eichwald.jpg
 
-SetNumber = 3
-SetTotal = 9
-Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
-Set-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
-Set = StrangeEons
+EncountersetNumber = 3
+EncountersetTotal = 9
+Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
+Encounterset-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
+Encounterset = StrangeEons
 Collection = StrangeEons
 CollectionNumber = 0
-Custom-tint = 0.0,1.0,1.0
-ShowCut = false
-ShowBleeding = false

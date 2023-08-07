@@ -1,26 +1,27 @@
 Template-region = 0,0,1250,1650
 Template-ppi = 150
-Template-template = TheLordOfTheRingsLCG/QuestSheet/Standard-lr.png
-Template-template-hires = TheLordOfTheRingsLCG/QuestSheet/Standard.png
-
+Template-template = TheLordOfTheRingsLCG/QuestSheet/Standard-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/QuestSheet/Standard-300.jp2
 Collection-portrait-clip-region = 58,176,40,40
 CollectionBis-portrait-clip-region = 1152,176,40,40
 Portrait-portrait-clip-region = 115,1025,1020,500
 
-Set-portrait-clip-region = 313,518,36,36
-Set1-portrait-clip-region = 380,518,36,36
-Set2-portrait-clip-region = 246,518,36,36
-Set3-portrait-clip-region = 447,518,36,36
-Set4-portrait-clip-region = 179,518,36,36
-Set5-portrait-clip-region = 514,518,36,36
+Encounterset-portrait-clip-region = 313,518,36,36
+Encounterset1-portrait-clip-region = 380,518,36,36
+Encounterset2-portrait-clip-region = 246,518,36,36
+Encounterset3-portrait-clip-region = 447,518,36,36
+Encounterset4-portrait-clip-region = 179,518,36,36
+Encounterset5-portrait-clip-region = 514,518,36,36
 
+GameLogo-en = TheLordOfTheRingsLCG/QuestSheet/GameLogo_en-150.jp2
+GameLogo-en-hires = TheLordOfTheRingsLCG/QuestSheet/GameLogo_en-300.jp2
+GameLogo-es = TheLordOfTheRingsLCG/QuestSheet/GameLogo_es-150.jp2
+GameLogo-es-hires = TheLordOfTheRingsLCG/QuestSheet/GameLogo_es-300.jp2
+GameLogo-pl = TheLordOfTheRingsLCG/QuestSheet/GameLogo_pl-150.jp2
+GameLogo-pl-hires = TheLordOfTheRingsLCG/QuestSheet/GameLogo_pl-300.jp2
 
-GameLogo-en = TheLordOfTheRingsLCG/QuestSheet/GameLogo_en-lr.jp2
-GameLogo-en-hires = TheLordOfTheRingsLCG/QuestSheet/GameLogo_en.jp2
-GameLogo-es = TheLordOfTheRingsLCG/QuestSheet/GameLogo_es-lr.jp2
-GameLogo-es-hires = TheLordOfTheRingsLCG/QuestSheet/GameLogo_es.jp2
-GameLogo-pl = TheLordOfTheRingsLCG/QuestSheet/GameLogo_pl-lr.jp2
-GameLogo-pl-hires = TheLordOfTheRingsLCG/QuestSheet/GameLogo_pl.jp2
+FFGicons = TheLordOfTheRingsLCG/QuestSheet/FFGicons-150.jp2
+FFGicons-hires = TheLordOfTheRingsLCG/QuestSheet/FFGicons-300.jp2
 
 Odd-Page-region = 1144,1541,54,40
 Page-region = 51,1539,54,40
@@ -44,30 +45,39 @@ Group-alignment = middle,center
 Group-pointsize = 30
 Group-colour = #FFFFFF
 
-Name-region = 110,400,516,90
-Name-stroke = Medium
-Name-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}
-Name-alignment = middle,center
-Name-pointsize = 20
-Name-colour = #FFFFFF
+Title-region = 110,400,516,90
+Title-stroke = Medium
+Title-style = FAMILY: {Eons.namedObjects.LRL.LRLwindlass}
+Title-alignment = middle,center
+Title-pointsize = 20
+Title-colour = #FFFFFF
 
 Copyright-region = 443,1512,320,28
 CollectionInfo-region = 120,1512,320,28
 
-Standard-template = TheLordOfTheRingsLCG/QuestSheet/Standard-lr.png
-Standard-template-hires = TheLordOfTheRingsLCG/QuestSheet/Standard.png
+Standard-template = TheLordOfTheRingsLCG/QuestSheet/Standard-150.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/QuestSheet/Standard-300.jp2
 
-Portrait-overlay = TheLordOfTheRingsLCG/QuestSheet/Overlay.jp2
-Portrait-overlay-small = TheLordOfTheRingsLCG/QuestSheet/Overlay-small.jp2
+Portrait-overlay = TheLordOfTheRingsLCG/QuestSheet/Portrait-overlay-150.jp2
+Portrait-overlay-hires = TheLordOfTheRingsLCG/QuestSheet/Portrait-overlay-300.jp2
+Portrait-overlay-small = TheLordOfTheRingsLCG/QuestSheet/Portrait-overlay-small-150.jp2
+Portrait-overlay-small-hires = TheLordOfTheRingsLCG/QuestSheet/Portrait-overlay-small-300.jp2
 
-Adapter-corrector = 34
+adapter-corrector = 34
 
-Adapter-0 = TheLordOfTheRingsLCG/image/empty1x1.png
-Adapter-1 = TheLordOfTheRingsLCG/QuestSheet/Adapter-1.jp2
-Adapter-2 = TheLordOfTheRingsLCG/QuestSheet/Adapter-2.jp2
-Adapter-3 = TheLordOfTheRingsLCG/QuestSheet/Adapter-3.jp2
-Adapter-4 = TheLordOfTheRingsLCG/QuestSheet/Adapter-4.jp2
-Adapter-5 = TheLordOfTheRingsLCG/QuestSheet/Adapter-5.jp2
-Adapter-6 = TheLordOfTheRingsLCG/QuestSheet/Adapter-6.jp2
+adapter0 = TheLordOfTheRingsLCG/image/empty1x1.png
+adapter1 = TheLordOfTheRingsLCG/QuestSheet/adapter1-150.jp2
+adapter1-hires = TheLordOfTheRingsLCG/QuestSheet/adapter1-300.jp2
+adapter2 = TheLordOfTheRingsLCG/QuestSheet/adapter2-150.jp2
+adapter2-hires = TheLordOfTheRingsLCG/QuestSheet/adapter2-300.jp2
+adapter3 = TheLordOfTheRingsLCG/QuestSheet/adapter3-150.jp2
+adapter3-hires = TheLordOfTheRingsLCG/QuestSheet/adapter3-300.jp2
+adapter4 = TheLordOfTheRingsLCG/QuestSheet/adapter4-150.jp2
+adapter4-hires = TheLordOfTheRingsLCG/QuestSheet/adapter4-300.jp2
+adapter5 = TheLordOfTheRingsLCG/QuestSheet/adapter5-150.jp2
+adapter5-hires = TheLordOfTheRingsLCG/QuestSheet/adapter5-300.jp2
+adapter6 = TheLordOfTheRingsLCG/QuestSheet/adapter6-150.jp2
+adapter6-hires = TheLordOfTheRingsLCG/QuestSheet/adapter6-300.jp2
 
-Template-tintable = TheLordOfTheRingsLCG/QuestSheet/Colour.jp2
+Template-tintable = TheLordOfTheRingsLCG/QuestSheet/CustomColour-tintable-150.jp2
+Template-tintable-hires = TheLordOfTheRingsLCG/QuestSheet/CustomColour-tintable-300.jp2

@@ -1,2 +1,2 @@
 @cat-inventory
-	@LRL-Contract-component = diy:TheLordOfTheRingsLCG/Contract/component.js | TheLordOfTheRingsLCG/Contract/ui.png | LRL
+	@LRL-Contract = diy:TheLordOfTheRingsLCG/Contract/component.js | TheLordOfTheRingsLCG/Contract/ui.png | LRL

@@ -1,2 +1,2 @@
 @cat-rules
-	@LRL-Objective-component = diy:TheLordOfTheRingsLCG/Objective/component.js | TheLordOfTheRingsLCG/Objective/ui.png | LRL
+	@LRL-Objective = diy:TheLordOfTheRingsLCG/Objective/component.js | TheLordOfTheRingsLCG/Objective/ui.png | LRL

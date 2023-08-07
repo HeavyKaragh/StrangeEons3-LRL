@@ -1,0 +1,33 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/Encounterset/Standard-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/Encounterset/Standard-300.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/Encounterset/StandardBack-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/Encounterset/StandardBack-300.jp2
+
+Portrait-portrait-clip-region = 0,62,413,204
+Encounterset-portrait-clip-region = 39,39,44,44
+
+Standard-template = TheLordOfTheRingsLCG/Encounterset/Standard-150.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/Encounterset/Standard-300.jp2
+
+StandardBack-template = TheLordOfTheRingsLCG/Encounterset/StandardBack-150.jp2
+StandardBack-template-hires = TheLordOfTheRingsLCG/Encounterset/StandardBack-300.jp2
+
+Title-region = 104,39,234,22
+Body-region = 50,274,312,218
+BodyBack-region = 50,46,312,468
+Type-region = 60,502,293,19
+
+OptionLeft-region = 49,507,59,9
+OptionLeft-decoration-region = 42,503,72,17
+OptionRight-region = 306,507,59,9
+OptionRight-decoration-region = 299,503,72,17
+
+Artist-region = 38,527,100,12
+Copyright-region = 139,527,135,12
+CollectionInfo-region = 275,527,87,12
+Collection-portrait-clip-region = 363,527,12,12

@@ -1,0 +1,151 @@
+Template-region = 0,0,413,563
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Small-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Small-300.jp2
+
+TemplateBack-region = 0,0,413,563
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/template/Player-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/template/Player-300.jp2
+
+Body-pointsize = 7
+Body-lineTightness = 0.5
+
+Portrait-portrait-clip-region = 0,0,413,563
+
+SphereIcon-portrait-clip-region = 329,487,34,34
+
+BodyIcon-portrait-clip-region = 184,473,46,46
+BodyIcon-Small-portrait-clip-region = 186,422,42,42
+BodyIcon-Medium-portrait-clip-region = 169,388,74,74
+BodyIcon-Big-portrait-clip-region = 154,354,106,106
+
+ResourceCost-region = 48,484,42,35
+
+Title-region = 125,490,197,22
+
+Traits-region = 62,461,173,22
+Traits-pointsize = 7
+Traits-lineTightness = 0.5
+
+Traits-alignment = center,top
+#Traits-Small-region = 64,421,286,18
+#Traits-Medium-region = 64,387,286,18
+#Traits-Big-region = 64,353,286,18
+
+Body-region = 62,354,290,107
+Body-Small-region = 62,421,290,40
+Body-Medium-region = 62,387,290,74
+Body-Big-region = 62,354,290,107
+
+Type-pointsize = 6
+Type-region = 257,470,95,12
+
+OptionRight-region = 173,476,59,9
+OptionRight-decoration-region = 167,472,72,16
+
+Artist-region = 52,527,92,12
+Copyright-region = 145,527,123,12
+CollectionInfo-region = 269,527,62,12
+Collection-portrait-clip-region =332,527,12,12
+CollectionNumber-region = 345,527,16,12
+
+Neutral-template = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Small-150.jp2
+Neutral-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Small-300.jp2
+Neutral-Small-template = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Small-150.jp2
+Neutral-Small-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Small-300.jp2
+Neutral-Medium-template = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Medium-150.jp2
+Neutral-Medium-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Medium-300.jp2
+Neutral-Big-template = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Big-150.jp2
+Neutral-Big-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Big-300.jp2
+
+Neutral-Short = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Short-150.jp2
+Neutral-Short-hires = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Short-300.jp2
+Neutral-Long = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Long-150.jp2
+Neutral-Long-hires = TheLordOfTheRingsLCG/AttachmentPromo/Neutral-Long-300.jp2
+
+CustomSphere-template = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Small-150.jp2
+CustomSphere-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Small-300.jp2
+CustomSphere-Small-template = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Small-150.jp2
+CustomSphere-Small-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Small-300.jp2
+CustomSphere-Medium-template = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Medium-150.jp2
+CustomSphere-Medium-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Medium-300.jp2
+CustomSphere-Big-template = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Big-150.jp2
+CustomSphere-Big-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Big-300.jp2
+
+CustomSphere-Short = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Short-150.jp2
+CustomSphere-Short-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Short-300.jp2
+CustomSphere-Long = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Long-150.jp2
+CustomSphere-Long-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Long-300.jp2
+
+Body-tintable = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Body-Small-tintable-150.jp2
+Body-tintable-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Body-Small-tintable-300.jp2
+Body-Small-tintable = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Body-Small-tintable-150.jp2
+Body-Small-tintable-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Body-Small-tintable-300.jp2
+Body-Medium-tintable = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Body-Medium-tintable-150.jp2
+Body-Medium-tintable-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Body-Medium-tintable-300.jp2
+Body-Big-tintable = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Body-Big-tintable-150.jp2
+Body-Big-tintable-hires = TheLordOfTheRingsLCG/AttachmentPromo/CustomSphere-Body-Big-tintable-300.jp2
+
+Leadership-template = TheLordOfTheRingsLCG/AttachmentPromo/Leadership-Small-150.jp2
+Leadership-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Leadership-Small-300.jp2
+Leadership-Small-template = TheLordOfTheRingsLCG/AttachmentPromo/Leadership-Small-150.jp2
+Leadership-Small-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Leadership-Small-300.jp2
+Leadership-Medium-template = TheLordOfTheRingsLCG/AttachmentPromo/Leadership-Medium-150.jp2
+Leadership-Medium-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Leadership-Medium-300.jp2
+Leadership-Big-template = TheLordOfTheRingsLCG/AttachmentPromo/Leadership-Big-150.jp2
+Leadership-Big-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Leadership-Big-300.jp2
+
+Spirit-template = TheLordOfTheRingsLCG/AttachmentPromo/Spirit-Small-150.jp2
+Spirit-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Spirit-Small-300.jp2
+Spirit-Small-template = TheLordOfTheRingsLCG/AttachmentPromo/Spirit-Small-150.jp2
+Spirit-Small-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Spirit-Small-300.jp2
+Spirit-Medium-template = TheLordOfTheRingsLCG/AttachmentPromo/Spirit-Medium-150.jp2
+Spirit-Medium-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Spirit-Medium-300.jp2
+Spirit-Big-template = TheLordOfTheRingsLCG/AttachmentPromo/Spirit-Big-150.jp2
+Spirit-Big-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Spirit-Big-300.jp2
+
+Tactics-template = TheLordOfTheRingsLCG/AttachmentPromo/Tactics-Small-150.jp2
+Tactics-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Tactics-Small-300.jp2
+Tactics-Small-template = TheLordOfTheRingsLCG/AttachmentPromo/Tactics-Small-150.jp2
+Tactics-Small-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Tactics-Small-300.jp2
+Tactics-Medium-template = TheLordOfTheRingsLCG/AttachmentPromo/Tactics-Medium-150.jp2
+Tactics-Medium-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Tactics-Medium-300.jp2
+Tactics-Big-template = TheLordOfTheRingsLCG/AttachmentPromo/Tactics-Big-150.jp2
+Tactics-Big-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Tactics-Big-300.jp2
+
+Lore-template = TheLordOfTheRingsLCG/AttachmentPromo/Lore-Small-150.jp2
+Lore-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Lore-Small-300.jp2
+Lore-Small-template = TheLordOfTheRingsLCG/AttachmentPromo/Lore-Small-150.jp2
+Lore-Small-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Lore-Small-300.jp2
+Lore-Medium-template = TheLordOfTheRingsLCG/AttachmentPromo/Lore-Medium-150.jp2
+Lore-Medium-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Lore-Medium-300.jp2
+Lore-Big-template = TheLordOfTheRingsLCG/AttachmentPromo/Lore-Big-150.jp2
+Lore-Big-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Lore-Big-300.jp2
+
+Baggins-template = TheLordOfTheRingsLCG/AttachmentPromo/Baggins-Small-150.jp2
+Baggins-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Baggins-Small-300.jp2
+Baggins-Small-template = TheLordOfTheRingsLCG/AttachmentPromo/Baggins-Small-150.jp2
+Baggins-Small-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Baggins-Small-300.jp2
+Baggins-Medium-template = TheLordOfTheRingsLCG/AttachmentPromo/Baggins-Medium-150.jp2
+Baggins-Medium-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Baggins-Medium-300.jp2
+Baggins-Big-template = TheLordOfTheRingsLCG/AttachmentPromo/Baggins-Big-150.jp2
+Baggins-Big-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Baggins-Big-300.jp2
+
+Fellowship-template = TheLordOfTheRingsLCG/AttachmentPromo/Fellowship-Small-150.jp2
+Fellowship-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Fellowship-Small-300.jp2
+Fellowship-Small-template = TheLordOfTheRingsLCG/AttachmentPromo/Fellowship-Small-150.jp2
+Fellowship-Small-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Fellowship-Small-300.jp2
+Fellowship-Medium-template = TheLordOfTheRingsLCG/AttachmentPromo/Fellowship-Medium-150.jp2
+Fellowship-Medium-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Fellowship-Medium-300.jp2
+Fellowship-Big-template = TheLordOfTheRingsLCG/AttachmentPromo/Fellowship-Big-150.jp2
+Fellowship-Big-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Fellowship-Big-300.jp2
+
+Mastery-template = TheLordOfTheRingsLCG/AttachmentPromo/Mastery-Small-150.jp2
+Mastery-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Mastery-Small-300.jp2
+Mastery-Small-template = TheLordOfTheRingsLCG/AttachmentPromo/Mastery-Small-150.jp2
+Mastery-Small-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Mastery-Small-300.jp2
+Mastery-Medium-template = TheLordOfTheRingsLCG/AttachmentPromo/Mastery-Medium-150.jp2
+Mastery-Medium-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Mastery-Medium-300.jp2
+Mastery-Big-template = TheLordOfTheRingsLCG/AttachmentPromo/Mastery-Big-150.jp2
+Mastery-Big-template-hires = TheLordOfTheRingsLCG/AttachmentPromo/Mastery-Big-300.jp2
