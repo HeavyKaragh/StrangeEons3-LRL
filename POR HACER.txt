@@ -6,7 +6,7 @@ side quest: añadir difficulty al dibujado
 Objective: añadir difficulty
 
 
-revisar imagenes de cut y bleeding
+revisar imagenes de cut y bleeding ¿quitar al ir incluido por SE?
 
 UpdatePreferences: no funciona project:test.jpg en -portrait-template
 
