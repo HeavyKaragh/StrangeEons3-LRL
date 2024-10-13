@@ -1,7 +1,8 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
-first-row = 29
-selected-members = :TheLordOfTheRingsLCG_Promotional.seext
+first-row = 24
+selected-members = \
+    :TheLordOfTheRingsLCG_Promotional/resources/TheLordOfTheRingsLCG/LRL-R.js
 open-folders = \
     :TheLordOfTheRingsLCG_Accesories:TheLordOfTheRingsLCG_Base:TheLordOfTheRingsLCG_B\
     ase/resources:TheLordOfTheRingsLCG_Encounter:TheLordOfTheRingsLCG_Promotional:The\
