@@ -1,0 +1,81 @@
+Template-region = 0,0,413,613
+Template-ppi = 150
+Template-template = TheLordOfTheRingsLCG/DividerVertical/Encounter-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-300.jp2
+
+Template-bleeding = TheLordOfTheRingsLCG/DividerVertical/Bleeding-300.png
+Template-cut = TheLordOfTheRingsLCG/DividerVertical/cut-Title-300.png
+
+TemplateBack-region = 0,0,413,613
+TemplateBack-ppi = 150
+TemplateBack-template = TheLordOfTheRingsLCG/DividerVertical/Encounter-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-300.jp2
+
+Portrait-portrait-clip-region = 43,93,327,477
+Collection-portrait-clip-region = 345,27,30,30
+Group-portrait-clip-region = 38,27,30,30
+
+Group-Left-region = 51,28,30,30
+Group-LeftMiddle-region = 146,28,30,30
+Group-RightMiddle-region = 239,28,30,30
+Group-Right-region = 333,28,30,30
+
+Group-Title-region = 38,27,30,30
+Collection-Title-region = 345,27,30,30
+
+Title-region = 84,31,245,22
+Artist-region = 139,575,136,12
+Artist-format = 
+
+Encounter-template = TheLordOfTheRingsLCG/DividerVertical/Encounter-150.jp2
+Encounter-template-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-300.jp2
+Encounter-Left = TheLordOfTheRingsLCG/DividerVertical/Encounter-Left-150.jp2
+Encounter-Left-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-Left-300.jp2
+Encounter-LeftMiddle = TheLordOfTheRingsLCG/DividerVertical/Encounter-LeftMiddle-150.jp2
+Encounter-LeftMiddle-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-LeftMiddle-300.jp2
+Encounter-RightMiddle = TheLordOfTheRingsLCG/DividerVertical/Encounter-RightMiddle-150.jp2
+Encounter-RightMiddle-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-RightMiddle-300.jp2
+Encounter-Right = TheLordOfTheRingsLCG/DividerVertical/Encounter-Right-150.jp2
+Encounter-Right-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-Right-300.jp2
+Encounter-Title = TheLordOfTheRingsLCG/DividerVertical/Encounter-Title-150.jp2
+Encounter-Title-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-Title-300.jp2
+
+Nightmare-template = TheLordOfTheRingsLCG/DividerVertical/Encounter-150.jp2
+Nightmare-template-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-300.jp2
+Nightmare-Left = TheLordOfTheRingsLCG/DividerVertical/Encounter-Left-150.jp2
+Nightmare-Left-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-Left-300.jp2
+Nightmare-LeftMiddle = TheLordOfTheRingsLCG/DividerVertical/Encounter-LeftMiddle-150.jp2
+Nightmare-LeftMiddle-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-LeftMiddle-300.jp2
+Nightmare-RightMiddle = TheLordOfTheRingsLCG/DividerVertical/Encounter-RightMiddle-150.jp2
+Nightmare-RightMiddle-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-RightMiddle-300.jp2
+Nightmare-Right = TheLordOfTheRingsLCG/DividerVertical/Encounter-Right-150.jp2
+Nightmare-Right-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-Right-300.jp2
+Nightmare-Title = TheLordOfTheRingsLCG/DividerVertical/Encounter-Title-150.jp2
+Nightmare-Title-hires = TheLordOfTheRingsLCG/DividerVertical/Encounter-Title-300.jp2
+
+Player-template = TheLordOfTheRingsLCG/DividerVertical/Player-150.jp2
+Player-template-hires = TheLordOfTheRingsLCG/DividerVertical/Player-300.jp2
+Player-Left = TheLordOfTheRingsLCG/DividerVertical/Player-Left-150.jp2
+Player-Left-hires = TheLordOfTheRingsLCG/DividerVertical/Player-Left-300.jp2
+Player-LeftMiddle = TheLordOfTheRingsLCG/DividerVertical/Player-LeftMiddle-150.jp2
+Player-LeftMiddle-hires = TheLordOfTheRingsLCG/DividerVertical/Player-LeftMiddle-300.jp2
+Player-RightMiddle = TheLordOfTheRingsLCG/DividerVertical/Player-Right-150.jp2
+Player-RightMiddle-hires = TheLordOfTheRingsLCG/DividerVertical/Player-Right-300.jp2
+Player-Right = TheLordOfTheRingsLCG/DividerVertical/Player-RightMiddle-150.jp2
+Player-Right-hires = TheLordOfTheRingsLCG/DividerVertical/Player-RightMiddle-300.jp2
+Player-Title = TheLordOfTheRingsLCG/DividerVertical/Player-Title-150.jp2
+Player-Title-hires = TheLordOfTheRingsLCG/DividerVertical/Player-Title-300.jp2
+
+CustomColour-tintable = TheLordOfTheRingsLCG/DividerVertical/CustomColour-tintable-150.jp2
+CustomColour-tintable-hires = TheLordOfTheRingsLCG/DividerVertical/CustomColour-tintable-300.jp2
+
+Template-cut-Title = TheLordOfTheRingsLCG/DividerVertical/cut-Title-300.png
+Template-cut-Left = TheLordOfTheRingsLCG/DividerVertical/cut-Left-300.png
+Template-cut-LeftMiddle = TheLordOfTheRingsLCG/DividerVertical/cut-LeftMiddle-300.png
+Template-cut-RightMiddle = TheLordOfTheRingsLCG/DividerVertical/cut-RightMiddle-300.png
+Template-cut-Right = TheLordOfTheRingsLCG/DividerVertical/cut-Right-300.png
+Template-cut-TitleBig = TheLordOfTheRingsLCG/DividerVertical/cut-TitleBig-300.png
+Template-cut-LeftBig = TheLordOfTheRingsLCG/DividerVertical/cut-LeftBig-300.png
+Template-cut-LeftMiddleBig = TheLordOfTheRingsLCG/DividerVertical/cut-LeftMiddleBig-300.png
+Template-cut-RightMiddleBig = TheLordOfTheRingsLCG/DividerVertical/cut-RightMiddleBig-300.png
+Template-cut-RightBig = TheLordOfTheRingsLCG/DividerVertical/cut-RightBig-300.png

@@ -75,3 +75,7 @@ Artist-region = 38,527,100,12
 Copyright-region = 139,527,135,12
 CollectionInfo-region = 275,527,87,12
 Collection-portrait-clip-region = 363,527,12,12
+
+Initial-tint = 120.0,0.70,0.95
+Main-tint = 40.0,0.95,0.95
+Epic-tint = -80.0,0.90,0.70

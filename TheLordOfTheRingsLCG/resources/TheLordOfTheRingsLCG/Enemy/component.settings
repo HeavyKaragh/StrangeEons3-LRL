@@ -53,6 +53,10 @@ Ship-template = TheLordOfTheRingsLCG/Enemy/Ship-150.jp2
 Ship-template-hires = TheLordOfTheRingsLCG/Enemy/Ship-300.jp2
 Ship-Body-region = 56,356,301,137
 
+ShipNightmare-template = TheLordOfTheRingsLCG/Enemy/ShipNightmare-150.jp2
+ShipNightmare-template-hires = TheLordOfTheRingsLCG/Enemy/ShipNightmare-300.jp2
+ShipNightmare-Body-region = 56,356,301,137
+
 Burden-template = TheLordOfTheRingsLCG/Enemy/Burden-150.jp2
 Burden-template-hires = TheLordOfTheRingsLCG/Enemy/Burden-300.jp2
 Burden-Body-region = 56,356,301,137

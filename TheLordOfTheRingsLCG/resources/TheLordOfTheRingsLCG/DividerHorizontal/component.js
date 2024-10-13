@@ -11,7 +11,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -212,7 +212,22 @@ function paintFront(g, diy, sheet) {
 
 function paintBack(g, diy, sheet) {
     debug(1, '\npaintBack');
-    let layout = String($Layout-icons + 'Back');
+    switch($Layout-icons){
+    case 'Left':
+    	layout = 'Right';
+    	break;
+    case 'LeftMiddle':
+    	layout = 'RightMiddle';
+    	break;
+    case 'RightMiddle':
+    	layout = 'LeftMiddle';
+    	break;
+    case 'Right':
+    	layout = 'Left';
+    	break;
+    default :
+    	layout = String($Layout-icons + 'Back');
+    }
 
     paintCommon(layout, diy, g, sheet);
     if (layout == 'TitleBack') {

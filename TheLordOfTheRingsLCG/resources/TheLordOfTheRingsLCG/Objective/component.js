@@ -9,7 +9,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -118,7 +118,7 @@ function createInterface(diy, editor, sheet) {
  	    // TEMPLATE PANEL
         let Template_panel = new TypeGrid();
         Template_panel.setTitle(@LRL-Template);
-        list = new Array('Standard', 'Burden', 'Ring');
+        list = new Array('Standard', 'Nightmare', 'Burden', 'Ring');
         let Template_control = new uiListIcon('Template', list, bindings, FRONT);
         let CustomColour_control = new uiTint('CustomColour', bindings, FRONT);
         Template_panel.place(

@@ -11,7 +11,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -114,7 +114,7 @@ function createInterface(diy, editor, sheet) {
         let CustomRegion_panel = new TypeGrid();
         CustomRegion_panel.setTitle(@LRL-CustomRegion);
 
-        let CustomRegion_control = new uiTint('CustomRegion', bindings, FRONT);
+        let CustomRegion_control = new uiTint('CustomRegion', bindings, BACK);
         CustomRegion_panel.place(
             CustomRegion_control, 'br hfill'
         );

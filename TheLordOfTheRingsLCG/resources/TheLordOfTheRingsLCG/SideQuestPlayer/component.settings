@@ -44,8 +44,8 @@ CustomSphere-template = TheLordOfTheRingsLCG/SideQuestPlayer/CustomSphere-150.jp
 CustomSphere-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/CustomSphere-300.jp2
 Body-tintable = TheLordOfTheRingsLCG/SideQuestPlayer/CustomSphere-Body-tintable-150.jp2
 Body-tintable-hires = TheLordOfTheRingsLCG/SideQuestPlayer/CustomSphere-Body-tintable-300.jp2
-Sphere-decoration-tintable = TheLordOfTheRingsLCG/SideQuestPlayer/CustomSphere-decoration-tintable-150.jp2
-Sphere-decoration-tintable-hires = TheLordOfTheRingsLCG/SideQuestPlayer/CustomSphere-decoration-tintable-300.jp2
+Pearl-tintable = TheLordOfTheRingsLCG/SideQuestPlayer/CustomSphere-Pearl-tintable-150.jp2
+Pearl-tintable-hires = TheLordOfTheRingsLCG/SideQuestPlayer/CustomSphere-Pearl-tintable-300.jp2
 
 Leadership-template = TheLordOfTheRingsLCG/SideQuestPlayer/Leadership-150.jp2
 Leadership-template-hires = TheLordOfTheRingsLCG/SideQuestPlayer/Leadership-300.jp2

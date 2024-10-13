@@ -5,8 +5,8 @@ Template-template-hires = TheLordOfTheRingsLCG/Objective/Standard-300.jp2
 
 TemplateBack-region = 0,0,413,563
 TemplateBack-ppi = 150
-TemplateBack-template = TheLordOfTheRingsLCG/image/Encounter-150.jp2
-TemplateBack-template-hires = TheLordOfTheRingsLCG/image/Encounter-300.jp2
+TemplateBack-template = TheLordOfTheRingsLCG/template/Encounter-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/template/Encounter-300.jp2
 
 Portrait-portrait-clip-region = 0,65,413,258
 Encounterset-portrait-clip-region = 318,263,36,36
@@ -38,6 +38,11 @@ CollectionNumber-region = 359,527,16,12
 
 Standard-template = TheLordOfTheRingsLCG/Objective/Standard-150.jp2
 Standard-template-hires = TheLordOfTheRingsLCG/Objective/Standard-300.jp2
+
+Nightmare-template = TheLordOfTheRingsLCG/Objective/Nightmare-150.jp2
+Nightmare-template-hires = TheLordOfTheRingsLCG/Objective/Nightmare-300.jp2
+Nightmare-Body-region = 63,322,286,169
+Nightmare-Body-shape = 51,51,344,0,0
 
 Ring-template = TheLordOfTheRingsLCG/Objective/Ring-150.jp2
 Ring-template-hires = TheLordOfTheRingsLCG/Objective/Ring-300.jp2

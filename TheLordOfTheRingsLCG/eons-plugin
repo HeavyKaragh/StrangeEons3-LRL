@@ -1,4 +1,4 @@
-id = CATALOGUEID{a83160cb-5c58-4bf0-83d1-37cda1cd38d1:2023-7-3-11-16-2-774}
+id = CATALOGUEID{a83160cb-5c58-4bf0-83d1-37cda1cd38d1:2023-9-27-10-10-12-758}
 
 priority = GAME
 ui-languages = en_US,es_ES,de_DE,fr_FR,pl_PL,it_IT
@@ -8,7 +8,7 @@ catalog-name = The Lord of the Rings LCG
 catalog-name_es_ES = El Señor de los Anillos LCG
 catalog-name_it_IT = Il Signore degli Anelli LCG
 
-catalog-credit = Karagh, GeckoTH
+catalog-credit = HeavyKaragh
 catalog-description = <p>This plug-in allows creating components for <i><b>The \
     Lord of the Rings: The Card Game</b></i> by Fantasy Flight Games.</p>\n<p>A \
     usage guide is available in <a \

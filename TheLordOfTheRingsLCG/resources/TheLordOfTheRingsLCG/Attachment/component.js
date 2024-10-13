@@ -6,7 +6,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -190,7 +190,7 @@ function createFrontPainter(diy, sheet) {
     // TEMPLATE
     Body_tinter = new createTinter('Body', diy);
     BodyIcon_tinter = new createTinter('BodyIcon', diy);
-    SphereDecoration_tinter = new createTinter('SphereDecoration', diy);
+    Pearl_tinter = new createTinter('Pearl', diy);
 
     // STATS
     ResourceCost_tinter = new createTinter('ResourceCost', diy);
@@ -224,7 +224,7 @@ function paintFront(g, diy, sheet) {
     // TEMPLATE
     if ($Template == 'CustomSphere') paintCustomSphereBody(diy, g, sheet);
     paintTemplate(diy, g, sheet);
-    if ($Template == 'CustomSphere') paintCustomSphereDecoration(diy, g, sheet);
+    if ($Template == 'CustomSphere') paintCustomSpherePearl(diy, g, sheet);
 
     // ICONS
     paintIcon('Collection', diy, g, sheet);
@@ -235,7 +235,8 @@ function paintFront(g, diy, sheet) {
 
     // TEXTS
     writeTitle(diy, g);
-    writeBody(['Traits', 'Effect', 'Flavour'], diy, g);
+    writeTraits(diy, g, sheet);
+    writeBody(['Effect', 'Flavour'], diy, g);
 
     writeType(diy, g);
     if ($Template == 'Boon') writeSubtype(diy, g);

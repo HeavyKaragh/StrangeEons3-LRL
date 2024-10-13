@@ -9,7 +9,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -106,6 +106,14 @@ function createInterface(diy, editor, sheet) {
 	    let Template_tab = new TypeGrid();
 	    Template_tab.editorTabScrolling = true;
 
+ 	    // TEMPLATE PANEL
+        let Template_panel = new TypeGrid();
+        Template_panel.setTitle(@LRL-Template);
+        list = new Array('Standard', 'Nightmare');
+        let Template_control = new uiListIcon('Template', list, bindings, FRONT);
+        Template_panel.place(Template_control, 'hfill');
+        Template_tab.place(Template_panel, 'hfill');
+        
 	    // TEMPLATE BACK PANEL
 	    let TemplateBack_panel = new TypeGrid();
 	    TemplateBack_panel.setTitle(@LRL-TemplateBack);
@@ -208,7 +216,7 @@ function paintFront(g, diy, sheet) {
 	paintPortraitShadow('Portrait', PortraitShadow_tinter, diy, g, sheet) ;
 
     // TEMPLATE
-    sheet.paintTemplateImage(g);
+    paintTemplate(diy, g, sheet);
     if ($Template == 'Standard') paintDifficulty(diy, g, sheet);
 
     // ICONS

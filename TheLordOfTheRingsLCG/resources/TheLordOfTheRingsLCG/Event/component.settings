@@ -39,8 +39,8 @@ CustomSphere-template = TheLordOfTheRingsLCG/Event/CustomSphere-150.jp2
 CustomSphere-template-hires = TheLordOfTheRingsLCG/Event/CustomSphere-300.jp2
 Body-tintable = TheLordOfTheRingsLCG/Event/CustomSphere-Body-tintable-150.jp2
 Body-tintable-hires = TheLordOfTheRingsLCG/Event/CustomSphere-Body-tintable-300.jp2
-Sphere-decoration-tintable = TheLordOfTheRingsLCG/Event/CustomSphere-decoration-tintable-150.jp2
-Sphere-decoration-tintable-hires = TheLordOfTheRingsLCG/Event/CustomSphere-decoration-tintable-300.jp2
+Pearl-tintable = TheLordOfTheRingsLCG/Event/CustomSphere-Pearl-tintable-150.jp2
+Pearl-tintable-hires = TheLordOfTheRingsLCG/Event/CustomSphere-Pearl-tintable-300.jp2
 
 Leadership-template = TheLordOfTheRingsLCG/Event/Leadership-150.jp2
 Leadership-template-hires = TheLordOfTheRingsLCG/Event/Leadership-300.jp2

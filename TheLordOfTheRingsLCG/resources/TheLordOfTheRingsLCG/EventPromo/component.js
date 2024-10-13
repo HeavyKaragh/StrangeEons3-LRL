@@ -266,14 +266,16 @@ function paintFront(g, diy, sheet) {
     // ICONS
     paintIcon('Collection', diy, g, sheet);
     switch($Template){
-    	case 'CustomSphere':
-    		paintPortrait('SphereIcon', diy, g, sheet);
-    		break;
     	case 'Neutral':
     		break;
-		default:
-        	let image = ImageUtils.get(PathIcon + $Template + '.png');
+    	case 'CustomSphere':
+        	let image = PortraitList[portraitIndexOf('SphereIcon')].getImage();
     		let region = diy.settings.getRegion('SphereIcon-'+$Title-length+'-portrait-clip-region');
+			sheet.paintImage(g, image, region);
+    		break;
+		default:
+        	image = ImageUtils.get(PathIcon + $Template + '.png');
+    		region = diy.settings.getRegion('SphereIcon-'+$Title-length+'-portrait-clip-region');
 			sheet.paintImage(g, image, region);
 		 	break;
 	}    		

@@ -42,8 +42,8 @@ CustomSphere-template-hires = TheLordOfTheRingsLCG/Ally/CustomSphere-300.jp2
 Body-tintable = TheLordOfTheRingsLCG/Ally/CustomSphere-Body-tintable-150.jp2
 Body-tintable-hires = TheLordOfTheRingsLCG/Ally/CustomSphere-Body-tintable-300.jp2
 #BodyIcon-tintable = TheLordOfTheRingsLCG/image/empty1x1.png
-Sphere-decoration-tintable = TheLordOfTheRingsLCG/Ally/CustomSphere-decoration-tintable-150.jp2
-Sphere-decoration-tintable-hires = TheLordOfTheRingsLCG/Ally/CustomSphere-decoration-tintable-300.jp2
+Pearl-tintable = TheLordOfTheRingsLCG/Ally/CustomSphere-Pearl-tintable-150.jp2
+Pearl-tintable-hires = TheLordOfTheRingsLCG/Ally/CustomSphere-Pearl-tintable-300.jp2
 
 Leadership-template = TheLordOfTheRingsLCG/Ally/Leadership-150.jp2
 Leadership-template-hires = TheLordOfTheRingsLCG/Ally/Leadership-300.jp2

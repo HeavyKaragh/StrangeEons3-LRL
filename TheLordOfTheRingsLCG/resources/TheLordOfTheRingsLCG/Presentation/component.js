@@ -1,3 +1,5 @@
+//no funciona portrait para gamename y titulo
+
 /* COMPONENT CONFIGURATION */
 const Card = 'Presentation';
 const CardVersion = 1;
@@ -6,7 +8,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);

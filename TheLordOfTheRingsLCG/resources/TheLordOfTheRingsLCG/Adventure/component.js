@@ -1,6 +1,6 @@
 // separar tipo para tercera edad?
 // quitar decoración de grupo en plantilla si no se usa
-
+// modificar fondo de la plantilla a más difuminado, más claro, y menos saturado
 /* COMPONENT CONFIGURATION */
 const Card = 'Adventure';
 const CardVersion = 1;
@@ -9,7 +9,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -186,7 +186,7 @@ function createInterface(diy, editor, sheet) {
     if (advancedControls) {
     	list = list.concat(new Array('CustomColour'));
     }
-    let Template_control = new uiListIcon('Template', list, bindings, FRONT);
+    let Template_control = new uiListIcon('Template', list, bindings, BOTH);
     Template_panel.place(Template_control, 'hfill');
     Template_tab.place(Template_panel, 'hfill');
     
@@ -194,7 +194,7 @@ function createInterface(diy, editor, sheet) {
 	    // CUSTOMCOLOUR PANEL
 	    let CustomColour_panel = new TypeGrid();
 	    CustomColour_panel.setTitle(@LRL-CustomColour);
-	    let CustomColour_control = new uiTint('CustomColour', bindings, FRONT);
+	    let CustomColour_control = new uiTint('CustomColour', bindings, BOTH);
 	    CustomColour_panel.place(CustomColour_control, 'hfill');
 	    Template_tab.place(CustomColour_panel, 'br hfill');
 	}
@@ -296,9 +296,20 @@ function paintFront(g, diy, sheet) {
     if($GrandAdventure != ''){
 		sheet.paintImage(g, 'GrandAdventure-decoration', 'Template-region');
     }
-    if ($Template == 'CustomColour') {
+    switch($Template){
+    case 'Initial':
+    case 'Main':
+    case 'Epic':
+	    tint = diy.settings.getTint($Template+'-tint');
+	    CustomColour_tinter.setFactors(tint[0], tint[1], tint[2]); // mover a listener
+	    image = CustomColour_tinter.getTintedImage();
+	    sheet.paintImage(g, image, 'Template-region');
+    	break;
+    case 'CustomColour':
     	paintCustomColour(diy, g, sheet);
-	}else{
+    	break;
+    case 'Standard':
+	default:
 		sheet.paintImage(g, 'Standard-overlay', 'Template-region');
 	}
 	
@@ -342,7 +353,21 @@ function paintBack(g, diy, sheet) {
     
     /* TEMPLATE */
     sheet.paintTemplateImage(g);
-    if ($Template == 'CustomColour') paintCustomColourBack(diy, g, sheet);
+    switch($Template){
+    case 'Initial':
+    case 'Main':
+    case 'Epic':
+	    tint = diy.settings.getTint($Template+'-tint');
+	    CustomColourBack_tinter.setFactors(tint[0], tint[1], tint[2]); // mover a listener
+	    image = CustomColourBack_tinter.getTintedImage();
+	    sheet.paintImage(g, image, 'Template-region');
+    	break;
+    case 'CustomColour':
+    	paintCustomColourBack(diy, g, sheet);
+    	break;
+    case 'Standard':
+	default:
+	}
 
     /* ICON */
     paintIcon('Collection', diy, g, sheet);

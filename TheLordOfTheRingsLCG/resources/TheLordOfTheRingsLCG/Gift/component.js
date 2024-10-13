@@ -6,7 +6,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -147,7 +147,7 @@ function createFrontPainter(diy, sheet) {
     debug(1, '\ncreateFrontPainter');
 	
     // TEMPLATE
-    SphereDecoration_tinter = new createTinter('Sphere-decoration', diy);
+    Pearl_tinter = new createTinter('Pearl', diy);
 
     // TEXT
     Title_writer = new createWriter('Title', diy, sheet);
@@ -170,7 +170,7 @@ function paintFront(g, diy, sheet) {
 
     // TEMPLATE
     paintTemplate(diy, g, sheet);
-    if ($Template == 'CustomSphere') paintCustomSphereDecoration(diy, g, sheet);
+    if ($Template == 'CustomSphere') paintCustomSpherePearl(diy, g, sheet);
 
     // ICONS
     paintIcon('Collection', diy, g, sheet);

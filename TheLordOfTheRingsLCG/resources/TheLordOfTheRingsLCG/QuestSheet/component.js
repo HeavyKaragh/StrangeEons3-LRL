@@ -1,3 +1,5 @@
+// alineación e iconos y decoración
+
 /* COMPONENT CONFIGURATION */
 const Card = 'QuestSheet';
 // cambiar StageLetter a imagen? y a\u00f1adir selector de letra
@@ -7,7 +9,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);

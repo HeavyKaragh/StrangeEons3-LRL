@@ -857,15 +857,15 @@ function paintCustomSphereBody(diy, g, sheet) {
     }
 }
 
-function paintCustomSphereDecoration(diy, g, sheet) {
+function paintCustomSpherePearl(diy, g, sheet) {
     debug(2, '\n\tpaintCustomSphereDecoration');
     /*
     This function paints the small tinted sphere decorations.
     */
     debug(5, '\tTint: ' + $CustomSphere-tint);
     let tint = diy.settings.getTint('CustomSphere-tint');
-    SphereDecoration_tinter.setFactors(tint[0], tint[1], tint[2]); // mover a listener
-    let image = SphereDecoration_tinter.getTintedImage();
+    Pearl_tinter.setFactors(tint[0], tint[1], tint[2]); // mover a listener
+    let image = Pearl_tinter.getTintedImage();
     sheet.paintImage(g, image, 'Template-region');
 }
 

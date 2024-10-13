@@ -1,0 +1,7 @@
+#WARNING:
+#If this file is deleted then this folder will no
+#longer appear to be a project/task in Strange Eons.
+#Thu Oct 18 10:11:42 CEST 2018
+type=PLUGIN
+bundle-file=TheLordOfTheRingsLCG_Icons.seext
+clean-ext=class

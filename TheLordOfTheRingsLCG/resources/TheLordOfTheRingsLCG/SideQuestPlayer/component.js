@@ -6,7 +6,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -89,7 +89,7 @@ function createInterface(diy, editor, sheet) {
     let Sphere_panel = new TypeGrid();
     Sphere_panel.setTitle(@LRL-Sphere);
     list = new Array('Neutral', 'Leadership', 'Lore', 'Spirit', 'Tactics');
-    if (advancedControls) list = list.concat(new Array('Boon', 'Baggins', 'Fellowship', 'CustomSphere', 'Mastery'));
+    if (advancedControls) list = list.concat(new Array('Baggins', 'Fellowship', 'CustomSphere', 'Mastery'));
     let Sphere_control = new uiListIcon('Template', list, bindings, FRONT);
     Sphere_panel.place(Sphere_control, 'hfill');
 	Template_tab.place(Sphere_panel, 'hfill');
@@ -192,7 +192,7 @@ function createFrontPainter(diy, sheet) {
     // TEMPLATE
     Body_tinter = new createTinter('Body', diy);
     BodyIcon_tinter = new createTinter('BodyIcon', diy);
-    SphereDecoration_tinter = new createTinter('Sphere-decoration', diy);
+    Pearl_tinter = new createTinter('Pearl', diy);
 
     // STATS
     ResourceCost_tinter = new createTinter('ResourceCost', diy);
@@ -226,7 +226,7 @@ function paintFront(g, diy, sheet) {
     // TEMPLATE
     if ($Template == 'CustomSphere') paintCustomSphereBody(diy, g, sheet);
     paintTemplate(diy, g, sheet);
-    if ($Template == 'CustomSphere') paintCustomSphereDecoration(diy, g, sheet);
+    if ($Template == 'CustomSphere') paintCustomSpherePearl(diy, g, sheet);
 
     // ICONS
     paintIcon('Collection', diy, g, sheet);

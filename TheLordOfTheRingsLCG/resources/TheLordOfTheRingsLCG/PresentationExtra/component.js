@@ -1,3 +1,5 @@
+// color de la carta no funciona
+
 /* COMPONENT CONFIGURATION */
 const Card = 'PresentationExtra';
 const CardVersion = 1;
@@ -6,7 +8,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -62,9 +64,9 @@ function createInterface(diy, editor, sheet) {
     // TEXTBOX PANEL
     let TextBoxBack_panel = new TypeGrid();
     TextBoxBack_panel.setTitle(@LRL-TextBoxBack);
-    let StoryBack_control = new uiParagraphLabeled('StoryBack', bindings, FRONT, 'medium');
-    let TextBack_control = new uiParagraphLabeled('TextBack', bindings, FRONT, 'big');
-    let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, FRONT, 'medium');
+    let StoryBack_control = new uiParagraphLabeled('StoryBack', bindings, BACK, 'medium');
+    let TextBack_control = new uiParagraphLabeled('TextBack', bindings, BACK, 'big');
+    let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, BACK, 'medium');
     TextBoxBack_panel.place(
         StoryBack_control, 'hfill', TextBack_control, 'br hfill', FlavourBack_control, 'br hfill'
     );

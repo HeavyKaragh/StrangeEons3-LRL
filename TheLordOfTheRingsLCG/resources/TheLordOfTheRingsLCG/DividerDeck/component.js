@@ -9,7 +9,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -189,8 +189,12 @@ function paintCommon(diy, g, sheet) {
 	            decorationRegion = diy.settings.getRegion(key + side + '-decoration-region');
 	        } else throw new Error('\tERROR: ' + key + side + '-decoration-region: UNDEFINED');
      		sheet.paintImage(g, decoration, decorationRegion);
-	        paintIconLRL(key, diy, g, sheet);
-        }
+     		
+		    let image = getIconLRL(key, diy);
+		    let regionKey = getKeyForTemplate(key + side + '-portrait-clip-region', diy);
+		    debug(5, '\n\tRegion: '+regionKey + ' : '+diy.settings.get(regionKey));
+		    sheet.paintImage(g, image, regionKey);
+		}
     }
 
     // PORTRAIT

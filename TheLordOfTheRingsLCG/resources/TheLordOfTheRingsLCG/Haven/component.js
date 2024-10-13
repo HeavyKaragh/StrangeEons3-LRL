@@ -8,7 +8,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -50,7 +50,7 @@ function createInterface(diy, editor, sheet) {
     let Effect_control = new uiParagraphLabeled('Effect', bindings, FRONT, 'big');
     let Flavour_control = new uiParagraphLabeled('Flavour', bindings, FRONT, 'small');
     TextBox_panel.place(
-        Trait_control, 'hfill'
+        Traits_control, 'hfill'
         , Effect_control, 'br hfill'
         , Flavour_control, 'br hfill'
     );
@@ -170,14 +170,13 @@ function paintFront(g, diy, sheet) {
     writeTitle(diy, g);
 
     if (diy.settings.getBoolean('Traits-inBox', false)) {
-   		writeTraits(diy, g);
-        writeBody(['Effect', 'Flavour'], diy, g);
+        writeBody(['Traits', 'Effect', 'Flavour'], diy, g);
     } else {
         if (diy.settings.get('Traits', '') != '') {
             sheet.paintImage(g, 'Traits-decoration', 'Template-region');
             let text = diy.settings.get('Traits-format', '') + $Traits;
             let region = diy.settings.getRegion('Traits');
-            writeLine(text, Trait_writer, region, g);
+            writeLine(text, Traits_writer, region, g);
         }
         writeBody(['Effect', 'Flavour'], diy, g);
     }

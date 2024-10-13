@@ -8,7 +8,7 @@ const CardVersion = 1;
 function create(diy) {
     debug(1, '\ncreate');
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     loadSettings(diy);
@@ -167,8 +167,7 @@ function paintFront(g, diy, sheet) {
     // TEXTS
     writeTitle(diy, g);
     if (diy.settings.getBoolean('Traits-inBox', false)) {
-   		writeTraits(diy, g);
-	    writeBody(['Effect', 'Flavour'], diy, g);
+        writeBody(['Traits', 'Effect', 'Flavour'], diy, g);
 	}else{
 	    if (diy.settings.get('Traits', '') != '') {
 	        sheet.paintImage(g, 'Traits-decoration', 'Template-region');

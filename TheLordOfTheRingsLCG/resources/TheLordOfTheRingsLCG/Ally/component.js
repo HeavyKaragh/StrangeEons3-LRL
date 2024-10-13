@@ -45,7 +45,7 @@ function create(diy) {
     keeping track of the plugin versions used to edit the component.
     */
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
-    diy.version = SELibraryVersion + LRLLibraryVersion + CardVersion;
+    diy.version = SEVersion + LRLVersion + CardVersion;
     $VersionHistory = diy.version;
 
     /*
@@ -567,6 +567,7 @@ function createFrontPainter(diy, sheet) {
     through setting-format.
     */
     Title_writer = new createWriter('Title', diy, sheet);
+    Traits_writer = new createWriter('Traits', diy, sheet);
     Body_writer = new createWriter('Body', diy, sheet);
     Option_writer = new createWriter('Option', diy, sheet);
     Type_writer = new createWriter('Type', diy, sheet);
@@ -591,7 +592,7 @@ function createFrontPainter(diy, sheet) {
     */
     Body_tinter = new createTinter('Body', diy);
     BodyIcon_tinter = new createTinter('BodyIcon', diy);
-    SphereDecoration_tinter = new createTinter('Sphere-decoration', diy);
+    Pearl_tinter = new createTinter('Pearl', diy);
 
     // PORTRAIT
     /* 
@@ -638,7 +639,7 @@ function paintFront(g, diy, sheet) {
     paintTemplate(diy, g, sheet); // this will draw the selected $Template
     //sheet.paintTemplateImage(g) ; // in some cards, where template cannot be modified,
     // this is used, and it will draw the image defined in diy.frontTemplateKey
-    if ($Template == 'CustomSphere') paintCustomSphereDecoration(diy, g, sheet); // colorized "pearls"
+    if ($Template == 'CustomSphere') paintCustomSpherePearl(diy, g, sheet); // colorized "pearls"
 
     // ICONS
     /* 
@@ -683,6 +684,7 @@ function paintFront(g, diy, sheet) {
     		in the user interface field.
     */
     writeTitle(diy, g);
+    writeTraits(diy, g, sheet);
     /*
     The text region containing the card effect contains distinctly
     formated texts. Each text uses it's own user interface control,
@@ -691,22 +693,17 @@ function paintFront(g, diy, sheet) {
     part uses it's own formats to add italics or whatever it needs,
     and are separated with line breaks.
     For example, in this Body block, all these settings are joined:
-    $Traits-format : adds italics, bold and centering through html tags
-    $Traits : contains the text from the user interface
-    $Traits-formatEnd : removes whatever is added in -format
-    $Body-break : contains a line break with greater distance
     $Effect-format : The text formatting options used in the writer 
     		are based on Rules text, so nothing is needed here. 
     $Effect
     $Effect-formatEnd
-    $Body-break
     $Flavour-format: adds a size change, italics and right alignment
     $Flavour
     $Flavour-formatEnd
     Also, note that Encounter cards' $Shadow-format adds the image
     of the ShadowSeparator.
     */
-    writeBody(['Traits', 'Effect', 'Flavour'], diy, g);
+    writeBody(['Effect', 'Flavour'], diy, g);
 
     writeType(diy, g);
     writeOption('OptionLeft', diy, g, sheet);
