@@ -1,4 +1,4 @@
-id = CATALOGUEID{6a986b9f-11a6-4e6e-bec9-c9f60455b979:2023-9-27-10-10-28-478}
+id = CATALOGUEID{6a986b9f-11a6-4e6e-bec9-c9f60455b979:2024-9-13-9-23-0-341}
 
 priority = EXPANSION
 ui-languages = en_US,es_ES,de_DE,fr_FR,pl_PL,it_IT
@@ -48,7 +48,7 @@ catalog-description_it_IT = <p>Questo plug-in permette di creare componenti per 
 
 catalog-game = LRL
 catalog-tags = beta, component
-catalog-minver = 4241
+catalog-minver = 4421
 catalog-replaces = \
     CATALOGUEID{6d7fa14a-dfe5-4ca3-8c98-2668500aefd9:2018-8-17-16-18-1-324}
 

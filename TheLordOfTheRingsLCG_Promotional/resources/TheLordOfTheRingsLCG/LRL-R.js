@@ -18,7 +18,7 @@ function getVersion(){ return 2.0 ; }
 
 function initialize(){
 	if( Game.get('LRL') == null ){
-		Eons.log.warning( "TheLordOfTheRingsLCG-R can't find TheLordOfTheRingsLCG" ) ;
+		Eons.log.warning( "TheLordOfTheRingsLCG-Promotional can't find TheLordOfTheRingsLCG" ) ;
 	}else{
 		for(
 			let index = 0 ; 

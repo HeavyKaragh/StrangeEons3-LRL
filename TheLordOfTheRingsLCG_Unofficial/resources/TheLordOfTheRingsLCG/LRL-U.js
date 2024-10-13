@@ -14,7 +14,7 @@ function getVersion(){ return 2.0 ; }
 
 function initialize(){
 	if( Game.get('LRL') == null ){
-		Eons.log.warning( "TheLordOfTheRingsLCG-U can't find TheLordOfTheRingsLCG" ) ;
+		Eons.log.warning( "TheLordOfTheRingsLCG-Unofficial can't find TheLordOfTheRingsLCG" ) ;
 	}else{
 		for( let index = 0 ; index < componentList.length ; index++ ){
 			ClassMap.add( 'TheLordOfTheRingsLCG/'+componentList[index]+'/component.classmap' );

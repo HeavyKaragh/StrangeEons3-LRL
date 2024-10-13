@@ -15,7 +15,7 @@ function getVersion(){ return 2.0 ; }
 
 function initialize(){
 	if( Game.get('LRL') == null ){
-		Eons.log.warning( "TheLordOfTheRingsLCG-E can't find TheLordOfTheRingsLCG" ) ;
+		Eons.log.warning( "TheLordOfTheRingsLCG-Encounter can't find TheLordOfTheRingsLCG" ) ;
 	}else{
 		for(
 			let index = 0 ; 
