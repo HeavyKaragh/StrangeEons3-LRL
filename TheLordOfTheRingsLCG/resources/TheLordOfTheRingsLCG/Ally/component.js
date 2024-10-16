@@ -46,14 +46,14 @@ function create(diy) {
     */
     diy.extensionName = 'TheLordOfTheRingsLCG.seext';
     diy.version = SEVersion + LRLVersion + CardVersion;
-    $VersionHistory = diy.version;
+    $VersionHistory = diy.version;//+ versión anterior 
 
     /*
     Next portion of code loads $settings used by the component, specifically, 
     regions where images and texts are drawn.
     In previous versions of the plugin, these where loaded into the plugin scope.
     I modified it to make it easier for the users to customize settings and to
-    avoid problems with aspect change from loading into later plugin versions.
+    avoid problems with aspect change from loading into later plugin versions. Now these settings are loaded into the component.
     */
     loadSettings(diy);
     loadExample(diy);
@@ -65,11 +65,11 @@ function create(diy) {
 
     diy.faceStyle = FaceStyle.TWO_FACES;
     /*
-    FaceStyle.TWO_FACES defines that both sides of the card editable.
+    FaceStyle.TWO_FACES defines that both sides of the card have modifiable elements.
     FaceStyle.PLAIN_BACK is used for components with a simple image
-    used in the back of the card. Because there are player cards that
-    can be added to the encounter deck, and quest cards that are added
-    to the player deck, this style is used often. In other games, like
+    used as the back of the card. Because there are player cards that
+    can be added to the encounter deck, and encounter cards that are added
+    to the player deck, this style is not used often. In other games, like
     competitive games (Magic, A Game of Thrones, etc...), PLAIN_BACK
     style is the most common.
     */
@@ -86,7 +86,7 @@ function create(diy) {
     diy.backTemplateKey = 'TemplateBack';
     /* 
     backTemplateKey defines the setting used for the back
-    image of the component. Because we are using PLAIN_BACK, it 
+    image of the component. If we are using PLAIN_BACK, it 
     will be painted always.
     */
 
@@ -94,7 +94,7 @@ function create(diy) {
     /* 
     bleedMargin defines the overdrawn template size, that is, the size
     of the template that will be cut to get a properly sized component.
-    It is done to avoid white borders on cutting errors.
+    This cut is done to avoid white borders on cutting errors.
     */
 
     /* 
