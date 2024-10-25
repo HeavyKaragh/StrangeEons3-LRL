@@ -1,4 +1,5 @@
 useLibrary( 'extension' ) ;
+useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');
 
 const componentList = new Array(
 	'HeroPromo'
@@ -18,13 +19,14 @@ function getVersion(){ return 2.0 ; }
 
 function initialize(){
 	if( Game.get('LRL') == null ){
-		Eons.log.warning( "TheLordOfTheRingsLCG-Promotional can't find TheLordOfTheRingsLCG" ) ;
+        Eons.log.warning( @LRL-R+' '+@LRL-ExtensionCantFind) ;
 	}else{
 		for(
 			let index = 0 ; 
 			index < componentList.length ; 
 			index++
-		){
+		){  
+            debug( 1 , 'Load classmap file: '+componentList[index] ) ;
 			ClassMap.add( 'TheLordOfTheRingsLCG/'+componentList[index]+'/component.classmap' );
 		}
 	}

@@ -1,13 +1,14 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
-first-row = 24
+first-row = 30
 selected-members = \
     :TheLordOfTheRingsLCG_Promotional/resources/TheLordOfTheRingsLCG/LRL-R.js
 open-folders = \
-    :TheLordOfTheRingsLCG_Accesories:TheLordOfTheRingsLCG_Base:TheLordOfTheRingsLCG_B\
-    ase/resources:TheLordOfTheRingsLCG_Encounter:TheLordOfTheRingsLCG_Promotional:The\
-    LordOfTheRingsLCG_Promotional/resources:TheLordOfTheRingsLCG_Promotional/resource\
-    s/TheLordOfTheRingsLCG
+    :TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources:TheLordOfTheRingsLCG/resourc\
+    es/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Accesories:TheLordOfTheRingsLCG_Base\
+    :TheLordOfTheRingsLCG_Base/resources:TheLordOfTheRingsLCG_Encounter:TheLordOfTheR\
+    ingsLCG_Promotional:TheLordOfTheRingsLCG_Promotional/resources:TheLordOfTheRingsL\
+    CG_Promotional/resources/TheLordOfTheRingsLCG
 notes = 
 res-id = dani
 export-file = plugin_se3-christ

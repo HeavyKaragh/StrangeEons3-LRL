@@ -1,4 +1,5 @@
 useLibrary( 'extension' ) ;
+//useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');
 
 function getName(){ return @LRL-I ; }
 function getDescription(){ return @LRL-I-description ; }
