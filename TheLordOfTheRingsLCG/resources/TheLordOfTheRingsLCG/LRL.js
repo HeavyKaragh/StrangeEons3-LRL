@@ -123,7 +123,7 @@ function initialize() {
     importClass(javax.swing.JTextField);
 
     var pc = new FillInPreferenceCategory(
-    	@LRL-TheLordOfTheRingsLCG-short, 
+    	@LRL-short, 
     	PathUi + 'TheLordOfTheRingsLCG-big.png'
     );
 

@@ -1,5 +1,4 @@
 useLibrary( 'extension' ) ;
-useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');
 
 const componentList = new Array(
 	'Quest'
@@ -20,7 +19,6 @@ function initialize(){
             index < componentList.length ; 
             index++
         ){  
-            debug( 1 , 'Load classmap file: '+componentList[index] ) ;
             ClassMap.add( 'TheLordOfTheRingsLCG/'+componentList[index]+'/component.classmap' );
         }
     }

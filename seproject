@@ -1,14 +1,20 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
-first-row = 30
+first-row = 54
 selected-members = \
-    :TheLordOfTheRingsLCG_Promotional/resources/TheLordOfTheRingsLCG/LRL-R.js
+    :TheLordOfTheRingsLCG.seext:TheLordOfTheRingsLCG_Accesories.seext:TheLordOfTheRin\
+    gsLCG_Base.seext:TheLordOfTheRingsLCG_Encounter.seext:TheLordOfTheRingsLCG_Icons.\
+    seext:TheLordOfTheRingsLCG_Player.seext:TheLordOfTheRingsLCG_Promotional.seext:Th\
+    eLordOfTheRingsLCG_Unofficial.seext:TheLordOfTheRingsLCG_Various.seext
 open-folders = \
-    :TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources:TheLordOfTheRingsLCG/resourc\
-    es/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Accesories:TheLordOfTheRingsLCG_Base\
-    :TheLordOfTheRingsLCG_Base/resources:TheLordOfTheRingsLCG_Encounter:TheLordOfTheR\
-    ingsLCG_Promotional:TheLordOfTheRingsLCG_Promotional/resources:TheLordOfTheRingsL\
-    CG_Promotional/resources/TheLordOfTheRingsLCG
+    :TheLordOfTheRingsLCG_Encounter:TheLordOfTheRingsLCG_Encounter/resources:TheLordO\
+    fTheRingsLCG_Encounter/resources/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Icons:\
+    TheLordOfTheRingsLCG_Icons/resources:TheLordOfTheRingsLCG_Icons/resources/TheLord\
+    OfTheRingsLCG:TheLordOfTheRingsLCG_Player:TheLordOfTheRingsLCG_Player/resources:T\
+    heLordOfTheRingsLCG_Player/resources/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Un\
+    official:TheLordOfTheRingsLCG_Unofficial/resources:TheLordOfTheRingsLCG_Unofficia\
+    l/resources/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Various:TheLordOfTheRingsLC\
+    G_Various/resources:TheLordOfTheRingsLCG_Various/resources/TheLordOfTheRingsLCG
 notes = 
 res-id = dani
 export-file = plugin_se3-christ
