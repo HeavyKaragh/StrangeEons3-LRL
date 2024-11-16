@@ -1,20 +1,8 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
-first-row = 54
-selected-members = \
-    :TheLordOfTheRingsLCG.seext:TheLordOfTheRingsLCG_Accesories.seext:TheLordOfTheRin\
-    gsLCG_Base.seext:TheLordOfTheRingsLCG_Encounter.seext:TheLordOfTheRingsLCG_Icons.\
-    seext:TheLordOfTheRingsLCG_Player.seext:TheLordOfTheRingsLCG_Promotional.seext:Th\
-    eLordOfTheRingsLCG_Unofficial.seext:TheLordOfTheRingsLCG_Various.seext
-open-folders = \
-    :TheLordOfTheRingsLCG_Encounter:TheLordOfTheRingsLCG_Encounter/resources:TheLordO\
-    fTheRingsLCG_Encounter/resources/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Icons:\
-    TheLordOfTheRingsLCG_Icons/resources:TheLordOfTheRingsLCG_Icons/resources/TheLord\
-    OfTheRingsLCG:TheLordOfTheRingsLCG_Player:TheLordOfTheRingsLCG_Player/resources:T\
-    heLordOfTheRingsLCG_Player/resources/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Un\
-    official:TheLordOfTheRingsLCG_Unofficial/resources:TheLordOfTheRingsLCG_Unofficia\
-    l/resources/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Various:TheLordOfTheRingsLC\
-    G_Various/resources:TheLordOfTheRingsLCG_Various/resources/TheLordOfTheRingsLCG
+first-row = 0
+selected-members = :TheLordOfTheRingsLCG_Encounter.seext
+open-folders = 
 notes = 
 res-id = dani
 export-file = plugin_se3-christ
