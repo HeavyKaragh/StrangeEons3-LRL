@@ -4,7 +4,7 @@ const Card = 'Ally';
 
 // This script's code version
 const CardVersion = 1;
-// 1: rewrite using new 2023 library
+// 1: rewrite using new 2024 library
 
 /*
 All the plug-in code revolves around the concept of the component "settings"
@@ -601,10 +601,10 @@ function createFrontPainter(diy, sheet) {
     for creating or updating components through external scripts or
     through the plugin preferences.
     */
-    updateExternalPortrait('Portrait', diy);
-    updateExternalPortrait('Collection', diy);
-    updateExternalPortrait('SphereIcon', diy);
-    updateExternalPortrait('BodyIcon', diy);
+   // updateExternalPortrait('Portrait', diy);
+    //updateExternalPortrait('Collection', diy);
+    //updateExternalPortrait('SphereIcon', diy);
+    //updateExternalPortrait('BodyIcon', diy);
 }
 
 function createBackPainter(diy, sheet) {
@@ -727,6 +727,132 @@ function paintBack(g, diy, sheet) {
 
     // TEMPLATE
     paintTemplateBack(diy, g, sheet);
+}
+
+function onRead(diy, ois) {
+    debug(1, '\nonRead');
+    /*
+    This is one of the main functions on scripted components.
+    This function is called by Strange Eons on component file loading.
+    When using custom portrait handling, Portraits must be loaded
+    explicitly.
+    */
+
+    if (diy.settings.get('VersionHistory', '') == '') {
+        debug(0, 'VersionHistory nonexistent.');
+        $VersionHistory = diy.version;
+    }
+    let LastVersion = String($VersionHistory).split(',');
+    LastVersion = LastVersion[LastVersion.length-1];
+    if (LastVersion != Number(SEVersion + LRLVersion + CardVersion)) {
+        debug(4, 'VersionHistory updated.');
+        $VersionHistory = $VersionHistory + ',' + SEVersion + LRLVersion + CardVersion;
+    }
+    
+    let portrait = true ;
+    let index= 0 
+    while (portrait != false) {
+        try {
+            portrait = ois.readObject();
+            index++;
+
+            var baseKey = String(portrait.getBaseKey());
+            debug(1,'Index:'+index+'; BaseKey: '+baseKey);
+    
+            switch(baseKey){
+                case 'Sphere':
+                case 'CustomSphere': 
+                case Card+'-CustomSphere':
+                case Card+'-Template-CustomSphere':
+                    key = 'SphereIcon';
+                    break;
+                case 'Pack-Portrait': 
+                case 'Pack-Collection':
+                    key = baseKey.replace('Pack-','');
+                    break;
+                case 'UsedSets-EncounterSet1': 
+                case 'UsedSets-EncounterSet2':
+                case 'UsedSets-EncounterSet3': 
+                case 'UsedSets-EncounterSet4':
+                case 'UsedSets-EncounterSet5':
+                    key = baseKey.replace('UsedSets-','');
+                    break;
+                case Card+'-Portrait': 
+                case Card+'-PortraitBack':
+                case Card+'-Collection': 
+                case Card+'-EncounterSet': 
+                case Card+'-BodyIcon':
+                case Card+'-EncounterSet1': 
+                case Card+'-EncounterSet2':
+                case Card+'-EncounterSet3': 
+                case Card+'-EncounterSet4':
+                case Card+'-EncounterSet5':
+                    key = baseKey.replace(Card+'-','');
+                    break;
+                case Card+'-UsedSets-EncounterSet1': 
+                case Card+'-UsedSets-EncounterSet2':
+                case Card+'-UsedSets-EncounterSet3': 
+                case Card+'-UsedSets-EncounterSet4':
+                case Card+'-UsedSets-EncounterSet5':
+                    key = baseKey.replace(Card+'-UsedSets-','');
+                    break;
+                default:
+                    key = baseKey;
+                }
+            if(baseKey != key){
+                debug(1,'Update portrait BaseKey: '+key);
+                diy.settings.set(key+'-portrait-template','')
+    //            PortraitList[index].setBaseKey(key)
+                PortraitList[index] = DefaultPortrait(
+                    portrait,
+                    key
+                );
+                PortraitList[index].installDefault();
+            //  PortraitList[PortraitList.indexOf(key)].setPanX(portrait.getPanX()-14);
+            //  PortraitList[PortraitList.indexOf(key)].setPanY(portrait.getPanY()+14);
+            //  PortraitList[PortraitList.indexOf(key)].setScale(portrait.getScale()+0.05);
+            }
+
+        } catch (err) {
+            portrait = false;
+        }
+    }
+    debug(5, 'PortraitList length: '+PortraitList.length);
+    
+    // Read component of older versions of the plugin
+    //if(OLD_SE2) onReadS2(diy, ois);
+    onReadS3beta(diy);
+
+    if (diy.settings.getBoolean('LRL-PreferencesUpdate', false)) loadPreferences(diy);
+}
+
+function onWrite(diy, oos) {
+    debug(1, '\nonWrite');
+    /*
+    This is one of the main functions on scripted components.
+    This function is called by Strange Eons on component file save.
+    When using custom portrait handling, Portraits must be saved
+    explicitly.
+    */
+    for (let index in PortraitList) {
+        oos.writeObject(PortraitList[index]);
+    }
+    debug(5, 'PortraitList length: '+PortraitList.length);
+}
+
+function onClear(diy) {
+    debug(1, '\nonClear');
+    /*
+    This is one of the main functions on scripted components.
+    This function is called by the Strange Eons user interface on
+    Edit>Clear menu. Should be used only to initialize the component
+    settings and controls.
+    In my code, I use the Localizable list defined in the game object
+    to clear all the text of the card.
+    */
+    for (let index in GAMEOBJECT.LocalizableList) {
+        diy.settings.reset(GAMEOBJECT.LocalizableList[index]);
+    }
 }
 
 if (sourcefile == 'Quickscript') {

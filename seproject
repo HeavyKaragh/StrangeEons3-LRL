@@ -1,8 +1,11 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
-first-row = 0
-selected-members = :TheLordOfTheRingsLCG_Encounter.seext
-open-folders = 
+first-row = 102
+selected-members = :TheLordOfTheRingsLCG.seext
+open-folders = \
+    :TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources:TheLordOfTheRingsLCG/resourc\
+    es/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Ally:\
+    TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/diy
 notes = 
 res-id = dani
 export-file = plugin_se3-christ

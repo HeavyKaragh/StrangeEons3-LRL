@@ -1,6 +1,6 @@
 /* VERSION CONTROL */
 var LRLVersion = 10;
-//10: 2023 rewrite
+//10: 2024 rewrite
 
 /* CONSTANTS AND VARIABLES */
 const GAME = 'LRL';
