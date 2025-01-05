@@ -739,84 +739,20 @@ function onRead(diy, ois) {
     */
 
     if (diy.settings.get('VersionHistory', '') == '') {
-        debug(5, 'VersionHistory nonexistent.');
+        debug(0, 'VersionHistory nonexistent.');
         $VersionHistory = diy.version;
     }
     let LastVersion = String($VersionHistory).split(',');
     LastVersion = LastVersion[LastVersion.length-1];
     if (LastVersion != Number(SEVersion + LRLVersion + CardVersion)) {
-        debug(3, 'VersionHistory updated.');
+        debug(4, 'VersionHistory updated.');
         $VersionHistory = $VersionHistory + ',' + SEVersion + LRLVersion + CardVersion;
     }
     
-    debug(2,'Read portraits.');
-    let portrait = true ;
-    let index= 0 
-    while (portrait != false) {
-        try {
-            portrait = ois.readObject();
-        } catch (err) {
-            debug(5, 'PortraitList length: '+PortraitList.length);
-            portrait = false;
-        }
-        if(portrait != false){
-            var baseKey = String(portrait.getBaseKey());
-            debug(4,'Index:'+index+'; BaseKey: '+baseKey);
-            
-            switch(baseKey){
-            case 'Sphere':
-            case 'CustomSphere': 
-            case Card+'-CustomSphere':
-            case Card+'-Template-CustomSphere':
-                key = 'SphereIcon';
-                break;
-            case 'Pack-Portrait': 
-            case 'Pack-Collection':
-                key = baseKey.replace('Pack-','');
-                break;
-            case 'UsedSets-EncounterSet1': 
-            case 'UsedSets-EncounterSet2':
-            case 'UsedSets-EncounterSet3': 
-            case 'UsedSets-EncounterSet4':
-            case 'UsedSets-EncounterSet5':
-                key = baseKey.replace('UsedSets-','');
-                break;
-            case Card+'-Portrait': 
-            case Card+'-PortraitBack':
-            case Card+'-Collection': 
-            case Card+'-EncounterSet': 
-            case Card+'-BodyIcon':
-            case Card+'-EncounterSet1': 
-            case Card+'-EncounterSet2':
-            case Card+'-EncounterSet3': 
-            case Card+'-EncounterSet4':
-            case Card+'-EncounterSet5':
-                key = baseKey.replace(Card+'-','');
-                break;
-            case Card+'-UsedSets-EncounterSet1': 
-            case Card+'-UsedSets-EncounterSet2':
-            case Card+'-UsedSets-EncounterSet3': 
-            case Card+'-UsedSets-EncounterSet4':
-            case Card+'-UsedSets-EncounterSet5':
-                key = baseKey.replace(Card+'-UsedSets-','');
-                break;
-            default:
-                key = baseKey;
-            }
-            
-            if(baseKey != key){
-                debug(3,'Update portrait BaseKey: '+key);
-                portrait = new DefaultPortrait( key, portrait );
-            }
-            
-            PortraitList[index] = portrait; 
-            index++;
-        }
-    }
+    readPortraits(diy, ois);
     
     // Read component of older versions of the plugin
-    //if(OLD_SE2) onReadS2(diy, ois);
-    onReadS3beta(diy);
+    if(true) onReadOldComponent(diy);
 
     if (diy.settings.getBoolean('LRL-PreferencesUpdate', false)) loadPreferences(diy);
 }

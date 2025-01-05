@@ -8,8 +8,8 @@ TemplateBack-ppi = 150
 TemplateBack-template = TheLordOfTheRingsLCG/Quest/StandardBack-150.jp2
 TemplateBack-template-hires = TheLordOfTheRingsLCG/Quest/StandardBack-300.jp2
 
-PortraitFront-portrait-clip-region = 0,0,563,413
-PortraitFront-portrait-backgroundFilled = true
+Portrait-portrait-clip-region = 0,0,563,413
+Portrait-portrait-backgroundFilled = true
 PortraitBack-portrait-clip-region = 0,0,563,413
 PortraitBack-portrait-backgroundFilled = true
 Encounterset-portrait-clip-region = 477,188,36,36
@@ -48,10 +48,10 @@ Title-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
 Title-pointsize = 12
 Title-colour = #000000
 
-PortraitFront-shadow-Black = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-150.jp2
-PortraitFront-shadow-Black-hires = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-300.jp2
-PortraitFront-shadow-tintable = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-tintable-150.jp2
-PortraitFront-shadow-tintable-hires = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-tintable-300.jp2
+Portrait-shadow-Black = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-150.jp2
+Portrait-shadow-Black-hires = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-300.jp2
+Portrait-shadow-tintable = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-tintable-150.jp2
+Portrait-shadow-tintable-hires = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-tintable-300.jp2
 PortraitBack-shadow-Black = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-150.jp2
 PortraitBack-shadow-Black-hires = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-300.jp2
 PortraitBack-shadow-tintable = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-tintable-150.jp2

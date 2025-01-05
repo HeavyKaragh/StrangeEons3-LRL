@@ -11,12 +11,10 @@ TemplateBack-template-hires = TheLordOfTheRingsLCG/template/Player-300.jp2
 SphereIcon-portrait-clip-region = 320,229,40,40
 Portrait-portrait-clip-region = 0,53,413,228
 
-Body-region = 56,304,301,190
-Traits-region = 56,285,301,18
+Body-region = 56,302,301,192
+Traits-region = 56,283,301,18
 Title-region = 90,40,232,23
 Type-region = 139,500,135,23
-
-Body-shape = 18,18,140,0,0
 
 OptionLeft-region = 49,507,59,9
 OptionLeft-decoration-region = 42,503,72,17

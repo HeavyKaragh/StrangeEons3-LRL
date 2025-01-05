@@ -15,7 +15,7 @@ ResourceCost-region = 45,61,44,30
 
 Title-region = 124,40,200,24
 Traits-region = 51,327,311,18
-Body-region = 51,345,311,167
+Body-region = 51,345,311,149
 Body-shape = 0,0,473,0,38
 Type-region = 139,502,135,18
 

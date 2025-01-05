@@ -1,3 +1,3 @@
-useLibrary('res://TheLordOfTheRingsLCG/diy/LRLSE3lib.js') ;
-useLibrary('res://TheLordOfTheRingsLCG/Set/component.js');
-if( sourcefile == 'Quickscript' ){testDIYScript();}
+useLibrary('res://TheLordOfTheRingsLCG/diy/LRLSE3betalib.js') ;
+useLibrary('res://TheLordOfTheRingsLCG/Encounterset/component.js');
+if( sourcefile == 'Quickscript' ) testDIYScript() ;

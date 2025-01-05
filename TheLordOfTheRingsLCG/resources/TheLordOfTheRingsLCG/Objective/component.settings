@@ -18,7 +18,7 @@ EncountersetNumber-region = 324,307,24,12
 
 Title-region = 59,36,295,25
 Traits-region = 64,323,285,18
-Body-region = 64,341,285,170
+Body-region = 64,341,285,152
 Type-region = 135,502,144,17
 OptionSpecial-portrait-clip-region = 75,494,24,24
 

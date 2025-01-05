@@ -956,48 +956,6 @@ function uiPortraitMirror(key, panel) {
     return control;
 }
 
-function uiCycler(key, list, bindings, sides) {
-    debug(3, '\n\tuiCycler: ' + key);
-    /*
-    This function creates a user interface button which cycles
-    through a value list each time it's pressed.
-    This should be used for applying different graphical effects
-    to the card or some card element where final selection depends
-    on user tastes. For other uses, a uiList is recomended.
-    For example, it's in "Quest" portrait to apply a darkening 
-    effect of different sizes and transparency.
-    */
-    if (sides == null) sides = BOTH;
-
-    let labels = new Array();
-    for (let index in list) {
-        labels[index] = @('LRL-' + list[index] + '-uiCycler');
-        if (labels[index] == "[MISSING: LRL-" + list[index] + "-uiCycler]") labels[index] = @('LRL-' + list[index]);
-    }
-    let control = new cycleButton(labels, list);
-    bindings.add(key, control, sides);
-    return control;
-}
-
-function uiCyclerLabeled(key, list, bindings, sides) {
-    debug(3, '\n\tuiCyclerLabeled: ' + key);
-    /*
-    This function creates a user interface button used to
-    select which identifing elements are shown in the card.
-    It's used only in "Divider" and "DividerHorizontal".
-    */
-    let grid = new Grid();
-
-    let control = new uiCycler(key, list, bindings, sides);
-    let label = @('LRL-' + key + '-uiCyclerLabeled');
-    if (label == "[MISSING: LRL-" + key + "-uiCyclerLabeled]") label = @('LRL-' + key);
-    label = '<html><b>' + label + ':';
-
-    grid.place(label, '', control, ''); //wmin 50lp') ;
-
-    return grid;
-}
-
 function portraitIndexOf(key) {
     debug(3, '\n\tportraitIndexOf: ' + key);
     /*
@@ -1096,6 +1054,29 @@ function getPortrait(index) {
     return PortraitList[index];
 }
 
+function readPortraits(diy, ois) {
+    debug(3, '\n\treadPortraits: PortraitList length: '+PortraitList.length);
+    let portrait = true ;
+    let index= 0 
+    while (portrait != false) {
+        try {
+            portrait = ois.readObject();
+        } catch (err) {
+            portrait = false;
+        }
+        if(portrait != false){
+            debug(4,'Index:'+index+'; Key: '+portrait.getBaseKey());
+            PortraitList[index] = portrait; 
+            index++;
+        }
+    }
+    if(PortraitList){
+        debug(4, '\n\tPortraitList length: '+PortraitList.length);
+    }else{
+        debug(4, '\n\t No portraits loaded.');
+    }
+}    
+
 // Following filters are used on portrait elements
 const createHCImage = filterFunction(
     new ca.cgjennings.graphics.filters.CompoundPixelwiseFilter([
@@ -1118,6 +1099,48 @@ const createSepiaImage = filterFunction(
         new ca.cgjennings.graphics.filters.GammaCorrectionFilter(1.5, 1, 0.5)
     ])
 );
+
+function uiCycler(key, list, bindings, sides) {
+    debug(3, '\n\tuiCycler: ' + key);
+    /*
+    This function creates a user interface button which cycles
+    through a value list each time it's pressed.
+    This should be used for applying different graphical effects
+    to the card or some card element where final selection depends
+    on user tastes. For other uses, a uiList is recomended.
+    For example, it's in "Quest" portrait to apply a darkening 
+    effect of different sizes and transparency.
+    */
+    if (sides == null) sides = BOTH;
+
+    let labels = new Array();
+    for (let index in list) {
+        labels[index] = @('LRL-' + list[index] + '-uiCycler');
+        if (labels[index] == "[MISSING: LRL-" + list[index] + "-uiCycler]") labels[index] = @('LRL-' + list[index]);
+    }
+    let control = new cycleButton(labels, list);
+    bindings.add(key, control, sides);
+    return control;
+}
+
+function uiCyclerLabeled(key, list, bindings, sides) {
+    debug(3, '\n\tuiCyclerLabeled: ' + key);
+    /*
+    This function creates a user interface button used to
+    select which identifing elements are shown in the card.
+    It's used only in "Divider" and "DividerHorizontal".
+    */
+    let grid = new Grid();
+
+    let control = new uiCycler(key, list, bindings, sides);
+    let label = @('LRL-' + key + '-uiCyclerLabeled');
+    if (label == "[MISSING: LRL-" + key + "-uiCyclerLabeled]") label = @('LRL-' + key);
+    label = '<html><b>' + label + ':';
+
+    grid.place(label, '', control, ''); //wmin 50lp') ;
+
+    return grid;
+}
 
 /* NUMERIC CONTROLS */
 function uiSpinner(key, bindings, sides, limit) {

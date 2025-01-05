@@ -1,11 +1,45 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
-first-row = 102
-selected-members = :TheLordOfTheRingsLCG.seext
+first-row = 526
+selected-members = \
+    :TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Quest/component.js
 open-folders = \
     :TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources:TheLordOfTheRingsLCG/resourc\
-    es/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Ally:\
-    TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/diy
+    es/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Adven\
+    ture:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Ally:TheLordOfTheRingsLC\
+    G/resources/TheLordOfTheRingsLCG/AllyPromo:TheLordOfTheRingsLCG/resources/TheLord\
+    OfTheRingsLCG/Attachment:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Atta\
+    chmentPromo:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Campaign:TheLordO\
+    fTheRingsLCG/resources/TheLordOfTheRingsLCG/Contract:TheLordOfTheRingsLCG/resourc\
+    es/TheLordOfTheRingsLCG/DividerDeck:TheLordOfTheRingsLCG/resources/TheLordOfTheRi\
+    ngsLCG/DividerHorizontal:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Divi\
+    derVertical:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Encounterset:TheL\
+    ordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Enemy:TheLordOfTheRingsLCG/resour\
+    ces/TheLordOfTheRingsLCG/EnemyPromo:TheLordOfTheRingsLCG/resources/TheLordOfTheRi\
+    ngsLCG/Event:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/EventPromo:TheLo\
+    rdOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Gift:TheLordOfTheRingsLCG/resource\
+    s/TheLordOfTheRingsLCG/Haven:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/\
+    Hero:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/HeroPromo:TheLordOfTheRi\
+    ngsLCG/resources/TheLordOfTheRingsLCG/Location:TheLordOfTheRingsLCG/resources/The\
+    LordOfTheRingsLCG/LocationPromo:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsL\
+    CG/Objective:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/ObjectiveAlly:Th\
+    eLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/ObjectiveAllyPromo:TheLordOfThe\
+    RingsLCG/resources/TheLordOfTheRingsLCG/ObjectivePromo:TheLordOfTheRingsLCG/resou\
+    rces/TheLordOfTheRingsLCG/Occurrence:TheLordOfTheRingsLCG/resources/TheLordOfTheR\
+    ingsLCG/Presence:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Presentation\
+    :TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/PresentationAlternate:TheLor\
+    dOfTheRingsLCG/resources/TheLordOfTheRingsLCG/PresentationExtra:TheLordOfTheRings\
+    LCG/resources/TheLordOfTheRingsLCG/Quest:TheLordOfTheRingsLCG/resources/TheLordOf\
+    TheRingsLCG/QuestSheet:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Rules:\
+    TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Scenario:TheLordOfTheRingsLCG\
+    /resources/TheLordOfTheRingsLCG/Setup:TheLordOfTheRingsLCG/resources/TheLordOfThe\
+    RingsLCG/SideQuest:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/SideQuestP\
+    layer:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Treachery:TheLordOfTheR\
+    ingsLCG/resources/TheLordOfTheRingsLCG/TreacheryPromo:TheLordOfTheRingsLCG/resour\
+    ces/TheLordOfTheRingsLCG/Treasure:TheLordOfTheRingsLCG/resources/TheLordOfTheRing\
+    sLCG/diy:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text:TheLordOfTheRin\
+    gsLCG_Base:TheLordOfTheRingsLCG_Base/resources:TheLordOfTheRingsLCG_Base/resource\
+    s/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Base/resources/TheLordOfTheRingsLCG/image
 notes = 
 res-id = dani
 export-file = plugin_se3-christ

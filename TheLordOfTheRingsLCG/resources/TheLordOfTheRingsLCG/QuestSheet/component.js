@@ -367,12 +367,7 @@ function paintFront(g, diy, sheet) {
 
 function onRead(diy, ois) {
     debug(1, '\nonRead');
-    /*
-    This is one of the main functions on scripted components.
-    This function is called by Strange Eons on component file loading.
-    When using custom portrait handling, Portraits must be loaded
-    explicitly.
-    */
+
     if (diy.settings.get('VersionHistory', '') == '') {
         debug(0, 'VersionHistory nonexistent.');
         $VersionHistory = diy.version;
@@ -383,33 +378,17 @@ function onRead(diy, ois) {
         debug(4, 'VersionHistory updated.');
         $VersionHistory = $VersionHistory + ',' + SEVersion + LRLVersion + CardVersion;
     }
+    
+    readPortraits(diy, ois);
+    
+    if(true) onReadOldComponent(diy);
 
-    try {
-        portrait = ois.readObject();
-    } catch (err) {
-        portrait = null;
-    }
-    while (portrait != null) {
-        let index = PortraitList.length;
-        debug(5, 'PortraitList length: '+PortraitList.length);
-        PortraitList[index] = portrait;
-        try {
-            portrait = ois.readObject();
-        } catch (err) {
-            portrait = null;
-        }
-    }
     if (diy.settings.getBoolean('LRL-PreferencesUpdate', false)) loadPreferences(diy);
 }
 
 function onWrite(diy, oos) {
     debug(1, '\nonWrite');
-    /*
-    This is one of the main functions on scripted components.
-    This function is called by Strange Eons on component file save.
-    When using custom portrait handling, Portraits must be saved
-    explicitly.
-    */
+
     for (let index in PortraitList) {
         oos.writeObject(PortraitList[index]);
     }
@@ -418,14 +397,7 @@ function onWrite(diy, oos) {
 
 function onClear(diy) {
     debug(1, '\nonClear');
-    /*
-    This is one of the main functions on scripted components.
-    This function is called by the Strange Eons user interface on
-    Edit>Clear menu. Should be used only to initialize the component
-    settings and controls.
-    In my code, I use the Localizable list defined in the game object
-    to clear all the text of the card.
-    */
+
     for (let index in GAMEOBJECT.LocalizableList) {
         diy.settings.reset(GAMEOBJECT.LocalizableList[index]);
     }

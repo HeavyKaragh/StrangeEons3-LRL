@@ -22,7 +22,7 @@ function create(diy) {
     diy.bleedMargin = 9;
 
     diy.customPortraitHandling = true;
-    createPortrait('PortraitFront', diy);
+    createPortrait('Portrait', diy);
     createPortrait('PortraitBack', diy);
     createPortrait('Collection', diy);
     createPortrait('Encounterset', diy);
@@ -249,15 +249,15 @@ function createInterface(diy, editor, sheet) {
     let PortraitFront_panel = new TypeGrid();
     PortraitFront_panel.setTitle(@LRL-PortraitFront);
     let Artist_control = new uiTextLabeled('Artist', bindings, FRONT);
-    let PortraitFront_control = new uiPortrait('PortraitFront', diy);
-    let PortraitFrontMirror_control = new uiPortraitMirror('PortraitFront', PortraitFront_control);
+    let PortraitFront_control = new uiPortrait('Portrait', diy);
+    let PortraitFrontMirror_control = new uiPortraitMirror('Portrait', PortraitFront_control);
 
    	if (advancedControls) {
-	    let PortraitFrontTint_control = new uiButtonText('PortraitFront-tinted', diy, bindings, FRONT);
+	    let PortraitFrontTint_control = new uiButtonText('Portrait-tinted', diy, bindings, FRONT);
 	    list = new Array('None', 'PortraitTint', 'Black');
 	    if (advancedControls) list = list.concat(new Array('CustomColour'));
-	    let PortraitFrontShadow_control = new uiCyclerLabeled('PortraitFront-shadow', list, bindings, FRONT);
-	    let PortraitFrontShadowTint_control = new uiTint('PortraitFront-shadow', bindings, FRONT);
+	    let PortraitFrontShadow_control = new uiCyclerLabeled('Portrait-shadow', list, bindings, FRONT);
+	    let PortraitFrontShadowTint_control = new uiTint('Portrait-shadow', bindings, FRONT);
 	    PortraitFront_panel.place(
 	        Artist_control, 'hfill', 
 	        PortraitFront_control, 'br hfill',
@@ -373,7 +373,7 @@ function createFrontPainter(diy, sheet) {
 
 	// PORTRAITS
     PortraitShadow_tinter = new createTinter('Portrait-shadow', diy);
-    updateExternalPortrait('PortraitFront', diy);
+    updateExternalPortrait('Portrait', diy);
     updateExternalPortrait('Collection', diy);
     updateExternalPortrait('Encounterset', diy);
     updateExternalPortrait('Encounterset1', diy);
@@ -397,9 +397,9 @@ function paintFront(g, diy, sheet) {
     debug(1, '\npaintFront');
 
     // PORTRAIT
-    if (diy.settings.getBoolean('PortraitFront-tinted',true)) {
+    if (diy.settings.getBoolean('Portrait-tinted',true)) {
         sheet.paintImage(g, ImageUtils.get(PathImage + 'white1x1.png'), 'Template');
-        index = portraitIndexOf('PortraitFront');
+        index = portraitIndexOf('Portrait');
         let imageTinted = PortraitList[index].getImage();
         let imagePanX = PortraitList[index].getPanX();
         let imagePanY = PortraitList[index].getPanY();
@@ -409,7 +409,7 @@ function paintFront(g, diy, sheet) {
         if ($Template == 'Nightmare') imageTinted = createRedishImage(imageTinted);
         else imageTinted = createSepiaImage(imageTinted);
 
-        let region = getArray('PortraitFront-portrait-clip-region', diy);
+        let region = getArray('Portrait-portrait-clip-region', diy);
         let AT = java.awt.geom.AffineTransform;
         let transform = AT.getTranslateInstance(
             Number(region[0]) + (Number(region[2]) / 2) + imagePanX-((imageTinted.width * imageScale) / 2),
@@ -418,9 +418,9 @@ function paintFront(g, diy, sheet) {
         transform.concatenate(AT.getScaleInstance(imageScale, imageScale));
         transform.concatenate(AT.getRotateInstance(-imageRotation * Math.PI / 180, imageTinted.width / 2, imageTinted.height / 2));
         g.drawImage(imageTinted, transform, null);
-    } else paintPortrait('PortraitFront', diy, g, sheet);
+    } else paintPortrait('Portrait', diy, g, sheet);
 
-	paintPortraitShadow('PortraitFront', PortraitShadow_tinter, diy, g, sheet) ;
+	paintPortraitShadow('Portrait', PortraitShadow_tinter, diy, g, sheet) ;
 
     // TEMPLATE
     paintTemplate(diy, g, sheet);
@@ -471,7 +471,7 @@ function paintBack(g, diy, sheet) {
     debug(1, '\npaintBack');
     // PORTRAIT
     if (diy.settings.getBoolean('PortraitBack-share')) {
-    	paintPortrait('PortraitFront', diy, g, sheet);
+    	paintPortrait('Portrait', diy, g, sheet);
     }else {
 	    paintPortrait('PortraitBack', diy, g, sheet);
 	}
@@ -533,12 +533,7 @@ function paintBack(g, diy, sheet) {
 
 function onRead(diy, ois) {
     debug(1, '\nonRead');
-    /*
-    This is one of the main functions on scripted components.
-    This function is called by Strange Eons on component file loading.
-    When using custom portrait handling, Portraits must be loaded
-    explicitly.
-    */
+
     if (diy.settings.get('VersionHistory', '') == '') {
         debug(0, 'VersionHistory nonexistent.');
         $VersionHistory = diy.version;
@@ -549,33 +544,17 @@ function onRead(diy, ois) {
         debug(4, 'VersionHistory updated.');
         $VersionHistory = $VersionHistory + ',' + SEVersion + LRLVersion + CardVersion;
     }
+    
+    readPortraits(diy, ois);
+    
+    if(true) onReadOldComponent(diy);
 
-    try {
-        portrait = ois.readObject();
-    } catch (err) {
-        portrait = null;
-    }
-    while (portrait != null) {
-        let index = PortraitList.length;
-        debug(5, 'PortraitList length: '+PortraitList.length);
-        PortraitList[index] = portrait;
-        try {
-            portrait = ois.readObject();
-        } catch (err) {
-            portrait = null;
-        }
-    }
     if (diy.settings.getBoolean('LRL-PreferencesUpdate', false)) loadPreferences(diy);
 }
 
 function onWrite(diy, oos) {
     debug(1, '\nonWrite');
-    /*
-    This is one of the main functions on scripted components.
-    This function is called by Strange Eons on component file save.
-    When using custom portrait handling, Portraits must be saved
-    explicitly.
-    */
+
     for (let index in PortraitList) {
         oos.writeObject(PortraitList[index]);
     }
@@ -584,14 +563,7 @@ function onWrite(diy, oos) {
 
 function onClear(diy) {
     debug(1, '\nonClear');
-    /*
-    This is one of the main functions on scripted components.
-    This function is called by the Strange Eons user interface on
-    Edit>Clear menu. Should be used only to initialize the component
-    settings and controls.
-    In my code, I use the Localizable list defined in the game object
-    to clear all the text of the card.
-    */
+
     for (let index in GAMEOBJECT.LocalizableList) {
         diy.settings.reset(GAMEOBJECT.LocalizableList[index]);
     }

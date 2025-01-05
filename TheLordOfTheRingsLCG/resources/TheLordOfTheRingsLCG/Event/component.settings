@@ -16,7 +16,7 @@ ResourceCost-region = 41,41,50,35
 
 Title-region = 55,84,23,180
 Traits-region = 56,331,301,18
-Body-region = 56,349,301,164
+Body-region = 56,349,301,146
 Type-region = 139,500,135,19
 
 Subtype-region = 146,301,124,14

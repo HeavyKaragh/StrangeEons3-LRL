@@ -64,167 +64,6 @@ function removeOldSettings(diy){
     }
 }
 
-function updatePortraitSE2(diy,ois){
-    var portrait;
-    try{portrait = ois.readObject();}catch(err){portrait = null;}
-    while(portrait != null){
-        debug(1,'onRead: old portrait: '+portrait.getBaseKey());
-        baseKey = String(portrait.getBaseKey());
-        switch(String(baseKey)){
-        case 'Portrait': case 'PortraitBack':
-        case 'Collection': case 'CustomSphere': case 'EncounterSet':
-        case 'EncounterSet1': case 'EncounterSet2':
-        case 'EncounterSet3': case 'EncounterSet4': case 'EncounterSet5':
-            key = baseKey;
-            break;
-        case 'Pack-Portrait': case 'Pack-Collection':
-            key = baseKey.replace('Pack-','');
-            break;
-        case 'UsedSets-EncounterSet1': case 'UsedSets-EncounterSet2':
-        case 'UsedSets-EncounterSet3': case 'UsedSets-EncounterSet4':
-        case 'UsedSets-EncounterSet5':
-            key = baseKey.replace('UsedSets-','');
-            debug(1,'onRead: '+baseKey+': '+$(baseKey));
-            break;
-        case Card+'-Portrait': case Card+'-PortraitBack':
-        case Card+'-Collection': case Card+'-EncounterSet': case Card+'-CustomSphere':
-        case Card+'-EncounterSet1': case Card+'-EncounterSet2':
-        case Card+'-EncounterSet3': case Card+'-EncounterSet4':
-        case Card+'-EncounterSet5':
-            key = baseKey.replace(Card+'-','');
-            break;
-        case Card+'-UsedSets-EncounterSet1': case Card+'-UsedSets-EncounterSet2':
-        case Card+'-UsedSets-EncounterSet3': case Card+'-UsedSets-EncounterSet4':
-        case Card+'-UsedSets-EncounterSet5':
-            key = baseKey.replace(Card+'-UsedSets-','');
-            break;
-        case 'Sphere':
-            key = 'CustomSphere';
-            break;
-        case Card+'-Template-CustomSphere':
-            key = baseKey.replace(Card+'-Template-','');
-            break;
-        default:
-            throw new Error('onRead: portrait load failed: '+portrait.getBaseKey());
-        }
-        debug(1,'updatePortraitBaseKey: '+Card+'-'+key);
-        if((diy.version < 3)&&((key == 'Portrait')||(key == 'PortraitBack'))){
-            portrait.setPanX(portrait.getPanX()-14);
-            portrait.setPanY(portrait.getPanY()+14);
-            portrait.setScale(portrait.getScale()+0.05);
-        }
-        PortraitList[PortraitList.indexOf(key)] = DefaultPortrait(
-            Card+'-'+key,
-            portrait
-        );
-        try{portrait = ois.readObject();}catch(err){portrait = null;}
-    }
-    for(let i = 0;i<PortraitList.length;i++){
-        key = PortraitList[i];
-        if(PortraitList[i]==null){
-            debug(1,'onRead: old card: create portrait: '+key);
-            debug(1,'onRead: old card: portrait '+diy.settings.get(Card+'-'+key+'-portrait-template',''));
-            debug(1,'onRead: old card: region: '+diy.settings.get(Card+'-'+key+'-portrait-clip-region',''));
-            switch(key){
-            case 'Portrait':
-            case 'PortraitBack':
-                PortraitList[i] = new DefaultPortrait(diy,Card+'-'+key,true);
-                PortraitList[i].backgroundFilled = true;
-                PortraitList[i].clipping = true;
-                break;
-            case 'PortraitV': case 'PortraitPromo':
-                PortraitList[i] = new DefaultPortrait(PortraitList[PORTRAIT],Card+'-'+key);
-                PortraitList[i].backgroundFilled = true;
-                break;
-            default:
-                PortraitList[i] = new DefaultPortrait(diy,Card+'-'+key,false);
-                PortraitList[i].backgroundFilled = false;
-                PortraitList[i].clipping = true;
-            }
-            if(diy.settings.get(Card+'-'+key+'-portrait-template','')==''){
-                diy.settings.set(
-                    Card+'-'+key+'-portrait-template',
-                    'TheLordOfTheRingsLCG/image/empty1x1.png'
-                );
-            }
-            if(diy.settings.get(Card+'-'+key+'-portrait-rotation','')==''){
-                diy.settings.set(
-                    Card+'-'+key+'-portrait-rotation',
-                    0
-                );
-            }
-            PortraitList[i].installDefault();
-        }
-    }
-    for(let i = 0;i<PortraitList.length;i++){
-        debug('onRead: old card: PortraitList: '+i+': '+PortraitList[i].getBaseKey());
-    }
-}
-
-function updatePortraitBaseKey(diy){
-    debug(1,'updatePortraitBaseKey');
-
-    for (let index in PortraitList) {
-        var baseKey = String(PortraitList[index].getBaseKey());
-        debug(1,'Index:'+index+'; BaseKey: '+baseKey);
-
-        switch(baseKey){
-            case 'Sphere':
-            case 'CustomSphere': 
-            case Card+'-CustomSphere':
-            case Card+'-Template-CustomSphere':
-                key = 'SphereIcon';
-                break;
-            case 'Pack-Portrait': 
-            case 'Pack-Collection':
-                key = baseKey.replace('Pack-','');
-                break;
-            case 'UsedSets-EncounterSet1': 
-            case 'UsedSets-EncounterSet2':
-            case 'UsedSets-EncounterSet3': 
-            case 'UsedSets-EncounterSet4':
-            case 'UsedSets-EncounterSet5':
-                key = baseKey.replace('UsedSets-','');
-                break;
-            case Card+'-Portrait': 
-            case Card+'-PortraitBack':
-            case Card+'-Collection': 
-            case Card+'-EncounterSet': 
-            case Card+'-BodyIcon':
-            case Card+'-EncounterSet1': 
-            case Card+'-EncounterSet2':
-            case Card+'-EncounterSet3': 
-            case Card+'-EncounterSet4':
-            case Card+'-EncounterSet5':
-                key = baseKey.replace(Card+'-','');
-                break;
-            case Card+'-UsedSets-EncounterSet1': 
-            case Card+'-UsedSets-EncounterSet2':
-            case Card+'-UsedSets-EncounterSet3': 
-            case Card+'-UsedSets-EncounterSet4':
-            case Card+'-UsedSets-EncounterSet5':
-                key = baseKey.replace(Card+'-UsedSets-','');
-                break;
-            default:
-                key = baseKey;
-            }
-        if(baseKey != key){
-            debug(1,'Update portrait BaseKey: '+key);
-            diy.settings.set(key+'-portrait-template','')
-//            PortraitList[index].setBaseKey(key)
-            PortraitList[index] = DefaultPortrait(
-                PortraitList[index],
-                key
-            );
-            PortraitList[index].installDefault();
-        //  PortraitList[PortraitList.indexOf(key)].setPanX(portrait.getPanX()-14);
-        //  PortraitList[PortraitList.indexOf(key)].setPanY(portrait.getPanY()+14);
-        //  PortraitList[PortraitList.indexOf(key)].setScale(portrait.getScale()+0.05);
-        }
-        
-    }
-}
-
 function traslateSetting(diy,oldSetting,newSetting,defaultValue,preserveNewSetting){
     debug(5,'\ntraslateSetting');
     debug(1,'\toldSetting: '+oldSetting+': '+diy.settings.get(oldSetting,'empty'));
@@ -249,8 +88,105 @@ function traslateSetting(diy,oldSetting,newSetting,defaultValue,preserveNewSetti
 */
 }
 
-function onReadS3beta(diy){
-    debug(5,'\nonReadS3beta');
+function checkStatOnMinus(diy,stat){
+    debug(0,'\tcheckStatOnMinus:'+stat);
+    if(diy.settings.get(stat,null) == 'minus'){
+        debug(0,'\t\tChange from minus to -');
+        diy.settings.set(stat,'-');
+    }
+}
+
+function checkBaseKey(portrait, diy){
+    debug(5,'\ncheckBaseKey');
+    let baseKey = String(portrait.getBaseKey());
+    let key = '';
+    debug(1,'\tBaseKey: '+baseKey);
+    
+    switch(baseKey){
+    case 'Sphere':
+    case 'CustomSphere': 
+    case Card+'-CustomSphere':
+    case Card+'-Template-CustomSphere':
+        key = 'SphereIcon';
+        break;
+    case 'RulesCard-Portrait': 
+    case 'RulesCard-Collection': 
+        key = baseKey.replace('RulesCard-','');
+        break;
+    case 'RulesCard-EncounterSet': 
+    case 'RulesCard-EncounterSet1': 
+    case 'RulesCard-EncounterSet2':
+    case 'RulesCard-EncounterSet3': 
+    case 'RulesCard-EncounterSet4':
+    case 'RulesCard-EncounterSet5':
+        key = baseKey.replace('RulesCard-EncounterSet','Encounterset');
+        break;
+    case 'Set-Portrait': 
+    case 'Set-Collection': 
+        key = baseKey.replace('Set-','');
+        break;
+    case 'Set-EncounterSet': 
+    case 'Set-EncounterSet1': 
+    case 'Set-EncounterSet2':
+    case 'Set-EncounterSet3': 
+    case 'Set-EncounterSet4':
+    case 'Set-EncounterSet5':
+        key = baseKey.replace('Set-EncounterSet','Encounterset');
+        break;
+    case 'Pack-Portrait': 
+    case 'Pack-Collection':
+        key = baseKey.replace('Pack-','');
+        break;
+    case 'UsedSets-EncounterSet1': 
+    case 'UsedSets-EncounterSet2':
+    case 'UsedSets-EncounterSet3': 
+    case 'UsedSets-EncounterSet4':
+    case 'UsedSets-EncounterSet5':
+        key = baseKey.replace('UsedSets-EncounterSet','Encounterset');
+        break;
+    case 'EncounterSet1': 
+    case 'EncounterSet2':
+    case 'EncounterSet3': 
+    case 'EncounterSet4':
+    case 'EncounterSet5':
+        key = baseKey.replace('EncounterSet','Encounterset');
+        break;
+    case Card+'-Portrait': 
+    case Card+'-PortraitBack':
+    case Card+'-Collection': 
+    case Card+'-BodyIcon':
+        key = baseKey.replace(Card+'-','');
+        break;
+    case Card+'-EncounterSet': 
+    case Card+'-EncounterSet1': 
+    case Card+'-EncounterSet2':
+    case Card+'-EncounterSet3': 
+    case Card+'-EncounterSet4':
+    case Card+'-EncounterSet5':
+        key = baseKey.replace(Card+'-EncounterSet','Encounterset');
+        break;
+    case Card+'-UsedSets-EncounterSet1': 
+    case Card+'-UsedSets-EncounterSet2':
+    case Card+'-UsedSets-EncounterSet3': 
+    case Card+'-UsedSets-EncounterSet4':
+    case Card+'-UsedSets-EncounterSet5':
+        key = baseKey.replace(Card+'-UsedSets-','Encounterset');
+        break;
+    default:
+        key = baseKey;
+    }
+
+    if(baseKey != key){
+        debug(3,'\tUpdate portrait BaseKey: '+key);
+        portrait = new DefaultPortrait( key, portrait );
+    }
+    
+    return portrait;   
+}
+
+
+function onReadOldComponent(diy){
+    debug(5,'\nonReadOldComponent: SE3');
     debug(1,'\tComponent: '+Card);
     debug(1,'\tTemplate: '+diy.settings.get('Template','empty'));
     debug(1,'\tDifficulty: '+diy.settings.get('Difficulty','empty'));
@@ -262,20 +198,32 @@ function onReadS3beta(diy){
     diy.backTemplateKey = 'TemplateBack';
     diy.bleedMargin = 9;
 
-//    updatePortraitBaseKey(diy)
+
+    for (let index in PortraitList) {
+        PortraitList[index] = checkBaseKey(PortraitList[index], diy);
+    }
     
-//            portrait = ois.readObject();
-//            PortraitList[index] = DefaultPortrait(
-//                updatePortraitBaseKey(diy),
-//                portrait
-//            );
-//            PortraitList[index].installDefault();
-//            index = PortraitList.length;
-//            debug(5, 'PortraitList index: '+index);
-//            PortraitList[index] = portrait;
+    debug(0,'\tCreate new portraits');
+    switch(String(Card)){
+    case 'Presentation':
+        diy.settings.set('Group-portrait-template','TheLordOfTheRingsLCG/icon/StrangeEons.png');
+        diy.settings.set('Group-portrait-clip-region','50,38,313,130');
+        createPortrait('Group', diy);
+        diy.settings.set('Title-portrait-template','TheLordOfTheRingsLCG/icon/StrangeEons.png');
+        diy.settings.set('Title-portrait-clip-region','50,423,313,102');
+        createPortrait('Title', diy);
+        diy.settings.set('BackgroundFront-portrait-template','TheLordOfTheRingsLCG/icon/StrangeEons.png');
+        diy.settings.set('BackgroundFront-portrait-clip-region','0,0,413,563');
+        createPortrait('BackgroundFront', diy);
+        diy.settings.set('BackgroundBack-portrait-template','TheLordOfTheRingsLCG/icon/StrangeEons.png');
+        diy.settings.set('BackgroundBack-portrait-clip-region','0,0,413,563');
+        createPortrait('BackgroundBack', diy);
+        $PortraitListCount = getPortraitCount();
+        break;
+    }
+        $PortraitListCount = getPortraitCount();
 
-
-    debug(0,'Check Template');
+    debug(0,'\tCheck Template');
     switch(String(Card)){
     case 'Ally': 
     case 'Attachment': 
@@ -300,7 +248,6 @@ function onReadS3beta(diy){
     case 'Location':
     case 'Objective':
     case 'ObjectiveAlly':
-    case 'Quest':
     case 'SideQuest':
     case 'Treachery':
         switch(diy.settings.get('Template',null)){
@@ -312,28 +259,50 @@ function onReadS3beta(diy){
         }
         traslateSetting(diy,'Template-CustomDifficulty-tintable-tint','CustomDifficulty-tint','0.5,0.5,0.5',true);
         traslateSetting(diy,'Template-tint','CustomDifficulty-tint','0.5,0.5,0.5',true);
+        if( diy.settings.get('OptionSpecial',null) == null ) diy.settings.set('OptionSpecial','EmptyIcon');
+        break;
+    case 'Quest':
+        traslateSetting(diy,'Adventure','Scenario','',true);
+        traslateSetting(diy,'AdventureBack','ScenarioBack','',true);
+        break;
+    case 'RulesCard':
+        traslateSetting(diy,'TextFront','Rules','',true);
+        traslateSetting(diy,'TextBack','RulesBack','',true);
+        traslateSetting(diy,'FlavourFront','Flavour','',true);
+        traslateSetting(diy,'StoryFront','Story','',true);
+        if( diy.settings.get('PageNumber',null) == null ) diy.settings.set('PageNumber','0');
+        if( diy.settings.get('PageTotal',null) == null ) diy.settings.set('PageTotal','0');
+        break;
+    case 'Presentation':
+        traslateSetting(diy,'Game','Group','',true);
+        if( diy.settings.get('CustomColour-tint',null) == null ) diy.settings.set('CustomColour-tint','0.5,0.5,0.5');
+        if( diy.settings.get('PageNumber',null) == null ) diy.settings.set('PageNumber','0');
+        if( diy.settings.get('PageTotal',null) == null ) diy.settings.set('PageTotal','0');
         break;
     }
 
-    function checkStatOnMinus(diy,stat){
-        debug(0,'checkStatOnMinus:'+stat);
-        if(diy.settings.get(stat,null) == 'minus'){
-            debug(0,'\tChange from minus to -');
-            diy.settings.set(stat,'-');
-        }
-    }
-    
-    checkStatOnMinus(diy,'Attack')
-    checkStatOnMinus(diy,'Defense')
-    checkStatOnMinus(diy,'Engagement')
-    checkStatOnMinus(diy,'HitPoints')
-    checkStatOnMinus(diy,'Progress')
-    checkStatOnMinus(diy,'ThreatCost')
-    checkStatOnMinus(diy,'Threat')
-    checkStatOnMinus(diy,'Willpower')
+    checkStatOnMinus(diy,'Attack');
+    checkStatOnMinus(diy,'Defense');
+    checkStatOnMinus(diy,'Engagement');
+    checkStatOnMinus(diy,'HitPoints');
+    checkStatOnMinus(diy,'Progress');
+    checkStatOnMinus(diy,'ThreatCost');
+    checkStatOnMinus(diy,'Threat');
+    checkStatOnMinus(diy,'Willpower');
 
     traslateSetting(diy,'Name','Title','',true);
     traslateSetting(diy,'Trait','Traits','',true);
     traslateSetting(diy,'Rules','Effect','',true);
-    //if( diy.settings.get('Type',null) == null ) $Type = '';
+    traslateSetting(diy,'RulesBack','EffectBack','',true);
+    traslateSetting(diy,'EncounterSet','Encounterset','StrangeEons',true);
+    traslateSetting(diy,'EncounterSet1','Encounterset1','StrangeEons',true);
+    traslateSetting(diy,'EncounterSet2','Encounterset2','StrangeEons',true);
+    traslateSetting(diy,'EncounterSet3','Encounterset3','StrangeEons',true);
+    traslateSetting(diy,'EncounterSet4','Encounterset4','StrangeEons',true);
+    traslateSetting(diy,'EncounterSet5','Encounterset5','StrangeEons',true);
+    
+    if( diy.settings.get('Collection','') == 'empty' ) diy.settings.set('Collection','EmptyIcon');
+    if( diy.settings.get('Collection','') == 'StrangeEonsIcon' ) diy.settings.set('Collection','StrangeEons');
+    if( diy.settings.get('Encounterset','') == 'empty' ) diy.settings.set('Encounterset','EmptyIcon');
+    if( diy.settings.get('Encounterset','') == 'StrangeEonsIcon' ) diy.settings.set('Encounterset','StrangeEons');
 }

@@ -27,7 +27,7 @@ HitPoints-region = 68,270,54,40
 
 Title-region =88,323,238,24
 Traits-region = 56,356,301,18
-Body-region = 56,374,301,137
+Body-region = 56,374,301,119
 Type-region = 135,502,144,18
 OptionSpecial-portrait-clip-region = 55,494,24,24
 

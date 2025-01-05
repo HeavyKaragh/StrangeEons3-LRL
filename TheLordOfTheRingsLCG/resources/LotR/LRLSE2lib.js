@@ -74,6 +74,106 @@ function removeOldSettings(diy){if(String($LRL-dontDelete) != 'yes'){
 		}
 	}
 }}
+
+function updatePortraitSE2(diy,ois){
+    var portrait;
+    try{portrait = ois.readObject();}catch(err){portrait = null;}
+    while(portrait != null){
+        debug(1,'onRead: old portrait: '+portrait.getBaseKey());
+        baseKey = String(portrait.getBaseKey());
+        switch(String(baseKey)){
+        case 'Portrait': case 'PortraitBack':
+        case 'Collection': case 'CustomSphere': case 'EncounterSet':
+        case 'EncounterSet1': case 'EncounterSet2':
+        case 'EncounterSet3': case 'EncounterSet4': case 'EncounterSet5':
+            key = baseKey;
+            break;
+        case 'Pack-Portrait': case 'Pack-Collection':
+            key = baseKey.replace('Pack-','');
+            break;
+        case 'UsedSets-EncounterSet1': case 'UsedSets-EncounterSet2':
+        case 'UsedSets-EncounterSet3': case 'UsedSets-EncounterSet4':
+        case 'UsedSets-EncounterSet5':
+            key = baseKey.replace('UsedSets-','');
+            debug(1,'onRead: '+baseKey+': '+$(baseKey));
+            break;
+        case Card+'-Portrait': case Card+'-PortraitBack':
+        case Card+'-Collection': case Card+'-EncounterSet': case Card+'-CustomSphere':
+        case Card+'-EncounterSet1': case Card+'-EncounterSet2':
+        case Card+'-EncounterSet3': case Card+'-EncounterSet4':
+        case Card+'-EncounterSet5':
+            key = baseKey.replace(Card+'-','');
+            break;
+        case Card+'-UsedSets-EncounterSet1': case Card+'-UsedSets-EncounterSet2':
+        case Card+'-UsedSets-EncounterSet3': case Card+'-UsedSets-EncounterSet4':
+        case Card+'-UsedSets-EncounterSet5':
+            key = baseKey.replace(Card+'-UsedSets-','');
+            break;
+        case 'Sphere':
+            key = 'CustomSphere';
+            break;
+        case Card+'-Template-CustomSphere':
+            key = baseKey.replace(Card+'-Template-','');
+            break;
+        default:
+            throw new Error('onRead: portrait load failed: '+portrait.getBaseKey());
+        }
+        debug(1,'updatePortraitBaseKey: '+Card+'-'+key);
+        if((diy.version < 3)&&((key == 'Portrait')||(key == 'PortraitBack'))){
+            portrait.setPanX(portrait.getPanX()-14);
+            portrait.setPanY(portrait.getPanY()+14);
+            portrait.setScale(portrait.getScale()+0.05);
+        }
+        PortraitList[PortraitList.indexOf(key)] = DefaultPortrait(
+            Card+'-'+key,
+            portrait
+        );
+        try{portrait = ois.readObject();}catch(err){portrait = null;}
+    }
+    for(let i = 0;i<PortraitList.length;i++){
+        key = PortraitList[i];
+        if(PortraitList[i]==null){
+            debug(1,'onRead: old card: create portrait: '+key);
+            debug(1,'onRead: old card: portrait '+diy.settings.get(Card+'-'+key+'-portrait-template',''));
+            debug(1,'onRead: old card: region: '+diy.settings.get(Card+'-'+key+'-portrait-clip-region',''));
+            switch(key){
+            case 'Portrait':
+            case 'PortraitBack':
+                PortraitList[i] = new DefaultPortrait(diy,Card+'-'+key,true);
+                PortraitList[i].backgroundFilled = true;
+                PortraitList[i].clipping = true;
+                break;
+            case 'PortraitV': case 'PortraitPromo':
+                PortraitList[i] = new DefaultPortrait(PortraitList[PORTRAIT],Card+'-'+key);
+                PortraitList[i].backgroundFilled = true;
+                break;
+            default:
+                PortraitList[i] = new DefaultPortrait(diy,Card+'-'+key,false);
+                PortraitList[i].backgroundFilled = false;
+                PortraitList[i].clipping = true;
+            }
+            if(diy.settings.get(Card+'-'+key+'-portrait-template','')==''){
+                diy.settings.set(
+                    Card+'-'+key+'-portrait-template',
+                    'TheLordOfTheRingsLCG/image/empty1x1.png'
+                );
+            }
+            if(diy.settings.get(Card+'-'+key+'-portrait-rotation','')==''){
+                diy.settings.set(
+                    Card+'-'+key+'-portrait-rotation',
+                    0
+                );
+            }
+            PortraitList[i].installDefault();
+        }
+    }
+    for(let i = 0;i<PortraitList.length;i++){
+        debug('onRead: old card: PortraitList: '+i+': '+PortraitList[i].getBaseKey());
+    }
+}
+
+
+
 function onReadV2(diy,ois){
 	diy.extensionName = 'TheLordOfTheRingsLCG.seext';
 	diy.bleedMargin = 0;
