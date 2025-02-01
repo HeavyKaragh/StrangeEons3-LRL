@@ -1,15 +1,12 @@
-Template = Standard
+Template = Main
 Portrait-portrait-template = TheLordOfTheRingsLCG/portrait/Caspar David Friedrich - Abtei im Eichwald.jpg
-Encounterset = Brigands
-Encounterset1 = Brigands
-Encounterset2 = Brigands
-Encounterset3 = Brigands
-Encounterset4 = Brigands
-Encounterset5 = Brigands
+Portrait-portrait-scale = 0.8
+Encounterset = StrangeEons
+Encounterset1 = SusurrosDelBosqueViejo
+Encounterset2 = CustomIcon
 Artist = Caspar David Friedrich
 Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
 Encounterset-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
-
 Encounterset1-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
 Encounterset2-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
 Encounterset3-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
@@ -18,6 +15,3 @@ Encounterset5-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable
 Collection = StrangeEons
 CollectionNumber = 0
 CustomColour-tint = 0.0,1.0,1.0
-Part = -
-ByEncounterset = false
-ByCollection = false

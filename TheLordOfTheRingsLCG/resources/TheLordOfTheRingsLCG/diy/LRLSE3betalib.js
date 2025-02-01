@@ -291,6 +291,7 @@ function onReadOldComponent(diy){
     checkStatOnMinus(diy,'Willpower');
 
     traslateSetting(diy,'Name','Title','',true);
+    traslateSetting(diy,'Unique','Title-unique','',true);
     traslateSetting(diy,'Trait','Traits','',true);
     traslateSetting(diy,'Rules','Effect','',true);
     traslateSetting(diy,'RulesBack','EffectBack','',true);

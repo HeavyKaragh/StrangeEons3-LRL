@@ -553,7 +553,7 @@ function formatArtist(key, diy) {
     let text = diy.settings.get(key, '');
     debug(2, '\n\t'+key+' : '+text);
     let format = diy.settings.get(key + '-format', '');
-    switch (text) {
+    switch (String(text)) {
         case null:
         case '':
             let unknown = diy.settings.get('LRL-Artist-unknown', #LRL-Artist-unknown);

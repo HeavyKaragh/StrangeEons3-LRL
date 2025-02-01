@@ -1,5 +1,3 @@
-// separar tipo para tercera edad?
-// quitar decoración de grupo en plantilla si no se usa
 // modificar fondo de la plantilla a más difuminado, más claro, y menos saturado
 /* COMPONENT CONFIGURATION */
 const Card = 'Adventure';
