@@ -1,13 +1,14 @@
 # WARNING: If this file is deleted, Strange Eons will no longer
 # see this as a project/task folder!
-first-row = 116
-selected-members = :TheLordOfTheRingsLCG.seext
+first-row = 162
+selected-members = \
+    :TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/myLRLlibrary.js
 open-folders = \
     :TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources:TheLordOfTheRingsLCG/resourc\
-    es/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Adven\
-    ture:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/Ally:TheLordOfTheRingsLC\
-    G/resources/TheLordOfTheRingsLCG/Quest:TheLordOfTheRingsLCG/resources/TheLordOfTh\
-    eRingsLCG/diy
+    es/TheLordOfTheRingsLCG:TheLordOfTheRingsLCG_Icons:TheLordOfTheRingsLCG_Icons/res\
+    ources:TheLordOfTheRingsLCG_Icons/resources/TheLordOfTheRingsLCG:TheLordOfTheRing\
+    sLCG_Icons/resources/TheLordOfTheRingsLCG/icon:TheLordOfTheRingsLCG_Icons/resourc\
+    es/TheLordOfTheRingsLCG/text
 notes = 
 res-id = dani
 export-file = plugin_se3-christ

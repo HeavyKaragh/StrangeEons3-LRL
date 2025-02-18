@@ -189,13 +189,13 @@ function onReadOldComponent(diy){
     debug(5,'\nonReadOldComponent: SE3');
     debug(1,'\tComponent: '+Card);
     debug(1,'\tTemplate: '+diy.settings.get('Template','empty'));
+    debug(1,'\tTemplateBack: '+diy.settings.get('TemplateBack','empty'));
     debug(1,'\tDifficulty: '+diy.settings.get('Difficulty','empty'));
     
     loadSettings(diy);
    
     diy.faceStyle = FaceStyle.TWO_FACES;
     diy.frontTemplateKey = 'Template';
-    diy.backTemplateKey = 'TemplateBack';
     diy.bleedMargin = 9;
 
 
@@ -278,6 +278,30 @@ function onReadOldComponent(diy){
         if( diy.settings.get('CustomColour-tint',null) == null ) diy.settings.set('CustomColour-tint','0.5,0.5,0.5');
         if( diy.settings.get('PageNumber',null) == null ) diy.settings.set('PageNumber','0');
         if( diy.settings.get('PageTotal',null) == null ) diy.settings.set('PageTotal','0');
+        break;
+    }
+    
+    debug(0,'\tCheck TemplateBack');
+    switch(String(Card)){
+    case 'Ally': 
+    case 'Attachment': 
+    case 'Event': 
+    case 'Hero': 
+    case 'SideQuestPlayer':
+    case 'Gift':
+        diy.backTemplateKey = 'Player';
+        break;
+    case 'Enemy':
+    case 'Location':
+    case 'Objective':
+    case 'ObjectiveAlly':
+    case 'SideQuest':
+    case 'Treachery':
+        diy.backTemplateKey = 'Encounter';
+        break;
+    case 'Quest':
+    case 'RulesCard':
+    case 'Presentation':
         break;
     }
 

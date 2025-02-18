@@ -750,6 +750,8 @@ function getIconLRL(key, diy) {
             break;
         default:
         	let image = ImageUtils.get(PathIcon + icon + '.png');
+            if (image == null) image = ImageUtils.get(PathNumberTintable + icon + '.png');
+            
 		    if (((key == 'Encounterset') || (key == 'Group')) 
 		    	&& ($Template == 'Nightmare')) {
 			    image = ImageUtils.invert(image);
