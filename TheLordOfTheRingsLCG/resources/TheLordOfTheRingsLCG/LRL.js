@@ -59,8 +59,7 @@ function initialize() {
         importClass(arkham.ContextBar);
 
         let button = {
-            buttonIcon: 
-            	ImageUtils.createIcon(ImageUtils.get(PathUi + name + '.png'), IconSize, IconSize),
+            buttonIcon: ImageUtils.createIcon(ImageUtils.get(PathUi + name + '.png'), IconSize, IconSize),
             getID: function getID() {
                 return 'LRL' + name;
             },
@@ -71,9 +70,7 @@ function initialize() {
                 return this.buttonIcon;
             },
             isVisibleInCurrentContext: function isVisibleInCurrentContext(context) {
-                return context.isMarkupTarget() &&
-                    (context.gameComponent != null) &&
-                    (context.getGame() == #LRL-TheLordOfTheRingsLCG);
+                return context.isMarkupTarget() && (context.gameComponent != null) && (context.getGame() == #LRL-TheLordOfTheRingsLCG);
             },
             isEnabledInCurrentContext: function isEnabledInCurrentContext(context) {
                 return true;
@@ -85,7 +82,7 @@ function initialize() {
                     //mt.selectedText = "<"+Game.get('LRL').masterSettings.get(name+'-tag')+">" ;
                     Eons.markupTarget.selectNone();
                     Eons.markupTarget.selectedText = "<" + Game.get('LRL').masterSettings.get(name + '-tag') + ">";
-                } catch (ex) {
+                } catch(ex) {
                     Error.handleUncaught(ex);
                 }
             }
@@ -103,9 +100,8 @@ function initialize() {
     GameLanguage.addStrings(PathText + 'icons');
 
     // create plugin/game environment (identity within Strange Eons, settings scope, ...) 
-    const GAME = Game.register(
-        'LRL', 'LRL-TheLordOfTheRingsLCG', ImageUtils.get(PathUi + 'TheLordOfTheRingsLCG.png')
-        //'LRL',@LRL-TheLordOfTheRingsLCG,#LRL-TheLordOfTheRingsLCG,ImageUtils.get(PathUi+'TheLordOfTheRingsLCG.png'),null
+    const GAME = Game.register('LRL', 'LRL-TheLordOfTheRingsLCG', ImageUtils.get(PathUi + 'TheLordOfTheRingsLCG.png')
+    //'LRL',@LRL-TheLordOfTheRingsLCG,#LRL-TheLordOfTheRingsLCG,ImageUtils.get(PathUi+'TheLordOfTheRingsLCG.png'),null
     );
     GAME.masterSettings.addSettingsFrom('TheLordOfTheRingsLCG/LRL.settings');
     GAME.masterSettings.addSettingsFrom('TheLordOfTheRingsLCG/LRL-I.settings');
@@ -122,10 +118,7 @@ function initialize() {
     importClass(ca.cgjennings.apps.arkham.dialog.prefs.FillInPreferenceCategory);
     importClass(javax.swing.JTextField);
 
-    var pc = new FillInPreferenceCategory(
-    	@LRL-short, 
-    	PathUi + 'TheLordOfTheRingsLCG-big.png'
-    );
+    var pc = new FillInPreferenceCategory(@LRL-short, PathUi + 'TheLordOfTheRingsLCG-big.png');
 
     pc.heading(@LRL-TheLordOfTheRingsLCG);
     pc.join();
@@ -139,10 +132,8 @@ function initialize() {
     if ($LRL-Debug == null) $LRL-Debug = 5;
     pc.label(@LRL-Debug);
     pc.join();
-    pc.addDropDown(
-    	'LRL-Debug'
-    	, [@LRL-Debug-0, @LRL-Debug-1, @LRL-Debug-2, @LRL-Debug-3, @LRL-Debug-4, @LRL-Debug-5] // interface labels
-        , [0, 1, 2, 3, 4, 5] // actual setting values
+    pc.addDropDown('LRL-Debug', [@LRL-Debug-0, @LRL-Debug-1, @LRL-Debug-2, @LRL-Debug-3, @LRL-Debug-4, @LRL-Debug-5] // interface labels
+    , [0, 1, 2, 3, 4, 5] // actual setting values
     );
     pc.join();
     pc.addTip(@LRL-Debug-tip-preferences);
@@ -182,16 +173,16 @@ function initialize() {
     pc.addField('LRL-Collection-portrait-template', @LRL-PathToIcon, LongText);
     pc.join();
     pc.addTip(@LRL-PathToIcon-tip-preferences);
-    //	pc.join() ; 
-    //	pc.addButton(
-    //		@LRL-preferences-pathToIcon ,
-    //		function addToList( actionEvent ) {
-    //			var filename = ResourceKit.showImageFileDialog( null) ;
+    //  pc.join() ; 
+    //  pc.addButton(
+    //      @LRL-preferences-pathToIcon ,
+    //      function addToList( actionEvent ) {
+    //          var filename = ResourceKit.showImageFileDialog( null) ;
     //// no guarda en shared.settings
     //// guarda en Global (plug-in default)
-    //			if (filename!=null) $LRL-Collection-portrait-template = filename ;
-    //		} 
-    //	);	
+    //          if (filename!=null) $LRL-Collection-portrait-template = filename ;
+    //      } 
+    //  );  
     pc.unindent();
 
     if ($LRL-Encounterset == null) $LRL-Encounterset = 'KeepValue';
@@ -212,39 +203,39 @@ function initialize() {
     pc.addField('LRL-Encounterset-portrait-template', @LRL-PathToIcon, LongText);
     pc.join();
     pc.addTip(@LRL-PathToIcon-tip-preferences);
-    //	pc.join() ; 
-    //	pc.addButton(
-    //		@LRL-preferences-pathToIcon ,
-    //		function action(){//addToList( actionEvent ) {
-    //			var filename = ResourceKit.showImageFileDialog( null) ;
-    //			if (filename!=null){ $LRL-EncountersetUser = filename }
-    //		} 
-    //	);	
+    //  pc.join() ; 
+    //  pc.addButton(
+    //      @LRL-preferences-pathToIcon ,
+    //      function action(){//addToList( actionEvent ) {
+    //          var filename = ResourceKit.showImageFileDialog( null) ;
+    //          if (filename!=null){ $LRL-EncountersetUser = filename }
+    //      } 
+    //  );  
     pc.unindent();
 
-    //	pc.subheading(@LRL-localization) ;
-    //	
-    //	pc.label(@LRL-locale) ;
-    //	pc.join() ; 
-    //	if($LRL-locale-toLoad==null ) $LRL-locale-toLoad = 'last' ; 
-    //	pc.addDropDown( 
-    //		'LRL-locale-toLoad',
-    //		[ @LRL-LastValues,@LRL-CurrentLocale,@LRL-SpecifiedLocale ],
-    //		['last','current','specified']
-    //	) ;
-    //	pc.join() ; 
-    //	pc.addField('LRL-locale','',6) ;
-    //	pc.join() ; 
-    //	pc.addTip(@LRL-locale-tip) ;
-    //	
-    ////	pc.subheading(@LRL-preferences-subheading-debug) ;
-    ////	pc.addCheckBox('LRL-debug',@LRL-preferences-debug,false) ;
-    ////	pc.join() ; 
-    ////	pc.addTip(@LRL-preferences-tip-debug) ;
-    //	
-    //	pc.addCheckBox('LRL-dontDelete',@LRL-preferences-dontDelete,false) ;
-    //	pc.join() ; 
-    //	pc.addTip(@LRL-dontDelete-tip) ;
+    //  pc.subheading(@LRL-localization) ;
+    //  
+    //  pc.label(@LRL-locale) ;
+    //  pc.join() ; 
+    //  if($LRL-locale-toLoad==null ) $LRL-locale-toLoad = 'last' ; 
+    //  pc.addDropDown( 
+    //      'LRL-locale-toLoad',
+    //      [ @LRL-LastValues,@LRL-CurrentLocale,@LRL-SpecifiedLocale ],
+    //      ['last','current','specified']
+    //  ) ;
+    //  pc.join() ; 
+    //  pc.addField('LRL-locale','',6) ;
+    //  pc.join() ; 
+    //  pc.addTip(@LRL-locale-tip) ;
+    //  
+    ////    pc.subheading(@LRL-preferences-subheading-debug) ;
+    ////    pc.addCheckBox('LRL-debug',@LRL-preferences-debug,false) ;
+    ////    pc.join() ; 
+    ////    pc.addTip(@LRL-preferences-tip-debug) ;
+    //  
+    //  pc.addCheckBox('LRL-dontDelete',@LRL-preferences-dontDelete,false) ;
+    //  pc.join() ; 
+    //  pc.addTip(@LRL-dontDelete-tip) ;
 
     Preferences.registerCategory(pc);
 }
@@ -252,17 +243,15 @@ function initialize() {
 function gameObject() { // GAME ){
     // "GameVariationList" includes the template variation list for 
     // strong game adaptations.
-    this.GameVariationList = new Array(
-        'TheLordOfTheRingsLCG' //,// all the official and unoffical templates
-        //, 'GUNNM' // new futuristic templates
+    this.GameVariationList = new Array('TheLordOfTheRingsLCG' //,// all the official and unoffical templates
+    //, 'GUNNM' // new futuristic templates
     );
 
     // "DefaultIconList" defines the minimum item list for Collection
     // and Encounterset lists
-    this.DefaultIconList = new Array(
-        'CustomIcon' // used to include icons through a Portrait_panel
-        , 'EmptyIcon' // used to not draw the icon
-        , 'StrangeEons' // used to show the Strange Eons hat icon
+    this.DefaultIconList = new Array('CustomIcon' // used to include icons through a Portrait_panel
+    , 'EmptyIcon' // used to not draw the icon
+    , 'StrangeEons' // used to show the Strange Eons hat icon
     );
 
     this.ProductGroupList = new Array();
@@ -277,8 +266,7 @@ function gameObject() { // GAME ){
         const PathIcon = 'TheLordOfTheRingsLCG/icon/';
         const IconSize = 24; // Icon size in preferences
         let icon;
-        let image = ImageUtils.get(PathUi + name + '.png', false, true)
-        if (image == null) {
+        let image = ImageUtils.get(PathUi + name + '.png', false, true) if (image == null) {
             image = ImageUtils.get(PathIcon + name + '.png', false, true);
             if (image == null) image = ImageUtils.get(PathUi + 'TheLordOfTheRingsLCG.png', false, true);
         }
@@ -290,9 +278,7 @@ function gameObject() { // GAME ){
     this.CollectionCombo = new Array();
     for (index in this.ProductGroupList) {
         let productGroup = this.ProductGroupList[index];
-        this.CollectionList = this.CollectionList.concat(
-            String(Game.get('LRL').masterSettings.get(productGroup + '-Collection-list')).split(',')
-        );
+        this.CollectionList = this.CollectionList.concat(String(Game.get('LRL').masterSettings.get(productGroup + '-Collection-list')).split(','));
         list = this.DefaultIconList.concat(this.CollectionList);
         for (index in list) {
             let item = list[index];
@@ -305,9 +291,7 @@ function gameObject() { // GAME ){
     this.EncountersetCombo = new Array();
     for (index in this.CollectionList) {
         let item = this.CollectionList[index];
-        this.EncountersetList = this.EncountersetList.concat(
-            String(Game.get('LRL').masterSettings.get(item + '-Encounterset-list')).split(',')
-        );
+        this.EncountersetList = this.EncountersetList.concat(String(Game.get('LRL').masterSettings.get(item + '-Encounterset-list')).split(','));
         list = this.DefaultIconList.concat(this.EncountersetList);
         for (index in list) {
             let item = list[index];
@@ -316,11 +300,7 @@ function gameObject() { // GAME ){
     }
     debug(3, 'EncountersetList: ' + this.EncountersetList);
 
-    this.OptionSpecialList = new Array(
-        'EmptyIcon', 'Sailing'
-        , 'EyeOfSauron', 'EyeOfSauron2', 'EyeOfSauron3', 'EyeOfSauron4'
-        , 'Person'
-    );
+    this.OptionSpecialList = new Array('EmptyIcon', 'Sailing', 'EyeOfSauron', 'EyeOfSauron2', 'EyeOfSauron3', 'EyeOfSauron4', 'Person');
     debug(3, 'OptionSpecialList: ' + this.OptionSpecialList);
 
     this.SphereList = new String(Game.get('LRL').masterSettings.get('TheLordOfTheRingsLCG-Sphere-list')).split(',');
@@ -353,50 +333,28 @@ function gameObject() { // GAME ){
     this.LRLsymbols = FontUtils.registerFontFamilyFromResources.apply(this, [pathLRLsymbols]);
     this.LRLwindlass = FontUtils.registerFontFamilyFromResources.apply(this, [pathLRLwindlass]);
 
-    //	this.DumbFont = FontUtils.registerFontFamilyFromResources.apply(this,['TheLordOfTheRingsLCG/font/Dumbledor.ttf']);
-    //	this.UnicodeFont = registerFont('Sun-ExtA.ttf');
+    //  this.DumbFont = FontUtils.registerFontFamilyFromResources.apply(this,['TheLordOfTheRingsLCG/font/Dumbledor.ttf']);
+    //  this.UnicodeFont = registerFont('Sun-ExtA.ttf');
 
     // "StyleTagList" defines the tags for text styles used in boxes 
-    this.StyleTagList = new Array(
-    	'LRLfont', 'LRLsymbols', 'LRLtitle'
-    	, 'Trait', 'Section'
-    );
+    this.StyleTagList = new Array('LRLfont', 'LRLsymbols', 'LRLtitle', 'Trait', 'Section');
 
     // "IconTagList" contains the available tags for text paragraphs
     // it's used to add the elements to the context bar too
-    this.IconTagList = new Array(
-        'Attack', 'Defense', 'Willpower', 'Threat', 'Unique'
-        , 'VerticalSpacer', 'HorizontalSpacer', 'List'
-        , 'Leadership', 'Lore', 'Spirit', 'Tactics'
-        , 'Baggins', 'Fellowship', 'Mastery'
-        , 'Sailing', 'HeadingOnCourse', 'HeadingOffCourse'
-        , 'HeadingBad', 'HeadingWorst'
-        , 'EyeOfSauron', 'Person', 'PerPlayer'
-        , 'ShadowSeparator', 'ChoiceSeparator'
-    );
-    
+    this.IconTagList = new Array('Attack', 'Defense', 'Willpower', 'Threat', 'Unique', 'VerticalSpacer', 'HorizontalSpacer', 'List', 'Leadership', 'Lore', 'Spirit', 'Tactics', 'Baggins', 'Fellowship', 'Mastery', 'Sailing', 'HeadingOnCourse', 'HeadingOffCourse', 'HeadingBad', 'HeadingWorst', 'EyeOfSauron', 'Person', 'PerPlayer', 'ShadowSeparator', 'ChoiceSeparator');
+
     // "EffectTagList" contains the available tags for text paragraphs
     // that substitute them for localized text strings
-//    this.EffectTagList = new Array(
-//        'ActionEffect', 'ResponseEffect', 'ForcedEffect'
-//        , 'ShadowEffect'
-//        , 'SuccessEffect', 'FailureEffect'
-//        , 'Choice1Effect', 'Choice2Effect'
-//        //, 'Ranged', 'Sentinel'
-//    );
+    //    this.EffectTagList = new Array(
+    //        'ActionEffect', 'ResponseEffect', 'ForcedEffect'
+    //        , 'ShadowEffect'
+    //        , 'SuccessEffect', 'FailureEffect'
+    //        , 'Choice1Effect', 'Choice2Effect'
+    //        //, 'Ranged', 'Sentinel'
+    //    );
 
     // "LocalizableList" contains the text elements used in any 
     // component it's used both for clearing a component and for
     // the in-component translations
-    this.LocalizableList = new Array(
-        'Group', 'Artist', 'ArtistBack'
-        , 'CollectionInfo', 'Condition', 'ConditionBack'
-        , 'Copyright', 'Group'
-        , 'Flavour', 'FlavourBack', 'FlavourLeft', 'FlavourRight'
-        , 'Group', 'Name', 'NameBack'
-        , 'OptionLeft', 'OptionRight', 'OptionLeftBack', 'OptionRightBack'
-        , 'Rules', 'RulesBack', 'RulesLeft', 'RulesRight'
-        , 'Shadow', 'Story', 'StoryBack', 'StoryLeft', 'StoryRight'
-        , 'Subtype', 'Trait', 'Type'
-    );
+    this.LocalizableList = new Array('Group', 'Artist', 'ArtistBack', 'CollectionInfo', 'Condition', 'ConditionBack', 'Copyright', 'Group', 'Flavour', 'FlavourBack', 'FlavourLeft', 'FlavourRight', 'Group', 'Name', 'NameBack', 'OptionLeft', 'OptionRight', 'OptionLeftBack', 'OptionRightBack', 'Rules', 'RulesBack', 'RulesLeft', 'RulesRight', 'Shadow', 'Story', 'StoryBack', 'StoryLeft', 'StoryRight', 'Subtype', 'Trait', 'Type');
 }

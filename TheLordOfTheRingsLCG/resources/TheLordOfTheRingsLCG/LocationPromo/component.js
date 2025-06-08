@@ -13,9 +13,7 @@ function createFrontPainter(diy, sheet) {}
 
 function createBackPainter(diy, sheet) {}
 
-
-function paintFront(g, diy, sheet) {
-}
+function paintFront(g, diy, sheet) {}
 
 function paintBack(g, diy, sheet) {
     sheet.paintTemplateImage(g);
@@ -29,12 +27,12 @@ function onRead(diy, ois) {
         $VersionHistory = diy.version;
     }
     let LastVersion = String($VersionHistory).split(',');
-    LastVersion = LastVersion[LastVersion.length-1];
+    LastVersion = LastVersion[LastVersion.length - 1];
     if (LastVersion != Number(SEVersion + LRLVersion + CardVersion)) {
         debug(4, 'VersionHistory updated.');
         $VersionHistory = $VersionHistory + ',' + SEVersion + LRLVersion + CardVersion;
     }
-    
+
     readPortraits(diy, ois);
 
     if (diy.settings.getBoolean('LRL-PreferencesUpdate', false)) loadPreferences(diy);
@@ -46,7 +44,7 @@ function onWrite(diy, oos) {
     for (let index in PortraitList) {
         oos.writeObject(PortraitList[index]);
     }
-    debug(5, 'PortraitList length: '+PortraitList.length);
+    debug(5, 'PortraitList length: ' + PortraitList.length);
 }
 
 function onClear(diy) {

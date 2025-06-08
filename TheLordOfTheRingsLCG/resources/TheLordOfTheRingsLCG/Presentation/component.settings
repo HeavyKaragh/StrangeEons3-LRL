@@ -9,7 +9,7 @@ TemplateBack-template = TheLordOfTheRingsLCG/Presentation/StandardBack-150.jp2
 TemplateBack-template-hires = TheLordOfTheRingsLCG/Presentation/StandardBack-300.jp2
 
 Portrait-portrait-clip-region = 0,140,413,285
-BackgroundFront-portrait-clip-region = 0,0,413,563
+Background-portrait-clip-region = 0,0,413,563
 BackgroundBack-portrait-clip-region = 0,0,413,563
 
 Page-region = 280,528,66,10

@@ -32,86 +32,73 @@ function createInterface(diy, editor, sheet) {
     let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls');
     var bindings = new Bindings(editor, diy);
 
-    // MAINFRONT TAB
+    // MAIN FRONT TAB
     let MainFront_tab = new TypeGrid();
     MainFront_tab.editorTabScrolling = true;
 
-    // TITLE PANEL
-    let Title_panel = new TypeGrid();
-    Title_panel.setTitle(@LRL-Title);
-    let Title_control = uiTitle(diy, bindings, FRONT);
-    Title_panel.place(Title_control, 'hfill');
-    MainFront_tab.place(Title_panel, 'hfill');
-
-    // TEXTBOX PANEL
-    let TextBoxFront_panel = new TypeGrid();
-    TextBoxFront_panel.setTitle(@LRL-TextBoxFront);
-    let Text_control = new uiParagraphLabeled('Text', bindings, FRONT, 'big');
-    let Condition_control = new uiParagraphLabeled('Condition', bindings, FRONT, 'small');
-    let Flavour_control = new uiParagraphLabeled('Flavour', bindings, FRONT, 'medium');
-    TextBoxFront_panel.place(
-        Text_control, 'hfill'
-        , Condition_control, 'br hfill'
-        , Flavour_control, 'br hfill'
-    );
-    MainFront_tab.place(TextBoxFront_panel, 'br hfill');
-
-    // MAINFRONT TAB CLOSE
+        // TITLE PANEL
+        let Title_panel = new TypeGrid();
+        Title_panel.setTitle(@LRL-Title);
+        let Title_control = uiTitle(diy, bindings, FRONT);
+        Title_panel.place(Title_control, 'hfill');
+        MainFront_tab.place(Title_panel, 'hfill');
+    
+        // TEXT BOX PANEL
+        let TextBoxFront_panel = new TypeGrid();
+        TextBoxFront_panel.setTitle(@LRL-TextBoxFront);
+        let Text_control = new uiParagraphLabeled('Text', bindings, FRONT, 'big');
+        let Condition_control = new uiParagraphLabeled('Condition', bindings, FRONT, 'small');
+        let Flavour_control = new uiParagraphLabeled('Flavour', bindings, FRONT, 'medium');
+        TextBoxFront_panel.place(Text_control, 'hfill', Condition_control, 'br hfill', Flavour_control, 'br hfill');
+        MainFront_tab.place(TextBoxFront_panel, 'br hfill');
+    
+    // MAIN FRONT TAB CLOSE
     MainFront_tab.addToEditor(editor, @LRL-MainFront);
 
-    // MAINBACK TAB
+    // MAIN BACK TAB
     let MainBack_tab = new TypeGrid();
     MainBack_tab.editorTabScrolling = true;
 
-    // TEXTBOXBACK PANEL
-    let TextBoxBack_panel = new TypeGrid();
-    TextBoxBack_panel.setTitle(@LRL-TextBoxBack);
-    let TextBack_control = new uiParagraphLabeled('TextBack', bindings, FRONT, 'big');
-    let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, FRONT, 'medium');
-    TextBoxBack_panel.place(
-        TextBack_control, 'hfill'
-        , FlavourBack_control, 'br hfill'
-    );
-    MainBack_tab.place(TextBoxBack_panel, 'hfill');
+        // TEXT BOX BACK PANEL
+        let TextBoxBack_panel = new TypeGrid();
+        TextBoxBack_panel.setTitle(@LRL-TextBoxBack);
+        let TextBack_control = new uiParagraphLabeled('TextBack', bindings, FRONT, 'big');
+        let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, FRONT, 'medium');
+        TextBoxBack_panel.place(TextBack_control, 'hfill', FlavourBack_control, 'br hfill');
+        MainBack_tab.place(TextBoxBack_panel, 'hfill');
 
-    // MAINBACK TAB CLOSE
+    // MAIN BACK TAB CLOSE
     MainBack_tab.addToEditor(editor, @LRL-MainBack);
 
     // ENCOUNTER SET TAB
     var Encounterset_tab = new TypeGrid();
     Encounterset_tab.editorTabScrolling = true;
 
-    // ENCOUNTER SET PANEL
-    let Encounterset_panel = new TypeGrid();
-    Encounterset_panel.setTitle(@LRL-Encounterset);
-    let Encounterset_control = new uiEncountersetList(bindings, FRONT);
-    let EncountersetNumber_control = new uiEncountersetNumber(bindings);
-    Encounterset_panel.place(
-        Encounterset_control, 'hfill',
-        EncountersetNumber_control, 'br'
-    );
-    let EncountersetPortrait_control = new uiPortrait('Encounterset', diy);
-    Encounterset_panel.place(EncountersetPortrait_control, 'br hfill');
-    Encounterset_tab.place(Encounterset_panel, 'br hfill');
+        // ENCOUNTER SET PANEL
+        let Encounterset_panel = new TypeGrid();
+        Encounterset_panel.setTitle(@LRL-Encounterset);
+        let Encounterset_control = new uiEncountersetList(bindings, FRONT);
+        let EncountersetNumber_control = new uiEncountersetNumber(bindings);
+        Encounterset_panel.place(Encounterset_control, 'hfill', EncountersetNumber_control, 'br');
+        let EncountersetPortrait_control = new uiPortrait('Encounterset', diy);
+        Encounterset_panel.place(EncountersetPortrait_control, 'br hfill');
+        Encounterset_tab.place(Encounterset_panel, 'br hfill');
 
+    // ENCOUNTER SET TAB CLOSE
     Encounterset_tab.addToEditor(editor, @LRL-Encounterset);
 
     // PORTRAIT TAB
     let Portrait_tab = new TypeGrid();
     Portrait_tab.editorTabScrolling = true;
 
-    // PORTRAIT PANEL
-    let Portrait_panel = new TypeGrid();
-    Portrait_panel.setTitle(@LRL-Portrait);
-    let Artist_control = new uiTextLabeled('Artist', bindings, FRONT);
-    let Portrait_control = new uiPortrait('Portrait', diy);
-    let PortraitMirror_control = new uiPortraitMirror('Portrait', Portrait_control);
-    Portrait_panel.place(
-        Artist_control, 'hfill', 
-        Portrait_control, 'br hfill', 
-        PortraitMirror_control, 'br hfill'
-    );
-    Portrait_tab.place(Portrait_panel, 'hfill');
+        // PORTRAIT PANEL
+        let Portrait_panel = new TypeGrid();
+        Portrait_panel.setTitle(@LRL-Portrait);
+        let Artist_control = new uiTextLabeled('Artist', bindings, FRONT);
+        let Portrait_control = new uiPortrait('Portrait', diy);
+        let PortraitMirror_control = new uiPortraitMirror('Portrait', Portrait_control);
+        Portrait_panel.place(Artist_control, 'hfill', Portrait_control, 'br hfill', PortraitMirror_control, 'br hfill');
+        Portrait_tab.place(Portrait_panel, 'hfill');
 
     // PORTRAIT TAB CLOSE
     Portrait_tab.addToEditor(editor, @LRL-Portrait);
@@ -120,31 +107,26 @@ function createInterface(diy, editor, sheet) {
     let Collection_tab = new TypeGrid();
     Collection_tab.editorTabScrolling = true;
 
-    // COLLECTION PANEL
-    let Collection_panel = new TypeGrid();
-    Collection_panel.setTitle(@LRL-Collection);
-    let CollectionNumber_control = new uiSpinnerLabeled('CollectionNumber', bindings, BOTH, 999);
-    let CollectionInfo_control = new uiTextLabeled('CollectionInfo', bindings, BOTH);
-    let Collection_control = new uiCollectionList(bindings, BOTH);
-    let CollectionPortrait_control = new uiPortrait('Collection', diy);
-    Collection_panel.place(
-        Collection_control, 'hfill', 
-        CollectionNumber_control, 'br', 
-        CollectionInfo_control, 'hfill', 
-        CollectionPortrait_control, 'br hfill'
-    );
-    Collection_tab.place(Collection_panel, 'hfill');
-
-     // OTHER CONTROLS PANEL
-    let OtherControls_panel = new TypeGrid();
-    OtherControls_panel.setTitle(@LRL-OtherControls);
-    let Copyright_control = new uiTextLabeled('Copyright', bindings, FRONT);
-    OtherControls_panel.place(Copyright_control, 'hfill');
-    if (advancedControls) {
-        let Type_control = new uiTextLabeled('Type', bindings, FRONT);
-        OtherControls_panel.place(Type_control, 'br hfill');
-    }
-    Collection_tab.place(OtherControls_panel, 'br hfill');
+        // COLLECTION PANEL
+        let Collection_panel = new TypeGrid();
+        Collection_panel.setTitle(@LRL-Collection);
+        let CollectionNumber_control = new uiSpinnerLabeled('CollectionNumber', bindings, BOTH, 999);
+        let CollectionInfo_control = new uiTextLabeled('CollectionInfo', bindings, BOTH);
+        let Collection_control = new uiCollectionList(bindings, BOTH);
+        let CollectionPortrait_control = new uiPortrait('Collection', diy);
+        Collection_panel.place(Collection_control, 'hfill', CollectionNumber_control, 'br', CollectionInfo_control, 'hfill', CollectionPortrait_control, 'br hfill');
+        Collection_tab.place(Collection_panel, 'hfill');
+    
+        // OTHER CONTROLS PANEL
+        let OtherControls_panel = new TypeGrid();
+        OtherControls_panel.setTitle(@LRL-OtherControls);
+        let Copyright_control = new uiTextLabeled('Copyright', bindings, FRONT);
+        OtherControls_panel.place(Copyright_control, 'hfill');
+        if (advancedControls) {
+            let Type_control = new uiTextLabeled('Type', bindings, FRONT);
+            OtherControls_panel.place(Type_control, 'br hfill');
+        }
+        Collection_tab.place(OtherControls_panel, 'br hfill');
 
     // COLLECTION TAB CLOSE
     Collection_tab.addToEditor(editor, @LRL-Collection);
@@ -155,7 +137,7 @@ function createInterface(diy, editor, sheet) {
 function createFrontPainter(diy, sheet) {
     debug(1, '\ncreateFrontPainter');
 
-     // STATS
+    // STATS
     EncountersetNumber_writer = new createWriter('EncountersetNumber', diy, sheet);
 
     // TEXT
@@ -172,13 +154,13 @@ function createFrontPainter(diy, sheet) {
 function createBackPainter(diy, sheet) {
     debug(1, '\ncreateBackPainter');
     debug(1, 'createBackPainter');
-    
+
     Type_writer = new createWriter('Type', diy, sheet);
 }
 
 function paintFront(g, diy, sheet) {
     debug(1, '\npaintFront');
-    
+
     // PORTRAIT
     paintPortrait('Portrait', diy, g, sheet);
 
@@ -206,7 +188,7 @@ function paintFront(g, diy, sheet) {
 
 function paintBack(g, diy, sheet) {
     debug(1, '\npaintBack');
-    
+
     // TEMPLATE
     sheet.paintTemplateImage(g);
 
@@ -225,15 +207,15 @@ function onRead(diy, ois) {
         $VersionHistory = diy.version;
     }
     let LastVersion = String($VersionHistory).split(',');
-    LastVersion = LastVersion[LastVersion.length-1];
+    LastVersion = LastVersion[LastVersion.length - 1];
     if (LastVersion != Number(SEVersion + LRLVersion + CardVersion)) {
         debug(4, 'VersionHistory updated.');
         $VersionHistory = $VersionHistory + ',' + SEVersion + LRLVersion + CardVersion;
     }
-    
+
     readPortraits(diy, ois);
-    
-    if(true) onReadOldComponent(diy);
+
+    if (true) onReadOldComponent(diy);
 
     if (diy.settings.getBoolean('LRL-PreferencesUpdate', false)) loadPreferences(diy);
 }
@@ -244,7 +226,7 @@ function onWrite(diy, oos) {
     for (let index in PortraitList) {
         oos.writeObject(PortraitList[index]);
     }
-    debug(5, 'PortraitList length: '+PortraitList.length);
+    debug(5, 'PortraitList length: ' + PortraitList.length);
 }
 
 function onClear(diy) {

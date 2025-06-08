@@ -36,96 +36,86 @@ function createInterface(diy, editor, sheet) {
     let Main_tab = new TypeGrid();
     Main_tab.editorTabScrolling = true;
 
-    // TITLE PANEL
-    let Title_panel = new TypeGrid();
-    Title_panel.setTitle(@LRL-Title);
-    let Title_control = uiTitle(diy, bindings, FRONT);
-    Title_panel.place(Title_control, 'hfill');
-    Main_tab.place(Title_panel, 'hfill');
-
-    // TEXTBOX PANEL
-    let TextBox_panel = new TypeGrid();
-    TextBox_panel.setTitle(@LRL-TextBox);
-    let Story_control = new uiParagraphLabeled('Story', bindings, FRONT, 'medium');
-    let Text_control = new uiParagraphLabeled('Text', bindings, FRONT, 'big');
-    let Flavour_control = new uiParagraphLabeled('Flavour', bindings, FRONT, 'medium');
-    TextBox_panel.place(
-        Story_control, 'hfill', Text_control, 'br hfill', Flavour_control, 'br hfill'
-    );
-    Main_tab.place(TextBox_panel, 'br hfill');
+        // TITLE PANEL
+        let Title_panel = new TypeGrid();
+        Title_panel.setTitle(@LRL-Title);
+        let Title_control = uiTitle(diy, bindings, FRONT);
+        Title_panel.place(Title_control, 'hfill');
+        Main_tab.place(Title_panel, 'hfill');
+    
+        // TEXT BOX PANEL
+        let TextBox_panel = new TypeGrid();
+        TextBox_panel.setTitle(@LRL-TextBox);
+        let Story_control = new uiParagraphLabeled('Story', bindings, FRONT, 'medium');
+        let Text_control = new uiParagraphLabeled('Text', bindings, FRONT, 'big');
+        let Flavour_control = new uiParagraphLabeled('Flavour', bindings, FRONT, 'medium');
+        TextBox_panel.place(Story_control, 'hfill', Text_control, 'br hfill', Flavour_control, 'br hfill');
+        Main_tab.place(TextBox_panel, 'br hfill');
 
     // MAIN TAB CLOSE
     Main_tab.addToEditor(editor, @LRL-Main);
 
-    // MAINBACK TAB
+    // MAIN BACK TAB
     var MainBack_tab = new TypeGrid();
     MainBack_tab.editorTabScrolling = true;
 
-    // TEXTBOX PANEL
-    let TextBoxBack_panel = new TypeGrid();
-    TextBoxBack_panel.setTitle(@LRL-TextBoxBack);
-    let StoryBack_control = new uiParagraphLabeled('StoryBack', bindings, BACK, 'medium');
-    let TextBack_control = new uiParagraphLabeled('TextBack', bindings, BACK, 'big');
-    let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, BACK, 'medium');
-    TextBoxBack_panel.place(
-        StoryBack_control, 'hfill', TextBack_control, 'br hfill', FlavourBack_control, 'br hfill'
-    );
-    MainBack_tab.place(TextBoxBack_panel, 'br hfill');
+        // TEXT BOX BACK PANEL
+        let TextBoxBack_panel = new TypeGrid();
+        TextBoxBack_panel.setTitle(@LRL-TextBoxBack);
+        let StoryBack_control = new uiParagraphLabeled('StoryBack', bindings, BACK, 'medium');
+        let TextBack_control = new uiParagraphLabeled('TextBack', bindings, BACK, 'big');
+        let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, BACK, 'medium');
+        TextBoxBack_panel.place(StoryBack_control, 'hfill', TextBack_control, 'br hfill', FlavourBack_control, 'br hfill');
+        MainBack_tab.place(TextBoxBack_panel, 'br hfill');
 
-    // MAINBACK TAB CLOSE
+    // MAIN BACK TAB CLOSE
     MainBack_tab.addToEditor(editor, @LRL-MainBack);
-
-    // ENCOUNTER SET TAB
 
     // TEMPLATE TAB
     let Template_tab = new TypeGrid();
     Template_tab.editorTabScrolling = true;
 
-    // TEMPLATE PANEL
-    let Template_panel = new TypeGrid();
-    Template_panel.setTitle(@LRL-Template);
+        // TEMPLATE PANEL
+        let Template_panel = new TypeGrid();
+        Template_panel.setTitle(@LRL-Template);
     
-    list = new Array('Standard', 'Nightmare');
-    if (advancedControls) list = list.concat(new Array('CustomColour'));
-    let Template_control = new uiListIcon('Template', list, bindings, BOTH);
-    bindings.add('TemplateBack', Template_control, BOTH);
-    Template_panel.place(Template_control, 'hfill');
-    Template_tab.place(Template_panel, 'hfill');
-
-    // LAYOUT PANEL
-    let Layout_panel = new TypeGrid();
-    Layout_panel.setTitle(@LRL-Layout);
-    list = new Array('None', 'Title');
-    Layout_control = new uiCyclerLabeled('Layout', list, bindings, BOTH);
-    Layout_panel.place(
-        Layout_control, 'br hfill'
-    );
-    Template_tab.place(Layout_panel, 'br hfill');
-
-    // CUSTOMCOLOUR PANEL
-    if (advancedControls) {
-        let CustomColour_panel = new TypeGrid();
-        CustomColour_panel.setTitle(@LRL-CustomColour);
-        list = new Array('Collection', 'CustomColour');
-        let ColourBy_control = new uiCyclerLabeled('ColourBy', list, bindings, BOTH);
-        let CustomColour_control = new uiTint('CustomColour', bindings, BOTH);
-        CustomColour_panel.place(
-            ColourBy_control, 'hfill', CustomColour_control, 'br hfill'
-        );
-        Template_tab.place(CustomColour_panel, 'br hfill');
-    }
-
-//    // OVERLAY PANEL
-//    if (advancedControls) {
-//        let Overlay_panel = new TypeGrid();
-//        Overlay_panel.setTitle(@LRL-Overlay);
-//        let Overlay_control = new uiPortrait('Overlay', diy);
-//        let OverlayBack_control = new uiPortrait('OverlayBack', diy);
-//        Overlay_panel.place(
-//            Overlay_control, 'br hfill', OverlayBack_control, 'br hfill'
-//        );
-//        Template_tab.place(Overlay_panel, 'br hfill');
-//    }
+        list = new Array('Standard', 'Nightmare');
+        if (advancedControls) list = list.concat(new Array('CustomColour'));
+        let Template_control = new uiListIcon('Template', list, bindings, BOTH);
+        bindings.add('TemplateBack', Template_control, BOTH);
+        Template_panel.place(Template_control, 'hfill');
+        Template_tab.place(Template_panel, 'hfill');
+    
+        // LAYOUT PANEL
+        let Layout_panel = new TypeGrid();
+        Layout_panel.setTitle(@LRL-Layout);
+        list = new Array('None', 'Title');
+        Layout_control = new uiCyclerLabeled('Layout', list, bindings, BOTH);
+        Layout_panel.place(Layout_control, 'br hfill');
+        Template_tab.place(Layout_panel, 'br hfill');
+    
+        // CUSTOM COLOUR PANEL
+        if (advancedControls) {
+            let CustomColour_panel = new TypeGrid();
+            CustomColour_panel.setTitle(@LRL-CustomColour);
+            list = new Array('Collection', 'CustomColour');
+            let ColourBy_control = new uiCyclerLabeled('ColourBy', list, bindings, BOTH);
+            let CustomColour_control = new uiTint('CustomColour', bindings, BOTH);
+            CustomColour_panel.place(ColourBy_control, 'hfill', CustomColour_control, 'br hfill');
+            Template_tab.place(CustomColour_panel, 'br hfill');
+        }
+    
+        //    // OVERLAY PANEL
+        //    if (advancedControls) {
+        //        let Overlay_panel = new TypeGrid();
+        //        Overlay_panel.setTitle(@LRL-Overlay);
+        //        let Overlay_control = new uiPortrait('Overlay', diy);
+        //        let OverlayBack_control = new uiPortrait('OverlayBack', diy);
+        //        Overlay_panel.place(
+        //            Overlay_control, 'br hfill', OverlayBack_control, 'br hfill'
+        //        );
+        //        Template_tab.place(Overlay_panel, 'br hfill');
+        //    }
 
     Template_tab.addToEditor(editor, @LRL-Template);
 
@@ -133,34 +123,28 @@ function createInterface(diy, editor, sheet) {
     let Collection_tab = new TypeGrid();
     Collection_tab.editorTabScrolling = true;
 
-    // COLLECTION PANEL
-    let Collection_panel = new TypeGrid();
-    Collection_panel.setTitle(@LRL-Collection);
-    let CollectionInfo_control = new uiTextLabeled('CollectionInfo', bindings, BOTH);
-    let Collection_control = new uiCollectionList(bindings, BOTH);
-    let CollectionPortrait_control = new uiPortrait('Collection', diy);
-    Collection_panel.place(
-        Collection_control, 'hfill', CollectionInfo_control, 'br hfill', CollectionPortrait_control, 'br hfill'
-    );
-    Collection_tab.place(Collection_panel, 'hfill');
-
-    // OTHER CONTROLS PANEL
-    let OtherControls_panel = new TypeGrid();
-    OtherControls_panel.setTitle(@LRL-OtherControls);
-    let Copyright_control = new uiTextLabeled('Copyright', bindings, FRONT);
-    let PageNumber_control = new uiSpinner('PageNumber', bindings, BACK, 98);
-    let PageTotal_control = new uiSpinnerLabeled('PageTotal', bindings, BACK, 98);
-    OtherControls_panel.place(
-        Copyright_control, 'hfill', PageNumber_control, 'br', @LRL-Of, '', PageTotal_control, ''
-    );
-    if (advancedControls) {
-        let Group_control = new uiParagraphLabeled('Group', bindings, FRONT, 'small');
-        let PageInbox_control = new uiButtonText('Page-inBox', diy, bindings, BACK);
-        OtherControls_panel.place(
-            PageInbox_control, '', Group_control, 'br hfill'
-        );
-    }
-    Collection_tab.place(OtherControls_panel, 'br hfill');
+        // COLLECTION PANEL
+        let Collection_panel = new TypeGrid();
+        Collection_panel.setTitle(@LRL-Collection);
+        let CollectionInfo_control = new uiTextLabeled('CollectionInfo', bindings, BOTH);
+        let Collection_control = new uiCollectionList(bindings, BOTH);
+        let CollectionPortrait_control = new uiPortrait('Collection', diy);
+        Collection_panel.place(Collection_control, 'hfill', CollectionInfo_control, 'br hfill', CollectionPortrait_control, 'br hfill');
+        Collection_tab.place(Collection_panel, 'hfill');
+    
+        // OTHER CONTROLS PANEL
+        let OtherControls_panel = new TypeGrid();
+        OtherControls_panel.setTitle(@LRL-OtherControls);
+        let Copyright_control = new uiTextLabeled('Copyright', bindings, FRONT);
+        let PageNumber_control = new uiSpinner('PageNumber', bindings, BACK, 98);
+        let PageTotal_control = new uiSpinnerLabeled('PageTotal', bindings, BACK, 98);
+        OtherControls_panel.place(Copyright_control, 'hfill', PageNumber_control, 'br', @LRL-Of, '', PageTotal_control, '');
+        if (advancedControls) {
+            let Group_control = new uiParagraphLabeled('Group', bindings, FRONT, 'small');
+            let PageInbox_control = new uiButtonText('Page-inBox', diy, bindings, BACK);
+            OtherControls_panel.place(PageInbox_control, '', Group_control, 'br hfill');
+        }
+        Collection_tab.place(OtherControls_panel, 'br hfill');
 
     // COLLECTION TAB CLOSE
     Collection_tab.addToEditor(editor, @LRL-Collection);
@@ -200,12 +184,10 @@ function paintCommon(diy, g, sheet) {
     // TEMPLATE
     // In this component, $Template is used only to select the background colour,
     // that should match the one used in Presentation card
-    if ($Template == 'CustomColour'){
+    if ($Template == 'CustomColour') {
         let tintIn;
-	    if (($ColourBy == 'CustomColour') 
-	    || ($Collection == 'EmptyIcon') 
-	    || ($Collection == 'CustomIcon')) {
-	        tintIn = diy.settings.getTint('CustomColour');
+        if (($ColourBy == 'CustomColour') || ($Collection == 'EmptyIcon') || ($Collection == 'CustomIcon')) {
+            tintIn = diy.settings.getTint('CustomColour');
         } else {
             tintIn = diy.settings.getTint($Collection + '-inside');
         }
@@ -221,16 +203,16 @@ function paintCommon(diy, g, sheet) {
     if (side == FRONT) region = diy.settings.getRegion('Collection-portrait-clip');
     else region = diy.settings.getRegion('Collection-back-portrait-clip');
     switch (item) {
-        case 'EmptyIcon':
-            break;
-        case 'CustomIcon':
-            //PortraitList[portraitIndexOf(key)].paint(g,sheet.getRenderTarget()) ;
-            image = PortraitList[portraitIndexOf('Collection')].getImage();
-            sheet.paintImage(g, image, region);
-            break;
-        default:
-            image = ImageUtils.get(PathIcon + item + '.png');
-            sheet.paintImage(g, image, region);
+    case 'EmptyIcon':
+        break;
+    case 'CustomIcon':
+        //PortraitList[portraitIndexOf(key)].paint(g,sheet.getRenderTarget()) ;
+        image = PortraitList[portraitIndexOf('Collection')].getImage();
+        sheet.paintImage(g, image, region);
+        break;
+    default:
+        image = ImageUtils.get(PathIcon + item + '.png');
+        sheet.paintImage(g, image, region);
     }
 
     // TEXTS
@@ -239,11 +221,7 @@ function paintCommon(diy, g, sheet) {
     else region = diy.settings.getRegion('CollectionInfo-back');
     if (side == FRONT) format = $CollectionInfo-format;
     else format = $CollectionInfo-back-format;
-    writeTextOutlined(
-        format + $CollectionInfo, Bottom_writer,
-        region, getStroke('Bottom', diy),
-        diy, g, sheet
-    );
+    writeTextOutlined(format + $CollectionInfo, Bottom_writer, region, getStroke('Bottom', diy), diy, g, sheet);
     writeCopyright(diy, g, sheet);
 
     // PAGE
@@ -255,8 +233,7 @@ function paintCommon(diy, g, sheet) {
             if (diy.settings.getBoolean('Page-inBox')) format = diy.settings.get('Page-inBox-format', '');
             else format = diy.settings.get('Page-format', '');
 
-            let page = diy.settings.get('LRL-Page', '')
-            if (page == '') page = #LRL-Page;
+            let page = diy.settings.get('LRL-Page', '') if (page == '') page = #LRL-Page;
 
             let number = Number($PageNumber) + sheet.getSheetIndex();
 
@@ -282,11 +259,7 @@ function paintFront(g, diy, sheet) {
     // TEXTS
     // NAME
     if ($Layout != 'None') {
-        writeTextOutlined(
-            diy.settings.get('Title-format', '') + $Title, Title_writer,
-            diy.settings.getRegion('Title'), getStroke('Title', diy),
-            diy, g, sheet
-        );
+        writeTextOutlined(diy.settings.get('Title-format', '') + $Title, Title_writer, diy.settings.getRegion('Title'), getStroke('Title', diy), diy, g, sheet);
     }
 
     // BODY
@@ -294,10 +267,7 @@ function paintFront(g, diy, sheet) {
     if ($Layout == 'None') region = diy.settings.getRegion('Body');
     else region = diy.settings.getRegion($Layout + '-Body');
 
-    writeParagraph(
-        ['Story', 'Text', 'Flavour'], Body_writer,
-        region, diy, g
-    );
+    writeParagraph(['Story', 'Text', 'Flavour'], Body_writer, region, diy, g);
 }
 
 function paintBack(g, diy, sheet) {
@@ -308,10 +278,7 @@ function paintBack(g, diy, sheet) {
     //    paintPortrait('OverlayBack', diy, g, sheet);
 
     // TEXT
-    writeParagraph(
-        ['StoryBack', 'TextBack', 'FlavourBack'], Body_writer,
-        diy.settings.getRegion('Body'), diy, g
-    );
+    writeParagraph(['StoryBack', 'TextBack', 'FlavourBack'], Body_writer, diy.settings.getRegion('Body'), diy, g);
 }
 
 function onRead(diy, ois) {
@@ -322,15 +289,15 @@ function onRead(diy, ois) {
         $VersionHistory = diy.version;
     }
     let LastVersion = String($VersionHistory).split(',');
-    LastVersion = LastVersion[LastVersion.length-1];
+    LastVersion = LastVersion[LastVersion.length - 1];
     if (LastVersion != Number(SEVersion + LRLVersion + CardVersion)) {
         debug(4, 'VersionHistory updated.');
         $VersionHistory = $VersionHistory + ',' + SEVersion + LRLVersion + CardVersion;
     }
-    
+
     readPortraits(diy, ois);
-    
-    if(true) onReadOldComponent(diy);
+
+    if (true) onReadOldComponent(diy);
 
     if (diy.settings.getBoolean('LRL-PreferencesUpdate', false)) loadPreferences(diy);
 }
@@ -341,7 +308,7 @@ function onWrite(diy, oos) {
     for (let index in PortraitList) {
         oos.writeObject(PortraitList[index]);
     }
-    debug(5, 'PortraitList length: '+PortraitList.length);
+    debug(5, 'PortraitList length: ' + PortraitList.length);
 }
 
 function onClear(diy) {

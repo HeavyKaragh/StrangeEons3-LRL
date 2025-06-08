@@ -23,13 +23,9 @@ Type-region = 134,501,143,18
 
 OptionLeft-region = 49,507,59,9
 OptionLeft-decoration-region = 42,503,72,17
-OptionLeftBack-region = 49,507,59,9
-OptionLeftBack-decoration-region = 42,503,72,17
 
 OptionRight-region = 306,507,59,9
 OptionRight-decoration-region = 299,503,72,17
-OptionRightBack-region = 306,507,59,9
-OptionRightBack-decoration-region = 299,503,72,17
 
 Artist-region = 38,527,100,12
 

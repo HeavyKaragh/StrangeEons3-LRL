@@ -37,23 +37,21 @@ function createInterface(diy, editor, sheet) {
     let Main_tab = new TypeGrid();
     Main_tab.editorTabScrolling = true;
 
-    // TITLE PANEL
-    let Title_panel = new TypeGrid();
-    Title_panel.setTitle(@LRL-Title);
-    let Title_control = uiTitle(diy, bindings, BOTH);
-    Title_panel.place(Title_control, 'hfill');
-    Main_tab.place(Title_panel, 'hfill');
-
-    // GROUP ICON PANEL
-    let Group_panel = new TypeGrid();
-    Group_panel.setTitle(@LRL-Group);
-    list = GAMEOBJECT.DefaultIconList.concat(GAMEOBJECT.FullIconList); // this icon list includes collection, set and others
-    let Group_control = new uiListIcon('Group', list, bindings, BOTH);
-    let GroupPortrait_control = new uiPortrait('Group', diy);
-    Group_panel.place(
-        Group_control, 'hfill', GroupPortrait_control, 'br hfill'
-    );
-    Main_tab.place(Group_panel, 'br hfill');
+        // TITLE PANEL
+        let Title_panel = new TypeGrid();
+        Title_panel.setTitle(@LRL-Title);
+        let Title_control = uiTitle(diy, bindings, BOTH);
+        Title_panel.place(Title_control, 'hfill');
+        Main_tab.place(Title_panel, 'hfill');
+    
+        // GROUP ICON PANEL
+        let Group_panel = new TypeGrid();
+        Group_panel.setTitle(@LRL-Group);
+        list = GAMEOBJECT.DefaultIconList.concat(GAMEOBJECT.FullIconList); // this icon list includes collection, set and others
+        let Group_control = new uiListIcon('Group', list, bindings, BOTH);
+        let GroupPortrait_control = new uiPortrait('Group', diy);
+        Group_panel.place(Group_control, 'hfill', GroupPortrait_control, 'br hfill');
+        Main_tab.place(Group_panel, 'br hfill');
 
     // MAIN TAB CLOSE
     Main_tab.addToEditor(editor, @LRL-Main);
@@ -62,34 +60,31 @@ function createInterface(diy, editor, sheet) {
     let Template_tab = new TypeGrid();
     Template_tab.editorTabScrolling = true;
 
-    // TEMPLATE PANEL
-    let Template_panel = new TypeGrid();
-    Template_panel.setTitle(@LRL-Template);
-    list = new Array('Encounter', 'Nightmare', 'Player');
-    let Template_control = new uiListIcon('Template', list, bindings, BOTH);
-    Template_panel.place(Template_control, 'hfill');
-    Template_tab.place(Template_panel, 'hfill');
+        // TEMPLATE PANEL
+        let Template_panel = new TypeGrid();
+        Template_panel.setTitle(@LRL-Template);
+        list = new Array('Encounter', 'Nightmare', 'Player');
+        let Template_control = new uiListIcon('Template', list, bindings, BOTH);
+        Template_panel.place(Template_control, 'hfill');
+        Template_tab.place(Template_panel, 'hfill');
+    
+        // LAYOUT PANEL
+        let Layout_panel = new TypeGrid();
+        Layout_panel.setTitle(@LRL-Layout);
+        list = new Array('Title', 'Left', 'LeftMiddle', 'RightMiddle', 'Right');
+        let LayoutIcons_control = new uiCyclerLabeled('Layout-icons', list, bindings, BOTH);
+        let LayoutIconswap_control = new uiButtonText('Layout-iconSwap', diy, bindings, BACK);
+        Layout_panel.place(LayoutIcons_control, '', LayoutIconswap_control, '');
+        Template_tab.place(Layout_panel, 'br hfill');
 
-    // LAYOUT PANEL
-    let Layout_panel = new TypeGrid();
-    Layout_panel.setTitle(@LRL-Layout);
-    list = new Array('Title', 'Left', 'LeftMiddle', 'RightMiddle', 'Right');
-    let LayoutIcons_control = new uiCyclerLabeled('Layout-icons', list, bindings, BOTH);
-    let LayoutIconswap_control = new uiButtonText('Layout-iconSwap', diy, bindings, BACK);
-    Layout_panel.place(
-        LayoutIcons_control, '', LayoutIconswap_control, ''
-    );
-    Template_tab.place(Layout_panel, 'br hfill');
-
-    let CustomColour_panel = new TypeGrid();
-    CustomColour_panel.setTitle(@LRL-CustomColour);
-    list = new Array('Collection', 'CustomColour');
-    let ColourBy_control = new uiCyclerLabeled('ColourBy', list, bindings, BOTH);
-    let CustomColour_control = new uiTint('CustomColour', bindings, BOTH);
-    CustomColour_panel.place(
-        ColourBy_control, 'hfill', CustomColour_control, 'br hfill'
-    );
-    Template_tab.place(CustomColour_panel, 'br hfill');
+       // CUSTOM COLOUR PANEL
+        let CustomColour_panel = new TypeGrid();
+        CustomColour_panel.setTitle(@LRL-CustomColour);
+        list = new Array('Collection', 'CustomColour');
+        let ColourBy_control = new uiCyclerLabeled('ColourBy', list, bindings, BOTH);
+        let CustomColour_control = new uiTint('CustomColour', bindings, BOTH);
+        CustomColour_panel.place(ColourBy_control, 'hfill', CustomColour_control, 'br hfill');
+        Template_tab.place(CustomColour_panel, 'br hfill');
 
     // TEMPLATE TAB CLOSE
     Template_tab.addToEditor(editor, @LRL-Template);
@@ -98,16 +93,14 @@ function createInterface(diy, editor, sheet) {
     let Portrait_tab = new TypeGrid();
     Portrait_tab.editorTabScrolling = true;
 
-    // PORTRAIT PANEL
-    let Portrait_panel = new TypeGrid();
-    Portrait_panel.setTitle(@LRL-Portrait);
-    let Artist_control = new uiTextLabeled('Artist', bindings, FRONT);
-    let Portrait_control = new uiPortrait('Portrait', diy);
-    let PortraitMirror_control = new uiPortraitMirror('Portrait', Portrait_control);
-    Portrait_panel.place(
-        Artist_control, 'hfill', Portrait_control, 'br hfill', PortraitMirror_control, 'br hfill'
-    );
-    Portrait_tab.place(Portrait_panel, 'hfill');
+        // PORTRAIT PANEL
+        let Portrait_panel = new TypeGrid();
+        Portrait_panel.setTitle(@LRL-Portrait);
+        let Artist_control = new uiTextLabeled('Artist', bindings, FRONT);
+        let Portrait_control = new uiPortrait('Portrait', diy);
+        let PortraitMirror_control = new uiPortraitMirror('Portrait', Portrait_control);
+        Portrait_panel.place(Artist_control, 'hfill', Portrait_control, 'br hfill', PortraitMirror_control, 'br hfill');
+        Portrait_tab.place(Portrait_panel, 'hfill');
 
     // PORTRAIT TAB CLOSE
     Portrait_tab.addToEditor(editor, @LRL-Portrait);
@@ -116,16 +109,14 @@ function createInterface(diy, editor, sheet) {
     let Collection_tab = new TypeGrid();
     Collection_tab.editorTabScrolling = true;
 
-    // COLLECTION PANEL
-    let Collection_panel = new TypeGrid();
-    Collection_panel.setTitle(@LRL-Collection);
-    //let CollectionInfo_control = new uiTextLabeled('CollectionInfo',bindings,BOTH) ;
-    let Collection_control = new uiCollectionList(bindings, BOTH);
-    let CollectionPortrait_control = new uiPortrait('Collection', diy);
-    Collection_panel.place(
-        Collection_control, 'hfill', CollectionPortrait_control, 'br hfill'
-    );
-    Collection_tab.place(Collection_panel, 'hfill');
+        // COLLECTION PANEL
+        let Collection_panel = new TypeGrid();
+        Collection_panel.setTitle(@LRL-Collection);
+        //let CollectionInfo_control = new uiTextLabeled('CollectionInfo',bindings,BOTH) ;
+        let Collection_control = new uiCollectionList(bindings, BOTH);
+        let CollectionPortrait_control = new uiPortrait('Collection', diy);
+        Collection_panel.place(Collection_control, 'hfill', CollectionPortrait_control, 'br hfill');
+        Collection_tab.place(Collection_panel, 'hfill');
 
     // COLLECTION TAB CLOSE
     Collection_tab.addToEditor(editor, @LRL-Collection);
@@ -163,11 +154,8 @@ function paintCommon(layout, diy, g, sheet) {
 
     // TEMPLATE
     let tint;
-    if (($ColourBy == 'CustomColour') ||
-        ($Collection == 'EmptyIcon') ||
-        ($Collection == 'CustomIcon'))
-        tint = diy.settings.getTint('CustomColour');
-    else tint = diy.settings.getTint($Collection+'-inside');
+    if (($ColourBy == 'CustomColour') || ($Collection == 'EmptyIcon') || ($Collection == 'CustomIcon')) tint = diy.settings.getTint('CustomColour');
+    else tint = diy.settings.getTint($Collection + '-inside');
 
     CustomColour_tinter.setFactors(tint[0], tint[1], tint[2]);
     sheet.paintImage(g, CustomColour_tinter.getTintedImage(), 'Template');
@@ -208,18 +196,18 @@ function paintBack(g, diy, sheet) {
     debug(1, '\npaintBack');
     let layout = diy.settings.get('Layout-icons', 'Title');
     switch (String(layout)) {
-        case 'Left':
-            layout = 'Right';
-            break;
-        case 'LeftMiddle':
-            layout = 'RightMiddle';
-            break;
-        case 'Right':
-            layout = 'Left';
-            break;
-        case 'RightMiddle':
-            layout = 'LeftMiddle';
-            break;
+    case 'Left':
+        layout = 'Right';
+        break;
+    case 'LeftMiddle':
+        layout = 'RightMiddle';
+        break;
+    case 'Right':
+        layout = 'Left';
+        break;
+    case 'RightMiddle':
+        layout = 'LeftMiddle';
+        break;
     }
 
     paintCommon(layout, diy, g, sheet);
@@ -246,15 +234,15 @@ function onRead(diy, ois) {
         $VersionHistory = diy.version;
     }
     let LastVersion = String($VersionHistory).split(',');
-    LastVersion = LastVersion[LastVersion.length-1];
+    LastVersion = LastVersion[LastVersion.length - 1];
     if (LastVersion != Number(SEVersion + LRLVersion + CardVersion)) {
         debug(4, 'VersionHistory updated.');
         $VersionHistory = $VersionHistory + ',' + SEVersion + LRLVersion + CardVersion;
     }
-    
+
     readPortraits(diy, ois);
-    
-    if(true) onReadOldComponent(diy);
+
+    if (true) onReadOldComponent(diy);
 
     if (diy.settings.getBoolean('LRL-PreferencesUpdate', false)) loadPreferences(diy);
 }
@@ -265,7 +253,7 @@ function onWrite(diy, oos) {
     for (let index in PortraitList) {
         oos.writeObject(PortraitList[index]);
     }
-    debug(5, 'PortraitList length: '+PortraitList.length);
+    debug(5, 'PortraitList length: ' + PortraitList.length);
 }
 
 function onClear(diy) {

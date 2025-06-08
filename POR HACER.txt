@@ -1,35 +1,54 @@
-<lrs>u</lrs> en 
-
-
-
-side quest: añadir difficulty al dibujado 
-Objective: añadir difficulty
-
-
-revisar imagenes de cut y bleeding ¿quitar al ir incluido por SE?
-
-UpdatePreferences: no funciona project:test.jpg en -portrait-template
-
-extracard: añadir color by collection
-extracard: cambiar a posicion de pagenumber fija para ambas caras?
-presentationclassic esta relacionado: igualar sistema
-
-Presentation BackBackground control avanzado.
-
-
-Occurrence \u00c2\u00bfQuitar Flavour?
-Occurrence: fijar icono encuentro
-
-Presentation a\u00f1adir tint by collection
+falta LRL-PageTotal
 
 añadir preferencias
 textos: Copyright, CollectionInfo
 iconlist: Collection, EncounterSet
 selector de archivo?: Collection-portrait-preferences, EncounterSet-portrait-preferences
+UpdatePreferences: no funciona project:test.jpg en -portrait-template
+
+revisar imagenes de cut y bleeding ¿quitar al ir incluido por SE?
 
 
-Enemy-Burden ¿?
-objective - nightnare
-side quest - nightnare 
-setup standard 
+
+SEPARADOR carta
+SEPARADOR horizontal
+SEPARADOR vertical
+probar
+
+ENEMIGO promo
+
+LUGAR promo
+
+OBJETIVO promo
+añadir difficulty
+
+OBJETIVO-ALIADO promo
+añadir difficulty
+añadir nightmare
+
+TRAICIÓN promo
+
+PRESENTACIÓN
+llevar color por colección a selector de plantilla
+no funciona overlay
+
+PRESENTACIÓN alternativa 
+llevar color por colección a selector de plantilla
+no funciona overlay
+
+PRESENTACIÓN extra
+llevar color por colección a selector de plantilla
+cambiar a posicion de pagenumber fija para ambas caras?
+
+QUEST
+nightmare: falta decoración progreso
+
+QUEST SHEET
+corregir posicion iconos de conjuntos
+
+RULES CARD
+corregir posicion iconos de conjuntos
+
+SIDE QUEST
+añadir difficulty al dibujado 
 

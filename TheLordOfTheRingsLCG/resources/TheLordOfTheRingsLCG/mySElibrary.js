@@ -7,6 +7,7 @@ useLibrary('imageutils');
 useLibrary('tints');
 importClass(arkham.component.DefaultPortrait);
 importClass(ca.cgjennings.graphics.ImageUtilities);
+importClass(ca.cgjennings.graphics.filters.StrokeFilter);
 
 /* VERSION CONTROL */
 var SEVersion = 100;
@@ -22,53 +23,52 @@ const BOTH = [0, 1];
 
 function getStroke(key, diy) {
     debug(3, '\n\tgetStroke: ' + key);
-    importClass(ca.cgjennings.graphics.filters.StrokeFilter);
-    let stroke = diy.settings.get(key + '-stroke', 'none');
+    let stroke = String(diy.settings.get(key + '-stroke', 'none'));
     let position = StrokeFilter.Position.OUTSIDE;
     let transparent = new Colour(0x00000000, true);
     let strong = new Colour(0xf00f0f0f, true);
     let medium = new Colour(0xb00f0f0f, true);
     let light = new Colour(0x800f0f0f, true);
     debug(5, '\tValue: ' + stroke);
-    switch (String(stroke)) {
-        case 'none':
-            return new StrokeFilter(transparent, 1, position);
-            break;
-        case 'Strong':
-            return new StrokeFilter(strong, 2, position);
-            break;
-        case 'StrongThin':
-            return new StrokeFilter(strong, 1, position);
-            break;
-        case 'StrongWide':
-            return new StrokeFilter(strong, 3, position);
-            break;
-        case 'Medium':
-            return new StrokeFilter(medium, 2, position);
-            break;
-        case 'MediumThin':
-            return new StrokeFilter(medium, 1, position);
-            break;
-        case 'MediumWide':
-            return new StrokeFilter(medium, 3, position);
-            break;
-        case 'Light':
-            return new StrokeFilter(light, 2, position);
-            break;
-        case 'LightThin':
-            return new StrokeFilter(light, 1, position);
-            break;
-        case 'LightWide':
-            return new StrokeFilter(light, 3, position);
-            break;
-        case 'Custom':
-            let colour = diy.settings.getColour(key + '-stroke-colour', new Colour(0xffff0000, true));
-            let width = diy.settings.getFloat(key + '-stroke-width', 2);
-            return new StrokeFilter(colour, width, position);
-            break;
-        default:
-            throw new Error('\tERROR: Stroke: UNDEFINED');
-            return new StrokeFilter(transparent, 1, position);
+    switch (stroke) {
+    case 'none':
+        return new StrokeFilter(transparent, 1, position);
+        break;
+    case 'Strong':
+        return new StrokeFilter(strong, 2, position);
+        break;
+    case 'StrongThin':
+        return new StrokeFilter(strong, 1, position);
+        break;
+    case 'StrongWide':
+        return new StrokeFilter(strong, 3, position);
+        break;
+    case 'Medium':
+        return new StrokeFilter(medium, 2, position);
+        break;
+    case 'MediumThin':
+        return new StrokeFilter(medium, 1, position);
+        break;
+    case 'MediumWide':
+        return new StrokeFilter(medium, 3, position);
+        break;
+    case 'Light':
+        return new StrokeFilter(light, 2, position);
+        break;
+    case 'LightThin':
+        return new StrokeFilter(light, 1, position);
+        break;
+    case 'LightWide':
+        return new StrokeFilter(light, 3, position);
+        break;
+    case 'Custom':
+        let colour = diy.settings.getColour(key + '-stroke-colour', new Colour(0xffff0000, true));
+        let width = diy.settings.getFloat(key + '-stroke-width', 2);
+        return new StrokeFilter(colour, width, position);
+        break;
+    default:
+        throw new Error('\tERROR: Stroke: UNDEFINED');
+        return new StrokeFilter(transparent, 1, position);
     }
 }
 
@@ -79,7 +79,7 @@ function getPortraitImage(key) {
 
 /* DEBUGGING */
 function debug(level, text) {
-    if (Number($(GAME+'-Debug')) >= level) println(text);
+    if (Number($(GAME + '-Debug')) >= level) println(text);
 }
 
 /* HELPER FUNCTIONS */
@@ -95,10 +95,10 @@ function getLocale() {
     */
     let output = String(Language.getGameLocale());
     output = output.split('_');
-    output = output[0];
+    output = String(output[0]);
 
     debug(4, '\tOutput: ' + output);
-    return String(output);
+    return output;
 }
 
 function getRegionTemplate(key, diy) {
@@ -111,9 +111,9 @@ function getKeyForTemplate(key, diy) {
     Looks for the most specific setting name. It's used to get correct settings
     depending on template variant selected.
     Will look for and RETURN, if it exists, in this order:
-    	1- $Template-key
-    	2- key
-    	3- null
+        1- $Template-key
+        2- key
+        3- null
     */
     debug(5, '\tTemplate: ' + $Template);
     let output = null;
@@ -155,7 +155,7 @@ function createCombo(list) {
     for (let index in list) {
         let item = list[index];
         debug(5, '\tItem: ' + item);
-        output[index] = ListItem(item, @('LRL-' + item), uiIcon(item));
+        output[index] = ListItem(item, @ ('LRL-' + item), uiIcon(item));
     }
 
     debug(4, '\tOutput: ' + output);
@@ -188,7 +188,7 @@ function uiListIcon(key, list, bindings, sides) {
     let combo = new Array();
     for (let index in list) {
         let item = list[index];
-        combo[index] = ListItem(item, @('LRL-' + item), uiIcon(item));
+        combo[index] = ListItem(item, @ ('LRL-' + item), uiIcon(item));
     }
 
     let control = new comboBox(combo, null);
@@ -204,7 +204,7 @@ function uiListIconLabeled(key, list, bindings, sides) {
     */
     let grid = new TypeGrid();
 
-    let label = '<html><b>' + @('LRL-' + key) + ':';
+    let label = '<html><b>' + @ ('LRL-' + key) + ':';
     let control = uiListIcon(key, list, bindings, sides);
     grid.place(label, '', control, 'hfill');
 
@@ -243,7 +243,7 @@ function uiListTextLabeled(key, list, bindings, sides) {
     */
     let grid = new TypeGrid();
 
-    let label = '<html><b>' + @('LRL-' + key) + ':';
+    let label = '<html><b>' + @ ('LRL-' + key) + ':';
     let control = uiListText(key, list, bindings, sides);
     grid.place(label, '', control, 'hfill');
 
@@ -257,7 +257,7 @@ function createWriter(key, diy, sheet) {
     Used in createFrontPainter to load the settings related to the rules paragraph.
     */
 
-    let writer = new markupBox(sheet)
+    let writer = new markupBox(sheet);
     writer.defaultStyle = diy.settings.getTextStyle(key, null);
     writer.setAlignment(diy.settings.getTextAlignment(key));
     writer.defaultStyle.add(SIZE, diy.settings.getPointSize(key, 8.0));
@@ -271,50 +271,50 @@ function createWriter(key, diy, sheet) {
     }
 
     switch (String($(key + '-textFitting'))) {
-        case 'none':
-            writer.setTextFitting(FIT_NONE);
-            break; //don't fit text
-        case 'spacing':
-            writer.setTextFitting(FIT_TIGHTEN_LINE_SPACING);
-            break;
-        case 'scaling':
-            writer.setTextFitting(FIT_SCALE_TEXT);
-            break;
-        case 'both':
-            writer.setTextFitting(FIT_BOTH);
-            break; //fit text by shrinking it and reducing the space between lines
+    case 'none':
+        writer.setTextFitting(FIT_NONE);
+        break; //don't fit text
+    case 'spacing':
+        writer.setTextFitting(FIT_TIGHTEN_LINE_SPACING);
+        break;
+    case 'scaling':
+        writer.setTextFitting(FIT_SCALE_TEXT);
+        break;
+    case 'both':
+        writer.setTextFitting(FIT_BOTH);
+        break; //fit text by shrinking it and reducing the space between lines
     }
     writer.setScalingLimit(diy.settings.getFloat(key + '-scalingLimit', 0.7));
     writer.setTightnessLimit(diy.settings.getFloat(key + '-lineTightnessLimit', 0.5));
 
     for (let index in GAMEOBJECT.IconTagList) {
         let item = GAMEOBJECT.IconTagList[index];
-        debug(5, '\nEffect tag: '+item); 
+        debug(5, '\nEffect tag: ' + item);
         let tag = diy.settings.get(item + '-tag');
-        debug(5, 'Tag: '+tag); 
+        debug(5, 'Tag: ' + tag);
         let replacement = diy.settings.get(item + '-tag-replacement', '');
-        debug(5, 'Replacement: '+replacement); 
+        debug(5, 'Replacement: ' + replacement);
         writer.setReplacementForTag(tag, replacement);
     }
 
-//    for (let index in GAMEOBJECT.EffectTagList) {
-//        let item = GAMEOBJECT.EffectTagList[index];
-//        debug(5, '\nEffect tag: '+item); 
-//        let tag = diy.settings.get(item + '-tag');
-//        debug(5, 'Tag: '+tag); 
-//        let replacement = diy.settings.get(item + '-tag-replacement', '');
-//        if(replacement == '') replacement = #('LRL-'+item);
-//        debug(5, 'Replacement: '+replacement); 
-//        writer.setReplacementForTag(tag, replacement);
-//    }
+    //    for ( let index in GAMEOBJECT.EffectTagList ) {
+    //        let item = GAMEOBJECT.EffectTagList[index] ;
+    //        debug( 5 , '\nEffect tag: ' + item ) ; 
+    //        let tag = diy.settings.get( item + '-tag' ) ;
+    //        debug( 5 , 'Tag: ' + tag ) ; 
+    //        let replacement = diy.settings.get( item + '-tag-replacement' , '' ) ;
+    //        if( replacement == '' ) replacement = #( 'LRL-' + item ) ;
+    //        debug( 5 , 'Replacement: ' + replacement ) ; 
+    //        writer.setReplacementForTag( tag , replacement ) ;
+    //    }
 
     for (index in GAMEOBJECT.StyleTagList) {
         let item = GAMEOBJECT.StyleTagList[index];
-        debug(5, '\nEffect tag: '+item); 
+        debug(5, '\nEffect tag: ' + item);
         let tag = diy.settings.get(item + '-tag');
-        debug(5, 'Tag: '+tag); 
+        debug(5, 'Tag: ' + tag);
         let style = diy.settings.getTextStyle(item + '-style', null);
-        debug(5, 'Style: '+style); 
+        debug(5, 'Style: ' + style);
         writer.setStyleForTag(tag, style);
     }
 
@@ -349,7 +349,7 @@ function uiTitleParagraph(diy, bindings, sides) {
 
     let control = new textArea($Title, 3, 30, true, true);
     bindings.add('Title', control, sides);
-    //	diy.nameField = control ; // no funciona
+    //  diy.nameField = control  ; // no funciona
 
     return control;
 }
@@ -368,19 +368,19 @@ function uiText(key, bindings, sides) {
     return control;
 }
 
-function uiTip(key){
+function uiTip(key) {
     debug(2, '\n\tuiTip: ' + key);
     /*
     Returns a user interface tip button .
     */
 
-    let tip = @('LRL-' + key + '-tip');
-    if(tip != '[MISSING: LRL-' + key + '-tip]') {
-    	debug(5, '\n\ttext: ' + tip);
-    	tip = new tipButton(tip);
-	}else tip = false ;
-	
-	return tip;
+    let tip = @ ('LRL-' + key + '-tip');
+    if (tip != '[MISSING: LRL-' + key + '-tip]') {
+        debug(5, '\n\ttext: ' + tip);
+        tip = new tipButton(tip);
+    } else tip = false;
+
+    return tip;
 }
 
 function uiTextLabeled(key, bindings, sides) {
@@ -391,13 +391,13 @@ function uiTextLabeled(key, bindings, sides) {
     */
     let grid = new TypeGrid();
 
-    let label = '<html><b>' + @('LRL-' + key) + ':';
+    let label = '<html><b>' + @ ('LRL-' + key) + ':';
     let control = uiText(key, bindings, sides);
     let tip = uiTip(key);
-    if(tip) {
-    	grid.place(label, '', control, 'hfill', tip, '');
-    }else grid.place(label, '', control, 'hfill');
-    
+    if (tip) {
+        grid.place(label, '', control, 'hfill', tip, '');
+    } else grid.place(label, '', control, 'hfill');
+
     return grid;
 }
 
@@ -407,8 +407,8 @@ function writeLine(text, writer, region, g) {
     Draws $key on the component template $key-region.
     */
     writer.markupText = text;
-    debug(5, '\n\tText: '+text);
-    debug(5, '\n\tRegion: '+region);
+    debug(5, '\n\tText: ' + text);
+    debug(5, '\n\tRegion: ' + region);
     writer.drawAsSingleLine(g, region);
 }
 
@@ -424,19 +424,23 @@ function formatText(key, diy) {
     return output;
 }
 
-
 function writeTextOutlined(text, writer, region, stroke, diy, g, sheet) {
     debug(3, '\n\twriteTextOutlined');
+
+    debug(3, '\n\t\tRegion: ' + region);
 
     let newRegion = String(region).split(',');
     let w = Number(newRegion[2]);
     let h = Number(newRegion[3]);
+    newRegion = new Region([2, 2, w - 4, h - 4]);
 
+    debug(3, '\n\t\tNew region: ' + newRegion);
+    
     let textImage = sheet.createTemporaryImage(w, h, true);
     let gi = sheet.createGraphics(textImage, true, true);
 
     writer.markupText = text;
-    writer.draw(gi, new Region([2, 2, w-4, h-4]));
+    writer.draw(gi, newRegion );
     // Text is written in a smaller region to give room to the outline
     // otherwise outline may be cut
 
@@ -464,7 +468,7 @@ function writeTextShadowed(key, writer, diy, g, sheet) {
 
     let stroke = new StrokeFilter(colour, width, StrokeFilter.Position.OUTSIDE);
 
-    let newRegion = diy.settings.get($Template + '-' + key + '-region', diy.settings.get(key + '-region'))
+    let newRegion = diy.settings.get($Template + '-' + key + '-region', diy.settings.get(key + '-region'));
     newRegion = String(region).split(',');
     let w = Number(newRegion[2]);
     let h = Number(newRegion[3]);
@@ -473,7 +477,7 @@ function writeTextShadowed(key, writer, diy, g, sheet) {
     let gi = sheet.createGraphics(textImage, true, true);
 
     writer.markupText = formatText(key, diy);
-    writer.draw(gi, new Region([2, 2, w-4, h-4]));
+    writer.draw(gi, new Region([2, 2, w - 4, h - 4]));
 
     while (passes > 0) {
         textImage = stroke.filter(textImage, null);
@@ -529,7 +533,6 @@ function writeLineDecorated(key, writer, diy, g, sheet) {
     writer.drawAsSingleLine(g, diy.settings.getRegion(key));
 }
 
-
 function uiParagraph(key, bindings, sides, size) {
     debug(3, '\n\tuiParagraph: ' + key);
     /*
@@ -544,21 +547,22 @@ function uiParagraph(key, bindings, sides, size) {
     let columns = 50;
 
     switch (String(size)) {
-        case 'line':
-            rows = 1;
-            break;
-        case 'small':
-            rows = 2;
-            break;
-        case 'medium':
-            rows = 4;
-            break;
-        case 'big':
-            rows = 8;
-            break;
-        case 'huge':
-            rows = 20;
-            break;
+    case 'line':
+        rows = 1;
+        break;
+
+    case 'small':
+        rows = 2;
+        break;
+    case 'medium':
+        rows = 4;
+        break;
+    case 'big':
+        rows = 8;
+        break;
+    case 'huge':
+        rows = 20;
+        break;
     }
 
     let control = new textArea($(key), rows, columns, true, true);
@@ -573,17 +577,15 @@ function uiParagraphLabeled(key, bindings, sides, size) {
     text label above it, both depending on key name.
     */
     let grid = new TypeGrid();
-    
-    let label = @('LRL-' + key + '-uiParagraphLabeled')
-    if (label == "[MISSING: LRL-" + key + "-uiParagraphLabeled]") label = @('LRL-' + key);
+
+    let label = @ ('LRL-' + key + '-uiParagraphLabeled') if (label == "[MISSING: LRL-" + key + "-uiParagraphLabeled]") label = @ ('LRL-' + key);
     label = '<html><b>' + label;
     let control = new uiParagraph(key, bindings, sides, size);
     let tip = uiTip(key);
-    if(tip) {
-    	grid.place(label, 'center', tip, '', control, 'br hfill');
-    }else grid.place(label, 'center', control, 'br hfill');
+    if (tip) {
+        grid.place(label, 'center', tip, '', control, 'br hfill');
+    } else grid.place(label, 'center', control, 'br hfill');
 
-   
     return grid;
 }
 
@@ -616,7 +618,7 @@ function writeParagraph(parts, writer, region, diy, g) {
     }
     writer.setMarkupText(text);
     updateNameTags(writer, diy);
-    //$key-measuredHeight = writer.measure(g,region);
+    //$key-measuredHeight = writer.measure( g , region ) ;
     writer.draw(g, region);
 }
 
@@ -652,64 +654,64 @@ function uiTint(key, bindings, sides) {
     // Run from the code editor window or by right clicking in the project pane.
     //
 
-    useLibrary('diy');
-    useLibrary('ui');
-    useLibrary('imageutils');
+    useLibrary('diy' ) ;
+    useLibrary('ui' ) ;
+    useLibrary('imageutils' ) ;
 
     function create(diy) {
-    	diy.faceStyle = FaceStyle.ONE_FACE;
-    	$tintValue = '0,1,1'; // note that this will match the "Enraged" preset
-    	$peacefulPreset = '-60,0.43,0.78';
+        diy.faceStyle = FaceStyle.ONE_FACE ;
+        $tintValue = '0,1,1' ; // note that this will match the "Enraged" preset
+        $peacefulPreset = '-60,0.43,0.78' ;
     }
 
     function createInterface(diy, editor ) {
-    	let panel = new Stack();
-    	hsbPanel = tintPanel();
+        let panel = new Stack() ;
+        hsbPanel = tintPanel() ;
 
-    	// define the preset tint values to use
-    	// (the user can still choose a custom tint if they wish)
-    	hsbPanel.setPresets(
-    		'Peaceful', $peacefulPreset, // preset values can be set from setting value
-    		'Enraged', '0,1,1',     //  or just a string that uses the setting value format
-    		'Toxic',  [0.34,1,1]    //  or an array [h,s,b] with h=angle/360
-    	);
+        // define the preset tint values to use
+        // (the user can still choose a custom tint if they wish)
+        hsbPanel.setPresets(
+            'Peaceful' , $peacefulPreset, // preset values can be set from setting value
+            'Enraged' , '0,1,1' ,     //  or just a string that uses the setting value format
+            'Toxic' ,  [0.34,1,1]    //  or an array [h,s,b] with h=angle/360
+        ) ;
 
-    	panel.add(hsbPanel );
+        panel.add(hsbPanel ) ;
 
-    	let bindings = new Bindings(editor, diy);
-    	bindings.add('tintValue', hsbPanel );
-    	panel.addToEditor(editor, 'Tint Presets Demo');
-    	bindings.bind();
+        let bindings = new Bindings(editor, diy) ;
+        bindings.add('tintValue' , hsbPanel ) ;
+        panel.addToEditor(editor, 'Tint Presets Demo' ) ;
+        bindings.bind() ;
     }
 
-    let tintable; // the image we will tint
+    let tintable ; // the image we will tint
 
     function createFrontPainter(diy,sheet) {
-    	tintable = ImageUtils.create(100, 100 );
-    	let g = tintable.createGraphics();
-    	try {
-    		g.setPaint(Colour.RED );
-    		g.fillRect(0, 0, tintable.width, tintable.height );
-    		g.setPaint(Colour.BLACK );
-    		g.drawRect(0, 0, tintable.width-1, tintable.height-1 );
-    	} finally {
-    		if(g) g.dispose();
-    	}
+        tintable = ImageUtils.create(100, 100 ) ;
+        let g = tintable.createGraphics() ;
+        try {
+            g.setPaint(Colour.RED ) ;
+            g.fillRect(0, 0, tintable.width, tintable.height ) ;
+            g.setPaint(Colour.BLACK ) ;
+            g.drawRect(0, 0, tintable.width-1, tintable.height-1 ) ;
+        } finally {
+            if(g) g.dispose() ;
+        }
     }
 
     function paintFront(g,diy,sheet) {
-    	sheet.paintTemplateImage(g );
-    	let tint = $$tintValue.tint;
-    	let tinted = ImageUtils.tint(tintable, hsb );
-    	g.drawImage(tinted,
-    		(sheet.templateWidth-tintable.width)/2,
-    		(sheet.templateHeight-tintable.height)/2,
-    		null
-    	);
+        sheet.paintTemplateImage(g ) ;
+        let tint = $$tintValue.tint ;
+        let tinted = ImageUtils.tint(tintable, hsb ) ;
+        g.drawImage(tinted,
+            (sheet.templateWidth-tintable.width)/2,
+            (sheet.templateHeight-tintable.height)/2,
+            null
+        ) ;
 
-    	// don't ask about unsaved changes when
-    	// the demo window is closed
-    	diy.markSaved();
+        // don't ask about unsaved changes when
+        // the demo window is closed
+        diy.markSaved() ;
     }
 
     function createBackPainter(diy,sheet) {}
@@ -718,7 +720,7 @@ function uiTint(key, bindings, sides) {
     function onRead() {}
     function onWrite() {}
 
-    testDIYScript();
+    testDIYScript() ;
     */
 
     if (sides == null) sides = BOTH;
@@ -726,29 +728,20 @@ function uiTint(key, bindings, sides) {
     importClass(ca.cgjennings.apps.arkham.HSBPanel);
     let control = new HSBPanel();
 
-    let label = @('LRL-' + key + '-uiTint');
-    if (label == "[MISSING: LRL-" + key + "-uiTint]") label = @('LRL-' + key);
+    let label = @ ('LRL-' + key + '-uiTint');
+    if (label == "[MISSING: LRL-" + key + "-uiTint]") label = @ ('LRL-' + key);
     control.setTitle(label);
 
     control.setPresets(
-//        @LRL-Neutral, $Neutral-tint
-//        , @LRL-Leadership, $Leadership-tint
-//        , @LRL-Lore, $Lore-tint
-//        , @LRL-Spirit, $Spirit-tint
-//        , @LRL-Tactics, $Tactics-tint
-//        , @LRL-Fellowship , $Fellowship-tint
-//        , @LRL-Baggins, $Baggins-tint
-//        , @LRL-Mastery, $Mastery-tint,
-        @LRL-Red, $Red-tint
-        , @LRL-Green, $Green-tint
-        , @LRL-Blue, $Blue-tint
-        , @LRL-Yellow, $Yellow-tint
-        , @LRL-Magenta, $Magenta-tint
-        , @LRL-Cyan, $Cyan-tint
-        , @LRL-White, $White-tint
-        , @LRL-Grey, $Grey-tint
-        , @LRL-Black, $Black-tint
-    );
+    //        @LRL-Neutral , $Neutral-tint
+    //        , @LRL-Leadership , $Leadership-tint
+    //        , @LRL-Lore , $Lore-tint
+    //        , @LRL-Spirit , $Spirit-tint
+    //        , @LRL-Tactics , $Tactics-tint
+    //        , @LRL-Fellowship , $Fellowship-tint
+    //        , @LRL-Baggins , $Baggins-tint
+    //        , @LRL-Mastery , $Mastery-tint ,
+    @LRL-Red, $Red-tint, @LRL-Green, $Green-tint, @LRL-Blue, $Blue-tint, @LRL-Yellow, $Yellow-tint, @LRL-Magenta, $Magenta-tint, @LRL-Cyan, $Cyan-tint, @LRL-White, $White-tint, @LRL-Grey, $Grey-tint, @LRL-Black, $Black-tint);
     bindings.add(key + '-tint', control, sides);
     return control;
 }
@@ -762,28 +755,28 @@ function uiTint(key, bindings, sides) {
 //plugin ui folder's "name" PNG file.
 //Icon size depends on the plugin's "uiIconSize" setting.
 //*/
-//	if(list==null){ list==new Array('null') ;
-//		debug(0,"\tList not defined.") ;
-//		return ;
-//	}else{
-//		debug(5,'\ticonListComboBox: '+list) ;
-//	}
+//  if(list==null){ list==new Array('null' )  ;
+//      debug(0,"\tList not defined.")  ;
+//      return  ;
+//  }else{
+//      debug(5, '\ticonListComboBox: '+list)  ;
+//  }
 //
-//	var combo = new Array() ;
-//	for(
-//		let index = 0 ;
-//		index < list.length ;
-//		index++
-//	){
-//		let name = list[ index ] ;
-//		combo[ index ] = ListItem(
-//			name ,
-//			@('LRL-'+name) ,
-//			uiIcon(name )
-//		) ;
-//	}
+//  var combo = new Array()  ;
+//  for(
+//      let index = 0  ;
+//      index < list.length  ;
+//      index++
+//  ){
+//      let name = list[ index ]  ;
+//      combo[ index ] = ListItem(
+//          name ,
+//          @('LRL-'+name) ,
+//          uiIcon(name )
+//      )  ;
+//  }
 //
-//	return new comboBox(combo,null) ;
+//  return new comboBox(combo,null)  ;
 //}
 
 function uiIcon(name) {
@@ -793,7 +786,7 @@ function uiIcon(name) {
     If it's not found, the function tries to get it from the "icons" folder.
     Icon size depends on the plugin's "uiIconSize" setting.
     */
-    let image = ImageUtils.get(PathUi + name + '.png', false, true)
+    let image = ImageUtils.get(PathUi + name + '.png', false, true);
     if (image == null) image = ImageUtils.get(PathIcon + name + '.png', false, true);
 
     image = ImageUtils.createIcon(image, IconSize, IconSize);
@@ -819,8 +812,8 @@ function uiButtonText(key, diy, bindings, sides) {
     Creates a toggle button with a text label.
     */
     if (sides == null) sides = BOTH;
-    let label = @('LRL-' + key + '-uiButtonText');
-    if (label == "[MISSING: LRL-" + key + "-uiButtonText]") label = @('LRL-' + key);
+    let label = @ ('LRL-' + key + '-uiButtonText');
+    if (label == "[MISSING: LRL-" + key + "-uiButtonText]") label = @ ('LRL-' + key);
     label = '<html><b>' + label;
 
     let control = new toggleButton(label, '', diy.settings.getBoolean(key, false), null);
@@ -845,18 +838,18 @@ function getIcon(key, diy) {
     debug(3, '\n\tgetIcon: ' + key + ' : ' + diy.settings.get(key));
     let icon = diy.settings.get(key); // get the icon name contained inside $key
     switch (String(icon)) {
-        case '':
-        case null:
-            throw new Error('\t' + key + ' not defined.');
-            break;
-        case 'EmptyIcon':
-            return ImageUtils.get(PathImage + 'empty1x1.png');
-            break;
-        case 'CustomIcon':
-            return PortraitList[portraitIndexOf(key)].getImage();
-            break;
-        default:
-            return ImageUtils.get(PathIcon + icon + '.png');
+    case '':
+    case null:
+        throw new Error('\t' + key + ' not defined.');
+        break;
+    case 'EmptyIcon':
+        return ImageUtils.get(PathImage + 'empty1x1.png');
+        break;
+    case 'CustomIcon':
+        return PortraitList[portraitIndexOf(key)].getImage();
+        break;
+    default:
+        return ImageUtils.get(PathIcon + icon + '.png');
     }
 }
 
@@ -874,8 +867,7 @@ function createPortrait(key, diy) {
     PortraitList[index].setScaleUsesMinimum(diy.settings.getBoolean(key + '-portrait-scaleUsesMinimum', false));
 
     if (diy.settings.getBoolean(key + '-portrait-stencil', true)) {
-        let image = diy.settings.getImageResource(diy.frontTemplateKey + '-template')
-        if (diy.settings.get(key) == 'PortraitBack') {
+        let image = diy.settings.getImageResource(diy.frontTemplateKey + '-template') if (diy.settings.get(key) == 'PortraitBack') {
             image = diy.settings.getImageResource(diy.backTemplateKey + '-template');
         }
         let region = diy.settings.getRegion(key + '-portrait-clip-region');
@@ -898,7 +890,7 @@ function createPortrait(key, diy) {
     debug(4, '\tPortrait index: ' + portraitIndexOf(key));
 }
 
-//function createLinkedPortrait(key){ debug(3,'createLinkedPortrait: '+key) ; //obsoleto
+//function createLinkedPortrait(key){ debug(3, 'createLinkedPortrait: '+key)  ; //obsoleto
 ///*
 //This function returns Portrait that allows user to change
 //and manipulate an external image to be used in the component.
@@ -908,11 +900,11 @@ function createPortrait(key, diy) {
 //used to load the Main portrait on Promotional Hero template.
 //Use only the key without the "Card" type.
 //*/
-//	
-//	var index = PortraitList.length ;
-//	PortraitList[index] = new DefaultPortrait(portraitIndexOf('Main'),Card+'-'+key) ;
-//	PortraitList[index].backgroundFilled = false ;
-//	PortraitList[index].installDefault() ;
+//  
+//  var index = PortraitList.length  ;
+//  PortraitList[index] = new DefaultPortrait(portraitIndexOf('Main' ),Card+'-'+key)  ;
+//  PortraitList[index].backgroundFilled = false  ;
+//  PortraitList[index].installDefault()  ;
 //}
 
 function uiPortrait(key, diy) {
@@ -924,7 +916,7 @@ function uiPortrait(key, diy) {
     on some non-manipulable component places, like Collection icon.
     Use only the key without the "Card" type.
     */
-    let label = @('LRL-' + key + '-uiPortrait');
+    let label = @ ('LRL-' + key + '-uiPortrait');
     if (label == "[MISSING: LRL-" + key + "-uiPortrait]") label = null;
 
     let control = new portraitPanel(diy, portraitIndexOf(key), label);
@@ -943,10 +935,7 @@ function uiPortraitMirror(key, panel) {
         let scale = PortraitList[index].getScale();
         let panX = PortraitList[index].getPanX();
         let panY = PortraitList[index].getPanY();
-        PortraitList[index].setImage(
-            PortraitList[index].getSource(),
-            ImageUtils.mirror(PortraitList[index].getImage(), true, false)
-        );
+        PortraitList[index].setImage(PortraitList[index].getSource(), ImageUtils.mirror(PortraitList[index].getImage(), true, false));
         PortraitList[index].setScale(scale);
         PortraitList[index].setPanX(panX);
         PortraitList[index].setPanY(panY);
@@ -971,7 +960,7 @@ function portraitIndexOf(key) {
         }
     }
     throw new Error('\tInvalid portrait key.');
-//    return null
+    //    return null
 }
 
 function paintPortrait(key, diy, g, sheet) {
@@ -988,12 +977,12 @@ function paintPortrait(key, diy, g, sheet) {
 
 function paintPortraitShadow(key, tinter, diy, g, sheet) {
     debug(3, '\n\tpaintPortraitShadow: ' + key);
-    let shadow = String(diy.settings.get(key+'-shadow', 'None')) ;
-    debug(3, '\n\t'+key+'-shadow: ' + shadow);
+    let shadow = String(diy.settings.get(key + '-shadow', 'None'));
+    debug(3, '\n\t' + key + '-shadow: ' + shadow);
     switch (shadow) {
-    case null: 
-    case 'None': 
-    	break;
+    case null:
+    case 'None':
+        break;
     case 'PortraitTint':
         let image = diy.settings.getImageResource(key + '-shadow-tintable');
         if ($Template == 'Nightmare') image = createRedishImage(image);
@@ -1006,33 +995,33 @@ function paintPortraitShadow(key, tinter, diy, g, sheet) {
         image = tinter.getTintedImage();
         sheet.paintImage(g, image, 'Template-region');
         break;
-    default: 
-        sheet.paintImage(g, key + '-shadow-'+shadow, 'Template-region');
+    default:
+        sheet.paintImage(g, key + '-shadow-' + shadow, 'Template-region');
     }
 }
 
-//function paintPortraitDraft(key,g,sheet ){ debug(3,'paintPortraitDraft: '+key) ;
-//	var imageTinted = PortraitList[portraitIndexOf(key)].getImage() ;
-//	var imagePanX = PortraitList[portraitIndexOf(key)].getPanX() ;
-//	var imagePanY = PortraitList[portraitIndexOf(key)].getPanY() ;
-//	var imageRotation = PortraitList[portraitIndexOf(key)].getRotation() ;
-//	var imageScale = PortraitList[portraitIndexOf(key)].getScale() ;
-//	imageTinted = createHCImage(imageTinted) ;
-//	var region = getArray(getKeyForTemplate(key+'-portrait-clip-region',diy)) ;
-//	var AT = java.awt.geom.AffineTransform ;
-//	var transform =	AT.getTranslateInstance(
-//			Number(region[ 0 ] )+(Number(region[ 2 ] )/2 )+imagePanX-((imageTinted.width*imageScale )/2 ) ,
-//			Number(region[ 1 ] )+(Number(region[ 3 ] )/2 )+imagePanY-((imageTinted.height*imageScale )/2 )
-//		) ;
-//	transform.concatenate(AT.getScaleInstance(imageScale, imageScale )) ;
-//	transform.concatenate(
-//		AT.getRotateInstance(
-//			-imageRotation * Math.PI/180 ,
-//			imageTinted.width/2 ,
-//			imageTinted.height/2
-//		)
-//	) ;
-//	g.drawImage(imageTinted, transform, null) ;
+//function paintPortraitDraft(key,g,sheet ){ debug(3, 'paintPortraitDraft: '+key)  ;
+//  var imageTinted = PortraitList[portraitIndexOf(key)].getImage()  ;
+//  var imagePanX = PortraitList[portraitIndexOf(key)].getPanX()  ;
+//  var imagePanY = PortraitList[portraitIndexOf(key)].getPanY()  ;
+//  var imageRotation = PortraitList[portraitIndexOf(key)].getRotation()  ;
+//  var imageScale = PortraitList[portraitIndexOf(key)].getScale()  ;
+//  imageTinted = createHCImage(imageTinted)  ;
+//  var region = getArray(getKeyForTemplate(key+'-portrait-clip-region' ,diy))  ;
+//  var AT = java.awt.geom.AffineTransform  ;
+//  var transform = AT.getTranslateInstance(
+//          Number(region[ 0 ] )+(Number(region[ 2 ] )/2 )+imagePanX-((imageTinted.width*imageScale )/2 ) ,
+//          Number(region[ 1 ] )+(Number(region[ 3 ] )/2 )+imagePanY-((imageTinted.height*imageScale )/2 )
+//      )  ;
+//  transform.concatenate(AT.getScaleInstance(imageScale, imageScale ))  ;
+//  transform.concatenate(
+//      AT.getRotateInstance(
+//          -imageRotation * Math.PI/180 ,
+//          imageTinted.width/2 ,
+//          imageTinted.height/2
+//      )
+//  )  ;
+//  g.drawImage(imageTinted, transform, null)  ;
 //}
 
 function getPortraitCount() {
@@ -1055,50 +1044,36 @@ function getPortrait(index) {
 }
 
 function readPortraits(diy, ois) {
-    debug(3, '\n\treadPortraits: PortraitList length: '+PortraitList.length);
-    let portrait = true ;
-    let index= 0 
+    debug(3, '\n\treadPortraits: PortraitList length: ' + PortraitList.length);
+    let portrait = true;
+    let index = 0
     while (portrait != false) {
         try {
             portrait = ois.readObject();
-        } catch (err) {
+        } catch(err) {
             portrait = false;
         }
-        if(portrait != false){
-            debug(4,'Index:'+index+'; Key: '+portrait.getBaseKey());
-            PortraitList[index] = portrait; 
+        if (portrait != false) {
+            debug(4, 'Index:' + index + ' ; Key: ' + portrait.getBaseKey());
+            PortraitList[index] = portrait;
             index++;
         }
     }
-    if(PortraitList){
-        debug(4, '\n\tPortraitList length: '+PortraitList.length);
-    }else{
+    if (PortraitList) {
+        debug(4, '\n\tPortraitList length: ' + PortraitList.length);
+    } else {
         debug(4, '\n\t No portraits loaded.');
     }
-}    
+}
 
 // Following filters are used on portrait elements
-const createHCImage = filterFunction(
-    new ca.cgjennings.graphics.filters.CompoundPixelwiseFilter([
-        new ca.cgjennings.graphics.filters.GreyscaleFilter(),
-        new ca.cgjennings.graphics.filters.BrightnessContrastFilter(0.3, 0.5)
-    ])
-);
+const createHCImage = filterFunction(new ca.cgjennings.graphics.filters.CompoundPixelwiseFilter([new ca.cgjennings.graphics.filters.GreyscaleFilter(), new ca.cgjennings.graphics.filters.BrightnessContrastFilter(0.3, 0.5)]));
 
-const createRedishImage = filterFunction(
-    new ca.cgjennings.graphics.filters.CompoundPixelwiseFilter([
-        new ca.cgjennings.graphics.filters.GreyscaleFilter(),
-        //new ca.cgjennings.graphics.filters.BrightnessContrastFilter(-0.2,0.2) ,
-        new ca.cgjennings.graphics.filters.GammaCorrectionFilter(1.5, 0.5, 0.5)
-    ])
-);
+const createRedishImage = filterFunction(new ca.cgjennings.graphics.filters.CompoundPixelwiseFilter([new ca.cgjennings.graphics.filters.GreyscaleFilter(),
+//new ca.cgjennings.graphics.filters.BrightnessContrastFilter(-0.2,0.2) ,
+new ca.cgjennings.graphics.filters.GammaCorrectionFilter(1.5, 0.5, 0.5)]));
 
-const createSepiaImage = filterFunction(
-    new ca.cgjennings.graphics.filters.CompoundPixelwiseFilter([
-        new ca.cgjennings.graphics.filters.GreyscaleFilter(),
-        new ca.cgjennings.graphics.filters.GammaCorrectionFilter(1.5, 1, 0.5)
-    ])
-);
+const createSepiaImage = filterFunction(new ca.cgjennings.graphics.filters.CompoundPixelwiseFilter([new ca.cgjennings.graphics.filters.GreyscaleFilter(), new ca.cgjennings.graphics.filters.GammaCorrectionFilter(1.5, 1, 0.5)]));
 
 function uiCycler(key, list, bindings, sides) {
     debug(3, '\n\tuiCycler: ' + key);
@@ -1115,8 +1090,8 @@ function uiCycler(key, list, bindings, sides) {
 
     let labels = new Array();
     for (let index in list) {
-        labels[index] = @('LRL-' + list[index] + '-uiCycler');
-        if (labels[index] == "[MISSING: LRL-" + list[index] + "-uiCycler]") labels[index] = @('LRL-' + list[index]);
+        labels[index] = @ ('LRL-' + list[index] + '-uiCycler');
+        if (labels[index] == "[MISSING: LRL-" + list[index] + "-uiCycler]") labels[index] = @ ('LRL-' + list[index]);
     }
     let control = new cycleButton(labels, list);
     bindings.add(key, control, sides);
@@ -1133,11 +1108,11 @@ function uiCyclerLabeled(key, list, bindings, sides) {
     let grid = new Grid();
 
     let control = new uiCycler(key, list, bindings, sides);
-    let label = @('LRL-' + key + '-uiCyclerLabeled');
-    if (label == "[MISSING: LRL-" + key + "-uiCyclerLabeled]") label = @('LRL-' + key);
+    let label = @ ('LRL-' + key + '-uiCyclerLabeled');
+    if (label == "[MISSING: LRL-" + key + "-uiCyclerLabeled]") label = @ ('LRL-' + key);
     label = '<html><b>' + label + ':';
 
-    grid.place(label, '', control, ''); //wmin 50lp') ;
+    grid.place(label, '', control, ''); //wmin 50lp' )  ;
 
     return grid;
 }
@@ -1158,8 +1133,8 @@ function uiSpinnerLabeled(key, bindings, sides, limit) {
     let control = new uiSpinner(key, bindings, sides, limit);
 
     let grid = new Grid();
-    let label = @('LRL-' + key + '-uiSpinnerLabeled');
-    if (label == "[MISSING: LRL-" + key + "-uiSpinnerLabeled]") label = @('LRL-' + key);
+    let label = @ ('LRL-' + key + '-uiSpinnerLabeled');
+    if (label == "[MISSING: LRL-" + key + "-uiSpinnerLabeled]") label = @ ('LRL-' + key);
     label = '<html><b>' + label + ':';
     grid.place(label, '', control, 'wmin 50lp');
     return grid;
@@ -1182,7 +1157,7 @@ function uiStat(key, bindings, sides, limit, extraList) {
     do {
         combo[index] = ListItem(index, String(index));
         index++;
-    } while (index <= limit)
+    } while ( index <= limit )
 
     index = 0;
     for (index in extraList) {
@@ -1240,11 +1215,11 @@ function paintTemplate(diy, g, sheet) {
     This function draws the base image selected by $template.
     Note this is different from using the basic paintTemplateImage.
     */
-    
-    if (diy.settings.get($Template+'-template') != null) {
-   		debug(5, '\tTemplate: ' + diy.settings.get($Template+'-template'));
-    	sheet.paintImage(g, $Template+'-template', 'Template');
-    }else sheet.paintTemplateImage(g);
+
+    if (diy.settings.get($Template + '-template') != null) {
+        debug(5, '\tTemplate: ' + diy.settings.get($Template + '-template'));
+        sheet.paintImage(g, $Template + '-template', 'Template');
+    } else sheet.paintTemplateImage(g);
 }
 
 function paintTemplateBack(diy, g, sheet) {
@@ -1253,10 +1228,10 @@ function paintTemplateBack(diy, g, sheet) {
     This function draws the base image selected by $templateback.
     Note this is different from using the basic paintTemplateImage.
     */
-    
+
     if (diy.settings.get($TemplateBack + '-template') != null) {
-   		debug(5, '\tTemplate: ' + diy.settings.get($TemplateBack+'-template'));
-    	sheet.paintImage(g, $TemplateBack+'-template', 'TemplateBack');
+        debug(5, '\tTemplate: ' + diy.settings.get($TemplateBack + '-template'));
+        sheet.paintImage(g, $TemplateBack + '-template', 'TemplateBack');
     } else sheet.paintTemplateImage(g);
 }
 
@@ -1268,10 +1243,10 @@ function paintTemplateBackShared(diy, g, sheet) {
     sided cards.
     Note this is different from using the basic paintTemplateImage.
     */
-    
+
     if (diy.settings.get($Template + 'Back-template') != null) {
-   		debug(5, '\tTemplate: ' + diy.settings.get($Template+'Back-template'));
-    	sheet.paintImage(g, $Template+'Back-template', 'TemplateBack');
+        debug(5, '\tTemplate: ' + diy.settings.get($Template + 'Back-template'));
+        sheet.paintImage(g, $Template + 'Back-template', 'TemplateBack');
     } else sheet.paintTemplateImage(g);
 }
 
@@ -1299,7 +1274,7 @@ function createTinter(key, diy) {
     */
     let image = diy.settings.getImageResource(key + '-tintable');
     let tinter = new TintCache(new TintFilter(), image);
-    let tint = diy.settings.getTint(key,[0.0,0.5,0.5]);
+    let tint = diy.settings.getTint(key, [0.0, 0.5, 0.5]);
     tinter.setFactors(tint[0], tint[1], tint[2]);
 
     return tinter;
@@ -1345,7 +1320,7 @@ function loadExample(diy) {
         if (locale != 'en') {
             try {
                 diy.settings.addSettingsFrom(PathCard + 'example_' + locale + '.properties');
-            } catch (err) {
+            } catch(err) {
                 throw new Error(Card + ' ' + @LRL-ExampleNotLocalized-error);
             }
         }
@@ -1403,4 +1378,3 @@ function updateExternalPortrait(key, diy) {
         diy.settings.set(key + '-external-scale', '');
     }
 }
-
