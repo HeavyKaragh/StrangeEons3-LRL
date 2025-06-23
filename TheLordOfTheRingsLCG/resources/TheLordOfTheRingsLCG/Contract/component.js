@@ -48,9 +48,9 @@ function createInterface(diy, editor, sheet) {
         let Flavour_control = new uiParagraphLabeled('Flavour', bindings, FRONT, 'medium');
         TextBox_panel.place(Effect_control, 'hfill', Flavour_control, 'br hfill');
         Main_tab.place(TextBox_panel, 'br hfill');
-
-    // MAIN TAB CLOSE
-    Main_tab.addToEditor(editor, @LRL-Main);
+    
+        // MAIN TAB CLOSE
+        Main_tab.addToEditor(editor, @LRL-Main);
 
     // MAIN BACK TAB
     var MainBack_tab = new TypeGrid();
@@ -63,14 +63,14 @@ function createInterface(diy, editor, sheet) {
         let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, BACK, 'medium');
         TextBoxBack_panel.place(EffectBack_control, 'hfill', FlavourBack_control, 'br hfill');
         MainBack_tab.place(TextBoxBack_panel, 'hfill');
-
-    // MAIN BACK TAB CLOSE
-    MainBack_tab.addToEditor(editor, @LRL-MainBack);
+    
+        // MAIN BACK TAB CLOSE
+        MainBack_tab.addToEditor(editor, @LRL-MainBack);
 
     // TEMPLATE TAB
     let Template_tab = new TypeGrid();
     Template_tab.editorTabScrolling = true;
-
+    
         // TEMPLATE PANEL
         let Template_panel = new TypeGrid();
         Template_panel.setTitle(@LRL-Template);
@@ -78,14 +78,14 @@ function createInterface(diy, editor, sheet) {
         let Template_control = new uiListIcon('Template', list, bindings, BOTH);
         Template_panel.place(Template_control, 'hfill');
         Template_tab.place(Template_panel, 'hfill');
-
-    // TEMPLATE TAB CLOSE
-    Template_tab.addToEditor(editor, @LRL-Template);
+    
+        // TEMPLATE TAB CLOSE
+        Template_tab.addToEditor(editor, @LRL-Template);
 
     // PORTRAIT TAB
     let Portrait_tab = new TypeGrid();
     Portrait_tab.editorTabScrolling = true;
-
+    
         // PORTRAIT FRONT PANEL   
         let PortraitFront_panel = new TypeGrid();
         PortraitFront_panel.setTitle(@LRL-PortraitFront);
@@ -104,14 +104,14 @@ function createInterface(diy, editor, sheet) {
         let PortraitBackMirror_control = new uiPortraitMirror('PortraitBack', PortraitBack_control);
         PortraitBack_panel.place(PortraitBackShare_control, '', ArtistBack_control, 'hfill', PortraitBack_control, 'br hfill', PortraitBackMirror_control, 'br hfill');
         Portrait_tab.place(PortraitBack_panel, 'br hfill');
-
-    // PORTRAIT TAB CLOSE
-    Portrait_tab.addToEditor(editor, @LRL-Portrait);
+    
+        // PORTRAIT TAB CLOSE
+        Portrait_tab.addToEditor(editor, @LRL-Portrait);
 
     // COLLECTION TAB
     let Collection_tab = new TypeGrid();
     Collection_tab.editorTabScrolling = true;
-
+    
         // COLLECTION PANEL
         let Collection_panel = new TypeGrid();
         Collection_panel.setTitle(@LRL-Collection);
@@ -134,9 +134,9 @@ function createInterface(diy, editor, sheet) {
             OtherControls_panel.place(Type_control, 'br hfill', SideFront_control, 'br hfill', SideBack_control, 'br hfill');
         }
         Collection_tab.place(OtherControls_panel, 'br hfill');
-
-    // COLLECTION TAB CLOSE
-    Collection_tab.addToEditor(editor, @LRL-Collection);
+    
+        // COLLECTION TAB CLOSE
+        Collection_tab.addToEditor(editor, @LRL-Collection);
 
     bindings.bind();
 }
@@ -193,7 +193,7 @@ function paintFront(g, diy, sheet) {
 function paintBack(g, diy, sheet) {
     debug(1, '\npaintBack');
 
-    if ($Template != 'DoubleSided') sheet.paintTemplateImage(g);
+    if ($Template == 'SingleSided') sheet.paintTemplateImage(g);
     else {
         // PORTRAIT
         if (diy.settings.getBoolean('PortraitBack-share')) paintPortrait('Portrait', diy, g, sheet);
@@ -262,15 +262,15 @@ function onClear(diy) {
 
 if (sourcefile == 'Quickscript') {
     Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings');
-    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings');
+    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/LRL-I.settings');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js');
     Eons.namedObjects.LRL = new gameObject();
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/mySElibrary.js');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/myLRLlibrary.js');
     GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game');
-    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons.properties');
     InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface');
-    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons');
     testDIYScript('LRL');
 } else {
     useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');

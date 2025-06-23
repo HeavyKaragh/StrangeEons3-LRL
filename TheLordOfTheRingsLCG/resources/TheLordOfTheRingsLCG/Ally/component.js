@@ -380,7 +380,7 @@ function createInterface(diy, editor, sheet) {
             let CustomSphere_panel = new TypeGrid();
             CustomSphere_panel.setTitle(@LRL-CustomSphere);
     
-            let CustomSphere_control = new uiTint('CustomSphere', bindings, FRONT);
+            let SphereColour_control = new uiTint('SphereColour', bindings, FRONT);
             // This function shows a tinter control. It shows a colour
             // selector and a list of predefined colours.
     
@@ -398,7 +398,7 @@ function createInterface(diy, editor, sheet) {
             // the icon redish, to make it look consistent with the
             // selected tint.
     
-            CustomSphere_panel.place(CustomSphere_control, 'hfill', SphereIcon_control, 'br hfill', BodyIcon_control, 'br hfill', BodyIconTransparency_control, 'br hfill', BodyIconTinted_control, '');
+            CustomSphere_panel.place(SphereColour_control, 'hfill', SphereIcon_control, 'br hfill', BodyIcon_control, 'br hfill', BodyIconTransparency_control, 'br hfill', BodyIconTinted_control, '');
             Template_tab.place(CustomSphere_panel, 'br hfill');
         }
     
@@ -768,15 +768,15 @@ if (sourcefile == 'Quickscript') {
     used while running the script in the editor pressing F5.
     */
     Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings');
-    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings');
+    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/LRL-I.settings');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js');
     Eons.namedObjects.LRL = new gameObject();
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/mySElibrary.js');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/myLRLlibrary.js');
     GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game');
-    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons.properties');
     InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface');
-    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons');
     testDIYScript('LRL');
 } else {
     useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');

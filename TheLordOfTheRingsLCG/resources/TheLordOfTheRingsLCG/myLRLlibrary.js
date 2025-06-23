@@ -17,6 +17,28 @@ var PathNumber = ResourcesPath + 'number/';
 var PathNumberTintable = ResourcesPath + 'numberTint/';
 var IconSize = $LRL-uiIconSize;
 
+function loadPreferences(diy) {
+    debug(3, '\n\tloadPreferences');
+    /*
+    This function loads the default value from LRL preferences.
+    This is useful when creating a lot of components for the same collection.
+    */
+    updateToPreferences('Copyright', diy);
+    updateToPreferences('CollectionInfo', diy);
+    updateToPreferences('Collection', diy);
+    updateToPreferences('Collection-portrait-template', diy);
+    // If Custom icon is selected in preferences, the custom icon path is used.
+    // This path should include the icon from the current project and start with 'project:'
+
+    if (diy.settings.get('EncounterSet') != null) {
+        // Check if the setting is used for this component.
+        // $setting should be set in example.properties if needed, even as empty string.
+        // Reading a $setting not defined, returns null.
+        updateToPreferences('EncounterSet', diy);
+        updateToPreferences('EncounterSet-portrait-template', diy);
+    }
+}
+
 function updateToPreferences(key, diy) {
     debug(3, '\n\tupdateToPreferences: ' + key);
     /*
@@ -41,21 +63,21 @@ function updateToPreferences(key, diy) {
     }
 }
 
-function uiEncountersetList(bindings, sides) {
-    debug(3, '\n\tuiEncountersetList');
+function uiEncounterSetList(bindings, sides) {
+    debug(3, '\n\tuiEncounterSetList');
     if (sides == null) sides = BOTH;
 
-    let control = new comboBox(GAMEOBJECT.EncountersetCombo, null);
-    bindings.add('Encounterset', control, sides);
+    let control = new comboBox(GAMEOBJECT.EncounterSetCombo, null);
+    bindings.add('EncounterSet', control, sides);
 
     return control;
 }
 
-function uiOtherEncountersetList(key, bindings, sides) {
-    debug(3, '\n\tuiOtherEncountersetList');
+function uiOtherEncounterSetList(key, bindings, sides) {
+    debug(3, '\n\tuiOtherEncounterSetList');
     if (sides == null) sides = BOTH;
 
-    let control = new comboBox(GAMEOBJECT.EncountersetCombo, null);
+    let control = new comboBox(GAMEOBJECT.EncounterSetCombo, null);
     bindings.add(key, control, sides);
 
     return control;
@@ -87,17 +109,17 @@ function uiTitleUnique(diy, bindings, sides) {
     return grid;
 }
 
-function uiTitleByEncounterset(diy, bindings, sides) {
-    debug(2, '\n\tuiTitleByEncounterset');
+function uiTitleByEncounterSet(diy, bindings, sides) {
+    debug(2, '\n\tuiTitleByEncounterSet');
     /*
     Creates the component title/name control that can use the text of the
-    selected Encounterset_control.
+    selected EncounterSet_control.
     */
     let grid = new TypeGrid();
 
-    let ByEncounterset_control = new uiButtonText('ByEncounterset', diy, bindings, sides);
+    let ByEncounterSet_control = new uiButtonText('ByEncounterSet', diy, bindings, sides);
     let Title_control = uiTitle(diy, bindings, sides);
-    grid.place(Title_control, 'hfill', ByEncounterset_control, '');
+    grid.place(Title_control, 'hfill', ByEncounterSet_control, '');
 
     return grid;
 }
@@ -142,9 +164,9 @@ function uiScenario(diy, bindings, sides) {
     */
     let grid = new TypeGrid();
 
-    let ByEncounterset_control = new uiButtonText('ByEncounterset', diy, bindings, sides);
+    let ByEncounterSet_control = new uiButtonText('ByEncounterSet', diy, bindings, sides);
     let text_control = uiText('Scenario', bindings, sides);
-    grid.place(text_control, 'hfill', ByEncounterset_control, '');
+    grid.place(text_control, 'hfill', ByEncounterSet_control, '');
 
     return grid;
 }
@@ -177,10 +199,10 @@ function writeScenario(diy, g) {
     let text = formatText('Scenario', diy);
     let format = diy.settings.get('Scenario-format', '');
     let region = diy.settings.getRegion('Scenario');
-    let byEncounterset = diy.settings.getBoolean('ByEncounterset', false);
+    let byEncounterSet = diy.settings.getBoolean('ByEncounterSet', false);
 
-    if (byEncounterset) {
-        let encounterset = $Encounterset;
+    if (byEncounterSet) {
+        let encounterset = $EncounterSet;
         switch (encounterset) {
         case 'CustomIcon':
         case 'EmptyIcon':
@@ -242,25 +264,25 @@ function writeSubtype(diy, g) {
     writeLine(text, Subtype_writer, region, g);
 }
 
-function writeEncountersetNumber(diy, g) {
-    debug(2, '\n\twriteEncountersetNumber');
+function writeEncounterSetNumber(diy, g) {
+    debug(2, '\n\twriteEncounterSetNumber');
     let text;
-    let number = diy.settings.get('EncountersetNumber', 0);
-    let region = getRegionTemplate('EncountersetNumber', diy);
-    let format = diy.settings.get('EncountersetNumber-format', '');
+    let number = diy.settings.get('EncounterSetNumber', 0);
+    let region = getRegionTemplate('EncounterSetNumber', diy);
+    let format = diy.settings.get('EncounterSetNumber-format', '');
 
     if (number > 0) {
-        let total = diy.settings.get('EncountersetTotal', 0);
+        let total = diy.settings.get('EncounterSetTotal', 0);
         if (total > 0) {
-            let separator = diy.settings.get('EncountersetNumber-of', '');
-            if (separator == '') separator = #LRL-EncountersetNumber-of;
+            let separator = diy.settings.get('EncounterSetNumber-of', '');
+            if (separator == '') separator = #LRL-EncounterSetNumber-of;
             text = number + separator + total;
         } else text = number;
     } else text = '---'; // if 0
     text = format + text;
 
     debug(5, '\tText: ' + text);
-    writeLine(text, EncountersetNumber_writer, region, g);
+    writeLine(text, EncounterSetNumber_writer, region, g);
 }
 
 function formatTitle(diy, g) {
@@ -319,17 +341,17 @@ function writeTitleRotated(diy, g) {
     g.setTransform(oldTransform);
 }
 
-function writeTextByEncounterset(key, writer, region, diy, g) {
-    debug(2, '\n\twriteTextByEncounterset');
+function writeTextByEncounterSet(key, writer, region, diy, g) {
+    debug(2, '\n\twriteTextByEncounterSet');
     /*
-    Writes text or #$Encounterset in the text-region.
+    Writes text or #$EncounterSet in the text-region.
     */
-    let byEncounterset = diy.settings.getBoolean('ByEncounterset', false);
-    debug(5, '\tByEncounterset: ' + byEncounterset);
+    let byEncounterSet = diy.settings.getBoolean('ByEncounterSet', false);
+    debug(5, '\tByEncounterSet: ' + byEncounterSet);
 
-    if (byEncounterset) {
-        let encounterset = $Encounterset;
-        debug(5, '\tEncounterset: ' + encounterset);
+    if (byEncounterSet) {
+        let encounterset = $EncounterSet;
+        debug(5, '\tEncounterSet: ' + encounterset);
         switch (encounterset) {
         case null:
         case 'CustomIcon':
@@ -348,13 +370,13 @@ function writeTextByEncounterset(key, writer, region, diy, g) {
     writeLine(text, writer, region, g);
 }
 
-function writeTitleByEncounterset(diy, g) {
-    debug(2, '\n\twriteTitleByEncounterset');
+function writeTitleByEncounterSet(diy, g) {
+    debug(2, '\n\twriteTitleByEncounterSet');
     /*
     Writes $name or #set in the $name-region.
     */
     let region = diy.settings.getRegion('Title');
-    writeTextByEncounterset('Title', Title_writer, region, diy, g);
+    writeTextByEncounterSet('Title', Title_writer, region, diy, g);
 }
 
 function writeTextByCollection(key, writer, region, diy, g) {
@@ -702,7 +724,7 @@ function writeBodyBack(parts, diy, g) {
 //   ){
 //      let item = collections[ index ] ;
 //      sets = sets.concat( 
-//          getArray( item+'-Encounterset-list' )
+//          getArray( item+'-EncounterSet-list' )
 //       ) ;
 //  }
 //
@@ -722,7 +744,7 @@ function paintIconLRL(key, diy, g, sheet) {
     The icon is looked for in the plugin ui folder's , as "key" PNG file.
     It will also look for Nightmare and Draft variants if needed.
     This function is the same as paintIcon in mySElibrary , but adds
-    the ability yo invert the colours of the Encounterset icon when
+    the ability yo invert the colours of the EncounterSet icon when
     used in Nightmare templates.
     */
     let image = getIconLRL(key, diy);
@@ -754,7 +776,7 @@ function getIconLRL(key, diy) {
         let image = ImageUtils.get(PathIcon + icon + '.png');
         if (image == null) image = ImageUtils.get(PathNumberTintable + icon + '.png');
 
-        if (((key == 'Encounterset') || (key == 'Group')) && ($Template == 'Nightmare')) {
+        if (((key == 'EncounterSet') || (key == 'Group')) && ($Template == 'Nightmare')) {
             image = ImageUtils.invert(image);
         }
         return image;
@@ -779,12 +801,12 @@ function paintGameLogo(diy, g, sheet) {
     sheet.paintImage(g, image, 'Template-region');
 }
 
-function uiEncountersetNumber(bindings) {
-    debug(3, '\n\tuiEncountersetNumber');
+function uiEncounterSetNumber(bindings) {
+    debug(3, '\n\tuiEncounterSetNumber');
     let grid = new Grid();
 
-    let Number_control = new uiSpinner('EncountersetNumber', bindings, FRONT, 99);
-    let Total_control = new uiSpinner('EncountersetTotal', bindings, FRONT, 99);
+    let Number_control = new uiSpinner('EncounterSetNumber', bindings, FRONT, 99);
+    let Total_control = new uiSpinner('EncounterSetTotal', bindings, FRONT, 99);
 
     grid.place('<html><b>' + @LRL-Number + ':', '', Number_control, '', @LRL-Of, '', Total_control, '');
     return grid;
@@ -830,8 +852,8 @@ function paintCustomSphereBody(diy, g, sheet) {
     CustomBody_tinter must de defined in createFrontPainter.
     CustomBodyIcon_tinter is optional.
     */
-    debug(5, '\tTint: ' + $CustomSphere-tint);
-    let tint = diy.settings.getTint('CustomSphere-tint');
+    debug(5, '\tTint: ' + $SphereColour-tint);
+    let tint = diy.settings.getTint('SphereColour-tint');
     Body_tinter.setFactors(tint[0], tint[1], tint[2]); // mover a listener
     let image = Body_tinter.getTintedImage();
     sheet.paintImage(g, image, 'Template-region');
@@ -860,8 +882,8 @@ function paintCustomSpherePearl(diy, g, sheet) {
     /*
     This function paints the small tinted sphere decorations.
     */
-    debug(5, '\tTint: ' + $CustomSphere-tint);
-    let tint = diy.settings.getTint('CustomSphere-tint');
+    debug(5, '\tTint: ' + $SphereColour-tint);
+    let tint = diy.settings.getTint('SphereColour-tint');
     Pearl_tinter.setFactors(tint[0], tint[1], tint[2]); // mover a listener
     let image = Pearl_tinter.getTintedImage();
     sheet.paintImage(g, image, 'Template-region');
@@ -990,39 +1012,39 @@ function paintAdapterTinted(list, diy, g, sheet) {
 //      decoType = 'Player';
 //  }
 //
-//  EncountersetIcon = getIcon( 'Encounterset' ) ;
+//  EncounterSetIcon = getIcon( 'EncounterSet' ) ;
 //  switch( String( $IconLayout ) ){
 //  case 'Left':
 //      adapterImage = ImageUtils.get( PathCard+decoType+'-adapter-Left.jp2' ) ;
 //      if( sheet.getSheetIndex() =1 ) adapterImage = ImageUtils.mirror( adapterImage ) ;
 //      sheet.paintImage( g , adapterImage , Card+'-adapter' ) ;
 //
-//      if( sheet.getSheetIndex() === 0 ) sheet.paintImage( g , EncountersetIcon , Card+'-icon-Left' ) ;
-//      else sheet.paintImage( g , EncountersetIcon , Card+'-icon-Right' ) ;
+//      if( sheet.getSheetIndex() === 0 ) sheet.paintImage( g , EncounterSetIcon , Card+'-icon-Left' ) ;
+//      else sheet.paintImage( g , EncounterSetIcon , Card+'-icon-Right' ) ;
 //      break;
 //  case 'LeftMiddle':
 //      adapterImage = ImageUtils.get( PathCard+decoType+'-adapter-LeftMiddle.jp2' ) ;
 //      if( sheet.getSheetIndex() =1 ) adapterImage = ImageUtils.mirror( adapterImage ) ;
 //      sheet.paintImage( g , adapterImage , Card+'-adapter' ) ;
 //
-//      if( sheet.getSheetIndex() === 0 ) sheet.paintImage( g , EncountersetIcon , Card+'-icon-LeftMiddle' ) ;
-//      else sheet.paintImage( g , EncountersetIcon , Card+'-icon-RightMiddle' ) ;
+//      if( sheet.getSheetIndex() === 0 ) sheet.paintImage( g , EncounterSetIcon , Card+'-icon-LeftMiddle' ) ;
+//      else sheet.paintImage( g , EncounterSetIcon , Card+'-icon-RightMiddle' ) ;
 //      break;
 //  case 'RightMiddle':
 //      adapterImage = ImageUtils.get( PathCard+decoType+'-adapter-LeftMiddle.jp2' ) ;
 //      if( sheet.getSheetIndex() =0 ) adapterImage = ImageUtils.mirror( adapterImage ) ;
 //      sheet.paintImage( g , adapterImage , Card+'-adapter' ) ;
 //
-//      if( sheet.getSheetIndex() === 0 ) sheet.paintImage( g , EncountersetIcon , Card+'-icon-RightMiddle' ) ;
-//      else sheet.paintImage( g , EncountersetIcon , Card+'-icon-LeftMiddle' ) ;
+//      if( sheet.getSheetIndex() === 0 ) sheet.paintImage( g , EncounterSetIcon , Card+'-icon-RightMiddle' ) ;
+//      else sheet.paintImage( g , EncounterSetIcon , Card+'-icon-LeftMiddle' ) ;
 //      break;
 //  case 'Right':
 //      adapterImage = ImageUtils.get( PathCard+decoType+'-adapter-Left.jp2' ) ;
 //      if( sheet.getSheetIndex() =0 ) adapterImage = ImageUtils.mirror( adapterImage ) ;
 //      sheet.paintImage( g , adapterImage , Card+'-adapter' ) ;
 //
-//      if( sheet.getSheetIndex() === 0 ) sheet.paintImage( g , EncountersetIcon , Card+'-icon-Right' ) ;
-//      else sheet.paintImage( g , EncountersetIcon , Card+'-icon-Left' ) ;
+//      if( sheet.getSheetIndex() === 0 ) sheet.paintImage( g , EncounterSetIcon , Card+'-icon-Right' ) ;
+//      else sheet.paintImage( g , EncounterSetIcon , Card+'-icon-Left' ) ;
 //      break;
 //  default:
 //      adapterImage = ImageUtils.get( PathCard+decoType+'-adapter-Title.jp2' ) ;
@@ -1030,7 +1052,7 @@ function paintAdapterTinted(list, diy, g, sheet) {
 //      sheet.paintImage( g , adapterImage , Card+'-adapter' ) ;
 //      CollectionIcon = getIcon( 'Collection' ) ;
 //      if( sheet.getSheetIndex() === 0 ){
-//          sheet.paintImage( g , EncountersetIcon , Card+'-icon-TitleLeft' ) ;
+//          sheet.paintImage( g , EncounterSetIcon , Card+'-icon-TitleLeft' ) ;
 //          sheet.paintImage( g , CollectionIcon , Card+'-icon-TitleRight' ) ;
 //      }else{
 //          if( Card=='DividerHorizontal' ){
@@ -1041,10 +1063,10 @@ function paintAdapterTinted(list, diy, g, sheet) {
 //              regionRight = diy.settings.getRegion( Card+'-icon-TitleRight' ) ;
 //          }
 //          if( diy.settings.getBoolean( 'IconSwap' , false ) === true ){
-//              sheet.paintImage( g , EncountersetIcon , regionRight ) ;
+//              sheet.paintImage( g , EncounterSetIcon , regionRight ) ;
 //              sheet.paintImage( g , CollectionIcon , regionLeft ) ;
 //          }else{
-//              sheet.paintImage( g , EncountersetIcon , regionLeft ) ;
+//              sheet.paintImage( g , EncounterSetIcon , regionLeft ) ;
 //              sheet.paintImage( g , CollectionIcon , regionRight ) ;
 //          }
 //      }
@@ -1057,6 +1079,6 @@ function paintAdapterTinted(list, diy, g, sheet) {
 //// ICONS
 //  writeTextOutlined( 'Artist' , Artist_writer , getStroke( 'Bottom' , diy ) , diy , g , sheet ) ;
 //  paintIcon( 'Collection' , g , sheet ) ;
-//  paintIcon( 'Encounterset' , g , sheet ) ;
+//  paintIcon( 'EncounterSet' , g , sheet ) ;
 //
 //}

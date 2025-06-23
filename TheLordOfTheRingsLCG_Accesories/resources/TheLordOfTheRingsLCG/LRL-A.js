@@ -5,12 +5,12 @@ const componentList = new Array(
 	, 'Presentation'
 	, 'PresentationExtra'
 	, 'PresentationAlternate'
-	, 'Rules'
+	, 'RulesCard'
 	, 'Scenario'
-	, 'Encounterset'
-	, 'DividerVertical'
+	, 'EncounterSet'
+	, 'Divider'
 	, 'DividerHorizontal'
-	, 'DividerDeck'
+	, 'DividerCard'
 ) ;
 
 function getName(){ return @LRL-A ; }

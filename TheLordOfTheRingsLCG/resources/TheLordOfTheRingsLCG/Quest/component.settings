@@ -12,7 +12,7 @@ Portrait-portrait-clip-region = 0,0,563,413
 Portrait-portrait-backgroundFilled = true
 PortraitBack-portrait-clip-region = 0,0,563,413
 PortraitBack-portrait-backgroundFilled = true
-Encounterset-portrait-clip-region = 477,188,36,36
+EncounterSet-portrait-clip-region = 477,188,36,36
 
 Difficulty-tintable = TheLordOfTheRingsLCG/image/Difficulty-tintable.jp2
 Difficulty-region = 469,180,52,52
@@ -38,11 +38,11 @@ CollectionInfo-region = 425,377,70,12
 Collection-portrait-clip-region = 496,377,12,12
 CollectionNumber-region = 509,377,16,12
 
-Encounterset1-portrait-clip-region = 448,212,22,22
-Encounterset2-portrait-clip-region = 423,212,22,22
-Encounterset3-portrait-clip-region = 398,212,22,22
-Encounterset4-portrait-clip-region = 373,212,22,22
-Encounterset5-portrait-clip-region = 348,212,22,22
+EncounterSet1-portrait-clip-region = 448,212,22,22
+EncounterSet2-portrait-clip-region = 423,212,22,22
+EncounterSet3-portrait-clip-region = 398,212,22,22
+EncounterSet4-portrait-clip-region = 373,212,22,22
+EncounterSet5-portrait-clip-region = 348,212,22,22
 
 Title-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}
 Title-pointsize = 12

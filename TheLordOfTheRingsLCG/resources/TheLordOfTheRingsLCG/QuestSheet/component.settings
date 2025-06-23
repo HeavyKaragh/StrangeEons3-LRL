@@ -6,12 +6,12 @@ Collection-portrait-clip-region = 58,176,40,40
 CollectionBis-portrait-clip-region = 1152,176,40,40
 Portrait-portrait-clip-region = 115,1025,1020,500
 
-Encounterset-portrait-clip-region = 313,518,36,36
-Encounterset1-portrait-clip-region = 380,518,36,36
-Encounterset2-portrait-clip-region = 246,518,36,36
-Encounterset3-portrait-clip-region = 447,518,36,36
-Encounterset4-portrait-clip-region = 179,518,36,36
-Encounterset5-portrait-clip-region = 514,518,36,36
+EncounterSet-portrait-clip-region = 313,518,36,36
+EncounterSet1-portrait-clip-region = 380,518,36,36
+EncounterSet2-portrait-clip-region = 246,518,36,36
+EncounterSet3-portrait-clip-region = 447,518,36,36
+EncounterSet4-portrait-clip-region = 179,518,36,36
+EncounterSet5-portrait-clip-region = 514,518,36,36
 
 GameLogo-en = TheLordOfTheRingsLCG/QuestSheet/GameLogo_en-150.jp2
 GameLogo-en-hires = TheLordOfTheRingsLCG/QuestSheet/GameLogo_en-300.jp2

@@ -12,5 +12,5 @@ Portrait-shadow = None
 Encounterset = StrangeEons
 Collection = StrangeEons
 CollectionNumber = 0
-CustomSphere-tint = 0.0,1.0,1.0
+SphereColour-tint = 0.0,1.0,1.0
 BodyIcon-transparency = 2

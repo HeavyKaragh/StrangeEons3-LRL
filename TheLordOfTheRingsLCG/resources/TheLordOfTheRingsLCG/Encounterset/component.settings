@@ -1,21 +1,21 @@
 Template-region = 0,0,413,563
 Template-ppi = 150
-Template-template = TheLordOfTheRingsLCG/Encounterset/Standard-150.jp2
-Template-template-hires = TheLordOfTheRingsLCG/Encounterset/Standard-300.jp2
+Template-template = TheLordOfTheRingsLCG/EncounterSet/Standard-150.jp2
+Template-template-hires = TheLordOfTheRingsLCG/EncounterSet/Standard-300.jp2
 
 TemplateBack-region = 0,0,413,563
 TemplateBack-ppi = 150
-TemplateBack-template = TheLordOfTheRingsLCG/Encounterset/StandardBack-150.jp2
-TemplateBack-template-hires = TheLordOfTheRingsLCG/Encounterset/StandardBack-300.jp2
+TemplateBack-template = TheLordOfTheRingsLCG/EncounterSet/StandardBack-150.jp2
+TemplateBack-template-hires = TheLordOfTheRingsLCG/EncounterSet/StandardBack-300.jp2
 
 Portrait-portrait-clip-region = 0,62,413,204
-Encounterset-portrait-clip-region = 39,39,44,44
+EncounterSet-portrait-clip-region = 39,39,44,44
 
-Standard-template = TheLordOfTheRingsLCG/Encounterset/Standard-150.jp2
-Standard-template-hires = TheLordOfTheRingsLCG/Encounterset/Standard-300.jp2
+Standard-template = TheLordOfTheRingsLCG/EncounterSet/Standard-150.jp2
+Standard-template-hires = TheLordOfTheRingsLCG/EncounterSet/Standard-300.jp2
 
-StandardBack-template = TheLordOfTheRingsLCG/Encounterset/StandardBack-150.jp2
-StandardBack-template-hires = TheLordOfTheRingsLCG/Encounterset/StandardBack-300.jp2
+StandardBack-template = TheLordOfTheRingsLCG/EncounterSet/StandardBack-150.jp2
+StandardBack-template-hires = TheLordOfTheRingsLCG/EncounterSet/StandardBack-300.jp2
 
 Title-region = 104,39,234,22
 Body-region = 50,274,312,218

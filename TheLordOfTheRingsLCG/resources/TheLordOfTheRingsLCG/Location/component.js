@@ -21,7 +21,7 @@ function create(diy) {
     diy.customPortraitHandling = true;
     createPortrait('Portrait', diy);
     createPortrait('Collection', diy);
-    createPortrait('Encounterset', diy);
+    createPortrait('EncounterSet', diy);
     $PortraitListCount = getPortraitCount();
 }
 
@@ -80,26 +80,26 @@ function createInterface(diy, editor, sheet) {
     Main_tab.addToEditor(editor, @LRL-Main);
 
     // ENCOUNTER SET TAB
-    var Encounterset_tab = new TypeGrid();
-    Encounterset_tab.editorTabScrolling = true;
+    var EncounterSet_tab = new TypeGrid();
+    EncounterSet_tab.editorTabScrolling = true;
 
         // ENCOUNTER SET PANEL
-        let Encounterset_panel = new TypeGrid();
-        Encounterset_panel.setTitle(@LRL-Encounterset);
-        let Encounterset_control = new uiEncountersetList(bindings, FRONT);
-        let EncountersetNumber_control = new uiEncountersetNumber(bindings);
-        Encounterset_panel.place(Encounterset_control, 'hfill', EncountersetNumber_control, 'br');
+        let EncounterSet_panel = new TypeGrid();
+        EncounterSet_panel.setTitle(@LRL-EncounterSet);
+        let EncounterSet_control = new uiEncounterSetList(bindings, FRONT);
+        let EncounterSetNumber_control = new uiEncounterSetNumber(bindings);
+        EncounterSet_panel.place(EncounterSet_control, 'hfill', EncounterSetNumber_control, 'br');
         if (advancedControls) {
             list = new Array('Standard', 'Gold', 'Red', 'Green', 'Blue', 'Purple', 'Yellow', 'Brown', 'Mulberry', 'White', 'Grey', 'Black', 'Cyan', 'Magenta', 'CustomDifficulty');
             let Difficulty_control = new uiListIconLabeled('Difficulty', list, bindings, FRONT);
-            Encounterset_panel.place(Difficulty_control, 'hfill');
+            EncounterSet_panel.place(Difficulty_control, 'hfill');
         }
-        let EncountersetPortrait_control = new uiPortrait('Encounterset', diy);
-        Encounterset_panel.place(EncountersetPortrait_control, 'br hfill');
-        Encounterset_tab.place(Encounterset_panel, 'br hfill');
+        let EncounterSetPortrait_control = new uiPortrait('EncounterSet', diy);
+        EncounterSet_panel.place(EncounterSetPortrait_control, 'br hfill');
+        EncounterSet_tab.place(EncounterSet_panel, 'br hfill');
     
     // ENCOUNTERSET TAB CLOSE
-    Encounterset_tab.addToEditor(editor, @LRL-Encounterset);
+    EncounterSet_tab.addToEditor(editor, @LRL-EncounterSet);
 
     // TEMPLATE TAB
     if (advancedControls) {
@@ -193,12 +193,12 @@ function createFrontPainter(diy, sheet) {
     Type_writer = new createWriter('Type', diy, sheet);
     Bottom_writer = new createWriter('Bottom', diy, sheet);
     Subtype_writer = new createWriter('Subtype', diy, sheet);
-    EncountersetNumber_writer = new createWriter('EncountersetNumber', diy, sheet);
+    EncounterSetNumber_writer = new createWriter('EncounterSetNumber', diy, sheet);
 
     // PORTRAIT
     updateExternalPortrait('Portrait', diy);
     updateExternalPortrait('Collection', diy);
-    updateExternalPortrait('Encounterset', diy);
+    updateExternalPortrait('EncounterSet', diy);
 }
 
 function createBackPainter(diy, sheet) {
@@ -217,7 +217,7 @@ function paintFront(g, diy, sheet) {
 
     // ICONS
     paintIcon('Collection', diy, g, sheet);
-    paintIcon('Encounterset', diy, g, sheet);
+    paintIcon('EncounterSet', diy, g, sheet);
     paintIcon('OptionSpecial', diy, g, sheet);
 
     // STATS
@@ -233,7 +233,7 @@ function paintFront(g, diy, sheet) {
     //  default:
     //      region = diy.settings.getRegion('Body') ;
     //  }
-    writeEncountersetNumber(diy, g);
+    writeEncounterSetNumber(diy, g);
 
     writeType(diy, g);
     writeOption('OptionLeft', diy, g, sheet);
@@ -292,15 +292,15 @@ function onClear(diy) {
 
 if (sourcefile == 'Quickscript') {
     Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings');
-    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings');
+    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/LRL-I.settings');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js');
     Eons.namedObjects.LRL = new gameObject();
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/mySElibrary.js');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/myLRLlibrary.js');
     GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game');
-    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons.properties');
     InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface');
-    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons');
     testDIYScript('LRL');
 } else {
     useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');

@@ -29,7 +29,7 @@ function initialize() {
     recognized as a singular game. This allows defining a settings scope to look
     for default values, so components will use those values when they are not
     specified in the component.settings file.
-    It will also load the custom fonts and several lists (Encounterset and 
+    It will also load the custom fonts and several lists (EncounterSet and 
     Collection), along with the context bar buttons to include in text controls.
     Also, it will to load default values for user defined settings and set up 
     plugin preferences menu, and load the localized text strings used in the plugin
@@ -185,22 +185,22 @@ function initialize() {
     //  );  
     pc.unindent();
 
-    if ($LRL-Encounterset == null) $LRL-Encounterset = 'KeepValue';
-    pc.label(@LRL-Encounterset);
+    if ($LRL-EncounterSet == null) $LRL-EncounterSet = 'KeepValue';
+    pc.label(@LRL-EncounterSet);
     pc.join();
     values = new Array('KeepValue').concat(Eons.namedObjects.LRL.DefaultIconList);
-    values = values.concat(Eons.namedObjects.LRL.EncountersetList);
+    values = values.concat(Eons.namedObjects.LRL.EncounterSetList);
     labels = new Array();
     for (index in values) {
         labels[index] = @('LRL-' + values[index]);
     }
-    pc.addDropDown('LRL-Encounterset', labels, values);
+    pc.addDropDown('LRL-EncounterSet', labels, values);
     pc.join();
-    pc.addTip(@LRL-Encounterset-tip-preferences);
+    pc.addTip(@LRL-EncounterSet-tip-preferences);
 
-    if ($LRL-Encounterset-portrait-template == null) $LRL-Encounterset-portrait-template = '';
+    if ($LRL-EncounterSet-portrait-template == null) $LRL-EncounterSet-portrait-template = '';
     pc.indent();
-    pc.addField('LRL-Encounterset-portrait-template', @LRL-PathToIcon, LongText);
+    pc.addField('LRL-EncounterSet-portrait-template', @LRL-PathToIcon, LongText);
     pc.join();
     pc.addTip(@LRL-PathToIcon-tip-preferences);
     //  pc.join() ; 
@@ -208,7 +208,7 @@ function initialize() {
     //      @LRL-preferences-pathToIcon ,
     //      function action(){//addToList( actionEvent ) {
     //          var filename = ResourceKit.showImageFileDialog( null) ;
-    //          if (filename!=null){ $LRL-EncountersetUser = filename }
+    //          if (filename!=null){ $LRL-EncounterSetUser = filename }
     //      } 
     //  );  
     pc.unindent();
@@ -248,7 +248,7 @@ function gameObject() { // GAME ){
     );
 
     // "DefaultIconList" defines the minimum item list for Collection
-    // and Encounterset lists
+    // and EncounterSet lists
     this.DefaultIconList = new Array('CustomIcon' // used to include icons through a Portrait_panel
     , 'EmptyIcon' // used to not draw the icon
     , 'StrangeEons' // used to show the Strange Eons hat icon
@@ -287,18 +287,18 @@ function gameObject() { // GAME ){
     }
     debug(3, 'CollectionList: ' + this.CollectionList);
 
-    this.EncountersetList = new Array();
-    this.EncountersetCombo = new Array();
+    this.EncounterSetList = new Array();
+    this.EncounterSetCombo = new Array();
     for (index in this.CollectionList) {
         let item = this.CollectionList[index];
-        this.EncountersetList = this.EncountersetList.concat(String(Game.get('LRL').masterSettings.get(item + '-Encounterset-list')).split(','));
-        list = this.DefaultIconList.concat(this.EncountersetList);
+        this.EncounterSetList = this.EncounterSetList.concat(String(Game.get('LRL').masterSettings.get(item + '-EncounterSet-list')).split(','));
+        list = this.DefaultIconList.concat(this.EncounterSetList);
         for (index in list) {
             let item = list[index];
-            this.EncountersetCombo[index] = ListItem(item, @('LRL-' + item), uiIcon(item));
+            this.EncounterSetCombo[index] = ListItem(item, @('LRL-' + item), uiIcon(item));
         }
     }
-    debug(3, 'EncountersetList: ' + this.EncountersetList);
+    debug(3, 'EncounterSetList: ' + this.EncounterSetList);
 
     this.OptionSpecialList = new Array('EmptyIcon', 'Sailing', 'EyeOfSauron', 'EyeOfSauron2', 'EyeOfSauron3', 'EyeOfSauron4', 'Person');
     debug(3, 'OptionSpecialList: ' + this.OptionSpecialList);
@@ -312,7 +312,7 @@ function gameObject() { // GAME ){
 
         this.FullIconList = this.FullIconList.concat(collection);
 
-        encountersetListForCurrentCollection = String(Game.get('LRL').masterSettings.get(collection + '-Encounterset-list')).split(',');
+        encountersetListForCurrentCollection = String(Game.get('LRL').masterSettings.get(collection + '-EncounterSet-list')).split(',');
 
         for (index1 in encountersetListForCurrentCollection) {
             let encounterset = encountersetListForCurrentCollection[index1];

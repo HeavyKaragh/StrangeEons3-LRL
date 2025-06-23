@@ -108,11 +108,12 @@ function createInterface(diy, editor, sheet) {
         if (advancedControls) {
             let CustomSphere_panel = new TypeGrid();
             CustomSphere_panel.setTitle(@LRL-CustomSphere);
-            let CustomSphere_control = new uiTint('CustomSphere', bindings, FRONT);
+            let SphereColour_control = new uiTint('SphereColour', bindings, FRONT);
             let SphereIcon_control = new uiPortrait('SphereIcon', diy);
             let BodyIcon_control = new uiPortrait('BodyIcon', diy);
             let BodyIconTransparency_control = new uiTransparency('BodyIcon', bindings, FRONT);
-            let BodyIconTinted_control = new uiButtonText('BodyIcon-tinted', diy, bindings, FRONT) CustomSphere_panel.place(CustomSphere_control, 'hfill', SphereIcon_control, 'br hfill', BodyIcon_control, 'br hfill', BodyIconTransparency_control, 'br hfill', BodyIconTinted_control, '');
+            let BodyIconTinted_control = new uiButtonText('BodyIcon-tinted', diy, bindings, FRONT);
+            CustomSphere_panel.place(SphereColour_control, 'hfill', SphereIcon_control, 'br hfill', BodyIcon_control, 'br hfill', BodyIconTransparency_control, 'br hfill', BodyIconTinted_control, '');
             Template_tab.place(CustomSphere_panel, 'br hfill');
         }
     
@@ -181,6 +182,15 @@ function createInterface(diy, editor, sheet) {
 function createFrontPainter(diy, sheet) {
     debug(1, '\ncreateFrontPainter');
 
+    // TEMPLATE
+    Body_tinter = new createTinter('Body', diy);
+    BodyIcon_tinter = new createTinter('BodyIcon', diy);
+    
+    // STATS
+    ResourceCost_tinter = new createTinter('ResourceCost', diy);
+    HitPoints_tinter = new createTinter('HitPoints', diy);
+    White_tinter = new createTinter('White', diy);
+
     // TEXT
     Title_writer = new createWriter('Title', diy, sheet);
     Traits_writer = new createWriter('Traits', diy, sheet);
@@ -188,15 +198,6 @@ function createFrontPainter(diy, sheet) {
     Option_writer = new createWriter('Option', diy, sheet);
     Type_writer = new createWriter('Type', diy, sheet);
     Bottom_writer = new createWriter('Bottom', diy, sheet);
-
-    // STATS
-    ResourceCost_tinter = new createTinter('ResourceCost', diy);
-    HitPoints_tinter = new createTinter('HitPoints', diy);
-    White_tinter = new createTinter('White', diy);
-
-    // TEMPLATE
-    Body_tinter = new createTinter('Body', diy);
-    BodyIcon_tinter = new createTinter('BodyIcon', diy);
 
     // PORTRAIT
     updateExternalPortrait('Portrait', diy);
@@ -217,14 +218,14 @@ function paintFront(g, diy, sheet) {
 
     // TEMPLATE
     if ($Template == 'CustomSphere') {
-        let image = diy.settings.getImageResource('Body-' + $TextBox-size + '-tintable') Body_tinter.setImage(image);
-        let tint = diy.settings.getTint('CustomSphere-tint');
+        let image = diy.settings.getImageResource('Body-' + $TextBox-size + '-tintable'); 
+        Body_tinter.setImage(image);
+        let tint = diy.settings.getTint('SphereColour-tint');
         Body_tinter.setFactors(tint[0], tint[1], tint[2]); // mover a listener
         image = Body_tinter.getTintedImage();
         sheet.paintImage(g, image, 'Template-region');
-
         sheet.paintImage(g, 'CustomSphere-' + $TextBox-size + '-template', 'Template');
-
+        
         debug(2, '\tpaintCustomSphereBodyIcon');
         image = getPortraitImage('BodyIcon'); // get image from portrait
         if (diy.settings.getBoolean('BodyIcon-tinted', true)) {
@@ -237,7 +238,6 @@ function paintFront(g, diy, sheet) {
         debug(5, '\tTransparency: ' + $BodyIcon-transparency);
         image = ImageUtilities.alphaComposite(image, Number($BodyIcon-transparency) / 10); // apply transparency
         sheet.paintImage(g, image, 'BodyIcon-' + $TextBox-size + '-portrait-clip-region');
-
     } else {
         if (diy.settings.get($Template + '-' + $TextBox-size + '-template') != null) {
             debug(5, '\tTemplate: ' + diy.settings.get($Template + '-' + $TextBox-size + '-template'));
@@ -376,15 +376,15 @@ function onClear(diy) {
 
 if (sourcefile == 'Quickscript') {
     Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings');
-    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings');
+    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/LRL-I.settings');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js');
     Eons.namedObjects.LRL = new gameObject();
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/mySElibrary.js');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/myLRLlibrary.js');
     GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game');
-    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons.properties');
     InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface');
-    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons');
     testDIYScript('LRL');
 } else {
     useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');

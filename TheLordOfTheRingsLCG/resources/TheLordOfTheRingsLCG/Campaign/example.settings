@@ -7,6 +7,6 @@ CollectionNumber = 0
 Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
 ByCollection = false
 
-Encounterset = StrangeEons
-Encounterset-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
-ByEncounterset = false
+EncounterSet = StrangeEons
+EncounterSet-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
+ByEncounterSet = false

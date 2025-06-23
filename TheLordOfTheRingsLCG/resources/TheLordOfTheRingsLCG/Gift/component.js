@@ -51,13 +51,13 @@ function createInterface(diy, editor, sheet) {
         TextBox_panel.place(Traits_control, 'hfill', Effect_control, 'br hfill', Flavour_control, 'br hfill');
         Main_tab.place(TextBox_panel, 'br hfill');
     
-    // MAIN TAB CLOSE
-    Main_tab.addToEditor(editor, @LRL-Main);
+        // MAIN TAB CLOSE
+        Main_tab.addToEditor(editor, @LRL-Main);
 
     // TEMPLATE TAB
     let Template_tab = new TypeGrid();
     Template_tab.editorTabScrolling = true;
-
+    
         // SPHERE PANEL
         let Sphere_panel = new TypeGrid();
         Sphere_panel.setTitle(@LRL-Sphere);
@@ -71,14 +71,14 @@ function createInterface(diy, editor, sheet) {
         if (advancedControls) {
             let CustomSphere_panel = new TypeGrid();
             CustomSphere_panel.setTitle(@LRL-CustomSphere);
-            let CustomSphere_control = new uiTint('CustomSphere', bindings, FRONT);
+            let SphereColour_control = new uiTint('SphereColour', bindings, FRONT);
             let SphereIcon_control = new uiPortrait('SphereIcon', diy);
-            CustomSphere_panel.place(CustomSphere_control, 'hfill', SphereIcon_control, 'br hfill');
+            CustomSphere_panel.place(SphereColour_control, 'hfill', SphereIcon_control, 'br hfill');
             Template_tab.place(CustomSphere_panel, 'br hfill');
         }
-
-    // TEMPLATE TAB CLOSE
-    Template_tab.addToEditor(editor, @LRL-Template);
+    
+        // TEMPLATE TAB CLOSE
+        Template_tab.addToEditor(editor, @LRL-Template);
 
     // PORTRAIT TAB
     let Portrait_tab = new TypeGrid();
@@ -226,15 +226,15 @@ function onClear(diy) {
 
 if (sourcefile == 'Quickscript') {
     Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings');
-    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings');
+    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/LRL-I.settings');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js');
     Eons.namedObjects.LRL = new gameObject();
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/mySElibrary.js');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/myLRLlibrary.js');
     GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game');
-    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons');
     InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface');
-    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons');
     testDIYScript('LRL');
 } else {
     useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');

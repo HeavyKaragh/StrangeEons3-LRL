@@ -145,7 +145,7 @@ function createCombo(list) {
     /*
     Creates a combo suitable for a ui comboBox from a list.
     It's used on components that use the same lists for several controls,
-    like Encounterset, Encounterset1, etc on Quest card.
+    like EncounterSet, EncounterSet1, etc on Quest card.
     */
     importClass(arkham.diy.ListItem);
 
@@ -167,7 +167,7 @@ function uiComboIcon(key, combo, bindings, sides) {
     /*
     Creates a user interface comboBox using a combo.
     It's used on components that use the same lists for several controls,
-    like Encounterset, Encounterset1, etc on Quest card.
+    like EncounterSet, EncounterSet1, etc on Quest card.
     */
     if (sides == null) sides = BOTH;
 
@@ -1327,27 +1327,6 @@ function loadExample(diy) {
     }
 }
 
-function loadPreferences(diy) {
-    debug(3, '\n\tloadPreferences');
-    /*
-    This function loads the default value from LRL preferences.
-    This is useful when creating a lot of components for the same collection.
-    */
-    updateToPreferences('Copyright', diy);
-    updateToPreferences('CollectionInfo', diy);
-    updateToPreferences('Collection', diy);
-    updateToPreferences('Collection-portrait-template', diy);
-    // If Custom icon is selected in preferences, the custom icon path is used.
-    // This path should include the icon from the current project and start with 'project:'
-
-    if (diy.settings.get('Encounterset') != null) {
-        // Check if the setting is used for this component.
-        // $setting should be set in example.properties if needed, even as empty string.
-        // Reading a $setting not defined, returns null.
-        updateToPreferences('Encounterset', diy);
-        updateToPreferences('Encounterset-portrait-template', diy);
-    }
-}
 
 function updateExternalPortrait(key, diy) {
     debug(3, '\n\tupdateExternalPortrait: ' + key);

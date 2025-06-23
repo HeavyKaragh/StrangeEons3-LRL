@@ -71,9 +71,9 @@ function createInterface(diy, editor, sheet) {
             OtherEffect_panel.place(OptionLeft_control, 'br hfill');
         }
         Main_tab.place(OtherEffect_panel, 'br hfill');
-
-    // MAIN TAB CLOSE
-    Main_tab.addToEditor(editor, @LRL-Main);
+    
+        // MAIN TAB CLOSE
+        Main_tab.addToEditor(editor, @LRL-Main);
 
     // TEMPLATE TAB
     let Template_tab = new TypeGrid();
@@ -92,11 +92,12 @@ function createInterface(diy, editor, sheet) {
         if (advancedControls) {
             let CustomSphere_panel = new TypeGrid();
             CustomSphere_panel.setTitle(@LRL-CustomSphere);
-            let CustomSphere_control = new uiTint('CustomSphere', bindings, FRONT);
+            let SphereColour_control = new uiTint('SphereColour', bindings, FRONT);
             let SphereIcon_control = new uiPortrait('SphereIcon', diy);
             let BodyIcon_control = new uiPortrait('BodyIcon', diy);
             let BodyIconTransparency_control = new uiTransparency('BodyIcon', bindings, FRONT);
-            let BodyIconTinted_control = new uiButtonText('BodyIcon-tinted', diy, bindings, FRONT) CustomSphere_panel.place(CustomSphere_control, 'hfill', SphereIcon_control, 'br hfill', BodyIcon_control, 'br hfill', BodyIconTransparency_control, 'br hfill', BodyIconTinted_control, '');
+            let BodyIconTinted_control = new uiButtonText('BodyIcon-tinted', diy, bindings, FRONT);
+            CustomSphere_panel.place(SphereColour_control, 'hfill', SphereIcon_control, 'br hfill', BodyIcon_control, 'br hfill', BodyIconTransparency_control, 'br hfill', BodyIconTinted_control, '');
             Template_tab.place(CustomSphere_panel, 'br hfill');
         }
     
@@ -109,9 +110,9 @@ function createInterface(diy, editor, sheet) {
             TemplateBack_panel.place(TemplateBack_control, 'hfill');
             Template_tab.place(TemplateBack_panel, 'br hfill');
         }
-
-    // TEMPLATE TAB CLOSE
-    Template_tab.addToEditor(editor, @LRL-Template);
+    
+        // TEMPLATE TAB CLOSE
+        Template_tab.addToEditor(editor, @LRL-Template);
 
     // PORTRAIT TAB
     let Portrait_tab = new TypeGrid();
@@ -126,13 +127,13 @@ function createInterface(diy, editor, sheet) {
         Portrait_panel.place(Artist_control, 'hfill', Portrait_control, 'br hfill', PortraitMirror_control, 'br hfill');
         Portrait_tab.place(Portrait_panel, 'hfill');
     
-    // PORTRAIT TAB CLOSE   
-    Portrait_tab.addToEditor(editor, @LRL-Portrait);
+        // PORTRAIT TAB CLOSE   
+        Portrait_tab.addToEditor(editor, @LRL-Portrait);
 
     // COLLECTION TAB
     let Collection_tab = new TypeGrid();
     Collection_tab.editorTabScrolling = true;
-
+    
         // COLLECTION PANEL
         let Collection_panel = new TypeGrid();
         Collection_panel.setTitle(@LRL-Collection);
@@ -154,9 +155,9 @@ function createInterface(diy, editor, sheet) {
             OtherControls_panel.place(Type_control, 'br hfill', Subtype_control, 'br hfill');
         }
         Collection_tab.place(OtherControls_panel, 'br hfill');
-
-    // COLLECTION TAB CLOSE
-    Collection_tab.addToEditor(editor, @LRL-Collection);
+    
+        // COLLECTION TAB CLOSE
+        Collection_tab.addToEditor(editor, @LRL-Collection);
 
     bindings.bind();
 }
@@ -273,15 +274,15 @@ function onClear(diy) {
 
 if (sourcefile == 'Quickscript') {
     Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings');
-    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings');
+    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/LRL-I.settings');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js');
     Eons.namedObjects.LRL = new gameObject();
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/mySElibrary.js');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/myLRLlibrary.js');
     GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game');
-    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons.properties');
     InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface');
-    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons');
     testDIYScript('LRL');
 } else {
     useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');

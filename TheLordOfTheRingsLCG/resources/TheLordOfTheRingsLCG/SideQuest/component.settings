@@ -20,12 +20,12 @@ Portrait-shadow-Black-hires = TheLordOfTheRingsLCG/template/PokerCardHorizontal-
 Portrait-shadow-tintable = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-tintable-150.jp2
 Portrait-shadow-tintable-hires = TheLordOfTheRingsLCG/template/PokerCardHorizontal-shadow-tintable-300.jp2
 
-Encounterset-portrait-clip-region = 481,189,36,36
+EncounterSet-portrait-clip-region = 481,189,36,36
 
 Difficulty-tintable = TheLordOfTheRingsLCG/image/Difficulty-tintable.jp2
 #Difficulty-tintable = 
 Difficulty-region = 473,180,52,52
-EncountersetNumber-region = 487,229,24,12
+EncounterSetNumber-region = 487,229,24,12
 
 Title-region = 90,39,381,27
 Progress-region = 52,203,36,24

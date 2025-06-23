@@ -10,7 +10,6 @@ TemplateBack-template-hires = TheLordOfTheRingsLCG/template/Player-300.jp2
 
 Portrait-portrait-clip-region = 89,0,319,324
 SphereIcon-portrait-clip-region = 46,481,36,36
-BodyIcon-portrait-clip-region = 145,363,124,124
 
 ThreatCost-region = 75,50,36,24
 Willpower-region = 73,118,15,15

@@ -22,7 +22,7 @@ function create(diy) {
 
     diy.customPortraitHandling = true;
     createPortrait('Portrait', diy);
-    createPortrait('Encounterset', diy);
+    createPortrait('EncounterSet', diy);
     createPortrait('Collection', diy);
     $PortraitListCount = getPortraitCount();
 }
@@ -35,7 +35,7 @@ function createInterface(diy, editor, sheet) {
     // MAIN FRONT TAB
     let MainFront_tab = new TypeGrid();
     MainFront_tab.editorTabScrolling = true;
-
+    
         // TITLE PANEL
         let Title_panel = new TypeGrid();
         Title_panel.setTitle(@LRL-Title);
@@ -52,45 +52,45 @@ function createInterface(diy, editor, sheet) {
         TextBoxFront_panel.place(Text_control, 'hfill', Condition_control, 'br hfill', Flavour_control, 'br hfill');
         MainFront_tab.place(TextBoxFront_panel, 'br hfill');
     
-    // MAIN FRONT TAB CLOSE
-    MainFront_tab.addToEditor(editor, @LRL-MainFront);
+        // MAIN FRONT TAB CLOSE
+        MainFront_tab.addToEditor(editor, @LRL-MainFront);
 
     // MAIN BACK TAB
     let MainBack_tab = new TypeGrid();
     MainBack_tab.editorTabScrolling = true;
-
+    
         // TEXT BOX BACK PANEL
         let TextBoxBack_panel = new TypeGrid();
         TextBoxBack_panel.setTitle(@LRL-TextBoxBack);
-        let TextBack_control = new uiParagraphLabeled('TextBack', bindings, FRONT, 'big');
-        let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, FRONT, 'medium');
+        let TextBack_control = new uiParagraphLabeled('TextBack', bindings, BACK, 'big');
+        let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, BACK, 'medium');
         TextBoxBack_panel.place(TextBack_control, 'hfill', FlavourBack_control, 'br hfill');
         MainBack_tab.place(TextBoxBack_panel, 'hfill');
-
-    // MAIN BACK TAB CLOSE
-    MainBack_tab.addToEditor(editor, @LRL-MainBack);
+    
+        // MAIN BACK TAB CLOSE
+        MainBack_tab.addToEditor(editor, @LRL-MainBack);
 
     // ENCOUNTER SET TAB
-    var Encounterset_tab = new TypeGrid();
-    Encounterset_tab.editorTabScrolling = true;
-
+    var EncounterSet_tab = new TypeGrid();
+    EncounterSet_tab.editorTabScrolling = true;
+    
         // ENCOUNTER SET PANEL
-        let Encounterset_panel = new TypeGrid();
-        Encounterset_panel.setTitle(@LRL-Encounterset);
-        let Encounterset_control = new uiEncountersetList(bindings, FRONT);
-        let EncountersetNumber_control = new uiEncountersetNumber(bindings);
-        Encounterset_panel.place(Encounterset_control, 'hfill', EncountersetNumber_control, 'br');
-        let EncountersetPortrait_control = new uiPortrait('Encounterset', diy);
-        Encounterset_panel.place(EncountersetPortrait_control, 'br hfill');
-        Encounterset_tab.place(Encounterset_panel, 'br hfill');
-
-    // ENCOUNTER SET TAB CLOSE
-    Encounterset_tab.addToEditor(editor, @LRL-Encounterset);
+        let EncounterSet_panel = new TypeGrid();
+        EncounterSet_panel.setTitle(@LRL-EncounterSet);
+        let EncounterSet_control = new uiEncounterSetList(bindings, FRONT);
+        let EncounterSetNumber_control = new uiEncounterSetNumber(bindings, FRONT);
+        EncounterSet_panel.place(EncounterSet_control, 'hfill', EncounterSetNumber_control, 'br');
+        let EncounterSetPortrait_control = new uiPortrait('EncounterSet', diy);
+        EncounterSet_panel.place(EncounterSetPortrait_control, 'br hfill');
+        EncounterSet_tab.place(EncounterSet_panel, 'br hfill');
+    
+        // ENCOUNTER SET TAB CLOSE
+        EncounterSet_tab.addToEditor(editor, @LRL-EncounterSet);
 
     // PORTRAIT TAB
     let Portrait_tab = new TypeGrid();
     Portrait_tab.editorTabScrolling = true;
-
+    
         // PORTRAIT PANEL
         let Portrait_panel = new TypeGrid();
         Portrait_panel.setTitle(@LRL-Portrait);
@@ -99,20 +99,20 @@ function createInterface(diy, editor, sheet) {
         let PortraitMirror_control = new uiPortraitMirror('Portrait', Portrait_control);
         Portrait_panel.place(Artist_control, 'hfill', Portrait_control, 'br hfill', PortraitMirror_control, 'br hfill');
         Portrait_tab.place(Portrait_panel, 'hfill');
-
-    // PORTRAIT TAB CLOSE
-    Portrait_tab.addToEditor(editor, @LRL-Portrait);
+    
+        // PORTRAIT TAB CLOSE
+        Portrait_tab.addToEditor(editor, @LRL-Portrait);
 
     // COLLECTION TAB
     let Collection_tab = new TypeGrid();
     Collection_tab.editorTabScrolling = true;
-
+    
         // COLLECTION PANEL
         let Collection_panel = new TypeGrid();
         Collection_panel.setTitle(@LRL-Collection);
-        let CollectionNumber_control = new uiSpinnerLabeled('CollectionNumber', bindings, BOTH, 999);
-        let CollectionInfo_control = new uiTextLabeled('CollectionInfo', bindings, BOTH);
-        let Collection_control = new uiCollectionList(bindings, BOTH);
+        let CollectionNumber_control = new uiSpinnerLabeled('CollectionNumber', bindings, FRONT, 999);
+        let CollectionInfo_control = new uiTextLabeled('CollectionInfo', bindings, FRONT);
+        let Collection_control = new uiCollectionList(bindings, FRONT);
         let CollectionPortrait_control = new uiPortrait('Collection', diy);
         Collection_panel.place(Collection_control, 'hfill', CollectionNumber_control, 'br', CollectionInfo_control, 'hfill', CollectionPortrait_control, 'br hfill');
         Collection_tab.place(Collection_panel, 'hfill');
@@ -123,13 +123,13 @@ function createInterface(diy, editor, sheet) {
         let Copyright_control = new uiTextLabeled('Copyright', bindings, FRONT);
         OtherControls_panel.place(Copyright_control, 'hfill');
         if (advancedControls) {
-            let Type_control = new uiTextLabeled('Type', bindings, FRONT);
+            let Type_control = new uiTextLabeled('Type', bindings, BACK);
             OtherControls_panel.place(Type_control, 'br hfill');
         }
         Collection_tab.place(OtherControls_panel, 'br hfill');
-
-    // COLLECTION TAB CLOSE
-    Collection_tab.addToEditor(editor, @LRL-Collection);
+    
+        // COLLECTION TAB CLOSE
+        Collection_tab.addToEditor(editor, @LRL-Collection);
 
     bindings.bind();
 }
@@ -138,7 +138,7 @@ function createFrontPainter(diy, sheet) {
     debug(1, '\ncreateFrontPainter');
 
     // STATS
-    EncountersetNumber_writer = new createWriter('EncountersetNumber', diy, sheet);
+    EncounterSetNumber_writer = new createWriter('EncounterSetNumber', diy, sheet);
 
     // TEXT
     Title_writer = new createWriter('Title', diy, sheet);
@@ -147,7 +147,7 @@ function createFrontPainter(diy, sheet) {
     Bottom_writer = new createWriter('Bottom', diy, sheet);
 
     updateExternalPortrait('Portrait', diy);
-    updateExternalPortrait('Encounterset', diy);
+    updateExternalPortrait('EncounterSet', diy);
     updateExternalPortrait('Collection', diy);
 }
 
@@ -169,13 +169,13 @@ function paintFront(g, diy, sheet) {
 
     // ICONS
     paintIcon('Collection', diy, g, sheet);
-    paintIconLRL('Encounterset', diy, g, sheet);
+    paintIconLRL('EncounterSet', diy, g, sheet);
 
     // TEXTS
     writeTitle(diy, g);
     writeBody(['Text', 'Condition', 'Flavour'], diy, g);
 
-    writeEncountersetNumber(diy, g);
+    writeEncounterSetNumber(diy, g);
 
     writeOption('OptionLeft', diy, g, sheet);
     writeOption('OptionRight', diy, g, sheet);
@@ -239,15 +239,15 @@ function onClear(diy) {
 
 if (sourcefile == 'Quickscript') {
     Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings');
-    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings');
+    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/LRL-I.settings');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js');
     Eons.namedObjects.LRL = new gameObject();
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/mySElibrary.js');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/myLRLlibrary.js');
     GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game');
-    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons.properties');
     InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface');
-    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons');
     testDIYScript('LRL');
 } else {
     useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');

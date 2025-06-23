@@ -212,9 +212,9 @@ function onReadOldComponent(diy){
         diy.settings.set('Title-portrait-template','TheLordOfTheRingsLCG/icon/StrangeEons.png');
         diy.settings.set('Title-portrait-clip-region','50,423,313,102');
         createPortrait('Title', diy);
-        diy.settings.set('BackgroundFront-portrait-template','TheLordOfTheRingsLCG/icon/StrangeEons.png');
-        diy.settings.set('BackgroundFront-portrait-clip-region','0,0,413,563');
-        createPortrait('BackgroundFront', diy);
+        diy.settings.set('Background-portrait-template','TheLordOfTheRingsLCG/icon/StrangeEons.png');
+        diy.settings.set('Background-portrait-clip-region','0,0,413,563');
+        createPortrait('Background', diy);
         diy.settings.set('BackgroundBack-portrait-template','TheLordOfTheRingsLCG/icon/StrangeEons.png');
         diy.settings.set('BackgroundBack-portrait-clip-region','0,0,413,563');
         createPortrait('BackgroundBack', diy);
@@ -268,8 +268,6 @@ function onReadOldComponent(diy){
     case 'RulesCard':
         traslateSetting(diy,'TextFront','Rules','',true);
         traslateSetting(diy,'TextBack','RulesBack','',true);
-        traslateSetting(diy,'FlavourFront','Flavour','',true);
-        traslateSetting(diy,'StoryFront','Story','',true);
         if( diy.settings.get('PageNumber',null) == null ) diy.settings.set('PageNumber','0');
         if( diy.settings.get('PageTotal',null) == null ) diy.settings.set('PageTotal','0');
         break;
@@ -287,9 +285,39 @@ function onReadOldComponent(diy){
     case 'Attachment': 
     case 'Event': 
     case 'Hero': 
+    case 'Gift':
+    case 'Treasure':
+        diy.backTemplateKey = 'Player';
+        break;
+    case 'SideQuestPlayer':
+        diy.backTemplateKey = 'PlayerHorizontal';
+        break;
+    case 'Enemy':
+    case 'Location':
+    case 'Objective':
+    case 'ObjectiveAlly':
+    case 'Treachery':
+        diy.backTemplateKey = 'Encounter';
+        break;
+    case 'SideQuest':
+        diy.backTemplateKey = 'EncounterHorizontal';
+        break;
+    case 'Quest':
+    case 'Presentation':
+    case 'RulesCard':
+    case 'EncountersetCard':
+        diy.backTemplateKey = 'TemplateBack';
+        break;
+    }
+
+    debug(0,'\tCheck other settings');
+    switch(String(Card)){
+    case 'Ally': 
+    case 'Attachment': 
+    case 'Event': 
+    case 'Hero': 
     case 'SideQuestPlayer':
     case 'Gift':
-        diy.backTemplateKey = 'Player';
         break;
     case 'Enemy':
     case 'Location':
@@ -297,11 +325,12 @@ function onReadOldComponent(diy){
     case 'ObjectiveAlly':
     case 'SideQuest':
     case 'Treachery':
-        diy.backTemplateKey = 'Encounter';
         break;
     case 'Quest':
     case 'RulesCard':
     case 'Presentation':
+    case 'EncountersetCard':
+        traslateSetting(diy,'GameName','Group','',true);
         break;
     }
 

@@ -9,16 +9,16 @@ TemplateBack-template = TheLordOfTheRingsLCG/Occurrence/StandardBack-150.jp2
 TemplateBack-template-hires = TheLordOfTheRingsLCG/Occurrence/StandardBack-300.jp2
 
 Portrait-portrait-clip-region = 0,165,413,170
-#Encounterset-portrait-clip-region = 340,39,34,34#vieja
-Encounterset-portrait-clip-region = 344,39,30,30
+#EncounterSet-portrait-clip-region = 340,39,34,34#vieja
+EncounterSet-portrait-clip-region = 344,39,30,30
 
 Difficulty-region = 0,0,413,563
 Difficulty-tintable = TheLordOfTheRingsLCG/Occurrence/Difficulty-tintable-150.png
 Difficulty-tintable-hires = TheLordOfTheRingsLCG/Occurrence/Difficulty-tintable-300.png
 
-Encounterset-decoration = TheLordOfTheRingsLCG/Occurrence/Encounterset-decoration-150.png
-Encounterset-decoration-hires = TheLordOfTheRingsLCG/Occurrence/Encounterset-decoration-300.png
-Encounterset-decoration-region = 0,0,413,563
+EncounterSet-decoration = TheLordOfTheRingsLCG/Occurrence/EncounterSet-decoration-150.png
+EncounterSet-decoration-hires = TheLordOfTheRingsLCG/Occurrence/EncounterSet-decoration-300.png
+EncounterSet-decoration-region = 0,0,413,563
 
 Body-region = 38,330,337,174
 Complex-Body-region = 38,330,337,58

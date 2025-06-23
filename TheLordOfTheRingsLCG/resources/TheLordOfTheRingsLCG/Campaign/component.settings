@@ -10,7 +10,7 @@ TemplateBack-template-hires = TheLordOfTheRingsLCG/Campaign/StandardBack-300.jp2
 
 Portrait-portrait-clip-region = 0,0,413,245
 
-Encounterset-portrait-clip-region = 325,191,37,37
+EncounterSet-portrait-clip-region = 325,191,37,37
 
 Campaign-region = 68,243,274,20
 

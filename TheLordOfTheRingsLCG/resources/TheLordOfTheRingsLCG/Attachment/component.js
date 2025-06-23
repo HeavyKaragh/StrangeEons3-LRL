@@ -92,11 +92,12 @@ function createInterface(diy, editor, sheet) {
         if (advancedControls) {
             let CustomSphere_panel = new TypeGrid();
             CustomSphere_panel.setTitle(@LRL-CustomSphere);
-            let CustomSphere_control = new uiTint('CustomSphere', bindings, FRONT);
+            let SphereColour_control = new uiTint('SphereColour', bindings, FRONT);
             let SphereIcon_control = new uiPortrait('SphereIcon', diy);
             let BodyIcon_control = new uiPortrait('BodyIcon', diy);
             let BodyIconTransparency_control = new uiTransparency('BodyIcon', bindings, FRONT);
-            let BodyIconTinted_control = new uiButtonText('BodyIcon-tinted', diy, bindings, FRONT) CustomSphere_panel.place(CustomSphere_control, 'hfill', SphereIcon_control, 'br hfill', BodyIcon_control, 'br hfill', BodyIconTransparency_control, 'br hfill', BodyIconTinted_control, '');
+            let BodyIconTinted_control = new uiButtonText('BodyIcon-tinted', diy, bindings, FRONT);
+            CustomSphere_panel.place(SphereColour_control, 'hfill', SphereIcon_control, 'br hfill', BodyIcon_control, 'br hfill', BodyIconTransparency_control, 'br hfill', BodyIconTinted_control, '');
             Template_tab.place(CustomSphere_panel, 'br hfill');
         }
     

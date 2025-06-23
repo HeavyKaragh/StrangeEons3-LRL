@@ -1,7 +1,7 @@
 //añadir pesadilla
 
 /* COMPONENT CONFIGURATION */
-const Card = 'Encounterset';
+const Card = 'EncounterSet';
 const CardVersion = 1;
 // 1: rewrite using new 2023 library
 
@@ -23,7 +23,7 @@ function create(diy) {
     diy.customPortraitHandling = true;
     createPortrait('Portrait', diy);
     createPortrait('Collection', diy);
-    createPortrait('Encounterset', diy);
+    createPortrait('EncounterSet', diy);
     $PortraitListCount = getPortraitCount();
 }
 
@@ -72,19 +72,19 @@ function createInterface(diy, editor, sheet) {
     MainBack_tab.addToEditor(editor, @LRL-MainBack);
 
     // ENCOUNTER SET TAB
-    var Encounterset_tab = new TypeGrid();
-    Encounterset_tab.editorTabScrolling = true;
+    var EncounterSet_tab = new TypeGrid();
+    EncounterSet_tab.editorTabScrolling = true;
 
         // ENCOUNTER SET PANEL
-        let Encounterset_panel = new TypeGrid();
-        Encounterset_panel.setTitle(@LRL-Encounterset);
-        let Encounterset_control = new uiEncountersetList(bindings, FRONT);
-        let EncountersetPortrait_control = new uiPortrait('Encounterset', diy);
-        Encounterset_panel.place(Encounterset_control, 'hfill', EncountersetPortrait_control, 'br hfill');
-        Encounterset_tab.place(Encounterset_panel, 'hfill');
+        let EncounterSet_panel = new TypeGrid();
+        EncounterSet_panel.setTitle(@LRL-EncounterSet);
+        let EncounterSet_control = new uiEncounterSetList(bindings, FRONT);
+        let EncounterSetPortrait_control = new uiPortrait('EncounterSet', diy);
+        EncounterSet_panel.place(EncounterSet_control, 'hfill', EncounterSetPortrait_control, 'br hfill');
+        EncounterSet_tab.place(EncounterSet_panel, 'hfill');
 
     // ENCOUNTERSET TAB CLOSE
-    Encounterset_tab.addToEditor(editor, @LRL-Encounterset);
+    EncounterSet_tab.addToEditor(editor, @LRL-EncounterSet);
 
     // PORTRAIT TAB
     let Portrait_tab = new TypeGrid();
@@ -143,7 +143,7 @@ function createFrontPainter(diy, sheet) {
     // PORTRAIT
     updateExternalPortrait('Portrait', diy);
     updateExternalPortrait('Collection', diy);
-    updateExternalPortrait('Encounterset', diy);
+    updateExternalPortrait('EncounterSet', diy);
 }
 
 function createBackPainter(diy, sheet) {
@@ -161,7 +161,7 @@ function paintFront(g, diy, sheet) {
 
     // ICONS
     paintIcon('Collection', diy, g, sheet);
-    paintIconLRL('Encounterset', diy, g, sheet);
+    paintIconLRL('EncounterSet', diy, g, sheet);
 
     // TEXT
     writeTitle(diy, g);
@@ -227,15 +227,15 @@ function onClear(diy) {
 
 if (sourcefile == 'Quickscript') {
     Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.settings');
-    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/LRL-I.settings');
+    Settings.shared.addSettingsFrom('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/LRL-I.settings');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/LRL.js');
     Eons.namedObjects.LRL = new gameObject();
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/mySElibrary.js');
     useLibrary('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/myLRLlibrary.js');
     GameLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/game');
-    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    GameLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons.properties');
     InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG/resources/TheLordOfTheRingsLCG/text/interface');
-    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-I/resources/TheLordOfTheRingsLCG/text/icons');
+    InterfaceLanguage.addStrings('project:TheLordOfTheRingsLCG-Icons/resources/TheLordOfTheRingsLCG/text/icons');
     testDIYScript('LRL');
 } else {
     useLibrary('res://TheLordOfTheRingsLCG/mySElibrary.js');

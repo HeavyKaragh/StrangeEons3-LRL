@@ -1,5 +1,6 @@
 falta LRL-PageTotal
 
+
 añadir preferencias
 textos: Copyright, CollectionInfo
 iconlist: Collection, EncounterSet
@@ -28,6 +29,12 @@ añadir nightmare
 
 TRAICIÓN promo
 
+HAVEN
+añadir formato traits para TraitIn
+
+PRESENCE
+añadir formato traits para TraitIn
+
 PRESENTACIÓN
 llevar color por colección a selector de plantilla
 no funciona overlay
@@ -45,10 +52,22 @@ nightmare: falta decoración progreso
 
 QUEST SHEET
 corregir posicion iconos de conjuntos
+formato de textos back
+
+SCENARIO
+añadir nightmare
 
 RULES CARD
 corregir posicion iconos de conjuntos
+group?
 
 SIDE QUEST
 añadir difficulty al dibujado 
 
+SETUP
+añadir título ByEncounterSet
+
+
+ENCOUNTER SET
+añadir título ByEncounterSet
+añadir nightmare

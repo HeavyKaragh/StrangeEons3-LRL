@@ -9,10 +9,10 @@ Collection-portrait-clipping = false
 Collection-portrait-scaleUsesMinimum = true
 Collection-portrait-stencil = false
 
-Encounterset-portrait-backgroundFilled = false
-Encounterset-portrait-clipping = false
-Encounterset-portrait-scaleUsesMinimum = true
-Encounterset-portrait-stencil = false
+EncounterSet-portrait-backgroundFilled = false
+EncounterSet-portrait-clipping = false
+EncounterSet-portrait-scaleUsesMinimum = true
+EncounterSet-portrait-stencil = false
 
 Group-portrait-backgroundFilled = false
 Group-portrait-clipping = false
@@ -30,30 +30,30 @@ BodyIcon-portrait-scaleUsesMinimum = true
 BodyIcon-portrait-stencil = false
 BodyIcon-transparency = 2
 
-Encounterset1-portrait-backgroundFilled = false
-Encounterset1-portrait-clipping = false
-Encounterset1-portrait-scaleUsesMinimum = true
-Encounterset1-portrait-stencil = false
+EncounterSet1-portrait-backgroundFilled = false
+EncounterSet1-portrait-clipping = false
+EncounterSet1-portrait-scaleUsesMinimum = true
+EncounterSet1-portrait-stencil = false
 
-Encounterset2-portrait-backgroundFilled = false
-Encounterset2-portrait-clipping = false
-Encounterset2-portrait-scaleUsesMinimum = true
-Encounterset2-portrait-stencil = false
+EncounterSet2-portrait-backgroundFilled = false
+EncounterSet2-portrait-clipping = false
+EncounterSet2-portrait-scaleUsesMinimum = true
+EncounterSet2-portrait-stencil = false
 
-Encounterset3-portrait-backgroundFilled = false
-Encounterset3-portrait-clipping = false
-Encounterset3-portrait-scaleUsesMinimum = true
-Encounterset3-portrait-stencil = false
+EncounterSet3-portrait-backgroundFilled = false
+EncounterSet3-portrait-clipping = false
+EncounterSet3-portrait-scaleUsesMinimum = true
+EncounterSet3-portrait-stencil = false
 
-Encounterset4-portrait-backgroundFilled = false
-Encounterset4-portrait-clipping = false
-Encounterset4-portrait-scaleUsesMinimum = true
-Encounterset4-portrait-stencil = false
+EncounterSet4-portrait-backgroundFilled = false
+EncounterSet4-portrait-clipping = false
+EncounterSet4-portrait-scaleUsesMinimum = true
+EncounterSet4-portrait-stencil = false
 
-Encounterset5-portrait-backgroundFilled = false
-Encounterset5-portrait-clipping = false
-Encounterset5-portrait-scaleUsesMinimum = true
-Encounterset5-portrait-stencil = false
+EncounterSet5-portrait-backgroundFilled = false
+EncounterSet5-portrait-clipping = false
+EncounterSet5-portrait-scaleUsesMinimum = true
+EncounterSet5-portrait-stencil = false
 
 OptionLeft-decoration = TheLordOfTheRingsLCG/image/Option-decoration.jp2
 OptionRight-decoration = TheLordOfTheRingsLCG/image/Option-decoration.jp2
@@ -99,7 +99,7 @@ PortraitBack-shadow-tint = 0.0,1.0,0.5
 # Encounter cards' decorations tints
 Gold-tint = 40.0,1.0,1.0
 #Standard-tint = 0.0,0.0,0.5
-#Encounterset-tint = 40.0,1.0,1.0
+#EncounterSet-tint = 40.0,1.0,1.0
 #Saga-tint = 20.0,0.6,0.9
 #Ring-tint = 0.4,0.7,1.0
 #Nightmare-tint = 0.0,1.0,0.5
@@ -236,10 +236,10 @@ CollectionNumber-format = <left>
 CollectionInfo-format = <right>
 Copyright-format = <center>
 
-EncountersetNumber-style = FAMILY: {Eons.namedObjects.LRL.BodyFont}; WEIGHT: BOLD
-EncountersetNumber-alignment = middle,center
-EncountersetNumber-pointsize = 4.5
-EncountersetNumber-colour = #FFFFFF
+EncounterSetNumber-style = FAMILY: {Eons.namedObjects.LRL.BodyFont}; WEIGHT: BOLD
+EncounterSetNumber-alignment = middle,center
+EncounterSetNumber-pointsize = 4.5
+EncounterSetNumber-colour = #FFFFFF
 
 Page-style = FAMILY: {Eons.namedObjects.LRL.LRLfont}; WIDTH: SEMICONDENSED; WEIGHT: BOLD
 Page-alignment = middle,center
@@ -321,7 +321,7 @@ Template-cutBig = TheLordOfTheRingsLCG/image/PokerCard-cutBig.png
 Template-bleeding = TheLordOfTheRingsLCG/image/PokerCard-bleeding.png
 Difficulty-tintable = TheLordOfTheRingsLCG/image/Difficulty-tintable.jp2
 Difficulty = Standard
-Encounterset-decoration = TheLordOfTheRingsLCG/image/Encounterset-decoration.jp2
+EncounterSet-decoration = TheLordOfTheRingsLCG/image/EncounterSet-decoration.jp2
 
 #Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-Tintable.png
 #Collection = StrangeEons

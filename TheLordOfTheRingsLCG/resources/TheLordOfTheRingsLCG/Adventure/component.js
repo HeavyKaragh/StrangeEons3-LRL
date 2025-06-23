@@ -22,38 +22,38 @@ function create(diy) {
     diy.customPortraitHandling = true;
     createPortrait('Portrait', diy);
     createPortrait('Collection', diy);
-    createPortrait('Encounterset', diy);
-    createPortrait('Encounterset1', diy);
-    createPortrait('Encounterset2', diy);
-    createPortrait('Encounterset3', diy);
-    createPortrait('Encounterset4', diy);
-    createPortrait('Encounterset5', diy);
+    createPortrait('EncounterSet', diy);
+    createPortrait('EncounterSet1', diy);
+    createPortrait('EncounterSet2', diy);
+    createPortrait('EncounterSet3', diy);
+    createPortrait('EncounterSet4', diy);
+    createPortrait('EncounterSet5', diy);
     $PortraitListCount = getPortraitCount();
 }
 
 function createInterface(diy, editor, sheet) {
     debug(1, '\ncreateInterface');
-    let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls');
+    let advancedControls = diy.settings.getBoolean('LRL-AdvancedControls',false);
     if ($Template == 'CustomColour') advancedControls = true;
     var bindings = new Bindings(editor, diy);
 
     // MAIN TAB
-    let MainFront_tab = new TypeGrid();
-    MainFront_tab.editorTabScrolling = true;
-
+    let Main_tab = new TypeGrid();
+    Main_tab.editorTabScrolling = true;
+    
         // TITLE PANEL
         let Title_panel = new TypeGrid();
         Title_panel.setTitle(@LRL-Title);
         let Title_control = uiTitle(diy, bindings, FRONT);
         Title_panel.place(Title_control, 'hfill');
-        MainFront_tab.place(Title_panel, 'hfill');
+        Main_tab.place(Title_panel, 'hfill');
     
         // GRAND ADVENTURE PANEL
         let GrandAdventure_panel = new TypeGrid();
         GrandAdventure_panel.setTitle(@LRL-GrandAdventure);
         let GrandAdventure_control = new uiText('GrandAdventure', bindings, FRONT);
         GrandAdventure_panel.place(GrandAdventure_control, 'hfill');
-        MainFront_tab.place(GrandAdventure_panel, 'br hfill');
+        Main_tab.place(GrandAdventure_panel, 'br hfill');
     
         // TEXT BOX PANEL
         let TextBox_panel = new TypeGrid();
@@ -62,7 +62,7 @@ function createInterface(diy, editor, sheet) {
         let Text_control = new uiParagraphLabeled('Text', bindings, FRONT, 'big');
         let Flavour_control = new uiParagraphLabeled('Flavour', bindings, FRONT, 'medium');
         TextBox_panel.place(Story_control, 'hfill', Text_control, 'br hfill', Flavour_control, 'br hfill');
-        MainFront_tab.place(TextBox_panel, 'br hfill');
+        Main_tab.place(TextBox_panel, 'br hfill');
     
         // OTHER EFFECT PANEL
         let OtherEffect_panel = new TypeGrid();
@@ -70,86 +70,86 @@ function createInterface(diy, editor, sheet) {
         let OptionLeft_control = new uiTextLabeled('OptionLeft', bindings, FRONT);
         let OptionRight_control = new uiTextLabeled('OptionRight', bindings, FRONT);
         OtherEffect_panel.place(OptionRight_control, 'hfill', OptionLeft_control, 'br hfill');
-        MainFront_tab.place(OtherEffect_panel, 'br hfill');
-
-    // MAIN TAB CLOSE
-    MainFront_tab.addToEditor(editor, @LRL-MainFront);
+        Main_tab.place(OtherEffect_panel, 'br hfill');
+    
+        // MAIN TAB CLOSE
+       Main_tab.addToEditor(editor, @LRL-MainFront);
 
     // MAIN BACK TAB
     var MainBack_tab = new TypeGrid();
     MainBack_tab.editorTabScrolling = true;
-
+    
         // TEXT BOX BACK PANEL
         let TextBoxBack_panel = new TypeGrid();
         TextBoxBack_panel.setTitle(@LRL-TextBoxBack);
-        let StoryBack_control = new uiParagraphLabeled('StoryBack', bindings, FRONT, 'medium');
-        let TextBack_control = new uiParagraphLabeled('TextBack', bindings, FRONT, 'big');
-        let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, FRONT, 'medium');
+        let StoryBack_control = new uiParagraphLabeled('StoryBack', bindings, BACK, 'medium');
+        let TextBack_control = new uiParagraphLabeled('TextBack', bindings, BACK, 'big');
+        let FlavourBack_control = new uiParagraphLabeled('FlavourBack', bindings, BACK, 'medium');
         TextBoxBack_panel.place(StoryBack_control, 'hfill', TextBack_control, 'br hfill', FlavourBack_control, 'br hfill');
         MainBack_tab.place(TextBoxBack_panel, 'br hfill');
-
-    // MAIN BACK TAB CLOSE
-    MainBack_tab.addToEditor(editor, @LRL-MainBack);
+    
+        // MAIN BACK TAB CLOSE
+        MainBack_tab.addToEditor(editor, @LRL-MainBack);
 
     // ENCOUNTER SET TAB
-    var Encounterset_tab = new TypeGrid();
-    Encounterset_tab.editorTabScrolling = true;
-
+    var EncounterSet_tab = new TypeGrid();
+    EncounterSet_tab.editorTabScrolling = true;
+    
         // ENCOUNTER SET PANEL
-        let Encounterset_panel = new TypeGrid();
-        Encounterset_panel.setTitle(@LRL-Encounterset);
-        let Encounterset_control = new uiEncountersetList(bindings, FRONT);
-        let EncountersetPortrait_control = new uiPortrait('Encounterset', diy);
-        Encounterset_panel.place(Encounterset_control, 'hfill', EncountersetPortrait_control, 'br hfill');
-        Encounterset_tab.place(Encounterset_panel, 'hfill');
+        let EncounterSet_panel = new TypeGrid();
+        EncounterSet_panel.setTitle(@LRL-EncounterSet);
+        let EncounterSet_control = new uiEncounterSetList(bindings, FRONT);
+        let EncounterSetPortrait_control = new uiPortrait('EncounterSet', diy);
+        EncounterSet_panel.place(EncounterSet_control, 'hfill', EncounterSetPortrait_control, 'br hfill');
+        EncounterSet_tab.place(EncounterSet_panel, 'hfill');
     
         // ADDITIONAL SET 1 PANEL
-        let Encounterset1_panel = new TypeGrid();
-        Encounterset1_panel.setTitle(@LRL-Encounterset1);
-        let Encounterset1_control = new uiOtherEncountersetList('Encounterset1', bindings, FRONT);
-        let Encounterset1Portrait_control = new uiPortrait('Encounterset1', diy);
-        Encounterset1_panel.place(Encounterset1_control, 'hfill', Encounterset1Portrait_control, 'br hfill');
-        Encounterset_tab.place(Encounterset1_panel, 'br hfill');
+        let EncounterSet1_panel = new TypeGrid();
+        EncounterSet1_panel.setTitle(@LRL-EncounterSet1);
+        let EncounterSet1_control = new uiOtherEncounterSetList('EncounterSet1', bindings, FRONT);
+        let EncounterSet1Portrait_control = new uiPortrait('EncounterSet1', diy);
+        EncounterSet1_panel.place(EncounterSet1_control, 'hfill', EncounterSet1Portrait_control, 'br hfill');
+        EncounterSet_tab.place(EncounterSet1_panel, 'br hfill');
     
         // ADDITIONAL SET 2 PANEL
-        let Encounterset2_panel = new TypeGrid();
-        Encounterset2_panel.setTitle(@LRL-Encounterset2);
-        let Encounterset2_control = new uiOtherEncountersetList('Encounterset2', bindings, FRONT);
-        let Encounterset2Portrait_control = new uiPortrait('Encounterset2', diy);
-        Encounterset2_panel.place(Encounterset2_control, 'hfill', Encounterset2Portrait_control, 'br hfill');
-        Encounterset_tab.place(Encounterset2_panel, 'br hfill');
+        let EncounterSet2_panel = new TypeGrid();
+        EncounterSet2_panel.setTitle(@LRL-EncounterSet2);
+        let EncounterSet2_control = new uiOtherEncounterSetList('EncounterSet2', bindings, FRONT);
+        let EncounterSet2Portrait_control = new uiPortrait('EncounterSet2', diy);
+        EncounterSet2_panel.place(EncounterSet2_control, 'hfill', EncounterSet2Portrait_control, 'br hfill');
+        EncounterSet_tab.place(EncounterSet2_panel, 'br hfill');
     
         // ADDITIONAL SET 3 PANEL
-        let Encounterset3_panel = new TypeGrid();
-        Encounterset3_panel.setTitle(@LRL-Encounterset3);
-        let Encounterset3_control = new uiOtherEncountersetList('Encounterset3', bindings, FRONT);
-        let Encounterset3Portrait_control = new uiPortrait('Encounterset3', diy);
-        Encounterset3_panel.place(Encounterset3_control, 'hfill', Encounterset3Portrait_control, 'br hfill');
-        Encounterset_tab.place(Encounterset3_panel, 'br hfill');
+        let EncounterSet3_panel = new TypeGrid();
+        EncounterSet3_panel.setTitle(@LRL-EncounterSet3);
+        let EncounterSet3_control = new uiOtherEncounterSetList('EncounterSet3', bindings, FRONT);
+        let EncounterSet3Portrait_control = new uiPortrait('EncounterSet3', diy);
+        EncounterSet3_panel.place(EncounterSet3_control, 'hfill', EncounterSet3Portrait_control, 'br hfill');
+        EncounterSet_tab.place(EncounterSet3_panel, 'br hfill');
     
         // ADDITIONAL SET 4 PANEL
-        let Encounterset4_panel = new TypeGrid();
-        Encounterset4_panel.setTitle(@LRL-Encounterset4);
-        let Encounterset4_control = new uiOtherEncountersetList('Encounterset4', bindings, FRONT);
-        let Encounterset4Portrait_control = new uiPortrait('Encounterset4', diy);
-        Encounterset4_panel.place(Encounterset4_control, 'hfill', Encounterset4Portrait_control, 'br hfill');
-        Encounterset_tab.place(Encounterset4_panel, 'br hfill');
+        let EncounterSet4_panel = new TypeGrid();
+        EncounterSet4_panel.setTitle(@LRL-EncounterSet4);
+        let EncounterSet4_control = new uiOtherEncounterSetList('EncounterSet4', bindings, FRONT);
+        let EncounterSet4Portrait_control = new uiPortrait('EncounterSet4', diy);
+        EncounterSet4_panel.place(EncounterSet4_control, 'hfill', EncounterSet4Portrait_control, 'br hfill');
+        EncounterSet_tab.place(EncounterSet4_panel, 'br hfill');
     
         // ADDITIONAL SET 5 PANEL
-        let Encounterset5_panel = new TypeGrid();
-        Encounterset5_panel.setTitle(@LRL-Encounterset5);
-        let Encounterset5_control = new uiOtherEncountersetList('Encounterset5', bindings, FRONT);
-        let Encounterset5Portrait_control = new uiPortrait('Encounterset5', diy);
-        Encounterset5_panel.place(Encounterset5_control, 'hfill', Encounterset5Portrait_control, 'br hfill');
-        Encounterset_tab.place(Encounterset5_panel, 'br hfill');
+        let EncounterSet5_panel = new TypeGrid();
+        EncounterSet5_panel.setTitle(@LRL-EncounterSet5);
+        let EncounterSet5_control = new uiOtherEncounterSetList('EncounterSet5', bindings, FRONT);
+        let EncounterSet5Portrait_control = new uiPortrait('EncounterSet5', diy);
+        EncounterSet5_panel.place(EncounterSet5_control, 'hfill', EncounterSet5Portrait_control, 'br hfill');
+        EncounterSet_tab.place(EncounterSet5_panel, 'br hfill');
     
-    // ENCOUNTER SET TAB CLOSE
-    Encounterset_tab.addToEditor(editor, @LRL-Encounterset);
+        // ENCOUNTER SET TAB CLOSE
+        EncounterSet_tab.addToEditor(editor, @LRL-EncounterSet);
 
     // TEMPLATE TAB
     let Template_tab = new TypeGrid();
     Template_tab.editorTabScrolling = true;
-
+    
         // TEMPLATE PANEL
         let Template_panel = new TypeGrid();
         Template_panel.setTitle(@LRL-Template);
@@ -164,20 +164,17 @@ function createInterface(diy, editor, sheet) {
     
         if (advancedControls) {
             // CUSTOMCOLOUR PANEL
-            let CustomColour_panel = new TypeGrid();
-            CustomColour_panel.setTitle(@LRL-CustomColour);
             let CustomColour_control = new uiTint('CustomColour', bindings, BOTH);
-            CustomColour_panel.place(CustomColour_control, 'hfill');
-            Template_tab.place(CustomColour_panel, 'br hfill');
+            Template_tab.place(CustomColour_control, 'br hfill');
         }
-
-    // TEMPLATE TAB CLOSE
-    Template_tab.addToEditor(editor, @LRL-Template);
+    
+        // TEMPLATE TAB CLOSE
+        Template_tab.addToEditor(editor, @LRL-Template);
 
     // PORTRAIT TAB
     let Portrait_tab = new TypeGrid();
     Portrait_tab.editorTabScrolling = true;
-
+    
         // PORTRAIT PANEL
         let Portrait_panel = new TypeGrid();
         Portrait_panel.setTitle(@LRL-Portrait);
@@ -186,18 +183,19 @@ function createInterface(diy, editor, sheet) {
         let PortraitMirror_control = new uiPortraitMirror('Portrait', Portrait_control);
         Portrait_panel.place(Artist_control, 'hfill', Portrait_control, 'br hfill', PortraitMirror_control, 'br hfill');
         Portrait_tab.place(Portrait_panel, 'hfill');
-
-    Portrait_tab.addToEditor(editor, @LRL-Portrait);
+        
+        // PORTRAIT TAB CLOSE
+        Portrait_tab.addToEditor(editor, @LRL-Portrait);
 
     // COLLECTION TAB
     let Collection_tab = new TypeGrid();
     Collection_tab.editorTabScrolling = true;
-
+    
         // COLLECTION PANEL
         let Collection_panel = new TypeGrid();
         Collection_panel.setTitle(@LRL-Collection);
-        let CollectionInfo_control = new uiTextLabeled('CollectionInfo', bindings, BOTH);
         let Collection_control = new uiCollectionList(bindings, BOTH);
+        let CollectionInfo_control = new uiTextLabeled('CollectionInfo', bindings, BOTH);
         let CollectionPortrait_control = new uiPortrait('Collection', diy);
         Collection_panel.place(Collection_control, 'hfill', CollectionInfo_control, 'br hfill', CollectionPortrait_control, 'br hfill');
         Collection_tab.place(Collection_panel, 'hfill');
@@ -212,9 +210,9 @@ function createInterface(diy, editor, sheet) {
             OtherControls_panel.place(Type_control, 'br hfill');
         }
         Collection_tab.place(OtherControls_panel, 'br hfill');
-
-    // COLLECTION TAB CLOSE
-    Collection_tab.addToEditor(editor, @LRL-Collection);
+    
+        // COLLECTION TAB CLOSE
+      Collection_tab.addToEditor(editor, @LRL-Collection);
 
     bindings.bind();
 }
@@ -235,12 +233,12 @@ function createFrontPainter(diy, sheet) {
 
     updateExternalPortrait('Portrait', diy);
     updateExternalPortrait('Collection', diy);
-    updateExternalPortrait('Encounterset', diy);
-    updateExternalPortrait('Encounterset1', diy);
-    updateExternalPortrait('Encounterset2', diy);
-    updateExternalPortrait('Encounterset3', diy);
-    updateExternalPortrait('Encounterset4', diy);
-    updateExternalPortrait('Encounterset5', diy);
+    updateExternalPortrait('EncounterSet', diy);
+    updateExternalPortrait('EncounterSet1', diy);
+    updateExternalPortrait('EncounterSet2', diy);
+    updateExternalPortrait('EncounterSet3', diy);
+    updateExternalPortrait('EncounterSet4', diy);
+    updateExternalPortrait('EncounterSet5', diy);
 }
 
 function createBackPainter(diy, sheet) {
@@ -281,18 +279,18 @@ function paintFront(g, diy, sheet) {
 
     /* ICONS */
     paintIcon('Collection', diy, g, sheet);
-    paintIconLRL('Encounterset', diy, g, sheet);
-    var adapterList = new Array('Encounterset1', 'Encounterset2', 'Encounterset3', 'Encounterset4', 'Encounterset5');
+    paintIconLRL('EncounterSet', diy, g, sheet);
+    var adapterList = new Array('EncounterSet1', 'EncounterSet2', 'EncounterSet3', 'EncounterSet4', 'EncounterSet5');
     paintAdapter(adapterList, diy, g, sheet);
     if ($Template == 'CustomColour') paintAdapterTinted(adapterList, diy, g, sheet);
-    paintIcon('Encounterset1', diy, g, sheet);
-    paintIcon('Encounterset2', diy, g, sheet);
-    paintIcon('Encounterset3', diy, g, sheet);
-    paintIcon('Encounterset4', diy, g, sheet);
-    paintIcon('Encounterset5', diy, g, sheet);
+    paintIcon('EncounterSet1', diy, g, sheet);
+    paintIcon('EncounterSet2', diy, g, sheet);
+    paintIcon('EncounterSet3', diy, g, sheet);
+    paintIcon('EncounterSet4', diy, g, sheet);
+    paintIcon('EncounterSet5', diy, g, sheet);
 
     /* TEXT */
-    writeTitleByEncounterset(diy, g);
+    writeTitleByEncounterSet(diy, g);
     if ($GrandAdventure != '') {
         writeLine(formatText('GrandAdventure', diy), GrandAdventure_writer, diy.settings.getRegion('GrandAdventure'), g);
     }

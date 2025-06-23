@@ -10,8 +10,8 @@ TemplateBack-template-hires = TheLordOfTheRingsLCG/Setup/NightmareBack-300.jp2
 
 Portrait-portrait-clip-region = 0,77,413,245
 
-Encounterset-portrait-clip-region = 325,266,37,37
-EncountersetNumber-region = 331,311,24,12
+EncounterSet-portrait-clip-region = 325,266,37,37
+EncounterSetNumber-region = 331,311,24,12
 
 BodyBack-region = 54,55,305,439
 Body-region = 54,325,305,192

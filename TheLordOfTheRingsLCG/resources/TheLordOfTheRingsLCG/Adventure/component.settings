@@ -9,13 +9,13 @@ TemplateBack-template = TheLordOfTheRingsLCG/Adventure/StandardBack-150.jp2
 TemplateBack-template-hires = TheLordOfTheRingsLCG/Adventure/StandardBack-300.jp2
 
 Portrait-portrait-clip-region = 0,66,413,230
-Encounterset-portrait-clip-region = 40,40,44,44
+EncounterSet-portrait-clip-region = 40,40,44,44
 
-Encounterset1-portrait-clip-region = 41,92,22,22
-Encounterset2-portrait-clip-region = 41,114,22,22
-Encounterset3-portrait-clip-region = 41,136,22,22
-Encounterset4-portrait-clip-region = 41,158,22,22
-Encounterset5-portrait-clip-region = 41,180,22,22
+EncounterSet1-portrait-clip-region = 41,92,22,22
+EncounterSet2-portrait-clip-region = 41,114,22,22
+EncounterSet3-portrait-clip-region = 41,136,22,22
+EncounterSet4-portrait-clip-region = 41,158,22,22
+EncounterSet5-portrait-clip-region = 41,180,22,22
 
 Standard-template = TheLordOfTheRingsLCG/Adventure/Standard-150.jp2
 Standard-template-hires = TheLordOfTheRingsLCG/Adventure/Standard-300.jp2
@@ -61,9 +61,9 @@ CustomColour-adapter5-tintable = TheLordOfTheRingsLCG/Adventure/CustomColour-ada
 CustomColour-adapter5-tintable-hires = TheLordOfTheRingsLCG/Adventure/CustomColour-adapter5-tintable-300.jp2
 
 OptionLeft-region = 49,507,59,9
-OptionLeftDecoration-region = 42,503,72,17
+OptionLeft-decoration-region = 42,503,72,17
 OptionRight-region = 306,507,59,9
-OptionRightDecoration-region = 299,503,72,17
+OptionRight-decoration-region = 299,503,72,17
 
 Title-region = 96,42,270,22
 GrandAdventure-region = 100,72,262,10

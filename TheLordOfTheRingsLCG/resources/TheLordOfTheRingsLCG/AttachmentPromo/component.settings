@@ -13,12 +13,12 @@ Body-lineTightness = 0.5
 
 Portrait-portrait-clip-region = 0,0,413,563
 
-SphereIcon-portrait-clip-region = 329,487,34,34
-
-BodyIcon-portrait-clip-region = 184,473,46,46
+BodyIcon-portrait-clip-region = 184,473,46,46
 BodyIcon-Small-portrait-clip-region = 186,422,42,42
 BodyIcon-Medium-portrait-clip-region = 169,388,74,74
 BodyIcon-Big-portrait-clip-region = 154,354,106,106
+
+SphereIcon-portrait-clip-region = 329,487,34,34
 
 ResourceCost-region = 48,484,42,35
 

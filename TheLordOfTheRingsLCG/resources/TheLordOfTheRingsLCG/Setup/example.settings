@@ -1,10 +1,10 @@
 Template = Nightmare
 Portrait-portrait-template = TheLordOfTheRingsLCG/portrait/Caspar David Friedrich - Abtei im Eichwald.jpg
 
-EncountersetNumber = 3
-EncountersetTotal = 9
+EncounterSetNumber = 3
+EncounterSetTotal = 9
 Collection-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
-Encounterset-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
-Encounterset = StrangeEons
+EncounterSet-portrait-template = TheLordOfTheRingsLCG/icon/StrangeEons-tintable.png
+EncounterSet = StrangeEons
 Collection = StrangeEons
 CollectionNumber = 0
